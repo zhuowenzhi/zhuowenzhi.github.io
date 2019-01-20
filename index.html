@@ -69,16 +69,476 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-node-pormise" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/20/node-pormise/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.565Z" itemprop="datePublished">2019-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-pormise/">node-promise</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date:2019/01/05</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-pormise/" data-id="cjr47yrqj000k50vn07ahwoei" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-npm" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/20/node-npm/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.564Z" itemprop="datePublished">2019-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-npm/">node-npm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>@author：zwz</li>
+<li>@date：2018/12/31</li>
+</ul>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><ul>
+<li>建议每个文件都有这个文件（包描述文件）</li>
+<li>这个文件可以用过npm init来创建</li>
+<li>执行npm install加上–save用来保存依赖项信息</li>
+<li>npm install 会把所有依赖项都加载回来</li>
+</ul>
+<h4 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h4><ul>
+<li><p><code>npm init</code></p>
+</li>
+<li><p><code>npm install 包名</code></p>
+</li>
+<li><p><code>npm uninstall 包名</code></p>
+</li>
+<li><p><code>npm install --save</code></p>
+</li>
+<li><p><code>npm help</code></p>
+</li>
+</ul>
+<h4 id="npm被墙"><a href="#npm被墙" class="headerlink" title="npm被墙"></a>npm被墙</h4><p><a href="http://npm.taobao.org/" target="_blank" rel="noopener">http://npm.taobao.org/</a></p>
+<p>安装淘宝的cnpm</p>
+<p><code>npm install --global cnpm</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-npm/" data-id="cjr47yrqe000d50vnfl5k0c9v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-mysql" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/20/node-mysql/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.563Z" itemprop="datePublished">2019-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-mysql/">node-mysql</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@ Date:2019/01/05</p>
+<h1 id="使用node操作MySQL"><a href="#使用node操作MySQL" class="headerlink" title="使用node操作MySQL"></a>使用node操作MySQL</h1><p>安装<br><code>npm install --save mysql</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var mysql      = require(&apos;mysql&apos;);</span><br><span class="line">var connection = mysql.createConnection(&#123;</span><br><span class="line">  host     : &apos;localhost&apos;,</span><br><span class="line">  user     : &apos;me&apos;,</span><br><span class="line">  password : &apos;secret&apos;,</span><br><span class="line">  database : &apos;my_db&apos;</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">connection.connect();</span><br><span class="line"> </span><br><span class="line">connection.query(&apos;SELECT 1 + 1 AS solution&apos;, function (error, results, fields) &#123;</span><br><span class="line">  if (error) throw error;</span><br><span class="line">  console.log(&apos;The solution is: &apos;, results[0].solution);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">connection.end();</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-mysql/" data-id="cjr47yrqi000i50vnktns8i8p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-mongodb" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/20/node-mongodb/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.554Z" itemprop="datePublished">2019-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-mongodb/">node-MongoDB</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="开启服务"><a href="#开启服务" class="headerlink" title="开启服务"></a>开启服务</h3><ol>
+<li>mongod</li>
+<li>mongo ,需要重新开启一个窗口</li>
+</ol>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><ul>
+<li><code>show dbs</code><ul>
+<li>查看所有数据库</li>
+</ul>
+</li>
+<li><code>db</code><ul>
+<li>查看当前操作的数据库</li>
+</ul>
+</li>
+<li><code>use 数据库名</code><ul>
+<li>切换到指点数据库（如果没有就新建）</li>
+</ul>
+</li>
+<li>插入数据</li>
+</ul>
+<h2 id="在node中操作MongoDB"><a href="#在node中操作MongoDB" class="headerlink" title="在node中操作MongoDB"></a>在node中操作MongoDB</h2><h3 id="使用官方mongodb包来操作"><a href="#使用官方mongodb包来操作" class="headerlink" title="使用官方mongodb包来操作"></a>使用官方mongodb包来操作</h3><p><a href="https://github.com/mongodb/node-mongodb-native" target="_blank" rel="noopener">https://github.com/mongodb/node-mongodb-native</a></p>
+<h3 id="使用第三方mongoose来操作数据库"><a href="#使用第三方mongoose来操作数据库" class="headerlink" title="使用第三方mongoose来操作数据库"></a>使用第三方mongoose来操作数据库</h3><p><a href="https://mongoosejs.com/" target="_blank" rel="noopener">https://mongoosejs.com/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const mongoose = require(&apos;mongoose&apos;);</span><br><span class="line">mongoose.connect(&apos;mongodb://localhost:27017/test&apos;, &#123;useNewUrlParser: true&#125;);</span><br><span class="line"></span><br><span class="line">const Cat = mongoose.model(&apos;Cat&apos;, &#123; name: String &#125;);</span><br><span class="line"></span><br><span class="line">const kitty = new Cat(&#123; name: &apos;Zildjian&apos; &#125;);</span><br><span class="line">kitty.save().then(() =&gt; console.log(&apos;meow&apos;));</span><br></pre></td></tr></table></figure></p>
+<h1 id="mongoose"><a href="#mongoose" class="headerlink" title="mongoose"></a>mongoose</h1><ul>
+<li>官网  <a href="https://mongoosejs.com/" target="_blank" rel="noopener">https://mongoosejs.com/</a></li>
+<li>官方指南  <a href="https://mongoosejs.com/docs/guides.html" target="_blank" rel="noopener">https://mongoosejs.com/docs/guides.html</a></li>
+<li>官方文档API  <a href="https://mongoosejs.com/docs/api.html" target="_blank" rel="noopener">https://mongoosejs.com/docs/api.html</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-mongodb/" data-id="cjr47yrqd000c50vn9m2ombd9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-module" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/20/node-module/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.545Z" itemprop="datePublished">2019-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-module/">node-module</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>@author：zwz</li>
+<li>@date：2018/12/31</li>
+</ul>
+<h1 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h1><ul>
+<li>核心模块</li>
+<li>第三方模块</li>
+<li>自己写的模块</li>
+<li><p>require加载模块的规则</p>
+<ul>
+<li>优先从缓存加载，不会重复加载</li>
+<li>判断模块标识</li>
+<li>首位的/表示跟路径</li>
+</ul>
+</li>
+</ul>
+<h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><ul>
+<li>文件作用域</li>
+<li>通信规则<ul>
+<li>加载模块</li>
+<li>导出</li>
+</ul>
+</li>
+</ul>
+<h4 id="CommonJS模块规范化"><a href="#CommonJS模块规范化" class="headerlink" title="CommonJS模块规范化"></a>CommonJS模块规范化</h4><ul>
+<li>模块作用域</li>
+<li>使用require方法加载模块</li>
+<li>使用exports接口对象用来导出模块中的成员</li>
+</ul>
+<h4 id="加载require"><a href="#加载require" class="headerlink" title="加载require"></a>加载require</h4><p>语法：<code>var 变量名 = require(&#39;模块&#39;)</code></p>
+<h4 id="导出exports"><a href="#导出exports" class="headerlink" title="导出exports"></a>导出exports</h4><p><code>每个模块都有对象module，该对象中有一个成员exports</code></p>
+<ul>
+<li><p>导出单个成员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &apos;a&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导出多个成员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    foo:&apos;bar&apos;,</span><br><span class="line">    add:function(x, y) &#123;</span><br><span class="line">        return x + y</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="module-exports-和-exports区别"><a href="#module-exports-和-exports区别" class="headerlink" title="module.exports 和 exports区别"></a>module.exports 和 exports区别</h4><ul>
+<li>exports 只是module.exports的引用而已</li>
+<li>每个模块最终的return的是module.exports</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-module/" data-id="cjr47yrqb000850vn5txvj1ra" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-express" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/20/node-express/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.530Z" itemprop="datePublished">2019-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-express/">node-express</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>@author：zwz</li>
+<li>@date：2018/12/31</li>
+</ul>
+<p><a href="http://expressjs.com/en/starter/installing.html" target="_blank" rel="noopener">http://expressjs.com/en/starter/installing.html</a></p>
+<h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><ul>
+<li>安装<br><code>npm install express --save</code></li>
+<li>配置模板引擎</li>
+</ul>
+<p><code>npm install --save art-template</code><br><code>npm install  --save expressart-template</code></p>
+<h3 id="基于文件做一套CRUD"><a href="#基于文件做一套CRUD" class="headerlink" title="基于文件做一套CRUD"></a>基于文件做一套CRUD</h3><h4 id="文件操作路径和模块路径"><a href="#文件操作路径和模块路径" class="headerlink" title="文件操作路径和模块路径"></a>文件操作路径和模块路径</h4><p>文件操作路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//  ./data/a.txt //当前目录</span><br><span class="line">//  data/a.txt //当前目录</span><br><span class="line">//  /data/a.txt //绝对路径，当前文件模块所处磁盘根目录</span><br><span class="line">fs.readFile(&apos;./data/a.txt&apos;,function (err, data) &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">        console.log(err)</span><br><span class="line">        return console.log(&apos;读取失败&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(data.toString())</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>模块路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//这里忽略了.则也是磁盘根目录</span><br><span class="line">require(&apos;./data/foo.js&apos;)</span><br><span class="line">//相对路径</span><br><span class="line">require(&apos;./data/foo.js)</span><br><span class="line">//模块加载的路径中的相对路径不能省略./</span><br></pre></td></tr></table></figure></p>
+<h4 id="自动重启"><a href="#自动重启" class="headerlink" title="自动重启"></a>自动重启</h4><p><code>npm install --global nodemon</code><br>安装完毕<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br><span class="line"></span><br><span class="line">nodemon app.js</span><br></pre></td></tr></table></figure></p>
+<h4 id="基本路由"><a href="#基本路由" class="headerlink" title="基本路由"></a>基本路由</h4><p>get<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(&apos;/&apos;.function (req, res) &#123;</span><br><span class="line">    res.send(&apos;hello world&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>post<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.post(&apos;/&apos;,function (req, res)&#123;</span><br><span class="line">    res.send(&apos;Got a POST request&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="静态服务"><a href="#静态服务" class="headerlink" title="静态服务"></a>静态服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(&apos;public&apos;))</span><br><span class="line">app.use(express.static(&apos;files&apos;))</span><br><span class="line"></span><br><span class="line">app.use(&apos;/static&apos;,express.static(&apos;public&apos;))</span><br></pre></td></tr></table></figure>
+<h4 id="使用art-template"><a href="#使用art-template" class="headerlink" title="使用art-template"></a>使用art-template</h4><p>安装</p>
+<p><code>npm install --save art-template</code><br>配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var app = express();</span><br><span class="line">app.engine(&apos;art&apos;, require(&apos;express-art-template&apos;));</span><br><span class="line">app.set(&apos;view options&apos;, &#123;</span><br><span class="line">    debug: process.env.NODE_ENV !== &apos;production&apos;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function (req, res) &#123;</span><br><span class="line">    res.render(&apos;index.art&apos;, &#123;</span><br><span class="line">        user: &#123;</span><br><span class="line">            name: &apos;aui&apos;,</span><br><span class="line">            tags: [&apos;art&apos;, &apos;template&apos;, &apos;nodejs&apos;]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="获取表单POST请求数据"><a href="#获取表单POST请求数据" class="headerlink" title="获取表单POST请求数据"></a>获取表单POST请求数据</h4><p>安装中间件middleware<br><code>npm install --save body-parser</code></p>
+<p>配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var bodyParser = require(&apos;body-parser&apos;)</span><br><span class="line"></span><br><span class="line">var app = express()</span><br><span class="line"></span><br><span class="line">// parse application/x-www-form-urlencoded</span><br><span class="line">app.use(bodyParser.urlencoded(&#123; extended: false &#125;))</span><br><span class="line"></span><br><span class="line">// parse application/json</span><br><span class="line">app.use(bodyParser.json())</span><br><span class="line"></span><br><span class="line">app.use(function (req, res) &#123;</span><br><span class="line">  res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;)</span><br><span class="line">  res.write(&apos;you posted:\n&apos;)</span><br><span class="line">  res.end(JSON.stringify(req.body, null, 2))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-express/" data-id="cjr47yrqa000750vnbr5gynmd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-CRUD" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/20/node-CRUD/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.511Z" itemprop="datePublished">2019-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-CRUD/">node-Express - CRUD</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="路由设计"><a href="#路由设计" class="headerlink" title="路由设计"></a>路由设计</h2><p>| 请求方法 |      请求路径      | get 参数 | post 参数                 |     备注 |<br>|   GET    |    /students     |         |                           | 渲染首页 |<br>|   GET    |    /students/new |         |                           | 渲染添加 |<br>|  POST    |    /students     |         |   name age gender hobbies | 渲染添加 |<br>|   GET    |   /students/edit | id      |   name age gender hobbies | 渲染编辑 |<br>|   POST   |   /students/edit | id      |                           | 渲染编辑 |<br>|   GET    | /students/delete | id      |                           | 渲染删除 |</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-CRUD/" data-id="cjr47yrq6000350vnvzcg0xtw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-art-template" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/20/node-art-template/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.509Z" itemprop="datePublished">2019-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-art-template/">npde-art-template</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>@author：zwz</li>
+<li><p>@date：2018/12/31</p>
+</li>
+<li><p>each语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;each 数组&#125;&#125;</span><br><span class="line">&lt;li&gt;&#123;&#123;$value&#125;&#125;&lt;/li&gt;</span><br><span class="line">&#123;&#123;/each&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置<br><code>npm install art-template --save</code></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-art-template/" data-id="cjr47yrq9000650vn7774wpff" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/19/hello/" class="article-date">
   <time datetime="2019-01-19T03:25:15.827Z" itemprop="datePublished">2019-01-19</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/生活体验/">生活体验</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -100,10 +560,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhuowenzhi.github.io/2019/01/19/hello/" data-id="cjr47bt6y00004svnxamnffss" class="article-share-link">Share</a>
+      <a data-url="http://zhuowenzhi.github.io/2019/01/19/hello/" data-id="cjr47yrq4000250vnztju0ozt" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活体验/">生活体验</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
 
     </footer>
   </div>
@@ -147,7 +607,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhuowenzhi.github.io/2019/01/19/hello-world/" data-id="cjr47bt9200014svnuf50tgub" class="article-share-link">Share</a>
+      <a data-url="http://zhuowenzhi.github.io/2019/01/19/hello-world/" data-id="cjr47yrpz000050vnyp5i5gnc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +627,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/生活体验/">生活体验</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li></ul>
     </div>
   </div>
 
@@ -177,7 +637,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活体验/">生活体验</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a></li></ul>
     </div>
   </div>
 
@@ -187,7 +647,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/生活体验/" style="font-size: 10px;">生活体验</a>
+      <a href="/tags/learn/" style="font-size: 20px;">learn</a> <a href="/tags/life/" style="font-size: 10px;">life</a>
     </div>
   </div>
 
@@ -209,11 +669,23 @@
       <ul>
         
           <li>
-            <a href="/2019/01/19/hello/">Hello ZWZ</a>
+            <a href="/2019/01/20/node-pormise/">node-promise</a>
           </li>
         
           <li>
-            <a href="/2019/01/19/hello-world/">Hello World</a>
+            <a href="/2019/01/20/node-npm/">node-npm</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/node-mysql/">node-mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/node-mongodb/">node-MongoDB</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/node-module/">node-module</a>
           </li>
         
       </ul>

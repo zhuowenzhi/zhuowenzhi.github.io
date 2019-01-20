@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>node-module | 指尖上的盛夏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="@author：zwz @date：2018/12/31  模块系统 核心模块 第三方模块 自己写的模块 require加载模块的规则  优先从缓存加载，不会重复加载 判断模块标识 首位的/表示跟路径    模块化 文件作用域 通信规则 加载模块 导出    CommonJS模块规范化 模块作用域 使用require方法加载模块 使用exports接口对象用来导出模块中的成员  加载requir">
+<meta name="keywords" content="learn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node-module">
+<meta property="og:url" content="http://zhuowenzhi.github.io/2019/01/20/node-module/index.html">
+<meta property="og:site_name" content="指尖上的盛夏">
+<meta property="og:description" content="@author：zwz @date：2018/12/31  模块系统 核心模块 第三方模块 自己写的模块 require加载模块的规则  优先从缓存加载，不会重复加载 判断模块标识 首位的/表示跟路径    模块化 文件作用域 通信规则 加载模块 导出    CommonJS模块规范化 模块作用域 使用require方法加载模块 使用exports接口对象用来导出模块中的成员  加载requir">
+<meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2019-01-20T01:28:04.903Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node-module">
+<meta name="twitter:description" content="@author：zwz @date：2018/12/31  模块系统 核心模块 第三方模块 自己写的模块 require加载模块的规则  优先从缓存加载，不会重复加载 判断模块标识 首位的/表示跟路径    模块化 文件作用域 通信规则 加载模块 导出    CommonJS模块规范化 模块作用域 使用require方法加载模块 使用exports接口对象用来导出模块中的成员  加载requir">
+  
+    <link rel="alternate" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">指尖上的盛夏</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">ZWZ</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhuowenzhi.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node-module" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/20/node-module/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.545Z" itemprop="datePublished">2019-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node-module
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>@author：zwz</li>
+<li>@date：2018/12/31</li>
+</ul>
+<h1 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h1><ul>
+<li>核心模块</li>
+<li>第三方模块</li>
+<li>自己写的模块</li>
+<li><p>require加载模块的规则</p>
+<ul>
+<li>优先从缓存加载，不会重复加载</li>
+<li>判断模块标识</li>
+<li>首位的/表示跟路径</li>
+</ul>
+</li>
+</ul>
+<h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><ul>
+<li>文件作用域</li>
+<li>通信规则<ul>
+<li>加载模块</li>
+<li>导出</li>
+</ul>
+</li>
+</ul>
+<h4 id="CommonJS模块规范化"><a href="#CommonJS模块规范化" class="headerlink" title="CommonJS模块规范化"></a>CommonJS模块规范化</h4><ul>
+<li>模块作用域</li>
+<li>使用require方法加载模块</li>
+<li>使用exports接口对象用来导出模块中的成员</li>
+</ul>
+<h4 id="加载require"><a href="#加载require" class="headerlink" title="加载require"></a>加载require</h4><p>语法：<code>var 变量名 = require(&#39;模块&#39;)</code></p>
+<h4 id="导出exports"><a href="#导出exports" class="headerlink" title="导出exports"></a>导出exports</h4><p><code>每个模块都有对象module，该对象中有一个成员exports</code></p>
+<ul>
+<li><p>导出单个成员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &apos;a&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导出多个成员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    foo:&apos;bar&apos;,</span><br><span class="line">    add:function(x, y) &#123;</span><br><span class="line">        return x + y</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="module-exports-和-exports区别"><a href="#module-exports-和-exports区别" class="headerlink" title="module.exports 和 exports区别"></a>module.exports 和 exports区别</h4><ul>
+<li>exports 只是module.exports的引用而已</li>
+<li>每个模块最终的return的是module.exports</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-module/" data-id="cjr47yrqb000850vn5txvj1ra" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/20/node-mongodb/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          node-MongoDB
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/20/node-express/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node-express</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/learn/" style="font-size: 20px;">learn</a> <a href="/tags/life/" style="font-size: 10px;">life</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/20/node-pormise/">node-promise</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/node-npm/">node-npm</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/node-mysql/">node-mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/node-mongodb/">node-MongoDB</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/node-module/">node-module</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 卓文智<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

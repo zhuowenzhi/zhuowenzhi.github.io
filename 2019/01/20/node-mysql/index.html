@@ -5,20 +5,20 @@
   
 
   
-  <title>Hello ZWZ | 指尖上的盛夏</title>
+  <title>node-mysql | 指尖上的盛夏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="做一个精致的女孩纸，种田，打码，环游世界">
-<meta name="keywords" content="life">
+  <meta name="description" content="@ Date:2019/01/05 使用node操作MySQL安装npm install --save mysql 12345678910111213141516var mysql      = require(&amp;apos;mysql&amp;apos;);var connection = mysql.createConnection(&amp;#123;  host     : &amp;apos;localhost&amp;">
+<meta name="keywords" content="learn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello ZWZ">
-<meta property="og:url" content="http://zhuowenzhi.github.io/2019/01/19/hello/index.html">
+<meta property="og:title" content="node-mysql">
+<meta property="og:url" content="http://zhuowenzhi.github.io/2019/01/20/node-mysql/index.html">
 <meta property="og:site_name" content="指尖上的盛夏">
-<meta property="og:description" content="做一个精致的女孩纸，种田，打码，环游世界">
+<meta property="og:description" content="@ Date:2019/01/05 使用node操作MySQL安装npm install --save mysql 12345678910111213141516var mysql      = require(&amp;apos;mysql&amp;apos;);var connection = mysql.createConnection(&amp;#123;  host     : &amp;apos;localhost&amp;">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-01-20T01:26:22.519Z">
+<meta property="og:updated_time" content="2019-01-20T01:27:58.266Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello ZWZ">
-<meta name="twitter:description" content="做一个精致的女孩纸，种田，打码，环游世界">
+<meta name="twitter:title" content="node-mysql">
+<meta name="twitter:description" content="@ Date:2019/01/05 使用node操作MySQL安装npm install --save mysql 12345678910111213141516var mysql      = require(&amp;apos;mysql&amp;apos;);var connection = mysql.createConnection(&amp;#123;  host     : &amp;apos;localhost&amp;">
   
     <link rel="alternate" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
   
@@ -69,12 +69,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-node-mysql" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/19/hello/" class="article-date">
-  <time datetime="2019-01-19T03:25:15.827Z" itemprop="datePublished">2019-01-19</time>
+    <a href="/2019/01/20/node-mysql/" class="article-date">
+  <time datetime="2019-01-20T01:12:53.563Z" itemprop="datePublished">2019-01-20</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -83,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello ZWZ
+      node-mysql
     </h1>
   
 
@@ -91,15 +95,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>做一个精致的女孩纸，种田，打码，环游世界</p>
-
+        <p>@ Date:2019/01/05</p>
+<h1 id="使用node操作MySQL"><a href="#使用node操作MySQL" class="headerlink" title="使用node操作MySQL"></a>使用node操作MySQL</h1><p>安装<br><code>npm install --save mysql</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var mysql      = require(&apos;mysql&apos;);</span><br><span class="line">var connection = mysql.createConnection(&#123;</span><br><span class="line">  host     : &apos;localhost&apos;,</span><br><span class="line">  user     : &apos;me&apos;,</span><br><span class="line">  password : &apos;secret&apos;,</span><br><span class="line">  database : &apos;my_db&apos;</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">connection.connect();</span><br><span class="line"> </span><br><span class="line">connection.query(&apos;SELECT 1 + 1 AS solution&apos;, function (error, results, fields) &#123;</span><br><span class="line">  if (error) throw error;</span><br><span class="line">  console.log(&apos;The solution is: &apos;, results[0].solution);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">connection.end();</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhuowenzhi.github.io/2019/01/19/hello/" data-id="cjr47yrq4000250vnztju0ozt" class="article-share-link">Share</a>
+      <a data-url="http://zhuowenzhi.github.io/2019/01/20/node-mysql/" data-id="cjr47yrqi000i50vnktns8i8p" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
 
     </footer>
   </div>
@@ -107,19 +112,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/01/20/node-art-template/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/20/node-npm/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          npde-art-template
+          node-npm
         
       </div>
     </a>
   
   
-    <a href="/2019/01/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/01/20/node-mongodb/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">node-MongoDB</div>
     </a>
   
 </nav>
