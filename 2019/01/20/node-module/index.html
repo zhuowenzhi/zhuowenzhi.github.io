@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://zhuowenzhi.github.io">
   <title>node-module | 指尖上的盛夏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="@author：zwz @date：2018/12/31  模块系统 核心模块 第三方模块 自己写的模块 require加载模块的规则  优先从缓存加载，不会重复加载 判断模块标识 首位的/表示跟路径    模块化 文件作用域 通信规则 加载模块 导出    CommonJS模块规范化 模块作用域 使用require方法加载模块 使用exports接口对象用来导出模块中的成员  加载requir">
+  <meta name="description" content="模块系统 核心模块 第三方模块 自己写的模块 require加载模块的规则  优先从缓存加载，不会重复加载 判断模块标识 首位的/表示跟路径    模块化 文件作用域 通信规则 加载模块 导出    CommonJS模块规范化 模块作用域 使用require方法加载模块 使用exports接口对象用来导出模块中的成员  加载require语法：var 变量名 = require(&amp;#39;模块&amp;#">
 <meta name="keywords" content="module">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node-module">
 <meta property="og:url" content="http://zhuowenzhi.github.io/2019/01/20/node-module/index.html">
 <meta property="og:site_name" content="指尖上的盛夏">
-<meta property="og:description" content="@author：zwz @date：2018/12/31  模块系统 核心模块 第三方模块 自己写的模块 require加载模块的规则  优先从缓存加载，不会重复加载 判断模块标识 首位的/表示跟路径    模块化 文件作用域 通信规则 加载模块 导出    CommonJS模块规范化 模块作用域 使用require方法加载模块 使用exports接口对象用来导出模块中的成员  加载requir">
+<meta property="og:description" content="模块系统 核心模块 第三方模块 自己写的模块 require加载模块的规则  优先从缓存加载，不会重复加载 判断模块标识 首位的/表示跟路径    模块化 文件作用域 通信规则 加载模块 导出    CommonJS模块规范化 模块作用域 使用require方法加载模块 使用exports接口对象用来导出模块中的成员  加载require语法：var 变量名 = require(&amp;#39;模块&amp;#">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-01-22T00:47:14.976Z">
+<meta property="og:updated_time" content="2019-01-24T09:20:29.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-module">
-<meta name="twitter:description" content="@author：zwz @date：2018/12/31  模块系统 核心模块 第三方模块 自己写的模块 require加载模块的规则  优先从缓存加载，不会重复加载 判断模块标识 首位的/表示跟路径    模块化 文件作用域 通信规则 加载模块 导出    CommonJS模块规范化 模块作用域 使用require方法加载模块 使用exports接口对象用来导出模块中的成员  加载requir">
+<meta name="twitter:description" content="模块系统 核心模块 第三方模块 自己写的模块 require加载模块的规则  优先从缓存加载，不会重复加载 判断模块标识 首位的/表示跟路径    模块化 文件作用域 通信规则 加载模块 导出    CommonJS模块规范化 模块作用域 使用require方法加载模块 使用exports接口对象用来导出模块中的成员  加载require语法：var 变量名 = require(&amp;#39;模块&amp;#">
   
     <link rel="alternative" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/public/images/header_img.jpg" class="js-avatar">
+			<img src="/img/header_img.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">指尖上的盛夏</a></h1>
@@ -90,7 +90,7 @@
 		        
 					<a class="weixin" target="_blank" href="/CGLLZWZ" title="weixin"><i class="icon-weixin"></i></a>
 		        
-					<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+					<a class="bilibili" target="_blank" href="https://account.bilibili.com/account/home" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
 					<a class="mail" target="_blank" href="/1791388628@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -110,7 +110,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/public/images/header_img.jpg" class="js-avatar">
+				<img src="/img/header_img.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">指尖上的盛夏</h1>
@@ -135,7 +135,7 @@
 			        
 						<a class="weixin" target="_blank" href="/CGLLZWZ" title="weixin"><i class="icon-weixin"></i></a>
 			        
-						<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+						<a class="bilibili" target="_blank" href="https://account.bilibili.com/account/home" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
 						<a class="mail" target="_blank" href="/1791388628@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -185,11 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>@author：zwz</li>
-<li>@date：2018/12/31</li>
-</ul>
-<h1 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h1><ul>
+        <h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><ul>
 <li>核心模块</li>
 <li>第三方模块</li>
 <li>自己写的模块</li>
@@ -512,19 +508,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">

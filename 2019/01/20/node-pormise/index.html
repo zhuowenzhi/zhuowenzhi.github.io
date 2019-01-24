@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://zhuowenzhi.github.io">
   <title>node-promise | 指尖上的盛夏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="date:2019/01/05 promise是一个构造函数 promise容器存放了一个异步任务pending，有两种状态，resolved和rejected 封装Promise readFile 12345678910111213141516171819202122232425function pReadFile(filePath) &amp;#123;  return new Promise(fun">
+  <meta name="description" content="promise是一个构造函数 promise容器存放了一个异步任务pending，有两种状态，resolved和rejected 封装Promise readFile 12345678910111213141516171819202122232425function pReadFile(filePath) &amp;#123;  return new Promise(function (resolve,">
 <meta name="keywords" content="promise">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node-promise">
 <meta property="og:url" content="http://zhuowenzhi.github.io/2019/01/20/node-pormise/index.html">
 <meta property="og:site_name" content="指尖上的盛夏">
-<meta property="og:description" content="date:2019/01/05 promise是一个构造函数 promise容器存放了一个异步任务pending，有两种状态，resolved和rejected 封装Promise readFile 12345678910111213141516171819202122232425function pReadFile(filePath) &amp;#123;  return new Promise(fun">
+<meta property="og:description" content="promise是一个构造函数 promise容器存放了一个异步任务pending，有两种状态，resolved和rejected 封装Promise readFile 12345678910111213141516171819202122232425function pReadFile(filePath) &amp;#123;  return new Promise(function (resolve,">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-01-22T00:46:45.170Z">
+<meta property="og:updated_time" content="2019-01-24T09:21:11.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-promise">
-<meta name="twitter:description" content="date:2019/01/05 promise是一个构造函数 promise容器存放了一个异步任务pending，有两种状态，resolved和rejected 封装Promise readFile 12345678910111213141516171819202122232425function pReadFile(filePath) &amp;#123;  return new Promise(fun">
+<meta name="twitter:description" content="promise是一个构造函数 promise容器存放了一个异步任务pending，有两种状态，resolved和rejected 封装Promise readFile 12345678910111213141516171819202122232425function pReadFile(filePath) &amp;#123;  return new Promise(function (resolve,">
   
     <link rel="alternative" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/public/images/header_img.jpg" class="js-avatar">
+			<img src="/img/header_img.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">指尖上的盛夏</a></h1>
@@ -90,7 +90,7 @@
 		        
 					<a class="weixin" target="_blank" href="/CGLLZWZ" title="weixin"><i class="icon-weixin"></i></a>
 		        
-					<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+					<a class="bilibili" target="_blank" href="https://account.bilibili.com/account/home" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
 					<a class="mail" target="_blank" href="/1791388628@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -110,7 +110,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/public/images/header_img.jpg" class="js-avatar">
+				<img src="/img/header_img.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">指尖上的盛夏</h1>
@@ -135,7 +135,7 @@
 			        
 						<a class="weixin" target="_blank" href="/CGLLZWZ" title="weixin"><i class="icon-weixin"></i></a>
 			        
-						<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+						<a class="bilibili" target="_blank" href="https://account.bilibili.com/account/home" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
 						<a class="mail" target="_blank" href="/1791388628@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -185,8 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>date:2019/01/05</p>
-<p>promise是一个构造函数</p>
+        <p>promise是一个构造函数</p>
 <p>promise容器存放了一个异步任务pending，有两种状态，resolved和rejected</p>
 <p>封装Promise readFile</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function pReadFile(filePath) &#123;</span><br><span class="line">  return new Promise(function (resolve, reject) &#123;</span><br><span class="line">    fs.readFile(filePath,&apos;utf8&apos;,function(err, data) &#123;</span><br><span class="line">      if (err) &#123;</span><br><span class="line">        reject(err)</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        resolve(data)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pReadFile(&apos;./data/c.txt&apos;)</span><br><span class="line">    .then(function (data) &#123;</span><br><span class="line">      console.log(data)</span><br><span class="line">     return pReadFile(&apos;./data/b.txt&apos;)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(function (data) &#123;</span><br><span class="line">      console.log(data)</span><br><span class="line">      return pReadFile(&apos;./data/a.txt&apos;)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(function (data) &#123;</span><br><span class="line">      console.log(data)</span><br><span class="line">      console.log(&apos;end&apos;)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
@@ -473,19 +472,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">

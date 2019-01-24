@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://zhuowenzhi.github.io">
   <title>node-mysql | 指尖上的盛夏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="@ Date:2019/01/05 使用node操作MySQL安装npm install --save mysql 12345678910111213141516var mysql      = require(&amp;apos;mysql&amp;apos;);var connection = mysql.createConnection(&amp;#123;  host     : &amp;apos;localhost&amp;">
+  <meta name="description" content="使用node操作MySQL安装npm install --save mysql 12345678910111213141516var mysql      = require(&amp;apos;mysql&amp;apos;);var connection = mysql.createConnection(&amp;#123;  host     : &amp;apos;localhost&amp;apos;,  user     :">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node-mysql">
 <meta property="og:url" content="http://zhuowenzhi.github.io/2019/01/20/node-mysql/index.html">
 <meta property="og:site_name" content="指尖上的盛夏">
-<meta property="og:description" content="@ Date:2019/01/05 使用node操作MySQL安装npm install --save mysql 12345678910111213141516var mysql      = require(&amp;apos;mysql&amp;apos;);var connection = mysql.createConnection(&amp;#123;  host     : &amp;apos;localhost&amp;">
+<meta property="og:description" content="使用node操作MySQL安装npm install --save mysql 12345678910111213141516var mysql      = require(&amp;apos;mysql&amp;apos;);var connection = mysql.createConnection(&amp;#123;  host     : &amp;apos;localhost&amp;apos;,  user     :">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-01-22T00:47:01.428Z">
+<meta property="og:updated_time" content="2019-01-24T09:20:58.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-mysql">
-<meta name="twitter:description" content="@ Date:2019/01/05 使用node操作MySQL安装npm install --save mysql 12345678910111213141516var mysql      = require(&amp;apos;mysql&amp;apos;);var connection = mysql.createConnection(&amp;#123;  host     : &amp;apos;localhost&amp;">
+<meta name="twitter:description" content="使用node操作MySQL安装npm install --save mysql 12345678910111213141516var mysql      = require(&amp;apos;mysql&amp;apos;);var connection = mysql.createConnection(&amp;#123;  host     : &amp;apos;localhost&amp;apos;,  user     :">
   
     <link rel="alternative" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/public/images/header_img.jpg" class="js-avatar">
+			<img src="/img/header_img.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">指尖上的盛夏</a></h1>
@@ -90,7 +90,7 @@
 		        
 					<a class="weixin" target="_blank" href="/CGLLZWZ" title="weixin"><i class="icon-weixin"></i></a>
 		        
-					<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+					<a class="bilibili" target="_blank" href="https://account.bilibili.com/account/home" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
 					<a class="mail" target="_blank" href="/1791388628@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -110,7 +110,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/public/images/header_img.jpg" class="js-avatar">
+				<img src="/img/header_img.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">指尖上的盛夏</h1>
@@ -135,7 +135,7 @@
 			        
 						<a class="weixin" target="_blank" href="/CGLLZWZ" title="weixin"><i class="icon-weixin"></i></a>
 			        
-						<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+						<a class="bilibili" target="_blank" href="https://account.bilibili.com/account/home" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
 						<a class="mail" target="_blank" href="/1791388628@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -185,8 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>@ Date:2019/01/05</p>
-<h1 id="使用node操作MySQL"><a href="#使用node操作MySQL" class="headerlink" title="使用node操作MySQL"></a>使用node操作MySQL</h1><p>安装<br><code>npm install --save mysql</code></p>
+        <h2 id="使用node操作MySQL"><a href="#使用node操作MySQL" class="headerlink" title="使用node操作MySQL"></a>使用node操作MySQL</h2><p>安装<br><code>npm install --save mysql</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var mysql      = require(&apos;mysql&apos;);</span><br><span class="line">var connection = mysql.createConnection(&#123;</span><br><span class="line">  host     : &apos;localhost&apos;,</span><br><span class="line">  user     : &apos;me&apos;,</span><br><span class="line">  password : &apos;secret&apos;,</span><br><span class="line">  database : &apos;my_db&apos;</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">connection.connect();</span><br><span class="line"> </span><br><span class="line">connection.query(&apos;SELECT 1 + 1 AS solution&apos;, function (error, results, fields) &#123;</span><br><span class="line">  if (error) throw error;</span><br><span class="line">  console.log(&apos;The solution is: &apos;, results[0].solution);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">connection.end();</span><br></pre></td></tr></table></figure>
       
 
@@ -471,19 +470,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
