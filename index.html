@@ -153,19 +153,113 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-A-sort-quit" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-A-InsertionSort" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/24/A-sort-quit/">A-sort-bubble</a>
+      <a class="article-title" href="/2019/01/25/A-InsertionSort/">A-InsertionSort</a>
     </h1>
   
 
         
-        <a href="/2019/01/24/A-sort-quit/" class="archive-article-date">
+        <a href="/2019/01/25/A-InsertionSort/" class="archive-article-date">
+  	<time datetime="2019-01-25T13:16:17.752Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+<p>算法描述和实现</p>
+<p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
+<p><1> 从第一个元素开始，该元素可以认为已经被排序；</1></p>
+<p><2> 取出下一个元素，在已经排序的元素序列中从后向前扫描；</2></p>
+<p><3> 如果该元素（已排序）大于新元素，将该元素移到下一位置；</3></p>
+<p><4> 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</4></p>
+<p><5> 将新元素插入到该位置后；</5></p>
+<p><6> 重复步骤2~5。</6></p>
+<p>直接插入排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function directInsertSort(arr) &#123;</span><br><span class="line">    for (var i = 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">        var temp =arr[i]</span><br><span class="line">        var j = i - 1</span><br><span class="line">        while (j &gt;= 0 &amp;&amp; arr[j] &gt; temp) &#123;</span><br><span class="line">            arr[j + 1] = arr[j]</span><br><span class="line">            j--</span><br><span class="line">        &#125;</span><br><span class="line">        arr[j + 1] = temp</span><br><span class="line">    &#125;</span><br><span class="line">    return arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">插入排序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/25/A-InsertionSort/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-A-SwitchingSort-quit" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/24/A-SwitchingSort-quit/">A-sort-bubble</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/24/A-SwitchingSort-quit/" class="archive-article-date">
   	<time datetime="2019-01-24T04:35:03.081Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-24</time>
 </a>
         
@@ -178,7 +272,7 @@
 <p>分治法：在分治法的思想下，原数列在每一轮被拆分成两部分，每一部分在下一轮又分别被拆分成两部分，直到不可再分为止。平均情况下需要logn轮，因此快速排序算法的平均时间复杂度是O（nlogn）。快速排序的平均时间复杂度是 O（nlogn），最坏情况下的时间复杂度是 O（n^2）。</p>
 <p>基准元素的选择：基准元素，英文pivot，用于在分治过程中以此为中心，把其他元素移动到基准元素的左右两边。</p>
 <h3 id="挖坑法"><a href="#挖坑法" class="headerlink" title="挖坑法"></a>挖坑法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">var arr = [4, 7, 6, 5, 3, 2, 8, 1]</span><br><span class="line">// 挖坑法</span><br><span class="line">console.log(&apos;排序前的arr:&apos; + arr + &quot;长度&quot; +arr.length+ &quot;\n&quot;)</span><br><span class="line">quickSort(arr,0,arr.length-1)</span><br><span class="line">console.log(&apos;quickSort排序后的arr:&apos; + arr)</span><br><span class="line">function quickSort(arr, startIndex, endIndex) &#123;</span><br><span class="line">    // 取第一个元素作为基准值</span><br><span class="line">    var pivot = arr[startIndex]</span><br><span class="line">    var left = startIndex</span><br><span class="line">    var right = endIndex</span><br><span class="line">    // 坑的位置,初始等于pivot</span><br><span class="line">    var index = startIndex</span><br><span class="line"></span><br><span class="line">    // 大循环在左右指针重合或者交错时结束</span><br><span class="line">    while (right &gt;= left) &#123;</span><br><span class="line">        // right指针从右向左比较</span><br><span class="line">        while (right &gt;= left) &#123;</span><br><span class="line">            if (arr[right] &lt; pivot) &#123;</span><br><span class="line">                arr[left] = arr[right]</span><br><span class="line">                index = right</span><br><span class="line">                left++</span><br><span class="line">                console.log(&quot;right右向左数组right&quot; + right + &quot;个位置left&quot; + left + &quot;个位置&quot; + &quot;index值为&quot; + index + &quot;数组为&quot; + arr)</span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">            right--</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">         // left指针从左向右比较</span><br><span class="line">        while (right &gt;= left) &#123;</span><br><span class="line">            if (arr[left] &gt; pivot) &#123;</span><br><span class="line">                arr[right] = arr[left]</span><br><span class="line">                index = left</span><br><span class="line">                right--</span><br><span class="line">                console.log(&quot;left左向右数组left&quot; + left + &quot;个位置rigth&quot; + right + &quot;个位置&quot; + &quot;index值为&quot; + index + &quot;数组为&quot; + arr + &quot;\n&quot;)</span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">            left++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[index] = pivot</span><br><span class="line">    console.log(&quot;index的值为&quot; + index)</span><br><span class="line">    return index</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/01/24/A-sort-quit/../../public/images/quick1.png" alt="快速排序挖坑法"></p>
+<p><img src="/2019/01/24/A-SwitchingSort-quit/../../public/images/quick1.png" alt="快速排序挖坑法"></p>
 
       
 
@@ -217,7 +311,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/24/A-sort-quit/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/24/A-SwitchingSort-quit/">展开全文 >></a>
         </p>
       
 
@@ -247,19 +341,19 @@
 
 
   
-    <article id="post-vue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-vue生命周期" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/23/vue/">vue</a>
+      <a class="article-title" href="/2019/01/23/vue生命周期/">vue</a>
     </h1>
   
 
         
-        <a href="/2019/01/23/vue/" class="archive-article-date">
+        <a href="/2019/01/23/vue生命周期/" class="archive-article-date">
   	<time datetime="2019-01-23T12:47:09.282Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-23</time>
 </a>
         
@@ -267,7 +361,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><img src="/2019/01/23/vue生命周期/../../public/images/vue/lifecycle.png" alt="vue生命周期 "></p>
+
       
 
       
@@ -280,7 +375,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue生命周期</a>
         		</li>
       		
 		</ul>
@@ -301,7 +396,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/23/vue/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/23/vue生命周期/">展开全文 >></a>
         </p>
       
 
@@ -505,19 +600,19 @@
 
 
   
-    <article id="post-A-sort-bubble" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-A-SwitchingSort-bubble" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/22/A-sort-bubble/">A-sort-bubble</a>
+      <a class="article-title" href="/2019/01/22/A-SwitchingSort-bubble/">A-sort-bubble</a>
     </h1>
   
 
         
-        <a href="/2019/01/22/A-sort-bubble/" class="archive-article-date">
+        <a href="/2019/01/22/A-SwitchingSort-bubble/" class="archive-article-date">
   	<time datetime="2019-01-22T00:43:04.086Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-22</time>
 </a>
         
@@ -527,7 +622,7 @@
       
         <p>冒泡排序的英文Bubble Sort，是一种最基础的交换排序。这种排序算法的每一个元素都可以像小气泡一样，根据自身大小，一点一点向着数组的一侧移动。</p>
 <p>冒泡排序：<code>相邻的元素两两比较，根据大小来交换元素的位置</code>，如果后面的比前面的小，则将小的元素排到前面。依照这个规则进行多次并且递减的迭代，直到顺序正确。</p>
-<p><img src="/2019/01/22/A-sort-bubble/../../public/images/avatar.gif" alt="冒泡排序第一版"></p>
+<p>c</p>
 
       
 
@@ -566,7 +661,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/22/A-sort-bubble/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/22/A-SwitchingSort-bubble/">展开全文 >></a>
         </p>
       
 
@@ -983,129 +1078,6 @@
 
 
   
-    <article id="post-node-module" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/20/node-module/">node-module</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/20/node-module/" class="archive-article-date">
-  	<time datetime="2019-01-20T01:12:53.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><ul>
-<li>核心模块</li>
-<li>第三方模块</li>
-<li>自己写的模块</li>
-<li><p>require加载模块的规则</p>
-<ul>
-<li>优先从缓存加载，不会重复加载</li>
-<li>判断模块标识</li>
-<li>首位的/表示跟路径</li>
-</ul>
-</li>
-</ul>
-<h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><ul>
-<li>文件作用域</li>
-<li>通信规则<ul>
-<li>加载模块</li>
-<li>导出</li>
-</ul>
-</li>
-</ul>
-<h4 id="CommonJS模块规范化"><a href="#CommonJS模块规范化" class="headerlink" title="CommonJS模块规范化"></a>CommonJS模块规范化</h4><ul>
-<li>模块作用域</li>
-<li>使用require方法加载模块</li>
-<li>使用exports接口对象用来导出模块中的成员</li>
-</ul>
-<h4 id="加载require"><a href="#加载require" class="headerlink" title="加载require"></a>加载require</h4><p>语法：<code>var 变量名 = require(&#39;模块&#39;)</code></p>
-<h4 id="导出exports"><a href="#导出exports" class="headerlink" title="导出exports"></a>导出exports</h4><p><code>每个模块都有对象module，该对象中有一个成员exports</code></p>
-<ul>
-<li><p>导出单个成员</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &apos;a&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>导出多个成员</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    foo:&apos;bar&apos;,</span><br><span class="line">    add:function(x, y) &#123;</span><br><span class="line">        return x + y</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="module-exports-和-exports区别"><a href="#module-exports-和-exports区别" class="headerlink" title="module.exports 和 exports区别"></a>module.exports 和 exports区别</h4><ul>
-<li>exports 只是module.exports的引用而已</li>
-<li>每个模块最终的return的是module.exports</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">module</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/20/node-module/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1203,6 +1175,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">交换排序</a>
               </li>
              
@@ -1211,11 +1187,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1223,19 +1195,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1247,19 +1211,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
               </li>
             
             <div class="clearfix"></div>
