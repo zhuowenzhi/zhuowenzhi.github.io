@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://zhuowenzhi.github.io">
-  <title>Tag: vue组件化和模块化区别 | 指尖上的盛夏</title>
+  <title>vue-Webpack | 指尖上的盛夏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面朝大海 春暖花开">
-<meta property="og:type" content="website">
-<meta property="og:title" content="指尖上的盛夏">
-<meta property="og:url" content="http://zhuowenzhi.github.io/tags/vue组件化和模块化区别/index.html">
+  <meta name="description" content="网页中引用的静态资源JS:  .js  .jsx  .coffee  .ts CSS: .css  .less  .sass  .scss Img: .jpg  .png  .svg  .gif fonts: .ttf  .eot  .woff  .woff2 模板文件: .ejs  .jade  .vue 网页静态资源多引发的问题 网页加载速度慢，因为要发起很多二次请求 要处理错综复杂的依赖关系">
+<meta name="keywords" content="vue Webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-Webpack">
+<meta property="og:url" content="http://zhuowenzhi.github.io/2019/02/14/vue-Webpack/index.html">
 <meta property="og:site_name" content="指尖上的盛夏">
-<meta property="og:description" content="面朝大海 春暖花开">
+<meta property="og:description" content="网页中引用的静态资源JS:  .js  .jsx  .coffee  .ts CSS: .css  .less  .sass  .scss Img: .jpg  .png  .svg  .gif fonts: .ttf  .eot  .woff  .woff2 模板文件: .ejs  .jade  .vue 网页静态资源多引发的问题 网页加载速度慢，因为要发起很多二次请求 要处理错综复杂的依赖关系">
 <meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2019-02-14T11:15:04.110Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="指尖上的盛夏">
-<meta name="twitter:description" content="面朝大海 春暖花开">
+<meta name="twitter:title" content="vue-Webpack">
+<meta name="twitter:description" content="网页中引用的静态资源JS:  .js  .jsx  .coffee  .ts CSS: .css  .less  .sass  .scss Img: .jpg  .png  .svg  .gif fonts: .ttf  .eot  .woff  .woff2 模板文件: .ejs  .jade  .vue 网页静态资源多引发的问题 网页加载速度慢，因为要发起很多二次请求 要处理错综复杂的依赖关系">
   
     <link rel="alternative" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
   
@@ -151,48 +153,108 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-Webpack" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/01/vue-组件化和模块化区别/" class="archive-article-date">
-  	<time datetime="2019-02-01T12:44:20.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/01/vue-组件化和模块化区别/">vue</a>
+    <h1 class="article-title" itemprop="name">
+      vue-Webpack
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/02/14/vue-Webpack/" class="archive-article-date">
+  	<time datetime="2019-02-14T07:25:55.882Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="网页中引用的静态资源"><a href="#网页中引用的静态资源" class="headerlink" title="网页中引用的静态资源"></a>网页中引用的静态资源</h2><p>JS:  .js  .jsx  .coffee  .ts</p>
+<p>CSS: .css  .less  .sass  .scss</p>
+<p>Img: .jpg  .png  .svg  .gif</p>
+<p>fonts: .ttf  .eot  .woff  .woff2</p>
+<p>模板文件: .ejs  .jade  .vue</p>
+<h2 id="网页静态资源多引发的问题"><a href="#网页静态资源多引发的问题" class="headerlink" title="网页静态资源多引发的问题"></a>网页静态资源多引发的问题</h2><ol>
+<li>网页加载速度慢，因为要发起很多二次请求</li>
+<li>要处理错综复杂的依赖关系</li>
+</ol>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
+<li>合并，压缩，精灵图，图片的Base64</li>
+<li>使用requireJS，也可以使用webpack解决各个包之间的依赖</li>
+</ol>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p>webpack 是前端的一个项目构建工具，它是基于Node.js开发出来的一个前端工具。</p>
+<h2 id="完美解决上述的2种解决方案"><a href="#完美解决上述的2种解决方案" class="headerlink" title="完美解决上述的2种解决方案"></a>完美解决上述的2种解决方案</h2><ol>
+<li>使用Gulp， 是基于task任务的</li>
+<li>使用webpack， 是基于整个项目进行构建的<ul>
+<li>借助webpack这个前端自动化工具,可以完美实现资源的合并，压缩，打包，混淆等功能</li>
+</ul>
+</li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li>npm i webpack -g  全局</li>
+<li>npm i webpack –save-dev</li>
+</ol>
+<h2 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h2><ol>
+<li>初始化</li>
+</ol>
+<p><code>npm init -y</code></p>
+<ol start="2">
+<li>新建文件夹不能命名为webpack</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! Refusing to install package with name &quot;webpack&quot; under a package</span><br><span class="line">npm ERR! also called &quot;webpack&quot;. Did you name your project the same</span><br><span class="line">npm ERR! as the dependency you&apos;re installing?</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>安装webpack-cli</li>
+</ol>
+<p><code>npm install webpack webpack-cli -g</code></p>
+<ol start="4">
+<li>在package.json配置中添加 “mode”: “production”</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The &apos;mode&apos; option has not been set, webpack will fallback to &apos;production&apos; for this value. Set &apos;mode&apos; option to &apos;development&apos; or &apos;production&apos; to enable defaults for each environment.</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue组件化和模块化区别</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue Webpack</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -205,17 +267,113 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zhuowenzhi.github.io/2019/02/14/vue-Webpack/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/02/15/HTTP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          HTTP
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/02/07/vue-路由/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -238,9 +396,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
