@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://zhuowenzhi.github.io">
   <title>HTTP | 指尖上的盛夏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="web核心-HTTP协议webservice = HTTP协议 + XMLRest = HTTP协议 + json/XML HTTP请求信息和响应信息请求  请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS]，请求路径[URL一部分]，所用协议[1.0版本]) 请求头信息 请求主体信息">
+  <meta name="description" content="web核心-HTTP协议webservice = HTTP协议 + XMLRest = HTTP协议 + json/XML HTTP请求信息和响应信息请求  请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD] 请求路径[URL一部分] 所用协议[1.0版本])  请求头信息(格式为 key:value)  请求主体信息   例： POST /060">
 <meta name="keywords" content="HTTP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP">
 <meta property="og:url" content="http://zhuowenzhi.github.io/2019/02/15/HTTP/index.html">
 <meta property="og:site_name" content="指尖上的盛夏">
-<meta property="og:description" content="web核心-HTTP协议webservice = HTTP协议 + XMLRest = HTTP协议 + json/XML HTTP请求信息和响应信息请求  请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS]，请求路径[URL一部分]，所用协议[1.0版本]) 请求头信息 请求主体信息">
+<meta property="og:description" content="web核心-HTTP协议webservice = HTTP协议 + XMLRest = HTTP协议 + json/XML HTTP请求信息和响应信息请求  请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD] 请求路径[URL一部分] 所用协议[1.0版本])  请求头信息(格式为 key:value)  请求主体信息   例： POST /060">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-02-15T11:01:11.789Z">
+<meta property="og:updated_time" content="2019-02-16T02:09:59.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP">
-<meta name="twitter:description" content="web核心-HTTP协议webservice = HTTP协议 + XMLRest = HTTP协议 + json/XML HTTP请求信息和响应信息请求  请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS]，请求路径[URL一部分]，所用协议[1.0版本]) 请求头信息 请求主体信息">
+<meta name="twitter:description" content="web核心-HTTP协议webservice = HTTP协议 + XMLRest = HTTP协议 + json/XML HTTP请求信息和响应信息请求  请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD] 请求路径[URL一部分] 所用协议[1.0版本])  请求头信息(格式为 key:value)  请求主体信息   例： POST /060">
   
     <link rel="alternative" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
   
@@ -176,10 +176,43 @@
         <h1 id="web核心-HTTP协议"><a href="#web核心-HTTP协议" class="headerlink" title="web核心-HTTP协议"></a>web核心-HTTP协议</h1><p>webservice = HTTP协议 + XML<br>Rest = HTTP协议 + json/XML</p>
 <h2 id="HTTP请求信息和响应信息"><a href="#HTTP请求信息和响应信息" class="headerlink" title="HTTP请求信息和响应信息"></a>HTTP请求信息和响应信息</h2><p>请求</p>
 <ol>
-<li>请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS]，请求路径[URL一部分]，所用协议[1.0版本])</li>
-<li>请求头信息</li>
-<li>请求主体信息</li>
+<li><p>请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD] 请求路径[URL一部分] 所用协议[1.0版本])</p>
+</li>
+<li><p>请求头信息(格式为 key:value)</p>
+</li>
+<li><p>请求主体信息</p>
+</li>
 </ol>
+<p>例：</p>
+<p>POST /0606/php HTTP/1.1</p>
+<p>Host:localhost</p>
+<p>Content-type:application/x-www-form-urlencode</p>
+<p>Content_length:5</p>
+<p>响应</p>
+<ol>
+<li><p>响应(协议 状态码 状态文字)</p>
+</li>
+<li><p>响应头信息(格式为 key:value)</p>
+</li>
+<li><p>主体信息(也可能没有)</p>
+</li>
+</ol>
+<p>例子：</p>
+<p>HTTP/1.1 200 OK</p>
+<p>Content-type:text/html</p>
+<p>Content-length:5</p>
+<p>hello</p>
+<p>请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD]</p>
+<p><code>请求方法虽然是HTTP协议里规定的，但是WEB SERVER未必允许或支持这些方法</code></p>
+<p>HEAD:和GET一致只是返回内容<br>比如我们确认一个内容是否存在不需要返回内容时这是HRAD比较合适</p>
+<p>TRACE:TRACE可以测试代理有没有修改你的HTTP请求</p>
+<p>OPTIONS:返回服务器可以用的请求方法</p>
+<p>状态码:用来反应服务器响应情况</p>
+<p>1XX 信息        收到请求，继续处理</p>
+<p>2XX 成功        操作成功接收，理解和接受</p>
+<p>3XX 重定向      为了完成请求，必须采取进一步措施</p>
+<p>4XX 客户端错误  请求的语法错误或不能完全被满足</p>
+<p>5XX 服务端错误  服务器无法完成明显有效的请求</p>
 
       
 
@@ -423,19 +456,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">交换排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,19 +464,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color5">交换排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,11 +476,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,11 +496,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,11 +520,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
               </li>
              
               <li class="article-tag-list-item">
