@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://zhuowenzhi.github.io">
-  <title>node-MongoDB | 指尖上的盛夏</title>
+  <title>HTTP的三次握手 | 指尖上的盛夏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开启服务 mongod mongo ,需要重新开启一个窗口  基本命令 show dbs 查看所有数据库   db 查看当前操作的数据库   use 数据库名 切换到指点数据库（如果没有就新建）   插入数据  在node中操作MongoDB使用官方mongodb包来操作https://github.com/mongodb/node-mongodb-native 使用第三方mongoose来操作数">
-<meta name="keywords" content="MongoDB">
+  <meta name="keywords" content="HTTP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node-MongoDB">
-<meta property="og:url" content="http://zhuowenzhi.github.io/2019/01/20/node-mongodb/index.html">
+<meta property="og:title" content="HTTP的三次握手">
+<meta property="og:url" content="http://zhuowenzhi.github.io/2019/02/16/HTTP的三次握手/index.html">
 <meta property="og:site_name" content="指尖上的盛夏">
-<meta property="og:description" content="开启服务 mongod mongo ,需要重新开启一个窗口  基本命令 show dbs 查看所有数据库   db 查看当前操作的数据库   use 数据库名 切换到指点数据库（如果没有就新建）   插入数据  在node中操作MongoDB使用官方mongodb包来操作https://github.com/mongodb/node-mongodb-native 使用第三方mongoose来操作数">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-01-22T00:47:07.422Z">
+<meta property="og:image" content="http://zhuowenzhi.github.io/2019/02/public/images/http/tcp.png">
+<meta property="og:updated_time" content="2019-02-16T03:02:21.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node-MongoDB">
-<meta name="twitter:description" content="开启服务 mongod mongo ,需要重新开启一个窗口  基本命令 show dbs 查看所有数据库   db 查看当前操作的数据库   use 数据库名 切换到指点数据库（如果没有就新建）   插入数据  在node中操作MongoDB使用官方mongodb包来操作https://github.com/mongodb/node-mongodb-native 使用第三方mongoose来操作数">
+<meta name="twitter:title" content="HTTP的三次握手">
+<meta name="twitter:image" content="http://zhuowenzhi.github.io/2019/02/public/images/http/tcp.png">
   
     <link rel="alternative" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
   
@@ -153,52 +152,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-node-mongodb" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-HTTP的三次握手" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      node-MongoDB
+      HTTP的三次握手
     </h1>
   
 
         
-        <a href="/2019/01/20/node-mongodb/" class="archive-article-date">
-  	<time datetime="2019-01-20T01:12:53.554Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
+        <a href="/2019/02/16/HTTP的三次握手/" class="archive-article-date">
+  	<time datetime="2019-02-16T02:45:24.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="开启服务"><a href="#开启服务" class="headerlink" title="开启服务"></a>开启服务</h3><ol>
-<li>mongod</li>
-<li>mongo ,需要重新开启一个窗口</li>
-</ol>
-<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><ul>
-<li><code>show dbs</code><ul>
-<li>查看所有数据库</li>
-</ul>
-</li>
-<li><code>db</code><ul>
-<li>查看当前操作的数据库</li>
-</ul>
-</li>
-<li><code>use 数据库名</code><ul>
-<li>切换到指点数据库（如果没有就新建）</li>
-</ul>
-</li>
-<li>插入数据</li>
-</ul>
-<h2 id="在node中操作MongoDB"><a href="#在node中操作MongoDB" class="headerlink" title="在node中操作MongoDB"></a>在node中操作MongoDB</h2><h3 id="使用官方mongodb包来操作"><a href="#使用官方mongodb包来操作" class="headerlink" title="使用官方mongodb包来操作"></a>使用官方mongodb包来操作</h3><p><a href="https://github.com/mongodb/node-mongodb-native" target="_blank" rel="noopener">https://github.com/mongodb/node-mongodb-native</a></p>
-<h3 id="使用第三方mongoose来操作数据库"><a href="#使用第三方mongoose来操作数据库" class="headerlink" title="使用第三方mongoose来操作数据库"></a>使用第三方mongoose来操作数据库</h3><p><a href="https://mongoosejs.com/" target="_blank" rel="noopener">https://mongoosejs.com/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const mongoose = require(&apos;mongoose&apos;);</span><br><span class="line">mongoose.connect(&apos;mongodb://localhost:27017/test&apos;, &#123;useNewUrlParser: true&#125;);</span><br><span class="line"></span><br><span class="line">const Cat = mongoose.model(&apos;Cat&apos;, &#123; name: String &#125;);</span><br><span class="line"></span><br><span class="line">const kitty = new Cat(&#123; name: &apos;Zildjian&apos; &#125;);</span><br><span class="line">kitty.save().then(() =&gt; console.log(&apos;meow&apos;));</span><br></pre></td></tr></table></figure></p>
-<h1 id="mongoose"><a href="#mongoose" class="headerlink" title="mongoose"></a>mongoose</h1><ul>
-<li>官网  <a href="https://mongoosejs.com/" target="_blank" rel="noopener">https://mongoosejs.com/</a></li>
-<li>官方指南  <a href="https://mongoosejs.com/docs/guides.html" target="_blank" rel="noopener">https://mongoosejs.com/docs/guides.html</a></li>
-<li>官方文档API  <a href="https://mongoosejs.com/docs/api.html" target="_blank" rel="noopener">https://mongoosejs.com/docs/api.html</a></li>
-</ul>
+        <p><img src="../../public/images/http/tcp.png" alt="三次握手时序图"></p>
 
       
 
@@ -233,7 +207,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
         		</li>
       		
 		</ul>
@@ -245,7 +219,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
+        			<a href="/categories/HTTP//" class="article-tag-list-link color5">HTTP</a>
         		</li>
       		
 		</ul>
@@ -300,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zhuowenzhi.github.io/2019/01/20/node-mongodb/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zhuowenzhi.github.io/2019/02/16/HTTP的三次握手/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +288,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/20/node-mysql/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          node-mysql
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/20/node-module/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">node-module</div>
+    <a href="/2019/02/15/HTTP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTTP</div>
       <i class="icon-circle-right"></i>
     </a>
   

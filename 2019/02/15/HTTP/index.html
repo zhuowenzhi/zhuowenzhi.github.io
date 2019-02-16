@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="指尖上的盛夏">
 <meta property="og:description" content="web核心-HTTP协议webservice = HTTP协议 + XMLRest = HTTP协议 + json/XML HTTP请求信息和响应信息请求  请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD] 请求路径[URL一部分] 所用协议[1.0版本])  请求头信息(格式为 key:value)  请求主体信息   例： POST /060">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-02-16T02:44:21.133Z">
+<meta property="og:updated_time" content="2019-02-16T02:49:20.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP">
 <meta name="twitter:description" content="web核心-HTTP协议webservice = HTTP协议 + XMLRest = HTTP协议 + json/XML HTTP请求信息和响应信息请求  请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD] 请求路径[URL一部分] 所用协议[1.0版本])  请求头信息(格式为 key:value)  请求主体信息   例： POST /060">
@@ -219,6 +219,14 @@
 <p>200               服务器成功返回网页<br>301/2             永久/临时重定向<br>304 NOT Modified  请求未修改(缓存可拿，减轻服务器负担)</p>
 <p>失败的状态码</p>
 <p>404                请求网页不存在<br>503                服务器暂时不可用<br>500                服务器内部错误</p>
+<h2 id="更多有意义的头"><a href="#更多有意义的头" class="headerlink" title="更多有意义的头"></a>更多有意义的头</h2><ul>
+<li><p>Content_Type,Content-Encoding等约束数据类型</p>
+</li>
+<li><p>Cookie保持会话信息</p>
+</li>
+<li><p>CORS实现跨域并保持安全限制</p>
+</li>
+</ul>
 
       
 
@@ -333,6 +341,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/02/16/HTTP的三次握手/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          HTTP的三次握手
+        
+      </div>
+    </a>
   
   
     <a href="/2019/02/14/vue-Webpack/" id="article-nav-older" class="article-nav-link-wrap">
@@ -466,6 +483,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">交换排序</a>
               </li>
              
@@ -474,39 +495,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">life</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,11 +507,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,10 +556,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
             
             <div class="clearfix"></div>
