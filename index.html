@@ -173,7 +173,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="../../public/images/http/tcp.png" alt="三次握手时序图"></p>
+        <p>client     — SYN = 1, Seq = X                  —-&gt;  server</p>
+<p>client     &lt;— SYN = 1, ACK = X + 1 ,Seq = Y    —-   server</p>
+<p>client     —- ACK = Y + 1 ,Seq = Z             —-&gt;   server</p>
 
       
 
@@ -187,7 +189,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TCP</a>
         		</li>
       		
 		</ul>
@@ -1307,6 +1309,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
             
             <div class="clearfix"></div>
