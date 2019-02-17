@@ -153,19 +153,691 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2019/02/16" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-2019/02/16/clone" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /**
+ * 浅克隆对象只会被克隆最外部的一层,
+ * 至于更深层的对象,则依然是通过引用指向同一块堆内存.
+ * @param {*} o 
+ */
+function shallow(o) {
+    const obj = {}
+    for (const i in o) {
+        obj[i] = o[i]
+            
+    }
+    return obj
+}
+// 被克隆对象
+const oldObj = {
+    a: 1,
+    b: ['aaa', 'bbbb'],
+    old: {
+        zwz: {
+            name:111
+        }
+    }
+}
+
+const newObj = shallow(oldObj)
+console.log(newObj.old.zwz, oldObj.old.zwz)
+console.log(newObj.old.zwz === oldObj.old.zwz)
+// { name: 111 } { name: 111 }
+// true
+newObj.old.zwz.name = '卓文智'
+console.log(newObj.old.zwz, oldObj.old.zwz)
+// { name: '卓文智' } { name: '卓文智' }
+
+
+// 深度克隆
+// 1.JOSN.parse()
+// JSON对象parse方法可以将JSON字符串反序列化成JS对象，
+// stringify方法可以将JS对象序列化成JSON字符串,
+// 这两个方法结合起来就能产生一个便捷的深克隆
+
+
+const newObjDeep1 = JSON.parse(JSON.stringify(oldObj))
+
+
+console.log(newObjDeep1.old.zwz, oldObj.old.zwz)
+console.log(newObjDeep1.old.zwz === oldObj.old.zwz)
+// { name: 111 } { name: 111 }
+// false
+newObjDeep1.old.zwz.name = '卓文智zzz'
+console.log(newObjDeep1.old.zwz, oldObj.old.zwz)
+// { name: '卓文智zzz' } { name: '卓文智' }
+
+// JOSN.parse()坑
+// 1.他无法实现对函数 、RegExp等特殊对象的克隆;
+// 2.会抛弃对象的constructor,所有的构造函数会指向Object;
+// 3.对象有循环引用,会报错;
+
+// 构造函数
+function person(name) {
+    this.name = name
+}
+
+const cgl = new person('cgl')
+
+// 函数
+function say() {
+    console.log('haaa')
+}
+
+const oldObj2 = {
+    a: say,
+    b: new Array(1),
+    c: new RegExp('ab+c', 'i'),
+    d: cgl
+}
+console.log('*************JSON.parse***********')
+
+const newObj2 = JSON.parse(JSON.stringify(oldObj2))
+console.log(newObj2.a, oldObj2.a);//无法复制函数
+// undefined [Function: say]
+console.log(newObj2.b[0], oldObj2.b[0]);//稀疏数组 复制错误
+// null undefined
+console.log(newObj2.c, oldObj2.c);//无法复制正在对象
+// {} /ab+c/i
+console.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向错误
+// [Function: Object] [Function: person]
+
+
+/**
+ * 2.深度克隆函数
+ * 由于要面对不同的对象(正则、数组、Date等)要采用不同的处理方式，
+ * 我们需要实现一个对象类型判断函数
+ */
+
+ const isType = (obj, type) => {
+     if (typeof obj !== 'object') return false
+    //  判断数据类型
+    const typeString = Object.prototype.toString.call(obj)
+    let flag
+    switch (type) {
+        case 'Array':
+            flag = typeString === '[object Array]'
+            break;
+        case 'Date':
+            flag = typeString === '[object Date]'
+            break;
+        case 'RegExp':
+            flag = typeString === '[object RegExp]'
+            break;
+        default:
+            flag = false
+    }
+    return flag
+ }
+
+//  我们需要通过正则的扩展了解到flags属性等等,
+// 因此我们需要实现一个提取flags的函数
+const getRegExp = re => {
+    var flags = ''
+    if (re.global) flags += 'g'
+    if (re.ignoreCase) flags += 'i'
+    if (re.multiline) flags += 'm'
+    return flags
+}
+
+/**
+ * deep clone
+ * @param {*} parent 
+ */
+const clone = parent => {
+    // 维护两个存储循坏的数组
+    const parents = []
+    const children = []
+
+    const _clone = parent => {
+        if (parent === null ) return null
+        if (typeof parent !== 'object') return parent
+
+        let child,proto
+
+        if (isType(parent, 'Array')) {
+            // 对数组做特殊处理
+            child = []
+        } else if (isType(parent, 'RegExp')) {
+             // 对正则对象做特殊处理
+             child = new RegExp(parent.source, getRegExp(parent))
+             if (parent.lastIndex) child.lastIndex = parent.lastIndex
+        } else if (isType(parent, 'RegExp')) {
+             // 对Date对象做特殊处理
+             child = new Date(parent.getTime)
+        } else {
+            // 处理对象原型
+            proto = Object.getPrototypeOf(parent)
+            // 利用Object.create切断原型链
+            child = Object.create(proto)
+        }
+
+        // 处理循环引用
+        const index = parents.indexOf(parent)
+
+        if (index != -1) {
+            // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象
+            return children[index]
+        }
+        parents.push(parent)
+        children.push(child)
+
+        for (let i in parent) {
+            // 递归
+            child[i] = _clone(parent[i])
+        }
+        return child
+    }
+    return _clone(parent)
+}
+
+
+console.log('*************clone***********')
+
+const newClone = oldObj2
+
+console.log(newClone.a, oldObj2.a);
+// [Function: say] [Function: say]
+console.log(newClone.b[0], oldObj2.b[0]);
+// undefined undefined
+console.log(newClone.c, oldObj2.c);
+// /ab+c/i /ab+c/i
+console.log(newClone.d.constructor, oldObj2.d.constructor);
+// [Function: person] [Function: person]
+// 参考链接：https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&utm_content=note&utm_medium=reader_share&utm_source=weixin
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/2019/02/16/clone/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/02/16/this" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        // 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。
+// Function.prototype 的 call 或 apply 方法将 this 值绑定到调用中的特定对象
+
+// Function.prototype.apply()
+// apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。
+
+var numbers = [5, 2, 3, 6]
+var max = Math.max.apply(null, numbers)
+console.log(max)
+// 6
+var min = Math.min.apply(null, numbers)
+console.log(min);
+// 2
+
+// Function.prototype.bind()
+// bind()方法创建一个新的函数，在调用时设置this关键字为提供的值。
+// 并在调用新函数时，将给定参数列表作为原函数的参数序列的前若干项
+var module = {
+    x: 42,
+    getX: function(){
+        return this.x
+    }
+}
+
+var unboundGetX = module.getX
+console.log(unboundGetX())
+// undefined
+var boundGetX = unboundGetX.bind(module)
+console.log(boundGetX())
+// 42
+
+// Function.prototype.call()
+// call() 方法调用一个函数, 其具有一个指定的this值和分别地提供的参数(参数的列表)。\
+function Product(name, price) {
+    this.name = name
+    this.price = price
+}
+
+function Food(name, price) {
+    Product.call(this, name, price) 
+    this.categroy = 'food'
+}
+console.log(new Food('cheese', 5).name);
+// cheese
+
+console.log('*************  读程序  ************');
+var a = 3
+function Text() {
+    var a =0
+    console.log(a)
+    console.log(this.a)
+    var a
+    console.log(a)
+}
+Text()   
+// 0
+// undefined
+// 0
+new Text()
+// 0
+// undefined
+// 0
+setTimeout(Text, 100)
+// 0
+// undefined
+// 0
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/2019/02/16/this/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/02/16/闭包" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /**
+ * bar()是定义在 foo() 里的内部函数，仅在该函数体内可用。
+ * bar()内没有自己的局部变量，然而它可以访问到外部函数的变量，
+ * bar() 可以使用父函数 foo() 中声明的变量 name 
+ */
+function foo() {
+    var name = 1;        //name 是一个被 foo 创建的局部变量
+    function bar(){      //bar() 是内部函数,一个闭包
+       console.log(name); //使用了父函数中声明的变量
+       
+    }
+    bar()
+}
+
+// foo()
+
+function F() {
+    var f = []
+    for (var i = 0; i 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/2019/02/16/闭包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/02/16/数据类型转换" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        var num = 1
+var str = 'str'
+var arr = [1,2,3]
+var boo = true
+var obj = new Object()
+var und = undefined
+var oNull = null
+const sym = Symbol()
+function foo() {}
+
+console.log('******   []   *****');
+console.log( [] == 0 )
+console.log( [] == null )
+console.log( [] == undefined )
+console.log( [] == false )
+console.log( [] == '' )
+// true
+// false
+// false
+// true
+// true
+
+console.log('******   0   *****');
+console.log( 0 == null )
+console.log( 0 == undefined )
+console.log( 0 == false )
+console.log( 0 == '' )
+// false
+// false
+// true
+// true
+
+console.log('******  null   *****');
+console.log( null == '' )
+console.log( null == undefined )
+console.log( null == false )
+console.log( null == '' )
+// false
+// true
+// false
+// false
+
+console.log('******  undefined   *****');
+console.log( undefined == '' )
+console.log( undefined == false )
+console.log( undefined == '' )
+// false
+// true
+// false
+// false
+
+console.log('******  false   *****');
+console.log( false == '' )
+// true
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/2019/02/16/数据类型转换/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/02/16/数据类型判断" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        var num = 1
+var str = 'str'
+var arr = [1,2,3]
+var boo = true
+var obj = new Object()
+var und = undefined
+var objNull = null
+const sym = Symbol()
+function foo() {}
+// 1.typeof 可以对基本类型做出准确的判断，但对于引用类型力不从心
+console.log('***********typeof*********');
+
+console.log(typeof num)
+console.log(typeof str)
+console.log(typeof arr)
+console.log(typeof boo)
+console.log(typeof obj)
+console.log(typeof und)
+console.log(typeof objNull)
+console.log(typeof sym)
+console.log(typeof foo)
+// number
+// string
+// object
+// boolean
+// object
+// undefined
+// object
+// symbol
+// function
+
+// 2.instanceof 判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假
+console.log('***********instanceof*********');
+
+console.log( num instanceof Array)
+console.log( str instanceof Array) 
+console.log( arr instanceof Array)
+console.log( boo instanceof Array)
+console.log( obj instanceof Array)
+console.log( und instanceof Array)
+console.log( objNull instanceof Array)
+console.log( sym instanceof Array)
+console.log( foo instanceof Array)
+// false
+// false
+// true
+// false
+// false
+// false
+// false
+// false
+// false
+// 3. constructor 查看对象对应的构造函数
+console.log('***********constructor*********');
+console.log( num.constructor == Array)
+console.log( str.constructor == Array) 
+console.log( arr.constructor ==  Array)
+console.log( boo.constructor ==  Array)
+console.log( obj.constructor ==  Array)
+// console.log( und.constructor ==  Array)//报错
+// console.log( objNull.constructor ==  Array)//报错
+console.log( sym.constructor ==  Array)
+console.log( foo.constructor ==  Array)
+// false
+// false
+// true
+// false
+// false
+// false
+// false
+// false
+
+// 4.Object.prototype.toString  
+// toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，
+// 更严格的讲，是 toString运行时this指向的对象类型, 返回的类型
+console.log('***********Object.prototype.toString*********');
+console.log(Object.prototype.toString (num))
+console.log(Object.prototype.toString (str))
+console.log(Object.prototype.toString (arr))
+console.log(Object.prototype.toString (boo))
+console.log(Object.prototype.toString (obj))
+console.log(Object.prototype.toString (und))
+console.log(Object.prototype.toString (objNull))
+console.log(Object.prototype.toString (sym))
+console.log(Object.prototype.toString (foo))
+// [object Object]
+// [object Object]
+// [object Object]
+// [object Object]
+// [object Object]
+// [object Object]
+// [object Object]
+// [object Object]
+// [object Object]
+console.log('***********Object.prototype.toString.call()*********');
+console.log(Object.prototype.toString.call (num))
+console.log(Object.prototype.toString.call (str))
+console.log(Object.prototype.toString.call (arr))
+console.log(Object.prototype.toString.call (boo))
+console.log(Object.prototype.toString.call (obj))
+console.log(Object.prototype.toString.call (und))
+console.log(Object.prototype.toString.call (objNull))
+console.log(Object.prototype.toString.call (sym))
+console.log(Object.prototype.toString.call (foo))
+// [object Number]
+// [object String]
+// [object Array]
+// [object Boolean]
+// [object Object]
+// [object Undefined]
+// [object Null]
+// [object Symbol]
+// [object Function]
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/2019/02/16/数据类型判断/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/02/16/讯飞" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/17/2019/02/16/">基础题</a>
+      <a class="article-title" href="/2019/02/17/2019/02/16/讯飞/">基础题</a>
     </h1>
   
 
         
-        <a href="/2019/02/17/2019/02/16/" class="archive-article-date">
+        <a href="/2019/02/17/2019/02/16/讯飞/" class="archive-article-date">
   	<time datetime="2019-02-17T03:30:37.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
 </a>
         
@@ -175,9 +847,45 @@
       
         <p>讯飞易听说</p>
 <ol>
-<li>JavaScript数据类型</li>
+<li><p>JavaScript数据类型</p>
+<p> 值类型(基本类型): 字符串(String), 数字(Number), 布尔(Boolean), 对空(Null), 未定义(Undefined),代表(Symbol)</p>
+<p> <code>注：Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。</code></p>
+<p> 引用数据类型:对象(Object),数组(Array),函数(Function)</p>
+</li>
+<li><p>闭包概念</p>
+<p> 闭包是由函数以及创建该函数的词法环境组合而成。这个环境包含了这个闭包创建时所能访问的所有局部变量。</p>
+</li>
+<li><p>解释this变量，call 和 apply 的作用，区别?</p>
+<p> <code>apply()</code>方法调用一个具有给定<code>this</code>值的函数，以及作为一个数组（或类似数组对象）提供的参数。</p>
+<p> <code>bind()</code>方法创建一个新的函数，在调用时设置<code>this</code>关键字为提供的值，并在调用新函数时，将给定的参数列表作为原函数的参数序列的前若干项</p>
+<p> <code>call()</code>方法调用一个函数，其具有一个指定的<code>this</code>的值和分别地提供参数(参数的列表)</p>
+<p> <code>call() 方法和 apply() 方法类似 ，区别在于call()方法接受的是参数列表而apply()方法接受的是一个参数数组</code></p>
+</li>
 </ol>
-<p>字符串, 数字, 布尔, 数组, 对象, Null,Undefined</p>
+<ol start="4">
+<li><p>为什么要对对象进行深度克隆，如何实现</p>
+<p> 当一个变量向另一个变量复制引用类型的值时，同时也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上引用同一个对象。因此改变其中一个变量就会影响另一个变量。</p>
+<p> 涉及<code>JS的数据类型、数据存储、内存管理</code></p>
+<p> 每一个数据都需要一个内存空间，分为栈内存(stack)和堆内存(heap)</p>
+<ul>
+<li><p>基础数据类型和栈内存<br>  基础数据类型都有固定大小，保存在栈内存中，由系统自动分配空间。我们可以直接操作保存在栈内存中的值，基础数据类型都是按值访问的，他们的值存储在变量访问的位置</p>
+</li>
+<li><p>引用数据类型和堆内存<br>  引用数据类型都是保存在堆内存中，大小不固定，动态填充。在操作对象时，实际上是在操作对象的引用而不是实际的对象。因此，引用类型的值都是按引用访问的。</p>
+</li>
+</ul>
+</li>
+<li><p>position取值和含义</p>
+<p> position 属性：规定元素的定位类型。即元素脱离文档流的布局，在页面的任意位置显示。</p>
+<p> 取值类型可以有：static、relative、absolute、fixed、inherit和sticky，这里sticky是CSS3新发布的一个属性。</p>
+<p> <code>absolute</code>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。</p>
+<p> <code>fixed</code>生成固定定位的元素，相对于浏览器窗口进行定位。</p>
+<p> <code>relative</code>生成相对定位的元素，相对于其正常位置进行定位。</p>
+<p> <code>static</code>默认值。没有定位，元素出现在正常的流中。</p>
+<p> <code>sticky</code>粘性定位，该定位基于用户滚动的位置。</p>
+<p> <code>inherit</code>规定应该从父元素继承 position 属性的值。</p>
+<p> <code>initial</code>设置该属性为默认值</p>
+</li>
+</ol>
 
       
 
@@ -212,7 +920,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/2019/02/16/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/17/2019/02/16/讯飞/">展开全文 >></a>
         </p>
       
 
@@ -581,548 +1289,6 @@
 
 
   
-    <article id="post-HTTP/HTTP" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/HTTP/HTTP/">HTTP</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/15/HTTP/HTTP/" class="archive-article-date">
-  	<time datetime="2019-02-15T10:28:50.813Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="web核心-HTTP协议"><a href="#web核心-HTTP协议" class="headerlink" title="web核心-HTTP协议"></a>web核心-HTTP协议</h1><p>webservice = HTTP协议 + XML<br>Rest = HTTP协议 + json/XML</p>
-<h2 id="HTTP请求信息和响应信息"><a href="#HTTP请求信息和响应信息" class="headerlink" title="HTTP请求信息和响应信息"></a>HTTP请求信息和响应信息</h2><p>请求</p>
-<ol>
-<li><p>请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD] 请求路径[URL一部分] 所用协议[1.0版本])</p>
-</li>
-<li><p>请求头信息(格式为 key:value)</p>
-</li>
-<li><p>请求主体信息</p>
-</li>
-</ol>
-<p>例：</p>
-<p>POST /0606/php HTTP/1.1</p>
-<p>Host:localhost</p>
-<p>Content-type:application/x-www-form-urlencode</p>
-<p>Content_length:5</p>
-<p>响应</p>
-<ol>
-<li><p>响应(协议 状态码 状态文字)</p>
-</li>
-<li><p>响应头信息(格式为 key:value)</p>
-</li>
-<li><p>主体信息(也可能没有)</p>
-</li>
-</ol>
-<p>例子：</p>
-<p>HTTP/1.1 200 OK</p>
-<p>Content-type:text/html</p>
-<p>Content-length:5</p>
-<p>hello</p>
-<p>请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD]</p>
-<p><code>请求方法虽然是HTTP协议里规定的，但是WEB SERVER未必允许或支持这些方法</code></p>
-<p><code>HEAD</code> :和GET一致只是返回内容<br>比如我们确认一个内容是否存在不需要返回内容时这是HRAD比较合适</p>
-<p><code>TRACE</code>: TRACE可以测试代理有没有修改你的HTTP请求</p>
-<p><code>OPTIONS</code> :返回服务器可以用的请求方法</p>
-<p><code>GET</code> :获取服务器资源</p>
-<p><code>POST</code> :发送数据给服务器</p>
-<p>状态码:用来反应服务器响应情况</p>
-<p>1XX 信息        收到请求，继续处理</p>
-<p>2XX 成功        操作成功接收，理解和接受</p>
-<p>3XX 重定向      为了完成请求，必须采取进一步措施</p>
-<p>4XX 客户端错误  请求的语法错误或不能完全被满足</p>
-<p>5XX 服务端错误  服务器无法完成明显有效的请求</p>
-<p>成功状态码</p>
-<p>200               服务器成功返回网页<br>301/2             永久/临时重定向<br>304 NOT Modified  请求未修改(缓存可拿，减轻服务器负担)</p>
-<p>失败的状态码</p>
-<p>404                请求网页不存在<br>503                服务器暂时不可用<br>500                服务器内部错误</p>
-<h2 id="更多有意义的头"><a href="#更多有意义的头" class="headerlink" title="更多有意义的头"></a>更多有意义的头</h2><ul>
-<li><p>Content_Type,Content-Encoding等约束数据类型</p>
-</li>
-<li><p>Cookie保持会话信息</p>
-</li>
-<li><p>CORS实现跨域并保持安全限制</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HTTP//" class="article-tag-list-link color5">HTTP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/15/HTTP/HTTP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue/vue-Webpack" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/14/Vue/vue-Webpack/">vue-Webpack</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/14/Vue/vue-Webpack/" class="archive-article-date">
-  	<time datetime="2019-02-14T07:25:55.882Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="网页中引用的静态资源"><a href="#网页中引用的静态资源" class="headerlink" title="网页中引用的静态资源"></a>网页中引用的静态资源</h2><p>JS:  .js  .jsx  .coffee  .ts</p>
-<p>CSS: .css  .less  .sass  .scss</p>
-<p>Img: .jpg  .png  .svg  .gif</p>
-<p>fonts: .ttf  .eot  .woff  .woff2</p>
-<p>模板文件: .ejs  .jade  .vue</p>
-<h2 id="网页静态资源多引发的问题"><a href="#网页静态资源多引发的问题" class="headerlink" title="网页静态资源多引发的问题"></a>网页静态资源多引发的问题</h2><ol>
-<li>网页加载速度慢，因为要发起很多二次请求</li>
-<li>要处理错综复杂的依赖关系</li>
-</ol>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
-<li>合并，压缩，精灵图，图片的Base64</li>
-<li>使用requireJS，也可以使用webpack解决各个包之间的依赖</li>
-</ol>
-<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p>webpack 是前端的一个项目构建工具，它是基于Node.js开发出来的一个前端工具。</p>
-<h2 id="完美解决上述的2种解决方案"><a href="#完美解决上述的2种解决方案" class="headerlink" title="完美解决上述的2种解决方案"></a>完美解决上述的2种解决方案</h2><ol>
-<li>使用Gulp， 是基于task任务的</li>
-<li>使用webpack， 是基于整个项目进行构建的<ul>
-<li>借助webpack这个前端自动化工具,可以完美实现资源的合并，压缩，打包，混淆等功能</li>
-</ul>
-</li>
-</ol>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li>npm i webpack -g  全局</li>
-<li>npm i webpack –save-dev</li>
-</ol>
-<h2 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h2><ol>
-<li>初始化</li>
-</ol>
-<p><code>npm init -y</code></p>
-<ol start="2">
-<li>新建文件夹不能命名为webpack</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! Refusing to install package with name &quot;webpack&quot; under a package</span><br><span class="line">npm ERR! also called &quot;webpack&quot;. Did you name your project the same</span><br><span class="line">npm ERR! as the dependency you&apos;re installing?</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>安装webpack-cli</li>
-</ol>
-<p><code>npm install webpack webpack-cli -g</code></p>
-<ol start="4">
-<li>在package.json配置中添加 “mode”: “production”</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The &apos;mode&apos; option has not been set, webpack will fallback to &apos;production&apos; for this value. Set &apos;mode&apos; option to &apos;development&apos; or &apos;production&apos; to enable defaults for each environment.</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue Webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/14/Vue/vue-Webpack/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue/vue-路由" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/07/Vue/vue-路由/">vue</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/07/Vue/vue-路由/" class="archive-article-date">
-  	<time datetime="2019-02-07T04:45:05.145Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是路由"><a href="#什么是路由" class="headerlink" title="什么是路由"></a>什么是路由</h2><p>1.<code>后端路由</code>:对应普通网站，所有的超链接都是URI地址，所有URI地址都对应服务器上对应的资源</p>
-<p>2.<code>前端路由</code>:对于单页面应用程序来说，主要通过URI中的hash（#号）来实现不同的切换，同时，hash有个特点：HTTP请求中不包含hash相关的内容，所以单页面应用程序中的页面跳转主要用hash实现</p>
-<p>3.在单页面应用程序中，这种通过hash改变切换页面的方式，承做前端路由</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue路由</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/07/Vue/vue-路由/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue/vue-组件化和模块化区别" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/01/Vue/vue-组件化和模块化区别/">vue</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/01/Vue/vue-组件化和模块化区别/" class="archive-article-date">
-  	<time datetime="2019-02-01T12:44:20.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>组件：组建的出现，就是为了能够拆分vue实例的代码，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调相对应的组件即可。<br>模块化：从代码逻辑的角度进行划分：方便代码开发，保证每个模块功能单一<br>组件化：从UI界面的角度进行划分：方便UI组件重用</p>
-<p>创建组件的3种方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 1.</span><br><span class="line">   Vue.component(&apos;myComl&apos;, Vue.extend(&#123;</span><br><span class="line">       template: &apos;&lt;h4&gt;xxxxxxxxxxxx&lt;/h4&gt;&apos;</span><br><span class="line">   &#125;))</span><br><span class="line">   // 2.</span><br><span class="line">   Vue.component(&apos;myComl2&apos;, &#123;</span><br><span class="line">       template: &apos;&lt;h4&gt;xxxxxxxxxxxx&lt;/h4&gt;&apos;</span><br><span class="line">   &#125;)</span><br><span class="line">   // 3</span><br><span class="line">   Vue.component(&apos;myComl3&apos;,&#123;</span><br><span class="line">       template: &apos;#temp&apos;</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure></p>
-<p>组件中的data</p>
-<pre><code>1.组件的data可以有自己的数据
-2.组件中的data必须是一个方法，实例的data可以作为一个对象
-3.组件中的data在方法内部必须返回一个对象
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 定义一个名为 button-counter 的新组件</span><br><span class="line">Vue.component(&apos;button-counter&apos;, &#123;</span><br><span class="line">  data: function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  template: &apos;&lt;button v-on:click=&quot;count++&quot;&gt;You clicked me &#123;&#123; count &#125;&#125; times.&lt;/button&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>父组件传值子组件</p>
-<p>1.在引用的时候，通过属性绑定的形式传值v-bind:属性名</p>
-<p>2.父组件传递过来的属性，先在props数组中定义一下，才能使用这个数据</p>
-<p>3.props中的数据都是只读的</p>
-<p>子组件传值父组件</p>
-<p>1.在父元素methods定义方法获取</p>
-<p>2.事件绑定传递值$emit</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue组件化和模块化区别</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/01/Vue/vue-组件化和模块化区别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-算法/A-InsertionSort" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/25/算法/A-InsertionSort/">A-InsertionSort</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/25/算法/A-InsertionSort/" class="archive-article-date">
-  	<time datetime="2019-01-25T13:16:17.752Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
-<p>算法描述和实现</p>
-<p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
-<p><1> 从第一个元素开始，该元素可以认为已经被排序；</1></p>
-<p><2> 取出下一个元素，在已经排序的元素序列中从后向前扫描；</2></p>
-<p><3> 如果该元素（已排序）大于新元素，将该元素移到下一位置；</3></p>
-<p><4> 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</4></p>
-<p><5> 将新元素插入到该位置后；</5></p>
-<p><6> 重复步骤2~5。</6></p>
-<p>直接插入排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function directInsertSort(arr) &#123;</span><br><span class="line">    for (var i = 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">        var temp =arr[i]</span><br><span class="line">        var j = i - 1</span><br><span class="line">        while (j &gt;= 0 &amp;&amp; arr[j] &gt; temp) &#123;</span><br><span class="line">            arr[j + 1] = arr[j]</span><br><span class="line">            j--</span><br><span class="line">        &#125;</span><br><span class="line">        arr[j + 1] = temp</span><br><span class="line">    &#125;</span><br><span class="line">    return arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">插入排序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/25/算法/A-InsertionSort/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1220,15 +1386,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1236,11 +1394,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1252,7 +1414,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1260,23 +1430,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1284,7 +1438,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1292,15 +1458,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
+                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1308,11 +1470,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaScript原型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
               </li>
             
             <div class="clearfix"></div>
