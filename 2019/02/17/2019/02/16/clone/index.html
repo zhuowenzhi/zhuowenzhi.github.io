@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://zhuowenzhi.github.io">
   <title>指尖上的盛夏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="/**  * 浅克隆对象只会被克隆最外部的一层,  * 至于更深层的对象,则依然是通过引用指向同一块堆内存.  * @param {*} o   */ function shallow(o) {     const obj = {}     for (const i in o) {         obj[i] = o[i]                  }     return obj }">
+  <meta name="description" content="/**  浅克隆对象只会被克隆最外部的一层, 至于更深层的对象,则依然是通过引用指向同一块堆内存. @param {} o  /function shallow(o) { const obj = {} for (const i in o) { obj[i] = o[i]  } return obj}// 被克隆对象const oldObj = { a: 1, b: [‘aaa’, ‘bbbb’],">
 <meta property="og:type" content="article">
 <meta property="og:title" content="指尖上的盛夏">
 <meta property="og:url" content="http://zhuowenzhi.github.io/2019/02/17/2019/02/16/clone/index.html">
 <meta property="og:site_name" content="指尖上的盛夏">
-<meta property="og:description" content="/**  * 浅克隆对象只会被克隆最外部的一层,  * 至于更深层的对象,则依然是通过引用指向同一块堆内存.  * @param {*} o   */ function shallow(o) {     const obj = {}     for (const i in o) {         obj[i] = o[i]                  }     return obj }">
+<meta property="og:description" content="/**  浅克隆对象只会被克隆最外部的一层, 至于更深层的对象,则依然是通过引用指向同一块堆内存. @param {} o  /function shallow(o) { const obj = {} for (const i in o) { obj[i] = o[i]  } return obj}// 被克隆对象const oldObj = { a: 1, b: [‘aaa’, ‘bbbb’],">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-02-17T10:38:46.581Z">
+<meta property="og:updated_time" content="2019-02-17T10:59:46.611Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指尖上的盛夏">
-<meta name="twitter:description" content="/**  * 浅克隆对象只会被克隆最外部的一层,  * 至于更深层的对象,则依然是通过引用指向同一块堆内存.  * @param {*} o   */ function shallow(o) {     const obj = {}     for (const i in o) {         obj[i] = o[i]                  }     return obj }">
+<meta name="twitter:description" content="/**  浅克隆对象只会被克隆最外部的一层, 至于更深层的对象,则依然是通过引用指向同一块堆内存. @param {} o  /function shallow(o) { const obj = {} for (const i in o) { obj[i] = o[i]  } return obj}// 被克隆对象const oldObj = { a: 1, b: [‘aaa’, ‘bbbb’],">
   
     <link rel="alternative" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
   
@@ -157,196 +157,101 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        /**
- * 浅克隆对象只会被克隆最外部的一层,
- * 至于更深层的对象,则依然是通过引用指向同一块堆内存.
- * @param {*} o 
- */
-function shallow(o) {
-    const obj = {}
-    for (const i in o) {
-        obj[i] = o[i]
-            
-    }
-    return obj
+        <p>/**</p>
+<ul>
+<li>浅克隆对象只会被克隆最外部的一层,</li>
+<li>至于更深层的对象,则依然是通过引用指向同一块堆内存.</li>
+<li><p>@param {<em>} o 
+</em>/<br>function shallow(o) {<br> const obj = {}<br> for (const i in o) {</p>
+<pre><code>obj[i] = o[i]
+</code></pre><p> }<br> return obj<br>}<br>// 被克隆对象<br>const oldObj = {<br> a: 1,<br> b: [‘aaa’, ‘bbbb’],<br> old: {</p>
+<pre><code>zwz: {
+    name:111
 }
-// 被克隆对象
-const oldObj = {
-    a: 1,
-    b: ['aaa', 'bbbb'],
-    old: {
-        zwz: {
-            name:111
-        }
-    }
-}
+</code></pre><p> }<br>}</p>
+</li>
+</ul>
+<p>const newObj = shallow(oldObj)<br>console.log(newObj.old.zwz, oldObj.old.zwz)<br>console.log(newObj.old.zwz === oldObj.old.zwz)<br>// { name: 111 } { name: 111 }<br>// true<br>newObj.old.zwz.name = ‘卓文智’<br>console.log(newObj.old.zwz, oldObj.old.zwz)<br>// { name: ‘卓文智’ } { name: ‘卓文智’ }</p>
+<p>// 深度克隆<br>// 1.JOSN.parse()<br>// JSON对象parse方法可以将JSON字符串反序列化成JS对象，<br>// stringify方法可以将JS对象序列化成JSON字符串,<br>// 这两个方法结合起来就能产生一个便捷的深克隆</p>
+<p>const newObjDeep1 = JSON.parse(JSON.stringify(oldObj))</p>
+<p>console.log(newObjDeep1.old.zwz, oldObj.old.zwz)<br>console.log(newObjDeep1.old.zwz === oldObj.old.zwz)<br>// { name: 111 } { name: 111 }<br>// false<br>newObjDeep1.old.zwz.name = ‘卓文智zzz’<br>console.log(newObjDeep1.old.zwz, oldObj.old.zwz)<br>// { name: ‘卓文智zzz’ } { name: ‘卓文智’ }</p>
+<p>// JOSN.parse()坑<br>// 1.他无法实现对函数 、RegExp等特殊对象的克隆;<br>// 2.会抛弃对象的constructor,所有的构造函数会指向Object;<br>// 3.对象有循环引用,会报错;</p>
+<p>// 构造函数<br>function person(name) {<br>    this.name = name<br>}</p>
+<p>const cgl = new person(‘cgl’)</p>
+<p>// 函数<br>function say() {<br>    console.log(‘haaa’)<br>}</p>
+<p>const oldObj2 = {<br>    a: say,<br>    b: new Array(1),<br>    c: new RegExp(‘ab+c’, ‘i’),<br>    d: cgl<br>}<br>console.log(‘<strong><strong><strong>*</strong></strong></strong>JSON.parse<strong><strong>***</strong></strong>‘)</p>
+<p>const newObj2 = JSON.parse(JSON.stringify(oldObj2))<br>console.log(newObj2.a, oldObj2.a);//无法复制函数<br>// undefined [Function: say]<br>console.log(newObj2.b[0], oldObj2.b[0]);//稀疏数组 复制错误<br>// null undefined<br>console.log(newObj2.c, oldObj2.c);//无法复制正在对象<br>// {} /ab+c/i<br>console.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向错误<br>// [Function: Object] [Function: person]</p>
+<p>/**</p>
+<ul>
+<li>2.深度克隆函数</li>
+<li>由于要面对不同的对象(正则、数组、Date等)要采用不同的处理方式，</li>
+<li><p>我们需要实现一个对象类型判断函数<br>*/</p>
+<p>const isType = (obj, type) =&gt; {<br>  if (typeof obj !== ‘object’) return false<br> //  判断数据类型<br> const typeString = Object.prototype.toString.call(obj)<br> let flag<br> switch (type) {</p>
+<pre><code>case &apos;Array&apos;:
+    flag = typeString === &apos;[object Array]&apos;
+    break;
+case &apos;Date&apos;:
+    flag = typeString === &apos;[object Date]&apos;
+    break;
+case &apos;RegExp&apos;:
+    flag = typeString === &apos;[object RegExp]&apos;
+    break;
+default:
+    flag = false
+</code></pre><p> }<br> return flag<br>}</p>
+</li>
+</ul>
+<p>//  我们需要通过正则的扩展了解到flags属性等等,<br>// 因此我们需要实现一个提取flags的函数<br>const getRegExp = re =&gt; {<br>    var flags = ‘’<br>    if (re.global) flags += ‘g’<br>    if (re.ignoreCase) flags += ‘i’<br>    if (re.multiline) flags += ‘m’<br>    return flags<br>}</p>
+<p>/**</p>
+<ul>
+<li>deep clone</li>
+<li><p>@param {<em>} parent 
+</em>/<br>const clone = parent =&gt; {<br> // 维护两个存储循坏的数组<br> const parents = []<br> const children = []</p>
+<p> const _clone = parent =&gt; {</p>
+<pre><code>if (parent === null ) return null
+if (typeof parent !== &apos;object&apos;) return parent
 
-const newObj = shallow(oldObj)
-console.log(newObj.old.zwz, oldObj.old.zwz)
-console.log(newObj.old.zwz === oldObj.old.zwz)
-// { name: 111 } { name: 111 }
-// true
-newObj.old.zwz.name = '卓文智'
-console.log(newObj.old.zwz, oldObj.old.zwz)
-// { name: '卓文智' } { name: '卓文智' }
+let child,proto
 
-
-// 深度克隆
-// 1.JOSN.parse()
-// JSON对象parse方法可以将JSON字符串反序列化成JS对象，
-// stringify方法可以将JS对象序列化成JSON字符串,
-// 这两个方法结合起来就能产生一个便捷的深克隆
-
-
-const newObjDeep1 = JSON.parse(JSON.stringify(oldObj))
-
-
-console.log(newObjDeep1.old.zwz, oldObj.old.zwz)
-console.log(newObjDeep1.old.zwz === oldObj.old.zwz)
-// { name: 111 } { name: 111 }
-// false
-newObjDeep1.old.zwz.name = '卓文智zzz'
-console.log(newObjDeep1.old.zwz, oldObj.old.zwz)
-// { name: '卓文智zzz' } { name: '卓文智' }
-
-// JOSN.parse()坑
-// 1.他无法实现对函数 、RegExp等特殊对象的克隆;
-// 2.会抛弃对象的constructor,所有的构造函数会指向Object;
-// 3.对象有循环引用,会报错;
-
-// 构造函数
-function person(name) {
-    this.name = name
-}
-
-const cgl = new person('cgl')
-
-// 函数
-function say() {
-    console.log('haaa')
-}
-
-const oldObj2 = {
-    a: say,
-    b: new Array(1),
-    c: new RegExp('ab+c', 'i'),
-    d: cgl
-}
-console.log('*************JSON.parse***********')
-
-const newObj2 = JSON.parse(JSON.stringify(oldObj2))
-console.log(newObj2.a, oldObj2.a);//无法复制函数
-// undefined [Function: say]
-console.log(newObj2.b[0], oldObj2.b[0]);//稀疏数组 复制错误
-// null undefined
-console.log(newObj2.c, oldObj2.c);//无法复制正在对象
-// {} /ab+c/i
-console.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向错误
-// [Function: Object] [Function: person]
-
-
-/**
- * 2.深度克隆函数
- * 由于要面对不同的对象(正则、数组、Date等)要采用不同的处理方式，
- * 我们需要实现一个对象类型判断函数
- */
-
- const isType = (obj, type) => {
-     if (typeof obj !== 'object') return false
-    //  判断数据类型
-    const typeString = Object.prototype.toString.call(obj)
-    let flag
-    switch (type) {
-        case 'Array':
-            flag = typeString === '[object Array]'
-            break;
-        case 'Date':
-            flag = typeString === '[object Date]'
-            break;
-        case 'RegExp':
-            flag = typeString === '[object RegExp]'
-            break;
-        default:
-            flag = false
-    }
-    return flag
- }
-
-//  我们需要通过正则的扩展了解到flags属性等等,
-// 因此我们需要实现一个提取flags的函数
-const getRegExp = re => {
-    var flags = ''
-    if (re.global) flags += 'g'
-    if (re.ignoreCase) flags += 'i'
-    if (re.multiline) flags += 'm'
-    return flags
+if (isType(parent, &apos;Array&apos;)) {
+    // 对数组做特殊处理
+    child = []
+} else if (isType(parent, &apos;RegExp&apos;)) {
+     // 对正则对象做特殊处理
+     child = new RegExp(parent.source, getRegExp(parent))
+     if (parent.lastIndex) child.lastIndex = parent.lastIndex
+} else if (isType(parent, &apos;RegExp&apos;)) {
+     // 对Date对象做特殊处理
+     child = new Date(parent.getTime)
+} else {
+    // 处理对象原型
+    proto = Object.getPrototypeOf(parent)
+    // 利用Object.create切断原型链
+    child = Object.create(proto)
 }
 
-/**
- * deep clone
- * @param {*} parent 
- */
-const clone = parent => {
-    // 维护两个存储循坏的数组
-    const parents = []
-    const children = []
+// 处理循环引用
+const index = parents.indexOf(parent)
 
-    const _clone = parent => {
-        if (parent === null ) return null
-        if (typeof parent !== 'object') return parent
-
-        let child,proto
-
-        if (isType(parent, 'Array')) {
-            // 对数组做特殊处理
-            child = []
-        } else if (isType(parent, 'RegExp')) {
-             // 对正则对象做特殊处理
-             child = new RegExp(parent.source, getRegExp(parent))
-             if (parent.lastIndex) child.lastIndex = parent.lastIndex
-        } else if (isType(parent, 'RegExp')) {
-             // 对Date对象做特殊处理
-             child = new Date(parent.getTime)
-        } else {
-            // 处理对象原型
-            proto = Object.getPrototypeOf(parent)
-            // 利用Object.create切断原型链
-            child = Object.create(proto)
-        }
-
-        // 处理循环引用
-        const index = parents.indexOf(parent)
-
-        if (index != -1) {
-            // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象
-            return children[index]
-        }
-        parents.push(parent)
-        children.push(child)
-
-        for (let i in parent) {
-            // 递归
-            child[i] = _clone(parent[i])
-        }
-        return child
-    }
-    return _clone(parent)
+if (index != -1) {
+    // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象
+    return children[index]
 }
+parents.push(parent)
+children.push(child)
 
+for (let i in parent) {
+    // 递归
+    child[i] = _clone(parent[i])
+}
+return child
+</code></pre><p> }<br> return _clone(parent)<br>}</p>
+</li>
+</ul>
+<p>console.log(‘<strong><strong><strong>*</strong></strong></strong>clone<strong><strong>***</strong></strong>‘)</p>
+<p>const newClone = oldObj2</p>
+<p>console.log(newClone.a, oldObj2.a);<br>// [Function: say] [Function: say]<br>console.log(newClone.b[0], oldObj2.b[0]);<br>// undefined undefined<br>console.log(newClone.c, oldObj2.c);<br>// /ab+c/i /ab+c/i<br>console.log(newClone.d.constructor, oldObj2.d.constructor);<br>// [Function: person] [Function: person]<br>// 参考链接：<a href="https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weixin" target="_blank" rel="noopener">https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weixin</a></p>
 
-console.log('*************clone***********')
-
-const newClone = oldObj2
-
-console.log(newClone.a, oldObj2.a);
-// [Function: say] [Function: say]
-console.log(newClone.b[0], oldObj2.b[0]);
-// undefined undefined
-console.log(newClone.c, oldObj2.c);
-// /ab+c/i /ab+c/i
-console.log(newClone.d.constructor, oldObj2.d.constructor);
-// [Function: person] [Function: person]
-// 参考链接：https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&utm_content=note&utm_medium=reader_share&utm_source=weixin
       
 
       
@@ -567,7 +472,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,11 +488,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,7 +504,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,23 +512,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,7 +520,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,7 +532,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,11 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,11 +556,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript原型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript原型</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
