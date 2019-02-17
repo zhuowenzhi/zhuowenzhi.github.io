@@ -153,6 +153,355 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-node-express" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-express/">node-express</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/20/node-express/" class="archive-article-date">
+  	<time datetime="2019-01-20T01:12:53.530Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><ul>
+<li>安装<a href="http://expressjs.com/en/starter/installing.html" target="_blank" rel="noopener">http://expressjs.com/en/starter/installing.html</a><br><code>npm install express --save</code></li>
+<li>配置模板引擎</li>
+</ul>
+<p><code>npm install --save art-template</code><br><code>npm install  --save expressart-template</code></p>
+<h3 id="基于文件做一套CRUD"><a href="#基于文件做一套CRUD" class="headerlink" title="基于文件做一套CRUD"></a>基于文件做一套CRUD</h3><h4 id="文件操作路径和模块路径"><a href="#文件操作路径和模块路径" class="headerlink" title="文件操作路径和模块路径"></a>文件操作路径和模块路径</h4><p>文件操作路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//  ./data/a.txt //当前目录</span><br><span class="line">//  data/a.txt //当前目录</span><br><span class="line">//  /data/a.txt //绝对路径，当前文件模块所处磁盘根目录</span><br><span class="line">fs.readFile(&apos;./data/a.txt&apos;,function (err, data) &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">        console.log(err)</span><br><span class="line">        return console.log(&apos;读取失败&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(data.toString())</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>模块路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//这里忽略了.则也是磁盘根目录</span><br><span class="line">require(&apos;./data/foo.js&apos;)</span><br><span class="line">//相对路径</span><br><span class="line">require(&apos;./data/foo.js)</span><br><span class="line">//模块加载的路径中的相对路径不能省略./</span><br></pre></td></tr></table></figure></p>
+<h4 id="自动重启"><a href="#自动重启" class="headerlink" title="自动重启"></a>自动重启</h4><p><code>npm install --global nodemon</code><br>安装完毕<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br><span class="line"></span><br><span class="line">nodemon app.js</span><br></pre></td></tr></table></figure></p>
+<h4 id="基本路由"><a href="#基本路由" class="headerlink" title="基本路由"></a>基本路由</h4><p>get<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(&apos;/&apos;.function (req, res) &#123;</span><br><span class="line">    res.send(&apos;hello world&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>post<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.post(&apos;/&apos;,function (req, res)&#123;</span><br><span class="line">    res.send(&apos;Got a POST request&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="静态服务"><a href="#静态服务" class="headerlink" title="静态服务"></a>静态服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(&apos;public&apos;))</span><br><span class="line">app.use(express.static(&apos;files&apos;))</span><br><span class="line"></span><br><span class="line">app.use(&apos;/static&apos;,express.static(&apos;public&apos;))</span><br></pre></td></tr></table></figure>
+<h4 id="使用art-template"><a href="#使用art-template" class="headerlink" title="使用art-template"></a>使用art-template</h4><p>安装</p>
+<p><code>npm install --save art-template</code><br>配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var app = express();</span><br><span class="line">app.engine(&apos;art&apos;, require(&apos;express-art-template&apos;));</span><br><span class="line">app.set(&apos;view options&apos;, &#123;</span><br><span class="line">    debug: process.env.NODE_ENV !== &apos;production&apos;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function (req, res) &#123;</span><br><span class="line">    res.render(&apos;index.art&apos;, &#123;</span><br><span class="line">        user: &#123;</span><br><span class="line">            name: &apos;aui&apos;,</span><br><span class="line">            tags: [&apos;art&apos;, &apos;template&apos;, &apos;nodejs&apos;]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="获取表单POST请求数据"><a href="#获取表单POST请求数据" class="headerlink" title="获取表单POST请求数据"></a>获取表单POST请求数据</h4><p>安装中间件middleware<br><code>npm install --save body-parser</code></p>
+<p>配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var bodyParser = require(&apos;body-parser&apos;)</span><br><span class="line"></span><br><span class="line">var app = express()</span><br><span class="line"></span><br><span class="line">// parse application/x-www-form-urlencoded</span><br><span class="line">app.use(bodyParser.urlencoded(&#123; extended: false &#125;))</span><br><span class="line"></span><br><span class="line">// parse application/json</span><br><span class="line">app.use(bodyParser.json())</span><br><span class="line"></span><br><span class="line">app.use(function (req, res) &#123;</span><br><span class="line">  res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;)</span><br><span class="line">  res.write(&apos;you posted:\n&apos;)</span><br><span class="line">  res.end(JSON.stringify(req.body, null, 2))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">express</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/20/node-express/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-node-CRUD" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-CRUD/">node-Express - CRUD</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/20/node-CRUD/" class="archive-article-date">
+  	<time datetime="2019-01-20T01:12:53.511Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="路由设计"><a href="#路由设计" class="headerlink" title="路由设计"></a>路由设计</h2><p>| 请求方法 |      请求路径      | get 参数 | post 参数                 |     备注 |<br>|   GET    |    /students     |         |                           | 渲染首页 |<br>|   GET    |    /students/new |         |                           | 渲染添加 |<br>|  POST    |    /students     |         |   name age gender hobbies | 渲染添加 |<br>|   GET    |   /students/edit | id      |   name age gender hobbies | 渲染编辑 |<br>|   POST   |   /students/edit | id      |                           | 渲染编辑 |<br>|   GET    | /students/delete | id      |                           | 渲染删除 |</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CRUD</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/20/node-CRUD/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-node-art-template" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/node-art-template/">npde-art-template</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/20/node-art-template/" class="archive-article-date">
+  	<time datetime="2019-01-20T01:12:53.509Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>each语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;each 数组&#125;&#125;</span><br><span class="line">&lt;li&gt;&#123;&#123;$value&#125;&#125;&lt;/li&gt;</span><br><span class="line">&#123;&#123;/each&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置<br><code>npm install art-template --save</code></p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">art-template</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/20/node-art-template/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hello" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/19/hello/">Hello ZWZ</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/19/hello/" class="archive-article-date">
+  	<time datetime="2019-01-19T03:25:15.827Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>做一个精致的女孩纸，种田，打码，环游世界</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/19/hello/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -321,10 +670,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
@@ -337,11 +682,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">life</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript原型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -349,7 +706,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -357,7 +714,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -365,15 +722,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -381,7 +730,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -397,11 +766,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
               </li>
             
             <div class="clearfix"></div>
