@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="指尖上的盛夏">
 <meta property="og:description" content="讯飞易听说  JavaScript数据类型  值类型(基本类型): 字符串(String), 数字(Number), 布尔(Boolean), 对空(Null), 未定义(Undefined),代表(Symbol)  注：Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。  引用数据类型:对象(Object),数组(Array),函数(Function)  闭包概念  闭包是">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-02-17T10:54:55.036Z">
+<meta property="og:updated_time" content="2019-02-18T07:12:35.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础题">
 <meta name="twitter:description" content="讯飞易听说  JavaScript数据类型  值类型(基本类型): 字符串(String), 数字(Number), 布尔(Boolean), 对空(Null), 未定义(Undefined),代表(Symbol)  注：Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。  引用数据类型:对象(Object),数组(Array),函数(Function)  闭包概念  闭包是">
@@ -212,6 +212,45 @@
 <p> <code>sticky</code>粘性定位，该定位基于用户滚动的位置。</p>
 <p> <code>inherit</code>规定应该从父元素继承 position 属性的值。</p>
 <p> <code>initial</code>设置该属性为默认值</p>
+</li>
+<li><p>块级元素和行内元素区别</p>
+<ul>
+<li><p>行内元素与块级元素直观上的区别</p>
+<p> 行内元素会在一条直线上排列，都是同一行的，水平方向排列</p>
+<p> 块级元素各占据一行，垂直方向排列。块级元素从新行开始结束接着一个断行。</p>
+<ul>
+<li><p>块级元素可以包含行内元素和块级元素。行内元素不能包含块级元素。</p>
+</li>
+<li><p>行内元素与块级元素属性的不同，主要是盒模型属性上</p>
+<p>行内元素设置width无效，height无效(可以设置line-height)，margin上下无效，padding上下无效（是有效的，只是不像块级元素会影响其他行）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>简述盒模型，以及不同浏览器的差异</p>
+<p> <code>标准盒模型和IE盒模型的区别</code></p>
+<p> W3C标准下padding、border所占的空间不在width、height范围内，而IE盒模型width包括content尺寸＋padding＋border的总和</p>
+</li>
+<li><p>CSS中的float机制以及使用方式</p>
+<p> CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。</p>
+<p> <code>元素怎样浮动</code></p>
+<p> 元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。</p>
+<p> 一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。</p>
+<p> 浮动元素之后的元素将围绕它。</p>
+<p> 浮动元素之前的元素将不会受到影响。</p>
+</li>
+<li><p>如何实现元素的垂直和水平居中</p>
+<ul>
+<li><p>1.CSS3的transform</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;</span><br><span class="line">   top: 50%;</span><br><span class="line">   left: 50%;</span><br><span class="line">   transform: translate(-50%, -50%)</span><br><span class="line"></span><br><span class="line">position: absolute;</span><br><span class="line">   top: 0;</span><br><span class="line">   left: 0;</span><br><span class="line">   right: 0;</span><br><span class="line">   bottom: 0;</span><br><span class="line">   margin: auto;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.flex盒子布局</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.display的table-cell</p>
+</li>
+</ul>
 </li>
 </ol>
 
@@ -470,6 +509,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
@@ -482,18 +525,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
@@ -502,7 +533,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,11 +545,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +553,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,11 +569,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">交换排序</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">交换排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,15 +585,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript原型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript原型</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
