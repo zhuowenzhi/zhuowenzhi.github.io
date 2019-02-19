@@ -153,6 +153,170 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2019/02/16/讯飞" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/17/2019/02/16/讯飞/">基础题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/17/2019/02/16/讯飞/" class="archive-article-date">
+  	<time datetime="2019-02-17T03:30:37.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>讯飞易听说</p>
+<ol>
+<li><p>JavaScript数据类型</p>
+<p> 值类型(基本类型): 字符串(String), 数字(Number), 布尔(Boolean), 对空(Null), 未定义(Undefined),代表(Symbol)</p>
+<p> <code>注：Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。</code></p>
+<p> 引用数据类型:对象(Object),数组(Array),函数(Function)</p>
+</li>
+<li><p>闭包概念</p>
+<p> 闭包是由函数以及创建该函数的词法环境组合而成。这个环境包含了这个闭包创建时所能访问的所有局部变量。</p>
+</li>
+<li><p>解释this变量，call 和 apply 的作用，区别?</p>
+<p> <code>apply()</code>方法调用一个具有给定<code>this</code>值的函数，以及作为一个数组（或类似数组对象）提供的参数。</p>
+<p> <code>bind()</code>方法创建一个新的函数，在调用时设置<code>this</code>关键字为提供的值，并在调用新函数时，将给定的参数列表作为原函数的参数序列的前若干项</p>
+<p> <code>call()</code>方法调用一个函数，其具有一个指定的<code>this</code>的值和分别地提供参数(参数的列表)</p>
+<p> <code>call() 方法和 apply() 方法类似 ，区别在于call()方法接受的是参数列表而apply()方法接受的是一个参数数组</code></p>
+</li>
+</ol>
+<ol start="4">
+<li><p>为什么要对对象进行深度克隆，如何实现</p>
+<p> 当一个变量向另一个变量复制引用类型的值时，同时也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上引用同一个对象。因此改变其中一个变量就会影响另一个变量。</p>
+<p> 涉及<code>JS的数据类型、数据存储、内存管理</code></p>
+<p> 每一个数据都需要一个内存空间，分为栈内存(stack)和堆内存(heap)</p>
+<ul>
+<li><p>基础数据类型和栈内存<br>  基础数据类型都有固定大小，保存在栈内存中，由系统自动分配空间。我们可以直接操作保存在栈内存中的值，基础数据类型都是按值访问的，他们的值存储在变量访问的位置</p>
+</li>
+<li><p>引用数据类型和堆内存<br>  引用数据类型都是保存在堆内存中，大小不固定，动态填充。在操作对象时，实际上是在操作对象的引用而不是实际的对象。因此，引用类型的值都是按引用访问的。</p>
+</li>
+</ul>
+</li>
+<li><p>position取值和含义</p>
+<p> position 属性：规定元素的定位类型。即元素脱离文档流的布局，在页面的任意位置显示。</p>
+<p> 取值类型可以有：static、relative、absolute、fixed、inherit和sticky，这里sticky是CSS3新发布的一个属性。</p>
+<p> <code>absolute</code>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。</p>
+<p> <code>fixed</code>生成固定定位的元素，相对于浏览器窗口进行定位。</p>
+<p> <code>relative</code>生成相对定位的元素，相对于其正常位置进行定位。</p>
+<p> <code>static</code>默认值。没有定位，元素出现在正常的流中。</p>
+<p> <code>sticky</code>粘性定位，该定位基于用户滚动的位置。</p>
+<p> <code>inherit</code>规定应该从父元素继承 position 属性的值。</p>
+<p> <code>initial</code>设置该属性为默认值</p>
+</li>
+<li><p>块级元素和行内元素区别</p>
+<ul>
+<li><p>行内元素与块级元素直观上的区别</p>
+<p> 行内元素会在一条直线上排列，都是同一行的，水平方向排列</p>
+<p> 块级元素各占据一行，垂直方向排列。块级元素从新行开始结束接着一个断行。</p>
+<ul>
+<li><p>块级元素可以包含行内元素和块级元素。行内元素不能包含块级元素。</p>
+</li>
+<li><p>行内元素与块级元素属性的不同，主要是盒模型属性上</p>
+<p>行内元素设置width无效，height无效(可以设置line-height)，margin上下无效，padding上下无效（是有效的，只是不像块级元素会影响其他行）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>简述盒模型，以及不同浏览器的差异</p>
+<p> <code>标准盒模型和IE盒模型的区别</code></p>
+<p> W3C标准下padding、border所占的空间不在width、height范围内，而IE盒模型width包括content尺寸＋padding＋border的总和</p>
+</li>
+<li><p>CSS中的float机制以及使用方式</p>
+<p> CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。</p>
+<p> <code>元素怎样浮动</code></p>
+<p> 元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。</p>
+<p> 一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。</p>
+<p> 浮动元素之后的元素将围绕它。</p>
+<p> 浮动元素之前的元素将不会受到影响。</p>
+</li>
+<li><p>如何实现元素的垂直和水平居中</p>
+<ul>
+<li><p>1.CSS3的transform</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;</span><br><span class="line">   top: 50%;</span><br><span class="line">   left: 50%;</span><br><span class="line">   transform: translate(-50%, -50%)</span><br><span class="line"></span><br><span class="line">position: absolute;</span><br><span class="line">   top: 0;</span><br><span class="line">   left: 0;</span><br><span class="line">   right: 0;</span><br><span class="line">   bottom: 0;</span><br><span class="line">   margin: auto;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.flex盒子布局</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.display的table-cell</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">基础题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/基础题//" class="article-tag-list-link color4">基础题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/2019/02/16/讯飞/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript/设计模式/设计模式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1034,100 +1198,6 @@
 
 
   
-    <article id="post-算法/A-SwitchingSort-quit" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/24/算法/A-SwitchingSort-quit/">A-sort-bubble</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/24/算法/A-SwitchingSort-quit/" class="archive-article-date">
-  	<time datetime="2019-01-24T04:35:03.081Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>快速排序英文名quick sort，又城划分排序，是对冒泡排序的一种改进，是目前所有排序算法中最快的一种。</p>
-<p>快速排序：快速排序在每一轮挑选一个基准元素，并让其他比它大的元素移动到数列一边，比它小的元素移动到数列的另一边，从而把数列拆解成了两个部分。</p>
-<p>分治法：在分治法的思想下，原数列在每一轮被拆分成两部分，每一部分在下一轮又分别被拆分成两部分，直到不可再分为止。平均情况下需要logn轮，因此快速排序算法的平均时间复杂度是O（nlogn）。快速排序的平均时间复杂度是 O（nlogn），最坏情况下的时间复杂度是 O（n^2）。</p>
-<p>基准元素的选择：基准元素，英文pivot，用于在分治过程中以此为中心，把其他元素移动到基准元素的左右两边。</p>
-<h3 id="挖坑法"><a href="#挖坑法" class="headerlink" title="挖坑法"></a>挖坑法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">var arr = [4, 7, 6, 5, 3, 2, 8, 1]</span><br><span class="line">// 挖坑法</span><br><span class="line">console.log(&apos;排序前的arr:&apos; + arr + &quot;长度&quot; +arr.length+ &quot;\n&quot;)</span><br><span class="line">quickSort(arr,0,arr.length-1)</span><br><span class="line">console.log(&apos;quickSort排序后的arr:&apos; + arr)</span><br><span class="line">function quickSort(arr, startIndex, endIndex) &#123;</span><br><span class="line">    // 取第一个元素作为基准值</span><br><span class="line">    var pivot = arr[startIndex]</span><br><span class="line">    var left = startIndex</span><br><span class="line">    var right = endIndex</span><br><span class="line">    // 坑的位置,初始等于pivot</span><br><span class="line">    var index = startIndex</span><br><span class="line"></span><br><span class="line">    // 大循环在左右指针重合或者交错时结束</span><br><span class="line">    while (right &gt;= left) &#123;</span><br><span class="line">        // right指针从右向左比较</span><br><span class="line">        while (right &gt;= left) &#123;</span><br><span class="line">            if (arr[right] &lt; pivot) &#123;</span><br><span class="line">                arr[left] = arr[right]</span><br><span class="line">                index = right</span><br><span class="line">                left++</span><br><span class="line">                console.log(&quot;right右向左数组right&quot; + right + &quot;个位置left&quot; + left + &quot;个位置&quot; + &quot;index值为&quot; + index + &quot;数组为&quot; + arr)</span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">            right--</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">         // left指针从左向右比较</span><br><span class="line">        while (right &gt;= left) &#123;</span><br><span class="line">            if (arr[left] &gt; pivot) &#123;</span><br><span class="line">                arr[right] = arr[left]</span><br><span class="line">                index = left</span><br><span class="line">                right--</span><br><span class="line">                console.log(&quot;left左向右数组left&quot; + left + &quot;个位置rigth&quot; + right + &quot;个位置&quot; + &quot;index值为&quot; + index + &quot;数组为&quot; + arr + &quot;\n&quot;)</span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">            left++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[index] = pivot</span><br><span class="line">    console.log(&quot;index的值为&quot; + index)</span><br><span class="line">    return index</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/01/24/算法/A-SwitchingSort-quit/../../public/images/quick1.png" alt="快速排序挖坑法"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">交换排序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">快速排序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/24/算法/A-SwitchingSort-quit/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1225,7 +1295,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1233,27 +1303,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">art-template</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">module</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1265,15 +1327,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1281,7 +1343,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1293,7 +1363,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1309,7 +1383,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1317,7 +1391,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
               </li>
              
               <li class="article-tag-list-item">
