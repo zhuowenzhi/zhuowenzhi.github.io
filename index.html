@@ -153,6 +153,254 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript/基础知识/深度克隆" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// js对象的深度克隆代码实现</span><br><span class="line">function clone(obj) &#123;</span><br><span class="line">    var buf</span><br><span class="line">    if (obj instanceof Array) &#123;</span><br><span class="line">        buf = [] //创建一个空数组</span><br><span class="line">        var i = obj.length</span><br><span class="line">        while (i--) &#123;</span><br><span class="line">            buf[i] = clone(obj[i])</span><br><span class="line">        &#125;</span><br><span class="line">        return buf</span><br><span class="line">    &#125; else if (obj instanceof Object) &#123;</span><br><span class="line">        buf =&#123;&#125; //创建一个空对象</span><br><span class="line">        for (var k in obj) &#123;</span><br><span class="line">            buf[k] = clone(obj[k])</span><br><span class="line">        &#125;</span><br><span class="line">        return buf</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return obj</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/03/JavaScript/基础知识/深度克隆/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/02/23/compute" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        compute(10,100);
+var compute = function(A,B) {
+  console.info(A * B) ;
+};
+ function compute(A,B){
+   console.info(A + B);
+ }
+ function compute(A,B){
+   console.info((A + B)*2);
+ }
+ compute(2,10);
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/23/2019/02/23/compute/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/02/23/foo" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        var obj = {
+
+    name:"zhangsan",
+ 
+    sayName:function(){
+ 
+      console.info(this.name);
+ 
+    }
+ 
+  }
+ 
+  var wfunc = obj.sayName;
+ 
+  obj.sayName();
+ 
+  wfunc();
+ 
+  var name = "lisi";
+ 
+  obj.sayName();
+ 
+  wfunc();
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/23/2019/02/23/foo/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-错点/display两次才有block" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/19/错点/display两次才有block/">onclcik两次才触发block</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/19/错点/display两次才有block/" class="archive-article-date">
+  	<time datetime="2019-02-19T10:31:04.461Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2019/02/19/错点/display两次才有block/../../../public/images/html/display.png" alt="第二次请求"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">错点总结</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/19/错点/display两次才有block/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-错点/p标签不能内嵌div" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -435,12 +683,52 @@
 
 
   
-    <article id="post-2019/02/16/块级元素和行内元素" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-2019/02/16/BoxModel" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        div&#123;</span><br><span class="line">            /* width: 200px;</span><br><span class="line">            height: 200px; */</span><br><span class="line">            border: 10px #ccc solid;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            background-color: black;</span><br><span class="line">            margin: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">        span &#123;</span><br><span class="line">            background-color: blanchedalmond;</span><br><span class="line">            width: 20px;</span><br><span class="line">            height: 20px;</span><br><span class="line">            border: 1px #ccc solid;</span><br><span class="line">            padding: 10px 20px;</span><br><span class="line">            margin: 10px 20px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;div&quot;&gt;</span><br><span class="line">        &lt;span id=&quot;span&quot;&gt;cccccccccc &lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;span&gt;cccccccccc &lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var div = document.getElementById(&apos;div&apos;).offsetHeight || clientHeight</span><br><span class="line">console.log(div);</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        <!-- ``` -->
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 10px #ccc solid;
+            padding: 10px;
+            background-color: black;
+            margin: 10px;
+            box-sizing: content-box;
+        }
+        /* span {
+            background-color: blanchedalmond;
+            width: 20px;
+            height: 20px;
+            border: 1px #ccc solid;
+            padding: 10px 20px;
+            margin: 10px 20px;
+        } */
+    </style>
+</head>
+<body>
+    <div id="div">
+        <!-- <span id="span">cccccccccc </span> -->
+    </div>
+</body>
+<script>
+var div = document.getElementById('div').offsetHeight || clientHeight
+console.log("高度为" + div);
+
+</script>
+</html>
+
+<!-- ``` -->
       
 
       
@@ -452,7 +740,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/2019/02/16/块级元素和行内元素/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/17/2019/02/16/BoxModel/">展开全文 >></a>
         </p>
       
 
@@ -534,7 +822,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 浅克隆对象只会被克隆最外部的一层,</span><br><span class="line"> * 至于更深层的对象,则依然是通过引用指向同一块堆内存.</span><br><span class="line"> * @param &#123;*&#125; o </span><br><span class="line"> */</span><br><span class="line">function shallow(o) &#123;</span><br><span class="line">    const obj = &#123;&#125;</span><br><span class="line">    for (const i in o) &#123;</span><br><span class="line">        obj[i] = o[i]</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">    return obj</span><br><span class="line">&#125;</span><br><span class="line">// 被克隆对象</span><br><span class="line">const oldObj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: [&apos;aaa&apos;, &apos;bbbb&apos;],</span><br><span class="line">    old: &#123;</span><br><span class="line">        zwz: &#123;</span><br><span class="line">            name:111</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const newObj = shallow(oldObj)</span><br><span class="line">console.log(newObj.old.zwz, oldObj.old.zwz)</span><br><span class="line">console.log(newObj.old.zwz === oldObj.old.zwz)</span><br><span class="line">// &#123; name: 111 &#125; &#123; name: 111 &#125;</span><br><span class="line">// true</span><br><span class="line">newObj.old.zwz.name = &apos;卓文智&apos;</span><br><span class="line">console.log(newObj.old.zwz, oldObj.old.zwz)</span><br><span class="line">// &#123; name: &apos;卓文智&apos; &#125; &#123; name: &apos;卓文智&apos; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 深度克隆</span><br><span class="line">// 1.JOSN.parse()</span><br><span class="line">// JSON对象parse方法可以将JSON字符串反序列化成JS对象，</span><br><span class="line">// stringify方法可以将JS对象序列化成JSON字符串,</span><br><span class="line">// 这两个方法结合起来就能产生一个便捷的深克隆</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const newObjDeep1 = JSON.parse(JSON.stringify(oldObj))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(newObjDeep1.old.zwz, oldObj.old.zwz)</span><br><span class="line">console.log(newObjDeep1.old.zwz === oldObj.old.zwz)</span><br><span class="line">// &#123; name: 111 &#125; &#123; name: 111 &#125;</span><br><span class="line">// false</span><br><span class="line">newObjDeep1.old.zwz.name = &apos;卓文智zzz&apos;</span><br><span class="line">console.log(newObjDeep1.old.zwz, oldObj.old.zwz)</span><br><span class="line">// &#123; name: &apos;卓文智zzz&apos; &#125; &#123; name: &apos;卓文智&apos; &#125;</span><br><span class="line"></span><br><span class="line">// JOSN.parse()坑</span><br><span class="line">// 1.他无法实现对函数 、RegExp等特殊对象的克隆;</span><br><span class="line">// 2.会抛弃对象的constructor,所有的构造函数会指向Object;</span><br><span class="line">// 3.对象有循环引用,会报错;</span><br><span class="line"></span><br><span class="line">// 构造函数</span><br><span class="line">function person(name) &#123;</span><br><span class="line">    this.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const cgl = new person(&apos;cgl&apos;)</span><br><span class="line"></span><br><span class="line">// 函数</span><br><span class="line">function say() &#123;</span><br><span class="line">    console.log(&apos;haaa&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const oldObj2 = &#123;</span><br><span class="line">    a: say,</span><br><span class="line">    b: new Array(1),</span><br><span class="line">    c: new RegExp(&apos;ab+c&apos;, &apos;i&apos;),</span><br><span class="line">    d: cgl</span><br><span class="line">&#125;</span><br><span class="line">console.log(&apos;*************JSON.parse***********&apos;)</span><br><span class="line"></span><br><span class="line">const newObj2 = JSON.parse(JSON.stringify(oldObj2))</span><br><span class="line">console.log(newObj2.a, oldObj2.a);//无法复制函数</span><br><span class="line">// undefined [Function: say]</span><br><span class="line">console.log(newObj2.b[0], oldObj2.b[0]);//稀疏数组 复制错误</span><br><span class="line">// null undefined</span><br><span class="line">console.log(newObj2.c, oldObj2.c);//无法复制正在对象</span><br><span class="line">// &#123;&#125; /ab+c/i</span><br><span class="line">console.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向错误</span><br><span class="line">// [Function: Object] [Function: person]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 2.深度克隆函数</span><br><span class="line"> * 由于要面对不同的对象(正则、数组、Date等)要采用不同的处理方式，</span><br><span class="line"> * 我们需要实现一个对象类型判断函数</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"> const isType = (obj, type) =&gt; &#123;</span><br><span class="line">     if (typeof obj !== &apos;object&apos;) return false</span><br><span class="line">    //  判断数据类型</span><br><span class="line">    const typeString = Object.prototype.toString.call(obj)</span><br><span class="line">    let flag</span><br><span class="line">    switch (type) &#123;</span><br><span class="line">        case &apos;Array&apos;:</span><br><span class="line">            flag = typeString === &apos;[object Array]&apos;</span><br><span class="line">            break;</span><br><span class="line">        case &apos;Date&apos;:</span><br><span class="line">            flag = typeString === &apos;[object Date]&apos;</span><br><span class="line">            break;</span><br><span class="line">        case &apos;RegExp&apos;:</span><br><span class="line">            flag = typeString === &apos;[object RegExp]&apos;</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">            flag = false</span><br><span class="line">    &#125;</span><br><span class="line">    return flag</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">//  我们需要通过正则的扩展了解到flags属性等等,</span><br><span class="line">// 因此我们需要实现一个提取flags的函数</span><br><span class="line">const getRegExp = re =&gt; &#123;</span><br><span class="line">    var flags = &apos;&apos;</span><br><span class="line">    if (re.global) flags += &apos;g&apos;</span><br><span class="line">    if (re.ignoreCase) flags += &apos;i&apos;</span><br><span class="line">    if (re.multiline) flags += &apos;m&apos;</span><br><span class="line">    return flags</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * deep clone</span><br><span class="line"> * @param &#123;*&#125; parent </span><br><span class="line"> */</span><br><span class="line">const clone = parent =&gt; &#123;</span><br><span class="line">    // 维护两个存储循坏的数组</span><br><span class="line">    const parents = []</span><br><span class="line">    const children = []</span><br><span class="line"></span><br><span class="line">    const _clone = parent =&gt; &#123;</span><br><span class="line">        if (parent === null ) return null</span><br><span class="line">        if (typeof parent !== &apos;object&apos;) return parent</span><br><span class="line"></span><br><span class="line">        let child,proto</span><br><span class="line"></span><br><span class="line">        if (isType(parent, &apos;Array&apos;)) &#123;</span><br><span class="line">            // 对数组做特殊处理</span><br><span class="line">            child = []</span><br><span class="line">        &#125; else if (isType(parent, &apos;RegExp&apos;)) &#123;</span><br><span class="line">             // 对正则对象做特殊处理</span><br><span class="line">             child = new RegExp(parent.source, getRegExp(parent))</span><br><span class="line">             if (parent.lastIndex) child.lastIndex = parent.lastIndex</span><br><span class="line">        &#125; else if (isType(parent, &apos;RegExp&apos;)) &#123;</span><br><span class="line">             // 对Date对象做特殊处理</span><br><span class="line">             child = new Date(parent.getTime)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 处理对象原型</span><br><span class="line">            proto = Object.getPrototypeOf(parent)</span><br><span class="line">            // 利用Object.create切断原型链</span><br><span class="line">            child = Object.create(proto)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 处理循环引用</span><br><span class="line">        const index = parents.indexOf(parent)</span><br><span class="line"></span><br><span class="line">        if (index != -1) &#123;</span><br><span class="line">            // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象</span><br><span class="line">            return children[index]</span><br><span class="line">        &#125;</span><br><span class="line">        parents.push(parent)</span><br><span class="line">        children.push(child)</span><br><span class="line"></span><br><span class="line">        for (let i in parent) &#123;</span><br><span class="line">            // 递归</span><br><span class="line">            child[i] = _clone(parent[i])</span><br><span class="line">        &#125;</span><br><span class="line">        return child</span><br><span class="line">    &#125;</span><br><span class="line">    return _clone(parent)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(&apos;*************clone***********&apos;)</span><br><span class="line"></span><br><span class="line">const newClone = oldObj2</span><br><span class="line"></span><br><span class="line">console.log(newClone.a, oldObj2.a);</span><br><span class="line">// [Function: say] [Function: say]</span><br><span class="line">console.log(newClone.b[0], oldObj2.b[0]);</span><br><span class="line">// undefined undefined</span><br><span class="line">console.log(newClone.c, oldObj2.c);</span><br><span class="line">// /ab+c/i /ab+c/i</span><br><span class="line">console.log(newClone.d.constructor, oldObj2.d.constructor);</span><br><span class="line">// [Function: person] [Function: person]</span><br><span class="line">// 参考链接：https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weixin</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 浅克隆对象只会被克隆最外部的一层,</span><br><span class="line"> * 至于更深层的对象,则依然是通过引用指向同一块堆内存.</span><br><span class="line"> * @param &#123;*&#125; o </span><br><span class="line"> */</span><br><span class="line">function shallow(o) &#123;</span><br><span class="line">    const obj = &#123;&#125;</span><br><span class="line">    for (const i in o) &#123;</span><br><span class="line">        obj[i] = o[i]</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">    return obj</span><br><span class="line">&#125;</span><br><span class="line">// 被克隆对象</span><br><span class="line">const oldObj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: [&apos;aaa&apos;, &apos;bbbb&apos;],</span><br><span class="line">    old: &#123;</span><br><span class="line">        zwz: &#123;</span><br><span class="line">            name:111</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const newObj = shallow(oldObj)</span><br><span class="line">console.log(newObj.old.zwz, oldObj.old.zwz)</span><br><span class="line">console.log(newObj.old.zwz === oldObj.old.zwz)</span><br><span class="line">// &#123; name: 111 &#125; &#123; name: 111 &#125;</span><br><span class="line">// true</span><br><span class="line">newObj.old.zwz.name = &apos;卓文智&apos;</span><br><span class="line">console.log(newObj.old.zwz, oldObj.old.zwz)</span><br><span class="line">// &#123; name: &apos;卓文智&apos; &#125; &#123; name: &apos;卓文智&apos; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 深度克隆</span><br><span class="line">// 1.JOSN.parse()</span><br><span class="line">// JSON对象parse方法可以将JSON字符串反序列化成JS对象，</span><br><span class="line">// stringify方法可以将JS对象序列化成JSON字符串,</span><br><span class="line">// 这两个方法结合起来就能产生一个便捷的深克隆</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const newObjDeep1 = JSON.parse(JSON.stringify(oldObj))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(newObjDeep1.old.zwz, oldObj.old.zwz)</span><br><span class="line">console.log(newObjDeep1.old.zwz === oldObj.old.zwz)</span><br><span class="line">// &#123; name: 111 &#125; &#123; name: 111 &#125;</span><br><span class="line">// false</span><br><span class="line">newObjDeep1.old.zwz.name = &apos;卓文智zzz&apos;</span><br><span class="line">console.log(newObjDeep1.old.zwz, oldObj.old.zwz)</span><br><span class="line">// &#123; name: &apos;卓文智zzz&apos; &#125; &#123; name: &apos;卓文智&apos; &#125;</span><br><span class="line"></span><br><span class="line">// JOSN.parse()坑</span><br><span class="line">// 1.他无法实现对函数 、RegExp等特殊对象的克隆;</span><br><span class="line">// 2.会抛弃对象的constructor,所有的构造函数会指向Object;</span><br><span class="line">// 3.对象有循环引用,会报错;</span><br><span class="line"></span><br><span class="line">// 构造函数</span><br><span class="line">function person(name) &#123;</span><br><span class="line">    this.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const cgl = new person(&apos;cgl&apos;)</span><br><span class="line"></span><br><span class="line">// 函数</span><br><span class="line">function say() &#123;</span><br><span class="line">    console.log(&apos;haaa&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const oldObj2 = &#123;</span><br><span class="line">    a: say,</span><br><span class="line">    b: new Array(1),</span><br><span class="line">    c: new RegExp(&apos;ab+c&apos;, &apos;i&apos;),</span><br><span class="line">    d: cgl</span><br><span class="line">&#125;</span><br><span class="line">console.log(&apos;*************JSON.parse***********&apos;)</span><br><span class="line"></span><br><span class="line">const newObj2 = JSON.parse(JSON.stringify(oldObj2))</span><br><span class="line">console.log(newObj2.a, oldObj2.a);//无法复制函数</span><br><span class="line">// undefined [Function: say]</span><br><span class="line">console.log(newObj2.b[0], oldObj2.b[0]);//稀疏数组 复制错误</span><br><span class="line">// null undefined</span><br><span class="line">console.log(newObj2.c, oldObj2.c);//无法复制正在对象</span><br><span class="line">// &#123;&#125; /ab+c/i</span><br><span class="line">console.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向错误</span><br><span class="line">// [Function: Object] [Function: person]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 2.深度克隆函数</span><br><span class="line"> * 由于要面对不同的对象(正则、数组、Date等)要采用不同的处理方式，</span><br><span class="line"> * 我们需要实现一个对象类型判断函数</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"> const isType = (obj, type) =&gt; &#123;</span><br><span class="line">     if (typeof obj !== &apos;object&apos;) return false</span><br><span class="line">    //  判断数据类型</span><br><span class="line">    const typeString = Object.prototype.toString.call(obj)</span><br><span class="line">    let flag</span><br><span class="line">    switch (type) &#123;</span><br><span class="line">        case &apos;Array&apos;:</span><br><span class="line">            flag = typeString === &apos;[object Array]&apos;</span><br><span class="line">            break;</span><br><span class="line">        case &apos;Date&apos;:</span><br><span class="line">            flag = typeString === &apos;[object Date]&apos;</span><br><span class="line">            break;</span><br><span class="line">        case &apos;RegExp&apos;:</span><br><span class="line">            flag = typeString === &apos;[object RegExp]&apos;</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">            flag = false</span><br><span class="line">    &#125;</span><br><span class="line">    return flag</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">//  我们需要通过正则的扩展了解到flags属性等等,</span><br><span class="line">// 因此我们需要实现一个提取flags的函数</span><br><span class="line">const getRegExp = re =&gt; &#123;</span><br><span class="line">    var flags = &apos;&apos;</span><br><span class="line">    if (re.global) flags += &apos;g&apos;</span><br><span class="line">    if (re.ignoreCase) flags += &apos;i&apos;</span><br><span class="line">    if (re.multiline) flags += &apos;m&apos;</span><br><span class="line">    return flags</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * deep clone</span><br><span class="line"> * @param &#123;*&#125; parent </span><br><span class="line"> */</span><br><span class="line">const clone = parent =&gt; &#123;</span><br><span class="line">    // 维护两个存储循坏的数组</span><br><span class="line">    const parents = []</span><br><span class="line">    const children = []</span><br><span class="line"></span><br><span class="line">    const _clone = parent =&gt; &#123;</span><br><span class="line">        if (parent === null ) return null</span><br><span class="line">        if (typeof parent !== &apos;object&apos;) return parent</span><br><span class="line"></span><br><span class="line">        let child,proto</span><br><span class="line"></span><br><span class="line">        if (isType(parent, &apos;Array&apos;)) &#123;</span><br><span class="line">            // 对数组做特殊处理</span><br><span class="line">            child = []</span><br><span class="line">        &#125; else if (isType(parent, &apos;RegExp&apos;)) &#123;</span><br><span class="line">             // 对正则对象做特殊处理</span><br><span class="line">             child = new RegExp(parent.source, getRegExp(parent))</span><br><span class="line">             if (parent.lastIndex) child.lastIndex = parent.lastIndex</span><br><span class="line">        &#125; else if (isType(parent, &apos;RegExp&apos;)) &#123;</span><br><span class="line">             // 对Date对象做特殊处理</span><br><span class="line">             child = new Date(parent.getTime)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 处理对象原型</span><br><span class="line">            proto = Object.getPrototypeOf(parent)</span><br><span class="line">            // 利用Object.create切断原型链</span><br><span class="line">            child = Object.create(proto)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 处理循环引用</span><br><span class="line">        const index = parents.indexOf(parent)</span><br><span class="line"></span><br><span class="line">        if (index != -1) &#123;</span><br><span class="line">            // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象</span><br><span class="line">            return children[index]</span><br><span class="line">        &#125;</span><br><span class="line">        parents.push(parent)</span><br><span class="line">        children.push(child)</span><br><span class="line"></span><br><span class="line">        for (let i in parent) &#123;</span><br><span class="line">            // 递归</span><br><span class="line">            child[i] = _clone(parent[i])</span><br><span class="line">        &#125;</span><br><span class="line">        return child</span><br><span class="line">    &#125;</span><br><span class="line">    return _clone(parent)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(&apos;*************clone***********&apos;)</span><br><span class="line"></span><br><span class="line">const newClone = oldObj2</span><br><span class="line"></span><br><span class="line">console.log(newClone.a, oldObj2.a);</span><br><span class="line">// [Function: say] [Function: say]</span><br><span class="line">console.log(newClone.b[0], oldObj2.b[0]);</span><br><span class="line">// undefined undefined</span><br><span class="line">console.log(newClone.c, oldObj2.c);</span><br><span class="line">// /ab+c/i /ab+c/i</span><br><span class="line">console.log(newClone.d.constructor, oldObj2.d.constructor);</span><br><span class="line">// [Function: person] [Function: person]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 参考链接：https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weixin</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -547,194 +837,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/17/2019/02/16/clone/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/16/this" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。</span><br><span class="line">// Function.prototype 的 call 或 apply 方法将 this 值绑定到调用中的特定对象</span><br><span class="line"></span><br><span class="line">// Function.prototype.apply()</span><br><span class="line">// apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。</span><br><span class="line"></span><br><span class="line">var numbers = [5, 2, 3, 6]</span><br><span class="line">var max = Math.max.apply(null, numbers)</span><br><span class="line">console.log(max)</span><br><span class="line">// 6</span><br><span class="line">var min = Math.min.apply(null, numbers)</span><br><span class="line">console.log(min);</span><br><span class="line">// 2</span><br><span class="line"></span><br><span class="line">// Function.prototype.bind()</span><br><span class="line">// bind()方法创建一个新的函数，在调用时设置this关键字为提供的值。</span><br><span class="line">// 并在调用新函数时，将给定参数列表作为原函数的参数序列的前若干项</span><br><span class="line">var module = &#123;</span><br><span class="line">    x: 42,</span><br><span class="line">    getX: function()&#123;</span><br><span class="line">        return this.x</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var unboundGetX = module.getX</span><br><span class="line">console.log(unboundGetX())</span><br><span class="line">// undefined</span><br><span class="line">var boundGetX = unboundGetX.bind(module)</span><br><span class="line">console.log(boundGetX())</span><br><span class="line">// 42</span><br><span class="line"></span><br><span class="line">// Function.prototype.call()</span><br><span class="line">// call() 方法调用一个函数, 其具有一个指定的this值和分别地提供的参数(参数的列表)。\</span><br><span class="line">function Product(name, price) &#123;</span><br><span class="line">    this.name = name</span><br><span class="line">    this.price = price</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Food(name, price) &#123;</span><br><span class="line">    Product.call(this, name, price) </span><br><span class="line">    this.categroy = &apos;food&apos;</span><br><span class="line">&#125;</span><br><span class="line">console.log(new Food(&apos;cheese&apos;, 5).name);</span><br><span class="line">// cheese</span><br><span class="line"></span><br><span class="line">console.log(&apos;*************  读程序  ************&apos;);</span><br><span class="line">var a = 3</span><br><span class="line">function Text() &#123;</span><br><span class="line">    var a =0</span><br><span class="line">    console.log(a)</span><br><span class="line">    console.log(this.a)</span><br><span class="line">    var a</span><br><span class="line">    console.log(a)</span><br><span class="line">&#125;</span><br><span class="line">Text()   </span><br><span class="line">// 0</span><br><span class="line">// undefined</span><br><span class="line">// 0</span><br><span class="line">new Text()</span><br><span class="line">// 0</span><br><span class="line">// undefined</span><br><span class="line">// 0</span><br><span class="line">setTimeout(Text, 100)</span><br><span class="line">// 0</span><br><span class="line">// undefined</span><br><span class="line">// 0</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/2019/02/16/this/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/16/闭包" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * bar()是定义在 foo() 里的内部函数，仅在该函数体内可用。</span><br><span class="line"> * bar()内没有自己的局部变量，然而它可以访问到外部函数的变量，</span><br><span class="line"> * bar() 可以使用父函数 foo() 中声明的变量 name </span><br><span class="line"> */</span><br><span class="line">function foo() &#123;</span><br><span class="line">    var name = 1;        //name 是一个被 foo 创建的局部变量</span><br><span class="line">    function bar()&#123;      //bar() 是内部函数,一个闭包</span><br><span class="line">       console.log(name); //使用了父函数中声明的变量</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    bar()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// foo()</span><br><span class="line"></span><br><span class="line">function F() &#123;</span><br><span class="line">    var f = []</span><br><span class="line">    for (var i = 0; i &lt;= 2; i++) &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">        f[i] = function() &#123;</span><br><span class="line">            console.log(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return f</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var f = new F()</span><br><span class="line"></span><br><span class="line">for (var i = 0; i &lt; f.length; i++) &#123;</span><br><span class="line">   f[i]();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 3</span><br><span class="line">// 3</span><br><span class="line">// 3</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/2019/02/16/闭包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/16/数据类型转换" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">var num = 1</span><br><span class="line">var str = &apos;str&apos;</span><br><span class="line">var arr = [1,2,3]</span><br><span class="line">var boo = true</span><br><span class="line">var obj = new Object()</span><br><span class="line">var und = undefined</span><br><span class="line">var oNull = null</span><br><span class="line">const sym = Symbol()</span><br><span class="line">function foo() &#123;&#125;</span><br><span class="line"></span><br><span class="line">console.log(&apos;******   []   *****&apos;);</span><br><span class="line">console.log( [] == 0 )</span><br><span class="line">console.log( [] == null )</span><br><span class="line">console.log( [] == undefined )</span><br><span class="line">console.log( [] == false )</span><br><span class="line">console.log( [] == &apos;&apos; )</span><br><span class="line">// true</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// true</span><br><span class="line">// true</span><br><span class="line"></span><br><span class="line">console.log(&apos;******   0   *****&apos;);</span><br><span class="line">console.log( 0 == null )</span><br><span class="line">console.log( 0 == undefined )</span><br><span class="line">console.log( 0 == false )</span><br><span class="line">console.log( 0 == &apos;&apos; )</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// true</span><br><span class="line">// true</span><br><span class="line"></span><br><span class="line">console.log(&apos;******  null   *****&apos;);</span><br><span class="line">console.log( null == &apos;&apos; )</span><br><span class="line">console.log( null == undefined )</span><br><span class="line">console.log( null == false )</span><br><span class="line">console.log( null == &apos;&apos; )</span><br><span class="line">// false</span><br><span class="line">// true</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line"></span><br><span class="line">console.log(&apos;******  undefined   *****&apos;);</span><br><span class="line">console.log( undefined == &apos;&apos; )</span><br><span class="line">console.log( undefined == false )</span><br><span class="line">console.log( undefined == &apos;&apos; )</span><br><span class="line">// false</span><br><span class="line">// true</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line"></span><br><span class="line">console.log(&apos;******  false   *****&apos;);</span><br><span class="line">console.log( false == &apos;&apos; )</span><br><span class="line">// true</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/2019/02/16/数据类型转换/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/16/数据类型判断" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">var num = 1</span><br><span class="line">var str = &apos;str&apos;</span><br><span class="line">var arr = [1,2,3]</span><br><span class="line">var boo = true</span><br><span class="line">var obj = new Object()</span><br><span class="line">var und = undefined</span><br><span class="line">var objNull = null</span><br><span class="line">const sym = Symbol()</span><br><span class="line">function foo() &#123;&#125;</span><br><span class="line">// 1.typeof 可以对基本类型做出准确的判断，但对于引用类型力不从心</span><br><span class="line">console.log(&apos;***********typeof*********&apos;);</span><br><span class="line"></span><br><span class="line">console.log(typeof num)</span><br><span class="line">console.log(typeof str)</span><br><span class="line">console.log(typeof arr)</span><br><span class="line">console.log(typeof boo)</span><br><span class="line">console.log(typeof obj)</span><br><span class="line">console.log(typeof und)</span><br><span class="line">console.log(typeof objNull)</span><br><span class="line">console.log(typeof sym)</span><br><span class="line">console.log(typeof foo)</span><br><span class="line">// number</span><br><span class="line">// string</span><br><span class="line">// object</span><br><span class="line">// boolean</span><br><span class="line">// object</span><br><span class="line">// undefined</span><br><span class="line">// object</span><br><span class="line">// symbol</span><br><span class="line">// function</span><br><span class="line"></span><br><span class="line">// 2.instanceof 判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假</span><br><span class="line">console.log(&apos;***********instanceof*********&apos;);</span><br><span class="line"></span><br><span class="line">console.log( num instanceof Array)</span><br><span class="line">console.log( str instanceof Array) </span><br><span class="line">console.log( arr instanceof Array)</span><br><span class="line">console.log( boo instanceof Array)</span><br><span class="line">console.log( obj instanceof Array)</span><br><span class="line">console.log( und instanceof Array)</span><br><span class="line">console.log( objNull instanceof Array)</span><br><span class="line">console.log( sym instanceof Array)</span><br><span class="line">console.log( foo instanceof Array)</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// true</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// 3. constructor 查看对象对应的构造函数</span><br><span class="line">console.log(&apos;***********constructor*********&apos;);</span><br><span class="line">console.log( num.constructor == Array)</span><br><span class="line">console.log( str.constructor == Array) </span><br><span class="line">console.log( arr.constructor ==  Array)</span><br><span class="line">console.log( boo.constructor ==  Array)</span><br><span class="line">console.log( obj.constructor ==  Array)</span><br><span class="line">// console.log( und.constructor ==  Array)//报错</span><br><span class="line">// console.log( objNull.constructor ==  Array)//报错</span><br><span class="line">console.log( sym.constructor ==  Array)</span><br><span class="line">console.log( foo.constructor ==  Array)</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// true</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line">// false</span><br><span class="line"></span><br><span class="line">// 4.Object.prototype.toString  </span><br><span class="line">// toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，</span><br><span class="line">// 更严格的讲，是 toString运行时this指向的对象类型, 返回的类型</span><br><span class="line">console.log(&apos;***********Object.prototype.toString*********&apos;);</span><br><span class="line">console.log(Object.prototype.toString (num))</span><br><span class="line">console.log(Object.prototype.toString (str))</span><br><span class="line">console.log(Object.prototype.toString (arr))</span><br><span class="line">console.log(Object.prototype.toString (boo))</span><br><span class="line">console.log(Object.prototype.toString (obj))</span><br><span class="line">console.log(Object.prototype.toString (und))</span><br><span class="line">console.log(Object.prototype.toString (objNull))</span><br><span class="line">console.log(Object.prototype.toString (sym))</span><br><span class="line">console.log(Object.prototype.toString (foo))</span><br><span class="line">// [object Object]</span><br><span class="line">// [object Object]</span><br><span class="line">// [object Object]</span><br><span class="line">// [object Object]</span><br><span class="line">// [object Object]</span><br><span class="line">// [object Object]</span><br><span class="line">// [object Object]</span><br><span class="line">// [object Object]</span><br><span class="line">// [object Object]</span><br><span class="line">console.log(&apos;***********Object.prototype.toString.call()*********&apos;);</span><br><span class="line">console.log(Object.prototype.toString.call (num))</span><br><span class="line">console.log(Object.prototype.toString.call (str))</span><br><span class="line">console.log(Object.prototype.toString.call (arr))</span><br><span class="line">console.log(Object.prototype.toString.call (boo))</span><br><span class="line">console.log(Object.prototype.toString.call (obj))</span><br><span class="line">console.log(Object.prototype.toString.call (und))</span><br><span class="line">console.log(Object.prototype.toString.call (objNull))</span><br><span class="line">console.log(Object.prototype.toString.call (sym))</span><br><span class="line">console.log(Object.prototype.toString.call (foo))</span><br><span class="line">// [object Number]</span><br><span class="line">// [object String]</span><br><span class="line">// [object Array]</span><br><span class="line">// [object Boolean]</span><br><span class="line">// [object Object]</span><br><span class="line">// [object Undefined]</span><br><span class="line">// [object Null]</span><br><span class="line">// [object Symbol]</span><br><span class="line">// [object Function]</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/2019/02/16/数据类型判断/">展开全文 >></a>
         </p>
       
 
@@ -865,35 +967,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -901,7 +979,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -909,7 +1007,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -917,19 +1015,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -945,11 +1039,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -957,7 +1059,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
