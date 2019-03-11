@@ -153,6 +153,683 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ES6/块级作用域/全局块作用域" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/11/ES6/块级作用域/全局块作用域/">全局块作用域</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/11/ES6/块级作用域/全局块作用域/" class="archive-article-date">
+  	<time datetime="2019-03-11T04:25:41.347Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>var 被用于全局作用域时，他会创建一个新的全局变量作为全局对象(浏览器环境中的window对象)的属性。这意味着var可能会无意中覆盖一个已经存在的全局属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var RegExp = &quot;hello&quot;;</span><br><span class="line">console.log(window.RegExp);</span><br></pre></td></tr></table></figure>
+<p>如果在全局作用域中使用let或者const，会在全局作用域下创建一个新的绑定，但该绑定不会添加为全局对象的属性。用let和const不能覆盖全局变量，而只能覆盖它。</p>
+<p>使用块级作用域最佳实践：默认使用const，只在确实需要改变变量的值时使用let。这样就可以在某种程度上实现代码的不可变，从而防止某些错误的产生。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ES6 全局块作用域</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/11/ES6/块级作用域/全局块作用域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6/块级作用域/循坏中的块级作用域绑定" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/10/ES6/块级作用域/循坏中的块级作用域绑定/">循坏中的块级作用域绑定</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/10/ES6/块级作用域/循坏中的块级作用域绑定/" class="archive-article-date">
+  	<time datetime="2019-03-10T15:00:46.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">console.log(i);</span><br></pre></td></tr></table></figure>
+<p>console.log(i)由于var声明得到提升，变量i在循坏结束后仍然可以访问。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">console.log(i);</span><br><span class="line"></span><br><span class="line">//ReferenceError: i is not defined</span><br></pre></td></tr></table></figure>
+<p>使用let声明，变量i只存在于for循坏中，一旦循坏结束，在其他地方均无法访问到该变量。</p>
+<h3 id="循坏中的函数"><a href="#循坏中的函数" class="headerlink" title="循坏中的函数"></a>循坏中的函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var func = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    func.push(function () &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">func.forEach(function(func) &#123;</span><br><span class="line">    func();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>输出10次10，这里是因为循环里的每次迭代同时共享变量i，循坏内部创建的函数全都保留了对相同变量相同的引用。循坏结束时变量i的值为10，所以每次调用console.log(i)都会输出10</p>
+<p>for循环是同步任务，i在不断增加直到等于length时候，循环不再执行，即等于10</p>
+<p>而循环内部函数是异步函数，也就是说内部的console.log(i)的执行任务被排在了任务队列的最后，所以for循环本身会先执行10次，但是不执行回调里面的任务，for循环都结束时，回调函数里面的console.log才开始执行第一次，所以每次输出都是10.</p>
+<p>为解决这个问题，在循环中使用立即执行函数表达式(IIFE),以强行生成计数器变量的副本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var func = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    func.push(function (value) &#123;</span><br><span class="line">        return function() &#123;</span><br><span class="line">            console.log(value);</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;(i))</span><br><span class="line">&#125;</span><br><span class="line">func.forEach(function(func) &#123;</span><br><span class="line">    func();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>输出0~9</p>
+<p>在循坏内部，IIFE表达式为接受的每一个变量i都创建了一个副本并存储为变量value，这个变量的值就是相应迭代创建的函数所使用的值，因此调用的每个函数都会像从0到9循坏一样得到期望的值。let和const提供的块级作用域让我们无须再这样子折腾。</p>
+<p>疑惑</p>
+<ul>
+<li>为什么立即执行函数就能得到每个迭代的值？</li>
+</ul>
+<p>使用let声明，每次迭代循坏都会创建一个新变量，并以之前迭代中同名变量的值将其迟世红。</p>
+<h2 id="循坏中的const声明"><a href="#循坏中的const声明" class="headerlink" title="循坏中的const声明"></a>循坏中的const声明</h2><p>普通的for循坏，可以在初始化变量时使用const，但是要更改这个变量的值就会抛出错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var func = [];</span><br><span class="line">for (const i = 0;i &lt; 10; i++) &#123;</span><br><span class="line">    func.push(function() &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>TypeError: Assignment to constant variable.<br>类型错误：分配给常量变量。</p>
+<p>在循坏的第一个迭代中，i是0，迭代执行成功。执行i++，这条语句试图修改常量，因此抛出错误。</p>
+<p>在for-in 或者 for-of循坏中使用const的行为与使用let一致。不会报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var func = [];</span><br><span class="line">var object = &#123;</span><br><span class="line">    a: true,</span><br><span class="line">    b: true,</span><br><span class="line">    c: true</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (const key in object) &#123;</span><br><span class="line">    func.push(function() &#123;</span><br><span class="line">        console.log(key);</span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">func.forEach(function(func) &#123;</span><br><span class="line">    func();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>const 运用在for-in 和for-of循环中，每次迭代不会像前面的for一样修改已有绑定，而是创建一个新的绑定。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ES6 循坏中的块级作用域绑定</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/10/ES6/块级作用域/循坏中的块级作用域绑定/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6/块级作用域/块级声明" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/10/ES6/块级作用域/块级声明/">块级声明</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/10/ES6/块级作用域/块级声明/" class="archive-article-date">
+  	<time datetime="2019-03-10T14:47:24.922Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="块级声明"><a href="#块级声明" class="headerlink" title="块级声明"></a>块级声明</h1><p>块级声明：用于在指定块的作用域之外无法访问的变量。块级作用域（词法作用域）存在于 </p>
+<ul>
+<li>函数内部</li>
+<li>块中{这里之间区域}</li>
+</ul>
+<h2 id="let声明"><a href="#let声明" class="headerlink" title="let声明"></a>let声明</h2><ul>
+<li>let可以把变量限制在当前作用域中</li>
+<li><code>同一作用域</code>let禁止重复定义已经存在的标识符</li>
+</ul>
+<p>变量value被let关键字声明之后不再被提升至函数顶部，执行流离开if块，value立刻被销毁。如果condition值为false，就永远不会声明并初始化value。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function getValue(conditon) &#123;</span><br><span class="line"></span><br><span class="line">    if (conditon) &#123;</span><br><span class="line">      </span><br><span class="line">        let value = &quot;blue&quot;;</span><br><span class="line">        return value;</span><br><span class="line">        </span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // return null</span><br><span class="line">        console.log(value);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getValue(&apos;&apos;)</span><br></pre></td></tr></table></figure>
+<p>ReferenceError: value is not defined</p>
+<h2 id="const声明"><a href="#const声明" class="headerlink" title="const声明"></a>const声明</h2><ul>
+<li>const声明的是常量，其值一旦被设定后不可更改。通过const声明的常量必须进行初始化。</li>
+<li>在同一作用域用const声明已经存在的变量也会导致语法错误</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const maxItems = 30;</span><br><span class="line">const maxItems = 10;</span><br><span class="line">const name;</span><br></pre></td></tr></table></figure>
+<p>const name报错：SyntaxError: Missing initializer in const declaration</p>
+<p>const maxItems = 10报错： SyntaxError: Identifier ‘maxItems’ has already been declared</p>
+<h3 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h3><pre><code>const 和 let 都是块级标识符，所以常量也是在当前代码块内有效，一旦执行到块外会立即被销毁。常量同样不会提升至作用域顶部。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (condition) &#123;</span><br><span class="line">    const maxItems = 5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//此处无法访问maxItems</span><br><span class="line">//ReferenceError: maxItems is not defined</span><br></pre></td></tr></table></figure>
+<h3 id="const声明对象"><a href="#const声明对象" class="headerlink" title="const声明对象"></a>const声明对象</h3><p>const声明对象不允许修改绑定，但允许修改该对象的属性值。</p>
+<ul>
+<li>修改绑定是变量指向的地址变了</li>
+<li>修改值是变量指向的地址没变，但是地址上的值变了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const person = &#123;</span><br><span class="line">    name :&quot;Nicholas&quot;</span><br><span class="line">&#125;</span><br><span class="line">person = &#123;</span><br><span class="line">    name : &quot;Greg&quot;</span><br><span class="line">&#125;</span><br><span class="line">person.name = &quot;Greg&quot;</span><br><span class="line"></span><br><span class="line">//类型错误：分配给常量变量。 TypeError: Assignment to constant variable.</span><br></pre></td></tr></table></figure>
+<p>person.name修改的是person包含的值</p>
+<p>如果直接给person赋值，即要改变person的绑定，就会报错</p>
+<h2 id="临时死区-TDZ"><a href="#临时死区-TDZ" class="headerlink" title="临时死区(TDZ)"></a>临时死区(TDZ)</h2><p>ES6 明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。</p>
+<p>在代码块内，使用 let 和 const 命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (condition) &#123;</span><br><span class="line">    console.log(typeof value);</span><br><span class="line">    let value = &quot;bule&quot;;</span><br><span class="line">&#125;</span><br><span class="line">// ReferenceError: value is not defined</span><br></pre></td></tr></table></figure>
+<p> console.log(typeof value)会抛出语法错误，用let定义并初始化变量value语句不会执行。此时value还位于JavaScript社区所谓的临时死区中。</p>
+<p> TDZ用来描述let和const变量不提升效果。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> console.log(typeof value);//undefined</span><br><span class="line"></span><br><span class="line">if (condition) &#123;</span><br><span class="line">    let value = &quot;bule&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>typeof是在声明变量value的代码块之外执行的，此时value并不在TDZ中，这也就意味着不存在value这个绑定，typeof操作最终返回undefined</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6 块级声明</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/10/ES6/块级作用域/块级声明/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6/块级作用域/Hosting" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        function getValue(conditon) {
+
+    if (conditon) {
+        // var value = "blue"
+        let value = "blue";
+        return value;
+
+    } else {
+        // return null
+        console.log(value);
+        
+    }
+}
+
+condition = true
+if (condition) {
+    const maxItems = 5;
+    // const maxItems = 10;
+}
+
+const person = {
+    name :"Nicholas"
+}
+// person = {
+//     name : "Greg"
+// }
+person.name = "Greg"
+
+//类型错误：分配给常量变量。 TypeError: Assignment to constant variable.
+
+
+// var func = [];
+// for (const i = 0;i < 10; i++) {
+//     func.push(function() {
+//         console.log(i);
+//     })
+// }
+var func = [];
+var object = {
+    a: true,
+    b: true,
+    c: true
+}
+
+for (const key in object) {
+    func.push(function() {
+        console.log(key);
+        
+    })
+}
+func.forEach(function(func) {
+    func();
+})
+
+var RegExp = "hello";
+console.log(window.RegExp);
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/10/ES6/块级作用域/Hosting/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6/块级作用域/var声明以及变量提升机制" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/10/ES6/块级作用域/var声明以及变量提升机制/">var变量提升</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/10/ES6/块级作用域/var声明以及变量提升机制/" class="archive-article-date">
+  	<time datetime="2019-03-10T13:10:58.535Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hosting机制：在函数作用域或者全局作用域中通过关键字var声明的变量，无论实际上是在哪里声明的，都会被当作在<code>当前作用域</code>顶部声明的变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function getValue(conditon) &#123;</span><br><span class="line"></span><br><span class="line">    if (conditon) &#123;</span><br><span class="line">        var value = &quot;blue&quot;</span><br><span class="line">        return value;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return null</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>变量提升后<br>JavaScript引擎会将getValue函数修改成这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getValue(conditon) &#123;</span><br><span class="line"></span><br><span class="line">    var value;</span><br><span class="line">    if (conditon) &#123;</span><br><span class="line">        value = &quot;blue&quot;</span><br><span class="line">        return value;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return null</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>变量value被提升至函数顶部,而初始化操作依旧停留在原处，这意味着else也可以访问到value该变量，由于此时变量尚未初始化，所以其值为undefined</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ES6 Hosting</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/10/ES6/块级作用域/var声明以及变量提升机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS/选择器优先级" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/03/CSS/选择器优先级/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaScript/基础知识/闭包/0303" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        function Foo() {
+    var i = 0
+    return function() {
+        console.log(i++)
+    }
+}
+var f1 = Foo()
+var f2 = Foo()
+f1()
+f1()
+f2()
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/03/JavaScript/基础知识/闭包/0303/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/03/自我介绍" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/03/2019/03/自我介绍/">自我介绍</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/03/2019/03/自我介绍/" class="archive-article-date">
+  	<time datetime="2019-03-03T13:43:47.777Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学习经历 项目经历 工作经历 个人优势</p>
+<p>1分钟</p>
+<p>5分钟</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/03/2019/03/自我介绍/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTTP/HTTP状态码" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -301,625 +978,9 @@
 
 
   
-    <article id="post-2019/02/23/compute" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        compute(10,100);
-var compute = function(A,B) {
-  console.info(A * B) ;
-};
- function compute(A,B){
-   console.info(A + B);
- }
- function compute(A,B){
-   console.info((A + B)*2);
- }
- compute(2,10);
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/23/2019/02/23/compute/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/23/foo" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        var obj = {
-
-    name:"zhangsan",
- 
-    sayName:function(){
- 
-      console.info(this.name);
- 
-    }
- 
-  }
- 
-  var wfunc = obj.sayName;
- 
-  obj.sayName();
- 
-  wfunc();
- 
-  var name = "lisi";
- 
-  obj.sayName();
- 
-  wfunc();
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/23/2019/02/23/foo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-错点/display两次才有block" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/19/错点/display两次才有block/">onclcik两次才触发block</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/19/错点/display两次才有block/" class="archive-article-date">
-  	<time datetime="2019-02-19T10:31:04.461Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2019/02/19/错点/display两次才有block/../../../public/images/html/display.png" alt="第二次请求"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">错点总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/19/错点/display两次才有block/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-错点/p标签不能内嵌div" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/19/错点/p标签不能内嵌div/">p标签不能内嵌div</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/19/错点/p标签不能内嵌div/" class="archive-article-date">
-  	<time datetime="2019-02-19T05:51:42.980Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在开发音乐webAPP时，我在p内嵌了div，发现div单独出来了</p>
-<p><img src="/2019/02/19/错点/p标签不能内嵌div/../../../public/images/html/p.png" alt="第二次请求"></p>
-<p>p是块级元素只能包含内联元素，而不能包含块级元素，还有h1-h6，dt，也是如此</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">错点总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/19/错点/p标签不能内嵌div/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTTP/浏览器缓存机制" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/18/HTTP/浏览器缓存机制/">HTTP浏览器缓存机制</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/18/HTTP/浏览器缓存机制/" class="archive-article-date">
-  	<time datetime="2019-02-18T07:12:20.291Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h2><pre><code>浏览器缓存就是把一个以及请求过的Web资源(如html页面，图片，数据，js等等)拷贝一份副本存储在浏览器中。缓存会根据进来的请求保存输出内容的副本。当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。
-</code></pre><h3 id="使用缓存"><a href="#使用缓存" class="headerlink" title="使用缓存"></a>使用缓存</h3><pre><code>(1) 减少网络带宽消耗
-
-(2) 降低服务器压力
-
-(3) 减少网络延迟，加快页面打开速度
-</code></pre><h3 id="浏览器缓存规则"><a href="#浏览器缓存规则" class="headerlink" title="浏览器缓存规则"></a>浏览器缓存规则</h3><pre><code>规则是在HTTP协议头信息(cache-control)和HTML页面的meta标签中定义的。从新鲜度和校验值两个维度来规定浏览器是否可以直接使用缓存中的副本，还是需要去服务器获取更新的版本
-
-`新鲜度(过期机制)`：也就是浏览器副本有效期。一个缓存副本必须满足以下条件，浏览器会认为它是足够新的。
-
-    * 含有完整的过期时间控制有信息(HTPP协议报头)，并且仍在有效期内
-    * 浏览器以及使用过这个缓存副本，并且在一个会话中已经检查过新鲜度
-
-`校验值(验证机制)`：服务器返回资源的时候有时在控制头信息带上这个资源的实体标签ETag(EntityTag),它可以作为浏览器再次请求过程的校验标识。如果发现标识不匹配，说明资源已经被修改或过期，浏览器需重新获取资源内容。
-</code></pre><p>第一次请求<br><img src="../../../public/images/http/cha.png" alt="第一次请求"></p>
-<p>第二次请求<br><img src="../../../public/images/http/cache.png" alt="第二次请求"></p>
-<p>ETag: “195-58226db2f14fc”</p>
-<p>If-Modified-Since: Mon, 18 Feb 2019 08:24:41 GMT</p>
-<p>If-None-Match: “195-58226db2f14fc”</p>
-<p>如果从  Mon, 18 Feb 2019 08:24:41 GMT  这个时间短以后图片修改过则重新请求，如果该图片最新的ETag和If-None-Match的值不匹配则重新请求</p>
-<p>第二次响应信息为304意味着从本地取缓存，节省了图片在网络上传输的时间</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">浏览器缓存机制</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HTTP//" class="article-tag-list-link color5">HTTP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/18/HTTP/浏览器缓存机制/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/16/垂直水平居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!DOCTYPE html>
-<html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .out {
-            width: 200px;
-            height: 200px;
-            border: 10px #ccc solid;
-            padding: 10px;
-            background-color: black;
-            margin: 10px;
-           
-        }
-        .inner {
-            width: 20px;
-            height: 20px;
-            border: 10px #ccc solid;
-            padding: 10px;
-            background-color:#fff;
-            margin: 10px;
-
-            /* position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) */
-
-            /* position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto; */
-
-            /* display: flex;
-            justify-content: center;
-            align-content: center; */
-
-            /* display: table-cell;
-            text-align: center;
-            vertical-align: middle; */
-            
-        }
-    </style>
-</head>
-
-<body>
-    <div class="out">
-        <div class="inner"></div>
-    </div>
-</body>
-</html>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/2019/02/16/垂直水平居中/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/16/BoxModel" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- ``` -->
-<!-- <!DOCTYPE html> -->
-<html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        div{
-            width: 200px;
-            height: 200px;
-            border: 10px #ccc solid;
-            padding: 10px;
-            background-color: black;
-            margin: 10px;
-            box-sizing: content-box;
-        }
-        /* span {
-            background-color: blanchedalmond;
-            width: 20px;
-            height: 20px;
-            border: 1px #ccc solid;
-            padding: 10px 20px;
-            margin: 10px 20px;
-        } */
-    </style>
-</head>
-<body>
-    <div id="div">
-        <!-- <span id="span">cccccccccc </span> -->
-    </div>
-</body>
-<script>
-var div = document.getElementById('div').offsetHeight || clientHeight
-console.log("高度为" + div);
-
-</script>
-</html>
-
-<!-- ``` -->
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/2019/02/16/BoxModel/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/16/position" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .div1,.div2,.div3 &#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            border: 1px #ccc solid;</span><br><span class="line">        &#125;</span><br><span class="line">        .div1 &#123;</span><br><span class="line">            background-color: red;</span><br><span class="line">        &#125;</span><br><span class="line">        .div2 &#123;</span><br><span class="line">            background-color: green;</span><br><span class="line">        &#125;</span><br><span class="line">        .div3 &#123;</span><br><span class="line">            background-color: yellow;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .div-container1 .div2&#123;</span><br><span class="line">            position: static;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .div-container2 .div2&#123;</span><br><span class="line">            position:fixed;</span><br><span class="line">            left:500px;</span><br><span class="line">            top:5px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .div-container3 .div2&#123;</span><br><span class="line">            position: sticky;</span><br><span class="line">            top: 200px;</span><br><span class="line">            left: 250px;</span><br><span class="line">        &#125;</span><br><span class="line">        .div-container4 &#123;</span><br><span class="line">            position: fixed;</span><br><span class="line">            top: 3px;</span><br><span class="line">            left: 300px;</span><br><span class="line">        &#125;</span><br><span class="line">        .div-container4 .div2&#123;</span><br><span class="line">            position: inherit;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .div-container5 .div2&#123;</span><br><span class="line">            position: initial;</span><br><span class="line">        &#125;</span><br><span class="line">        .div-container6 .div2&#123;</span><br><span class="line">            position: relative;</span><br><span class="line">        &#125;</span><br><span class="line">        .div-container7 .div2&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">        &#125;</span><br><span class="line">        .div-container7 .div2&#123;</span><br><span class="line">            position: static;</span><br><span class="line">        &#125;</span><br><span class="line">        .div-container8 .div2&#123;</span><br><span class="line">            position: static;</span><br><span class="line">        &#125;</span><br><span class="line">        .div-container9 .div2&#123;</span><br><span class="line">            position: static;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h5&gt;static   `static`默认值。没有定位，元素出现在正常的流中。&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;div-container div-container1&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;div1&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div2&quot;&gt;static&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div3&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">      </span><br><span class="line">    &lt;h5&gt;fixed   `fixed`生成固定定位的元素，相对于浏览器窗口进行定位。&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;div-container div-container2&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;div1&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div2&quot;&gt;fixed&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div3&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h5&gt;sticky   `sticky`粘性定位，该定位基于用户滚动的位置。&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;div-container div-container3&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;div1&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div2&quot;&gt;sticky&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div3&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h5&gt;inherit    `inherit`规定应该从父元素继承 position 属性的值。&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;div-container div-container4&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;div1&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div2&quot;&gt;inherit&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div3&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h5&gt;initial    `initial`设置该属性为默认值&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;div-container div-container5&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;div1&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div2&quot;&gt;initial&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div3&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h5&gt;Relative      `relative`生成相对定位的元素，相对于其正常位置进行定位。&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;div-container div-container6&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;div1&quot;&gt;static1&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div2&quot;&gt;relative1&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div3&quot;&gt;static1&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h5&gt;Absolute     `absolute`生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;div-container div-container7&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;div1&quot;&gt;static2&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div2&quot;&gt;absolute2&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div3&quot;&gt;static2&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h5&gt;Relative contains Absolute&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;div-container div-container8&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;div1&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div2&quot;&gt;absolute3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div3&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h5&gt;Absolute contains Absolute&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;div-container div-container9&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;div1&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div2&quot;&gt;absolute3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;div3&quot;&gt;static3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- 块级元素和行内元素区别</span><br><span class="line"></span><br><span class="line">        * 行内元素与块级元素直观上的区别</span><br><span class="line"></span><br><span class="line">            行内元素会在一条直线上排列，都是同一行的，水平方向排列</span><br><span class="line"></span><br><span class="line">            块级元素各占据一行，垂直方向排列。块级元素从新行开始结束接着一个断行。</span><br><span class="line"></span><br><span class="line">        * 块级元素可以包含行内元素和块级元素。行内元素不能包含块级元素。</span><br><span class="line"></span><br><span class="line">        * 行内元素与块级元素属性的不同，主要是盒模型属性上</span><br><span class="line"></span><br><span class="line">            行内元素设置width无效，height无效(可以设置line-height)，margin上下无效，padding上下无效（是有效的，只是不像块级元素会影响其他行） --&gt;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/2019/02/16/position/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1018,6 +1079,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">HTTP状态码</a>
               </li>
              
@@ -1026,27 +1091,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,7 +1103,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1066,19 +1111,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1086,7 +1131,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1098,19 +1159,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript原型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1118,7 +1175,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ES6 循坏中的块级作用域绑定</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES6 Hosting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">基础题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JavaScript原型继承</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
               </li>
             
             <div class="clearfix"></div>
