@@ -153,29 +153,12 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-ES6/字符串和正则表达式/正则表达式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-HTML5/存储/IndexedDB" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/11/ES6/字符串和正则表达式/正则表达式/">正则表达式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/11/ES6/字符串和正则表达式/正则表达式/" class="archive-article-date">
-  	<time datetime="2019-03-11T09:04:40.429Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="正则表达式u修饰符"><a href="#正则表达式u修饰符" class="headerlink" title="正则表达式u修饰符"></a>正则表达式u修饰符</h3><p>正则表达式可以完成简单的字符串操作，但默认将字符串的每个字符按照16位编码单元处理。为解决这个问题，ES6给正则表达式定义一个支持Unicode的u修饰符</p>
-<h4 id="u修饰符实例"><a href="#u修饰符实例" class="headerlink" title="u修饰符实例"></a>u修饰符实例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let text = &apos;𠮷&apos;</span><br></pre></td></tr></table></figure>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var db;</span><br><span class="line">    var arrKey = [];</span><br><span class="line">    var openRequest;</span><br><span class="line">    var lastCursor;</span><br><span class="line">    var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;</span><br><span class="line">    var dbName = &quot;person&quot;;</span><br><span class="line">    var tableName = &quot;testTable&quot;;</span><br><span class="line"></span><br><span class="line">    function init () &#123;</span><br><span class="line">        // 数据库存在的话就打开</span><br><span class="line">        openRequest = indexedDB.open(dbName);</span><br><span class="line"></span><br><span class="line">        // 数据库不存在就新建</span><br><span class="line">        // onupgradeneeded事件在新的数据库创建或版本改变时触发</span><br><span class="line">        openRequest.onupgradeneeded = function(e) &#123;</span><br><span class="line">            console.log(&quot;running onupgradeneeded&quot;);</span><br><span class="line">            var thisDb = e.target.result;</span><br><span class="line">            console.log(thisDb.version);</span><br><span class="line">            // 数据库建表</span><br><span class="line">            if (!thisDb.objectStoreNames.contains(tableName)) &#123;</span><br><span class="line">                console.log(&quot;I need to create the objectStoreNames&quot;);</span><br><span class="line">                var objectStore = thisDb.createObjectStore(tableNmae, &#123; keyPath: &quot;id&quot;, autoIncrement:true &#125;);//主键</span><br><span class="line">                objectStore.createIndex(&quot;name&quot;, &quot;name&quot;, &#123; unique: false&#125;);//是否能被索引</span><br><span class="line">                objectStore.createIndex(&quot;phone&quot;, &quot;phone&quot;, &#123; unique: false&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 已经创建好的数据库</span><br><span class="line">        openRequest.onsuccess = function(e) &#123;</span><br><span class="line">            db = e.target.result;</span><br><span class="line">            console.log(db.version);</span><br><span class="line">            db.onerror = function(event) &#123;</span><br><span class="line">                alert(&quot;database error&quot; + event.target.errorCode)</span><br><span class="line">                console.dir(event.target);</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            if (db.objectStoreNames.contains(tableName)) &#123;</span><br><span class="line">                console.log(&quot;contain table&quot; + tableName);</span><br><span class="line"></span><br><span class="line">                // 事务可读机制保证一致性和可靠性</span><br><span class="line">                var tansaction = db.tansaction([tableName], &quot;readwirte&quot;);</span><br><span class="line">                tansaction.oncomplete = function(event) &#123;</span><br><span class="line">                    console.log(&quot;All done&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                tansaction.onerror = function(event) &#123;</span><br><span class="line">                    console.dir(event);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                // 得到表的对象</span><br><span class="line">                var objectStore = tansaction.objectStore(tableName);</span><br><span class="line"></span><br><span class="line">                // 使用游标遍历（遍历表）</span><br><span class="line">                objectStore.openCursor().onsuccess = function(event) &#123;</span><br><span class="line">                    var cursor = event.target.result;</span><br><span class="line">                    if (cursor) &#123;</span><br><span class="line">                        console.log(cursor.key);</span><br><span class="line">                        console.log(cursor.value);</span><br><span class="line">                        reder(&#123;</span><br><span class="line">                            key:cursor.key,</span><br><span class="line">                            name:cursor.value[&quot;name&quot;],</span><br><span class="line">                            phone:cursor.value[&quot;phone&quot;],</span><br><span class="line">                            address:cursor.value[&quot;address&quot;]</span><br><span class="line">                        &#125;)</span><br><span class="line">                        lastCursor = cursor.key;</span><br><span class="line">                        // 执行下一条</span><br><span class="line">                        cursor.continue();</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        console.log(&quot;Done with cursor&quot;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;</span><br><span class="line"></span><br><span class="line">                objectStore.openCursor().onerror = function () &#123;</span><br><span class="line">                    console.dir(event);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // </span><br><span class="line">        openRequest.onerror = function(e) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // add</span><br><span class="line">        document.querySelector(&apos;#add&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">            var name = document.querySelector(&apos;#name&apos;).value;</span><br><span class="line">            var phone = document.querySelector(&apos;#phone&apos;).value;</span><br><span class="line">            var address = document.querySelector(&apos;#address&apos;).value;</span><br><span class="line">            var person = &#123;</span><br><span class="line">                &quot;name&quot;: name,</span><br><span class="line">                &quot;phone&quot;: phone,</span><br><span class="line">                &quot;address&quot;: address</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            var transaction = db.transaction([tableName], &quot;readwrite&quot;);</span><br><span class="line">            transaction.compelete = function(event) &#123;</span><br><span class="line">                console.log(&quot;transaction compelete&quot;);</span><br><span class="line">            &#125;;</span><br><span class="line">            transaction.onerror = function() &#123;</span><br><span class="line">                console.log(event);</span><br><span class="line">            &#125;</span><br><span class="line">            var objectStore = transaction.objectStore(tableName);</span><br><span class="line">            objectStore.add(person);</span><br><span class="line">            objectStore.openCursor().onsuccess = function(event) &#123;</span><br><span class="line">                cursor = event.target.result;</span><br><span class="line">                var key;</span><br><span class="line">                if (lastCursor == null) &#123;</span><br><span class="line">                    key = cursor.key;</span><br><span class="line">                    lastCursor = key;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    key = ++ lastCursor;</span><br><span class="line">                &#125;</span><br><span class="line">                reder(&#123;</span><br><span class="line">                    key: key,</span><br><span class="line">                    name: name,</span><br><span class="line">                    phone: phone,</span><br><span class="line">                    address: address</span><br><span class="line">                &#125;);</span><br><span class="line">                console.log(&quot;success add new record !key&quot; + key);</span><br><span class="line">                console.dir(person)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        // delete</span><br><span class="line">        function deleteRecord(id) &#123;</span><br><span class="line">            var transaction = db.transaction([tableName], &quot;readwrite&quot;)</span><br><span class="line">            transaction.oncomplete = function(event) &#123;</span><br><span class="line">                console.log(&quot;transaction complete&quot;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            transaction.onerror = function(event) &#123;</span><br><span class="line">                console.dir(event);</span><br><span class="line">            &#125;</span><br><span class="line">            var objectStore = transaction.objectStore(tableName);</span><br><span class="line">            var removeKey = parseInt(id);</span><br><span class="line">            var getRequest = function(e) &#123;</span><br><span class="line">                var result = getRequest.result;</span><br><span class="line">                console.log(result);</span><br><span class="line">            &#125;</span><br><span class="line">            var request = objectStore.delete(removeKey);</span><br><span class="line">            request.onsuccess = function(e) &#123;</span><br><span class="line">                console.log(&quot;success delete record&quot;);</span><br><span class="line">            &#125;;</span><br><span class="line">            request.onerror = function(e) &#123;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -183,33 +166,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ES6 正则表达式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/11/ES6/字符串和正则表达式/正则表达式/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/17/HTML5/存储/IndexedDB/">展开全文 >></a>
         </p>
       
 
@@ -239,59 +200,222 @@
 
 
   
-    <article id="post-ES6/字符串和正则表达式/字符的Unicode表示法" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-HTML5/存储/IndexedDB" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/11/ES6/字符串和正则表达式/字符的Unicode表示法/">字符串</a>
+      <a class="article-title" href="/2019/03/17/HTML5/存储/IndexedDB/">HTML5关系型数据库存储</a>
     </h1>
   
 
         
-        <a href="/2019/03/11/ES6/字符串和正则表达式/字符的Unicode表示法/" class="archive-article-date">
-  	<time datetime="2019-03-11T06:45:13.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
+        <a href="/2019/03/17/HTML5/存储/IndexedDB/" class="archive-article-date">
+  	<time datetime="2019-03-17T13:12:13.249Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="字符的Unicode表示法"><a href="#字符的Unicode表示法" class="headerlink" title="字符的Unicode表示法"></a>字符的Unicode表示法</h3><p>JavaScript允许采用<code>\uxxxx</code>表示一个字符，其中xxxx表示字符的码点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;\u0061&quot;);</span><br><span class="line">//a</span><br></pre></td></tr></table></figure>
-<p>但是这种表示法只限于<code>\u0000 -- \uFFFF</code>之间的字符。超出这个范围的字符，必须用双字节表示法表达</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;\uD842\uDFB7&quot;);</span><br><span class="line">//𠮷</span><br></pre></td></tr></table></figure>
-<p>上面代码表示，如果在\u后面跟上超过0xFFFF的数值(比如\u20BB7),JavaScript就会理解成\u20BB+7,由于\u20BB是一个不可打印字符，所以会显示一个空格，后面跟一个7(₻7)</p>
-<p>ES6对这点做了改进，只要将码点放入大括号，就能正确解读该字符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;\u&#123;20BB7&#125;&quot;);//𠮷</span><br></pre></td></tr></table></figure>
-<p>JavaScript 方法表示一个字符</p>
-<ol>
-<li>‘\z’ === ‘z’  //true</li>
-<li>‘\172’ === ‘z’   //true</li>
-<li>‘\x7A’ === ‘z’   //true</li>
-<li>‘\u007A’ === ‘z’   //true</li>
-<li>‘\u{7A}’ === ‘z’   //true</li>
+        <p>Web SQL 和 IndexedDB</p>
+<p>一种能在浏览器中持久化地存储结构化数据的数据库，并且为web应用提供了丰富的查询能力</p>
+<p>浏览器支持</p>
+<p>chrome 11 +</p>
+<p>opera 不支持</p>
+<p>Firefox 4+</p>
+<p>IE 10+</p>
+<p>存储结构</p>
+<p>IndexedDB是按域名分配独立空间，一个独立域名下可以创建多个数据库，每个数据库可以创建多个对象存储空间（表），一个对象存储空间可以存储多个对象数据</p>
+<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><h3 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h3><h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">HTML5关系型数据库存储</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/HTML5//" class="article-tag-list-link color1">HTML5</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/17/HTML5/存储/IndexedDB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTML5/存储/localstorage" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;本地存储图片&lt;/title&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!-- &lt;img src=&quot;../../../../public/images/html5/2.png&quot; alt=&quot;&quot;&gt; --&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var src =&quot;../../../../public/images/html5/2.png&quot;</span><br><span class="line">function set(key) &#123;</span><br><span class="line">    var img = document.createElement(&apos;img&apos;);</span><br><span class="line">    img.addEventListener(&apos;load&apos;, function() &#123;</span><br><span class="line">        </span><br><span class="line">        var imgCanvas = document.createElement(&apos;canvas&apos;);</span><br><span class="line">        var imgContext = imgCanvas.getContext(&apos;2d&apos;)</span><br><span class="line">        </span><br><span class="line">        imgCanvas.width = this.width</span><br><span class="line">        imgCanvas.height = this.height</span><br><span class="line"></span><br><span class="line">        imgContext.drawImage(this, 0, 0, this.width, this.height)</span><br><span class="line"></span><br><span class="line">        var imgAsDataURL = imgCanvas.toDataURL(&apos;images/png&apos;)</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            localStorage.setItem(key, imgAsDataURL)</span><br><span class="line">        &#125; catch (e) &#123;</span><br><span class="line">            console.log(&quot;failed&quot; + e)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;, false)</span><br><span class="line">    img.src = src</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 获取图片并渲染 </span><br><span class="line">    function get(key) &#123;</span><br><span class="line">        var srcStr = localStorage.getItem(key)</span><br><span class="line"></span><br><span class="line">        var imgObj = document.createElement(&apos;img&apos;)</span><br><span class="line"></span><br><span class="line">        imgObj.src = srcStr</span><br><span class="line"></span><br><span class="line">        document.body.appendChild(imgObj)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/17/HTML5/存储/localstorage/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTML5/存储/本地存储" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/17/HTML5/存储/本地存储/">HTML5本地存储</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/17/HTML5/存储/本地存储/" class="archive-article-date">
+  	<time datetime="2019-03-17T12:29:41.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>API : localStorage &amp;&amp; sessionStorage</p>
+</li>
+<li><p>存储形式 : key —&gt;value</p>
+</li>
+<li><p>过期 : 永久存储，永不失效</p>
+</li>
+<li><p>大小 : 官方给出是每个域名5M</p>
+</li>
+</ul>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>localStorage API</p>
+<ul>
+<li><p>getItem : 取记录</p>
+</li>
+<li><p>setItem : 设置</p>
+</li>
+<li><p>removeItem : 移除</p>
+</li>
+<li><p>key : 取索引</p>
+</li>
+<li><p>clear : 全部删掉</p>
+</li>
+</ul>
+<p>sessionStorage</p>
+<p>重新打开浏览器或者关闭浏览器消失</p>
+<h3 id="H5本地存储"><a href="#H5本地存储" class="headerlink" title="H5本地存储"></a>H5本地存储</h3><p>数组 ： 直接不能存，要把数组序列化成字符串就可以</p>
+<p>json数据 ：直接不能存，把json数据parse成对象，stringfiy转成字符串</p>
+<p>图片</p>
+<p>脚本 ： ajax</p>
+<p>样式文件</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li><p>使用前要判断浏览器是否支持</p>
+</li>
+<li><p>写数据时，需要异常处理，避免超出容量抛错</p>
+</li>
+<li><p>避免把敏感信息存入localStorage</p>
+</li>
+<li><p>key的唯一性</p>
+</li>
 </ol>
-<h3 id="codePointAt"><a href="#codePointAt" class="headerlink" title="codePointAt()"></a>codePointAt()</h3><p>JavaScript内部，字符以UTF-16的格式存储，每个字符固定为2字节，对于那些需要4个字节存储的字符(码点大于0xFFFF的字符)，JavaScript会认为他们是两个字节。</p>
-<p>“𠮷”字码点是0x20BB7,UTF-16编码为0xD842 0xDFB7(十进制为55362 57271)，需要4个字节存储。对于4个字节的字符，JavaScript不能正确处理，字符串长度就会误判长度为2，而且charAt方法无法读取整个字符，charCodeAt方法只能返回前2个字节和后2个字节的值。</p>
-<p>ES6提供的codePointAt()方法，能够正确处理4个字节存储的字符，返回一个字符的码点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;𠮷a&quot;</span><br><span class="line">console.log(str.charCodeAt(0));</span><br><span class="line">console.log(str.charCodeAt(1));</span><br><span class="line"></span><br><span class="line">console.log(str.codePointAt(0));</span><br><span class="line">console.log(str.codePointAt(1));</span><br><span class="line">console.log(str.codePointAt(2));</span><br><span class="line"></span><br><span class="line">//55362</span><br><span class="line">//57271</span><br><span class="line">//134071</span><br><span class="line">//57271</span><br><span class="line">//97</span><br></pre></td></tr></table></figure>
-<p>codePointAt()检测一个字符占用的编码单元数量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function is32Bit(c) &#123;</span><br><span class="line">    return c.codePointAt(0) &gt; 0xFFFF;</span><br><span class="line">&#125;</span><br><span class="line">console.log(is32Bit(&apos;𠮷&apos;));</span><br><span class="line">console.log(is32Bit(&apos;a&apos;));</span><br><span class="line">//true</span><br><span class="line">//false</span><br></pre></td></tr></table></figure>
-<h3 id="String-fromCodePoint"><a href="#String-fromCodePoint" class="headerlink" title="String.fromCodePoint()"></a>String.fromCodePoint()</h3><p>String.fromCodePoint()方法根据指定的码位生成一个字符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(String.fromCodePoint(134071));//𠮷</span><br></pre></td></tr></table></figure>
-<h3 id="normalize"><a href="#normalize" class="headerlink" title="normalize()"></a>normalize()</h3><p>ES6为字符串实例化提供了normalize方法，用来将两个字符的不同表示方法统一为同样的形式，称为Unicode正规化。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;\u01D1&apos;.normalize() === &apos;\u004F\u030c&apos;.normalize());</span><br><span class="line">//true</span><br></pre></td></tr></table></figure>
-<p>normalize接受4个参数</p>
-<ul>
-<li>NFC 标准等价合成</li>
-<li>NFD 标准等价分解</li>
-<li>NFKC 兼容等价合成</li>
-<li>NFKD 兼容等价分解</li>
-</ul>
-<p>在对比字符串之前，一定要把它们标准化为同一形式</p>
+<h3 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h3><ol>
+<li><p>存储更新策略，过期控制</p>
+</li>
+<li><p>子域名之间不能共享数据</p>
+</li>
+<li><p>超出存储大小之后如何存储（LRU，FIFO）</p>
+</li>
+<li><p>server端如何取到</p>
+</li>
+</ol>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol>
+<li><p>利用本地存储数据，减少网络传输</p>
+</li>
+<li><p>弱网络环境下，高延迟，低宽带，尽量把数据本地化</p>
+</li>
+</ol>
 
       
 
@@ -305,7 +429,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ES6 字符串</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML5本地存储</a>
         		</li>
       		
 		</ul>
@@ -317,7 +441,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
+        			<a href="/categories/HTML5//" class="article-tag-list-link color1">HTML5</a>
         		</li>
       		
 		</ul>
@@ -326,7 +450,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/11/ES6/字符串和正则表达式/字符的Unicode表示法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/17/HTML5/存储/本地存储/">展开全文 >></a>
         </p>
       
 
@@ -356,106 +480,102 @@
 
 
   
-    <article id="post-ES6/字符串和正则表达式/string" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        console.log("\u0061");
-console.log("\uD842\uDFB7");
-console.log("\u{20BB7}");//𠮷
-var str = "𠮷a"
-console.log(str.charCodeAt(0));
-console.log(str.charCodeAt(1));
-
-console.log(str.codePointAt(0));
-console.log(str.codePointAt(1));
-console.log(str.codePointAt(2));
-// ₻7
-function is32Bit(c) {
-    return c.codePointAt(0) > 0xFFFF;
-}
-console.log(is32Bit('𠮷'));
-console.log(is32Bit('a'));
-
-console.log('\u01D1'.normalize('NFC') === '\u004F\u030c'.normalize('NFC'));
-console.log('\u01D1'.normalize('NFD') === '\u004F\u030c'.normalize('NFD'));
-console.log('\u01D1'.normalize('NFKC') === '\u004F\u030c'.normalize('NFKC'));
-console.log('\u01D1'.normalize('NFKD') === '\u004F\u030c'.normalize('NFKD'));
-
-
-
-
-let text = '𠮷'
-console.log(text.length);
-console.log(/^.$/.test(text));
-console.log(/^.$/u.test(text));
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/11/ES6/字符串和正则表达式/string/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6/块级作用域/全局块作用域" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-HTML5/存储/客户端储存" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/11/ES6/块级作用域/全局块作用域/">全局块作用域</a>
+      <a class="article-title" href="/2019/03/17/HTML5/存储/客户端储存/">HTML5缓存</a>
     </h1>
   
 
         
-        <a href="/2019/03/11/ES6/块级作用域/全局块作用域/" class="archive-article-date">
-  	<time datetime="2019-03-11T04:25:41.347Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
+        <a href="/2019/03/17/HTML5/存储/客户端储存/" class="archive-article-date">
+  	<time datetime="2019-03-17T11:59:43.737Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>var 被用于全局作用域时，他会创建一个新的全局变量作为全局对象(浏览器环境中的window对象)的属性。这意味着var可能会无意中覆盖一个已经存在的全局属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var RegExp = &quot;hello&quot;;</span><br><span class="line">console.log(window.RegExp);</span><br></pre></td></tr></table></figure>
-<p>如果在全局作用域中使用let或者const，会在全局作用域下创建一个新的绑定，但该绑定不会添加为全局对象的属性。用let和const不能覆盖全局变量，而只能覆盖它。</p>
-<p>使用块级作用域最佳实践：默认使用const，只在确实需要改变变量的值时使用let。这样就可以在某种程度上实现代码的不可变，从而防止某些错误的产生。</p>
+        <p>客户端储存历程</p>
+<h3 id="远古时期"><a href="#远古时期" class="headerlink" title="远古时期"></a>远古时期</h3><ul>
+<li>cookies的用法和缺陷</li>
+<li>userdata</li>
+</ul>
+<h3 id="HTML时代"><a href="#HTML时代" class="headerlink" title="HTML时代"></a>HTML时代</h3><ul>
+<li>localStorage</li>
+<li>application cache</li>
+<li>indexedDB</li>
+</ul>
+<ol>
+<li>使用规范</li>
+<li>每种存储的特点以及解决的问题</li>
+<li>在大型站点的使用</li>
+<li>具体业务适用的场景</li>
+</ol>
+<h3 id="HTML5储存"><a href="#HTML5储存" class="headerlink" title="HTML5储存"></a>HTML5储存</h3><p>如何实现把图片放在客户端</p>
+<p>如何实现跨域请求</p>
+<p>如何做到真正的离线访问web应用</p>
+<p>如何实现一个客户端的数据库</p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><p>H5之前如何实现存储</p>
+</li>
+<li><p>H5的几种常见的存储方式</p>
+</li>
+<li><p>localStorage &amp;&amp; sessionStorage</p>
+</li>
+<li><p>application cache 的介绍和应用</p>
+</li>
+<li><p>indexDB的介绍和使用场景</p>
+</li>
+</ul>
+<h3 id="关于存储"><a href="#关于存储" class="headerlink" title="关于存储"></a>关于存储</h3><ul>
+<li><p>cache</p>
+</li>
+<li><p>磁盘文件</p>
+</li>
+<li><p>数据库</p>
+</li>
+<li><p>内存</p>
+</li>
+</ul>
+<h3 id="H5之前"><a href="#H5之前" class="headerlink" title="H5之前"></a>H5之前</h3><p>H5之前浏览器端使用cookies去存客户端的一些内容</p>
+<p>cookies 的特点</p>
+<ol>
+<li><p><code>http请求头上会带着</code>：一个比较大的缺点，一个http请求要通过三次握手，要去请求回包，整个过程比较长，请求头又带着一堆,会显得非常臃肿</p>
+</li>
+<li><p><code>大小4k</code>: 对于每一个域名，浏览器客户端只会存4k大小，不能放更多</p>
+</li>
+<li><p><code>主domain污染</code>：每一个子域名都放在主域名下，子域名去访问一条记录或者http请求都会带着主域名，会造成主域名cookies的污染，产生安全隐患</p>
+</li>
+</ol>
+<p>cookies在浏览器存储形态</p>
+<p>name value domain path expires size http secure</p>
+<p>UserDate</p>
+<ol>
+<li>只有IE支持</li>
+</ol>
+<h3 id="H5存储"><a href="#H5存储" class="headerlink" title="H5存储"></a>H5存储</h3><ul>
+<li><p>解决4k大小问题</p>
+</li>
+<li><p>解决请求头常带存储信息的问题</p>
+</li>
+<li><p>解决关系型存储的问题</p>
+</li>
+<li><p>跨浏览器</p>
+</li>
+</ul>
+<h3 id="H5的存储"><a href="#H5的存储" class="headerlink" title="H5的存储"></a>H5的存储</h3><ul>
+<li><p>本地存储 (localStorage &amp;&amp; sessionStorage)</p>
+</li>
+<li><p>离线存储 (application cache)</p>
+</li>
+<li><p>IndexedDB 和 WebSQL</p>
+</li>
+</ul>
 
       
 
@@ -469,7 +589,7 @@ console.log(/^.$/u.test(text));
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ES6 全局块作用域</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HTML5缓存</a>
         		</li>
       		
 		</ul>
@@ -481,7 +601,7 @@ console.log(/^.$/u.test(text));
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
+        			<a href="/categories/HTML5//" class="article-tag-list-link color1">HTML5</a>
         		</li>
       		
 		</ul>
@@ -490,7 +610,7 @@ console.log(/^.$/u.test(text));
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/11/ES6/块级作用域/全局块作用域/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/17/HTML5/存储/客户端储存/">展开全文 >></a>
         </p>
       
 
@@ -520,50 +640,34 @@ console.log(/^.$/u.test(text));
 
 
   
-    <article id="post-ES6/块级作用域/循坏中的块级作用域绑定" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Angular/基础知识/组件和组件树" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/10/ES6/块级作用域/循坏中的块级作用域绑定/">循坏中的块级作用域绑定</a>
+      <a class="article-title" href="/2019/03/17/Angular/基础知识/组件和组件树/">angular</a>
     </h1>
   
 
         
-        <a href="/2019/03/10/ES6/块级作用域/循坏中的块级作用域绑定/" class="archive-article-date">
-  	<time datetime="2019-03-10T15:00:46.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
+        <a href="/2019/03/17/Angular/基础知识/组件和组件树/" class="archive-article-date">
+  	<time datetime="2019-03-17T01:24:32.655Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">console.log(i);</span><br></pre></td></tr></table></figure>
-<p>console.log(i)由于var声明得到提升，变量i在循坏结束后仍然可以访问。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">console.log(i);</span><br><span class="line"></span><br><span class="line">//ReferenceError: i is not defined</span><br></pre></td></tr></table></figure>
-<p>使用let声明，变量i只存在于for循坏中，一旦循坏结束，在其他地方均无法访问到该变量。</p>
-<h3 id="循坏中的函数"><a href="#循坏中的函数" class="headerlink" title="循坏中的函数"></a>循坏中的函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var func = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    func.push(function () &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">func.forEach(function(func) &#123;</span><br><span class="line">    func();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>输出10次10，这里是因为循环里的每次迭代同时共享变量i，循坏内部创建的函数全都保留了对相同变量相同的引用。循坏结束时变量i的值为10，所以每次调用console.log(i)都会输出10</p>
-<p>for循环是同步任务，i在不断增加直到等于length时候，循环不再执行，即等于10</p>
-<p>而循环内部函数是异步函数，也就是说内部的console.log(i)的执行任务被排在了任务队列的最后，所以for循环本身会先执行10次，但是不执行回调里面的任务，for循环都结束时，回调函数里面的console.log才开始执行第一次，所以每次输出都是10.</p>
-<p>为解决这个问题，在循环中使用立即执行函数表达式(IIFE),以强行生成计数器变量的副本。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var func = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    func.push(function (value) &#123;</span><br><span class="line">        return function() &#123;</span><br><span class="line">            console.log(value);</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;(i))</span><br><span class="line">&#125;</span><br><span class="line">func.forEach(function(func) &#123;</span><br><span class="line">    func();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>输出0~9</p>
-<p>在循坏内部，IIFE表达式为接受的每一个变量i都创建了一个副本并存储为变量value，这个变量的值就是相应迭代创建的函数所使用的值，因此调用的每个函数都会像从0到9循坏一样得到期望的值。let和const提供的块级作用域让我们无须再这样子折腾。</p>
-<p>疑惑</p>
-<ul>
-<li>为什么立即执行函数就能得到每个迭代的值？</li>
-</ul>
-<p>使用let声明，每次迭代循坏都会创建一个新变量，并以之前迭代中同名变量的值将其迟世红。</p>
-<h2 id="循坏中的const声明"><a href="#循坏中的const声明" class="headerlink" title="循坏中的const声明"></a>循坏中的const声明</h2><p>普通的for循坏，可以在初始化变量时使用const，但是要更改这个变量的值就会抛出错误</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var func = [];</span><br><span class="line">for (const i = 0;i &lt; 10; i++) &#123;</span><br><span class="line">    func.push(function() &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>TypeError: Assignment to constant variable.<br>类型错误：分配给常量变量。</p>
-<p>在循坏的第一个迭代中，i是0，迭代执行成功。执行i++，这条语句试图修改常量，因此抛出错误。</p>
-<p>在for-in 或者 for-of循坏中使用const的行为与使用let一致。不会报错。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var func = [];</span><br><span class="line">var object = &#123;</span><br><span class="line">    a: true,</span><br><span class="line">    b: true,</span><br><span class="line">    c: true</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (const key in object) &#123;</span><br><span class="line">    func.push(function() &#123;</span><br><span class="line">        console.log(key);</span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">func.forEach(function(func) &#123;</span><br><span class="line">    func();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>const 运用在for-in 和for-of循环中，每次迭代不会像前面的for一样修改已有绑定，而是创建一个新的绑定。</p>
+        <h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><p>模块</p>
+<p>组件</p>
+<p>元数据</p>
+<p>模板</p>
+<p>数据绑定</p>
+<p>服务</p>
+<p>指令</p>
+<p>依赖注入</p>
 
       
 
@@ -577,7 +681,7 @@ console.log(/^.$/u.test(text));
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ES6 循坏中的块级作用域绑定</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">angular组件和组件树</a>
         		</li>
       		
 		</ul>
@@ -589,7 +693,7 @@ console.log(/^.$/u.test(text));
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
+        			<a href="/categories/angular//" class="article-tag-list-link color3">angular</a>
         		</li>
       		
 		</ul>
@@ -598,7 +702,7 @@ console.log(/^.$/u.test(text));
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/10/ES6/块级作用域/循坏中的块级作用域绑定/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/17/Angular/基础知识/组件和组件树/">展开全文 >></a>
         </p>
       
 
@@ -628,63 +732,27 @@ console.log(/^.$/u.test(text));
 
 
   
-    <article id="post-ES6/块级作用域/块级声明" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Vue/源码/双向数据绑定" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/10/ES6/块级作用域/块级声明/">块级声明</a>
+      <a class="article-title" href="/2019/03/17/Vue/源码/双向数据绑定/">双向数据绑定</a>
     </h1>
   
 
         
-        <a href="/2019/03/10/ES6/块级作用域/块级声明/" class="archive-article-date">
-  	<time datetime="2019-03-10T14:47:24.922Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
+        <a href="/2019/03/17/Vue/源码/双向数据绑定/" class="archive-article-date">
+  	<time datetime="2019-03-17T00:33:43.023Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="块级声明"><a href="#块级声明" class="headerlink" title="块级声明"></a>块级声明</h1><p>块级声明：用于在指定块的作用域之外无法访问的变量。块级作用域（词法作用域）存在于 </p>
-<ul>
-<li>函数内部</li>
-<li>块中{这里之间区域}</li>
-</ul>
-<h2 id="let声明"><a href="#let声明" class="headerlink" title="let声明"></a>let声明</h2><ul>
-<li>let可以把变量限制在当前作用域中</li>
-<li><code>同一作用域</code>let禁止重复定义已经存在的标识符</li>
-</ul>
-<p>变量value被let关键字声明之后不再被提升至函数顶部，执行流离开if块，value立刻被销毁。如果condition值为false，就永远不会声明并初始化value。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function getValue(conditon) &#123;</span><br><span class="line"></span><br><span class="line">    if (conditon) &#123;</span><br><span class="line">      </span><br><span class="line">        let value = &quot;blue&quot;;</span><br><span class="line">        return value;</span><br><span class="line">        </span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // return null</span><br><span class="line">        console.log(value);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getValue(&apos;&apos;)</span><br></pre></td></tr></table></figure>
-<p>ReferenceError: value is not defined</p>
-<h2 id="const声明"><a href="#const声明" class="headerlink" title="const声明"></a>const声明</h2><ul>
-<li>const声明的是常量，其值一旦被设定后不可更改。通过const声明的常量必须进行初始化。</li>
-<li>在同一作用域用const声明已经存在的变量也会导致语法错误</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const maxItems = 30;</span><br><span class="line">const maxItems = 10;</span><br><span class="line">const name;</span><br></pre></td></tr></table></figure>
-<p>const name报错：SyntaxError: Missing initializer in const declaration</p>
-<p>const maxItems = 10报错： SyntaxError: Identifier ‘maxItems’ has already been declared</p>
-<h3 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h3><pre><code>const 和 let 都是块级标识符，所以常量也是在当前代码块内有效，一旦执行到块外会立即被销毁。常量同样不会提升至作用域顶部。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (condition) &#123;</span><br><span class="line">    const maxItems = 5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//此处无法访问maxItems</span><br><span class="line">//ReferenceError: maxItems is not defined</span><br></pre></td></tr></table></figure>
-<h3 id="const声明对象"><a href="#const声明对象" class="headerlink" title="const声明对象"></a>const声明对象</h3><p>const声明对象不允许修改绑定，但允许修改该对象的属性值。</p>
-<ul>
-<li>修改绑定是变量指向的地址变了</li>
-<li>修改值是变量指向的地址没变，但是地址上的值变了</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const person = &#123;</span><br><span class="line">    name :&quot;Nicholas&quot;</span><br><span class="line">&#125;</span><br><span class="line">person = &#123;</span><br><span class="line">    name : &quot;Greg&quot;</span><br><span class="line">&#125;</span><br><span class="line">person.name = &quot;Greg&quot;</span><br><span class="line"></span><br><span class="line">//类型错误：分配给常量变量。 TypeError: Assignment to constant variable.</span><br></pre></td></tr></table></figure>
-<p>person.name修改的是person包含的值</p>
-<p>如果直接给person赋值，即要改变person的绑定，就会报错</p>
-<h2 id="临时死区-TDZ"><a href="#临时死区-TDZ" class="headerlink" title="临时死区(TDZ)"></a>临时死区(TDZ)</h2><p>ES6 明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。</p>
-<p>在代码块内，使用 let 和 const 命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (condition) &#123;</span><br><span class="line">    console.log(typeof value);</span><br><span class="line">    let value = &quot;bule&quot;;</span><br><span class="line">&#125;</span><br><span class="line">// ReferenceError: value is not defined</span><br></pre></td></tr></table></figure>
-<p> console.log(typeof value)会抛出语法错误，用let定义并初始化变量value语句不会执行。此时value还位于JavaScript社区所谓的临时死区中。</p>
-<p> TDZ用来描述let和const变量不提升效果。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> console.log(typeof value);//undefined</span><br><span class="line"></span><br><span class="line">if (condition) &#123;</span><br><span class="line">    let value = &quot;bule&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>typeof是在声明变量value的代码块之外执行的，此时value并不在TDZ中，这也就意味着不存在value这个绑定，typeof操作最终返回undefined</p>
-
+        
       
 
       
@@ -697,7 +765,7 @@ console.log(/^.$/u.test(text));
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6 块级声明</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue源码</a>
         		</li>
       		
 		</ul>
@@ -709,7 +777,7 @@ console.log(/^.$/u.test(text));
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -718,7 +786,7 @@ console.log(/^.$/u.test(text));
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/10/ES6/块级作用域/块级声明/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/17/Vue/源码/双向数据绑定/">展开全文 >></a>
         </p>
       
 
@@ -748,135 +816,27 @@ console.log(/^.$/u.test(text));
 
 
   
-    <article id="post-ES6/块级作用域/Hosting" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        function getValue(conditon) {
-
-    if (conditon) {
-        // var value = "blue"
-        let value = "blue";
-        return value;
-
-    } else {
-        // return null
-        console.log(value);
-        
-    }
-}
-
-condition = true
-if (condition) {
-    const maxItems = 5;
-    // const maxItems = 10;
-}
-
-const person = {
-    name :"Nicholas"
-}
-// person = {
-//     name : "Greg"
-// }
-person.name = "Greg"
-
-//类型错误：分配给常量变量。 TypeError: Assignment to constant variable.
-
-
-// var func = [];
-// for (const i = 0;i < 10; i++) {
-//     func.push(function() {
-//         console.log(i);
-//     })
-// }
-var func = [];
-var object = {
-    a: true,
-    b: true,
-    c: true
-}
-
-for (const key in object) {
-    func.push(function() {
-        console.log(key);
-        
-    })
-}
-func.forEach(function(func) {
-    func();
-})
-
-var RegExp = "hello";
-console.log(window.RegExp);
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/10/ES6/块级作用域/Hosting/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6/块级作用域/var声明以及变量提升机制" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-ES6/箭头函数/箭头函数" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/10/ES6/块级作用域/var声明以及变量提升机制/">var变量提升</a>
+      <a class="article-title" href="/2019/03/16/ES6/箭头函数/箭头函数/">箭头函数</a>
     </h1>
   
 
         
-        <a href="/2019/03/10/ES6/块级作用域/var声明以及变量提升机制/" class="archive-article-date">
-  	<time datetime="2019-03-10T13:10:58.535Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
+        <a href="/2019/03/16/ES6/箭头函数/箭头函数/" class="archive-article-date">
+  	<time datetime="2019-03-16T05:45:14.446Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hosting机制：在函数作用域或者全局作用域中通过关键字var声明的变量，无论实际上是在哪里声明的，都会被当作在<code>当前作用域</code>顶部声明的变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function getValue(conditon) &#123;</span><br><span class="line"></span><br><span class="line">    if (conditon) &#123;</span><br><span class="line">        var value = &quot;blue&quot;</span><br><span class="line">        return value;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return null</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>变量提升后<br>JavaScript引擎会将getValue函数修改成这样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getValue(conditon) &#123;</span><br><span class="line"></span><br><span class="line">    var value;</span><br><span class="line">    if (conditon) &#123;</span><br><span class="line">        value = &quot;blue&quot;</span><br><span class="line">        return value;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return null</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>变量value被提升至函数顶部,而初始化操作依旧停留在原处，这意味着else也可以访问到value该变量，由于此时变量尚未初始化，所以其值为undefined</p>
-
+        
       
 
       
@@ -889,7 +849,7 @@ console.log(window.RegExp);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ES6 Hosting</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6 箭头函数</a>
         		</li>
       		
 		</ul>
@@ -910,7 +870,7 @@ console.log(window.RegExp);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/10/ES6/块级作用域/var声明以及变量提升机制/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/16/ES6/箭头函数/箭头函数/">展开全文 >></a>
         </p>
       
 
@@ -940,12 +900,35 @@ console.log(window.RegExp);
 
 
   
-    <article id="post-CSS/选择器优先级" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Vue/集成vue/高仿别人的APP" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/16/Vue/集成vue/高仿别人的APP/">高仿别人的app</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/16/Vue/集成vue/高仿别人的APP/" class="archive-article-date">
+  	<time datetime="2019-03-16T03:17:13.248Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ol>
+<li><p>Chrome调试查看DOM结构</p>
+</li>
+<li><p>Header，Body里面查看js/css引用，搜索相应的js库</p>
+</li>
+<li><p>查看source，network中的js，使用饭编与断点进行调试。</p>
+</li>
+</ol>
+
       
 
       
@@ -957,7 +940,7 @@ console.log(window.RegExp);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/03/CSS/选择器优先级/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/16/Vue/集成vue/高仿别人的APP/">展开全文 >></a>
         </p>
       
 
@@ -987,22 +970,88 @@ console.log(window.RegExp);
 
 
   
-    <article id="post-JavaScript/基础知识/闭包/0303" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Vue/集成vue/集成Vue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/16/Vue/集成vue/集成Vue/">Vue集成</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/16/Vue/集成vue/集成Vue/" class="archive-article-date">
+  	<time datetime="2019-03-16T02:33:02.424Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        function Foo() {
-    var i = 0
-    return function() {
-        console.log(i++)
-    }
-}
-var f1 = Foo()
-var f2 = Foo()
-f1()
-f1()
-f2()
+        <ol>
+<li><p>单页面，多页面引入Vue.js</p>
+</li>
+<li><p>复杂单页面应用Vue.cli工具</p>
+</li>
+<li><p>开发工作流</p>
+</li>
+</ol>
+<ul>
+<li><p>需求调研</p>
+</li>
+<li><p>交互设计，逻辑设计，接口设计</p>
+</li>
+<li><p>代码实验，测试运行，线上部署</p>
+</li>
+</ul>
+<ol start="4">
+<li>git</li>
+</ol>
+<ul>
+<li><p>git clone 地址 (远程仓库下载代码到本地目录)</p>
+</li>
+<li><p>git status (查看在哪个分支和有无提交)</p>
+</li>
+<li><p>ls (查看)</p>
+</li>
+<li><p>git branch -a (查看本地分支远程分支)</p>
+</li>
+<li><p>git branch</p>
+</li>
+<li><p>touch 文件名 (创建文件)</p>
+</li>
+<li><p>git add . (将所有本地文件添加到待提交待处理的状态)</p>
+</li>
+<li><p>git commit -m “注释” (本次提交注释)</p>
+</li>
+<li><p>git remote -v (查看推送到哪里去)</p>
+</li>
+<li><p>git push origin master (提交到远程主干分支)</p>
+</li>
+<li><p>git checkout -b 分支名 (创建分支)</p>
+</li>
+<li><p>git checkout 分支名 (切换分支)</p>
+</li>
+<li><p>git merge 分支名 (合并分支)</p>
+</li>
+<li><p>git branch -D 分支名 (删除本地分支)</p>
+</li>
+<li><p>git branch -a (查看本地远程分支)</p>
+</li>
+<li><p>git push origin :分支名 (删除远程分支)</p>
+</li>
+<li><p>git reset –haed head^ (回退)</p>
+</li>
+<li><p>git log(日志)</p>
+</li>
+<li><p>git relog</p>
+</li>
+<li><p>git reset –hard HEAD@{1}</p>
+</li>
+</ul>
+
       
 
       
@@ -1010,11 +1059,33 @@ f2()
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Vue集成</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/03/JavaScript/基础知识/闭包/0303/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/16/Vue/集成vue/集成Vue/">展开全文 >></a>
         </p>
       
 
@@ -1046,7 +1117,7 @@ f2()
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1141,23 +1212,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bootstrap carousel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap  collapse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap  dropdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">bootstrap  modal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HTTP状态码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1165,15 +1240,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1181,7 +1248,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">HTTP状态码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1189,31 +1272,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1221,15 +1284,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap tabs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">WEB标准</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTML iframe</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">浏览器页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">浏览器兼容性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">浏览器内核</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">angular组件和组件树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1237,15 +1332,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ES6 循坏中的块级作用域绑定</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1257,7 +1352,99 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6 箭头函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HTML5关系型数据库存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">HTML5缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML5本地存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ES6 循坏中的块级作用域绑定</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">css-loader</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue html-webpack-plugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue webpack-dev-server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue Webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue-vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-组件化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue源码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Vue集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue组件化和模块化区别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
               </li>
              
               <li class="article-tag-list-item">
