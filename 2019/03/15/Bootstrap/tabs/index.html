@@ -1,0 +1,1188 @@
+<!DOCTYPE HTML>
+<html lang="English">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="选项卡, 指尖上的盛夏">
+    <meta name="description" content="选项卡组件（也就是菜单组件），对应的是 Bootstrap的 nav-tabs）
+底部可以切换的选项卡面板，在 Bootstrap 中通常 tab-pane 来表示
+&amp;lt;!-- 选项卡组件（菜单项nav-tabs）--&amp;gt;
+&amp;lt;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>选项卡 | 指尖上的盛夏</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">指尖上的盛夏</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">指尖上的盛夏</div>
+        <div class="logo-desc">
+            
+            面朝大海 春暖花开
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        选项卡
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/bootstrap-tabs/" target="_blank">
+                                <span class="chip bg-color">bootstrap tabs</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/bootstrap/" class="post-category" target="_blank">
+                                bootstrap
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-03-15
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>选项卡组件（也就是菜单组件），对应的是 Bootstrap的 nav-tabs）</p>
+<p>底部可以切换的选项卡面板，在 Bootstrap 中通常 tab-pane 来表示</p>
+<pre><code>&lt;!-- 选项卡组件（菜单项nav-tabs）--&gt;
+&lt;ul id=&quot;myTab&quot; class=&quot;nav nav-tabs&quot; role=&quot;tablist&quot;&gt;
+    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#bulletin&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;公告&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#rule&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;规则&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#forum&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;论坛&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#security&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;安全&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#welfare&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;公益&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- 选项卡面板 --&gt;
+&lt;div id=&quot;myTabContent&quot; class=&quot;tab-content&quot;&gt;
+    &lt;div class=&quot;tab-pane active&quot; id=&quot;bulletin&quot;&gt;公告内容面板&lt;/div&gt;
+    &lt;div class=&quot;tab-pane&quot; id=&quot;rule&quot;&gt;规则内容面板&lt;/div&gt;
+    &lt;div class=&quot;tab-pane&quot; id=&quot;forum&quot;&gt;论坛内容面板&lt;/div&gt;
+    &lt;div class=&quot;tab-pane&quot; id=&quot;security&quot;&gt;安全内容面板&lt;/div&gt;
+    &lt;div class=&quot;tab-pane&quot; id=&quot;welfare&quot;&gt;公益内容面板&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre><p>关键一点，选项卡中链接的锚点要与对应的面板内容容器的ID相匹配。</p>
+<p>面板内容tab-pane都是隐藏的，只有当前面板内容才是显示的：</p>
+<pre><code>/*bootstrap.css文件第3758行～第3763行*/
+.tab-content &gt; .tab-pane {
+    display: none;
+}
+.tab-content &gt; .active {
+    display: block;
+}
+</code></pre><ol>
+<li><p>选项卡–触发切换效果</p>
+<p> 选项卡导航链接中要设置 data-toggle=”tab”</p>
+<p> 并且设置 data-target=”对应内容面板的选择符(一般是ID)”;</p>
+<p> 如果是链接的话，还可以通过 href=”对应内容面板的选择符(一般是ID)”</p>
+<p> 主要起的作用是用户点击的时候能找到该选择符所对应的面板内容 tab-pane。</p>
+<p> 面板内容统一放在 tab-content 容器中，而且每个内容面板 tab-pane 都需要设置一个独立的选择符（最好是ID）与选项卡中的 data-target 或 href 的值匹配。</p>
+</li>
+<li><p>选项卡–为选择卡添加fade样式</p>
+</li>
+</ol>
+<p>为了让面板的隐藏与显示在切换的过程效果更流畅，可以在面板中添加类名 fade，让其产生渐入的效果。</p>
+<p>在添加 fade 样式时，最初的默认显示的内容面板一定要记得加上 in 类名，不然其内容用户无法看到。如下面的示例所示。</p>
+<ol start="3">
+<li>选项卡–胶囊式选项卡（nav-pills）</li>
+</ol>
+<p>在Bootstrap除了可以让 nav-tabs 具有选项卡的切换功能之外，还可以对胶囊式 nav-pills 导航也具有选项卡的功能。我们只需要将 nav-tabs 换成 nav-pills，另外关键一点是将 data-toggle=”tab”换成data-toggle=”pill”。</p>
+<pre><code>&lt;!-- 选项卡组件（菜单项nav-pills）--&gt;
+&lt;ul id=&quot;myTab&quot; class=&quot;nav nav-pills&quot; role=&quot;tablist&quot;&gt;
+    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#bulletin&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;公告&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#rule&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;规则&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#forum&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;论坛&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#security&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;安全&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#welfare&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;公益&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- 选项卡面板 --&gt;
+&lt;div id=&quot;myTabContent&quot; class=&quot;tab-content&quot;&gt;
+    &lt;div class=&quot;tab-pane fade in active&quot; id=&quot;bulletin&quot;&gt;公告内容面板&lt;/div&gt;
+    &lt;div class=&quot;tab-pane fade&quot; id=&quot;rule&quot;&gt;规则内容面板&lt;/div&gt;
+    &lt;div class=&quot;tab-pane fade&quot; id=&quot;forum&quot;&gt;论坛内容面板&lt;/div&gt;
+    &lt;div class=&quot;tab-pane fade&quot; id=&quot;security&quot;&gt;安全内容面板&lt;/div&gt;
+    &lt;div class=&quot;tab-pane fade&quot; id=&quot;welfare&quot;&gt;公益内容面板&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><ol start="4">
+<li>选项卡–JavaScript触发方法</li>
+</ol>
+<p>调用方法:</p>
+<p>在每个链接的单击事件中调用tab(“show”)方法，显示对应的标签面板内容。针对上面的示例，删除HTML中自定义的 data-toggle=”tab” 或 data-toggle=”pill” 的属性，然后通过下面的脚本来调用：</p>
+<pre><code>$(function(){
+    $(&quot;#myTab a&quot;).click(function(e){
+        e.preventDefault();
+        $(this).tab(&quot;show&quot;);
+    });
+})
+</code></pre><ol start="5">
+<li>提示框(Tooltip)</li>
+</ol>
+<pre><code> &lt;h3&gt;按钮做的提示框&lt;/h3&gt;
+  &lt;button type=&quot;button&quot; 
+          class=&quot;btn btn-default&quot; 
+          data-toggle=&quot;tooltip&quot; 
+          data-placement=&quot;left&quot; 
+          data-original-title=&quot;提示框居左&quot; 
+          title=&quot;&quot;&gt;
+  提示框居左      
+  &lt;/button&gt;
+  &lt;button type=&quot;button&quot; 
+          class=&quot;btn btn-default&quot; 
+          data-toggle=&quot;tooltip&quot; 
+          data-placement=&quot;top&quot; 
+          data-original-title=&quot;提示框在顶部&quot;&gt;
+   提示框在顶部
+  &lt;/button&gt;
+  &lt;button type=&quot;button&quot; 
+          class=&quot;btn btn-default&quot; 
+          data-toggle=&quot;tooltip&quot; 
+          data-placement=&quot;bottom&quot; 
+          data-original-title=&quot;提示框在底部&quot;&gt;
+  提示框在底部             
+  &lt;/button&gt;
+  &lt;button type=&quot;button&quot; 
+          class=&quot;btn btn-default&quot; 
+          data-toggle=&quot;tooltip&quot; 
+          data-placement=&quot;right&quot; 
+          data-original-title=&quot;提示框居右&quot;&gt;
+  提示框居右      
+  &lt;/button&gt;
+  &lt;h3&gt;链接制作的提示框&lt;/h3&gt;
+  &lt;a class=&quot;btn btn-primary&quot; 
+     data-toggle=&quot;tooltip&quot; 
+     data-placement=&quot;left&quot; 
+     title=&quot;提示框居左&quot;&gt;
+     提示框居左
+  &lt;/a&gt;
+  &lt;a class=&quot;btn btn-primary&quot; 
+     data-toggle=&quot;tooltip&quot; 
+     data-placement=&quot;top&quot; 
+     title=&quot;提示框在顶部&quot;&gt;
+     提示框在顶部
+  &lt;/a&gt;
+  &lt;a class=&quot;btn btn-primary&quot; 
+     data-toggle=&quot;tooltip&quot; 
+     data-placement=&quot;bottom&quot; 
+     title=&quot;提示框在底部&quot;&gt;
+     提示框在底部
+  &lt;/a&gt;
+  &lt;a class=&quot;btn btn-primary&quot; 
+     data-toggle=&quot;tooltip&quot; 
+     data-placement=&quot;right&quot; 
+     title=&quot;提示框在居右&quot;&gt;
+     提示框居右
+  &lt;/a&gt;
+  &lt;a href=&quot;##&quot; 
+     class=&quot;btn btn-primary&quot; 
+     id=&quot;myTooltip&quot;&gt;
+     我是提示框
+  &lt;/a&gt;
+  &lt;a href=&quot;##&quot; 
+     class=&quot;btn btn-primary&quot; 
+     id=&quot;myTooltip2&quot;&gt;
+     我是提示框2
+  &lt;/a&gt;
+  &lt;script src=&quot;http://libs.baidu.com/jquery/1.9.0/jquery.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+  $(function(){
+    $(&#39;[data-toggle=&quot;tooltip&quot;]&#39;).tooltip();
+    $(&#39;#myTooltip&#39;).tooltip({
+      title:&quot;我是一个提示框，我在顶部出现&quot;,
+      placement:&#39;top&#39;
+    });
+  });
+  &lt;/script&gt;
+</code></pre><p>在Bootstrap框架中的提示框，结构非常简单，常常使用的是按钮<button>标签或者链接<a>标签来制作。不管是使用按钮还是链接来制作提示框，他们都有一个共性：</a></button></p>
+<pre><code>通过 title 属性的值来定义提示信息(也可以使用自定义属性 data-original-title 来设置提示信息)。
+
+通过 data-placement 自定义属性来控制提示信息框的位置，根据四种不同的位置，data-placement具有四个值：top、right、bottom和left，分别表示提示框出现的位置在顶部、右边、底部和左边。
+
+还有一个最重要的参数不可缺少，data-toggle=&quot;tooltip&quot;
+</code></pre><p>1、如果同时设置了 data-original-title 和 title 定义提示信息，那么 data-original-title 的优先级要高于 title。只有 data-original-title 值为空时，才会取 title 的值做为提示信息的内容。</p>
+<p>2、Bootstrap框架中的提示框的触发方式和前面介绍的插件略有不同。不能直接通过自定义的属性 data- 来触发。必须得依赖于JavaScript的代码触发。（所以右侧代码是没有动画效果的，不要着急，后面小节会有讲解。）</p>
+<ol start="6">
+<li>提示框–JS触发提示框方法</li>
+</ol>
+<p>bootstrap框架中的提示框的触发方式和前面介绍的插件略有不同。不能直接通过自定义的属性 data- 来触发。必须得依赖于JavaScript的代码触发。</p>
+<p>最简单的触发方式如下：</p>
+<pre><code>$(function(){
+    $(&#39;[data-toggle=&quot;tooltip&quot;]&#39;).tooltip();
+});
+</code></pre><p>除此之外，也可以单独指定一个元素，在该元素上调用提示框，并且可能通过JavaScript的各种参数来实现，无需定义一些 data 属性，如：</p>
+<pre><code>$(function(){
+    $(&#39;#myTooltip&#39;).tooltip({
+       title:&quot;我是一个提示框，我在顶部出现&quot;,
+       placement:&#39;top&#39;
+    });
+});
+</code></pre><ol start="7">
+<li>弹出框–弹出框的结构</li>
+</ol>
+<pre><code>&lt;button type=&quot;button&quot; 
+        class=&quot;btn btn-default&quot; 
+        data-container=&quot;body&quot; 
+        data-placement=&quot;bottom&quot; 
+        data-toggle=&quot;popover&quot; 
+        data-original-title=&quot;Bootstrap弹出框标题&quot; 
+        data-content=&quot;Bootstrap弹出框的内容&quot; &gt;
+        猛击我吧
+&lt;/button&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-default&quot; 
+        data-container=&quot;body&quot; 
+        data-placement=&quot;right&quot; 
+        data-toggle=&quot;popover&quot; 
+        title=&quot;Bootstrap弹出框标题&quot; 
+        data-content=&quot;Bootstrap弹出框的内容&quot;&gt;
+        猛击我吧
+&lt;/a&gt;
+
+&lt;script&gt;
+$(function(){
+  $(&#39;[data-toggle=&quot;popover&quot;]&#39;).popover();
+});
+</code></pre><p>弹出框的制作结构和提示框并无太多差别，但样式风格上还是有蛮大的区别。其主要定义了弹出框边框、圆角、背景、阴影以及三角形等样式：具体代码见右侧的bootstrap.css。</p>
+<p>Bootstrap框架中触发弹出框和提示框一样不能直接通过HTML的自定义data属性来触发。需要依赖于JavaScript脚本。<br>最简单的触发方式如下：</p>
+<p>html代码：</p>
+<pre><code>&lt;button type=&quot;button&quot; 
+        class=&quot;btn btn-default&quot; 
+        data-toggle=&quot;popover&quot; 
+        data-placement=&quot;left&quot; 
+        title=&quot;提示框居左&quot; 
+        data-content=&quot;我是弹出框的内容&quot;&gt;
+        猛击我吧
+&lt;/button&gt;
+</code></pre><p>js代码：</p>
+<pre><code>$(function(){
+    $(&#39;[data-toggle=&quot;popover&quot;]&#39;).popover();
+});
+</code></pre><p>使用JS设置参数：</p>
+<p>html代码：</p>
+<pre><code>&lt;button type=&quot;button&quot;
+          class=&quot;btn btn-default&quot;
+          id=&quot;myPopover&quot;&gt;
+          猛击我吧
+&lt;/button&gt;
+</code></pre><p>除此之外，也可以单独指定一个元素，在该元素上调用提示框，并且可能通过JavaScript的各种参数来实现，无需定义一些data属性，如：</p>
+<pre><code>$(function(){
+    $(&#39;#myPopover&#39;).popover({
+        title:&quot;我是弹出框的标题&quot;,
+        content:&quot;我是弹出框的内容&quot;,
+        placement:&quot;top&quot;
+    });
+});
+</code></pre><p>弹出框–自定义结构属性</p>
+<pre><code> &lt;button type=&quot;button&quot;
+          class=&quot;btn btn-default&quot;
+          data-toggle=&quot;popover&quot;
+          data-placement=&quot;bottom&quot;
+          title=&quot;提示框居左&quot;
+          data-content=&quot;我是弹出框的内容&quot;
+          data-trigger=&quot;hover&quot;
+          data-dalay=&quot;600&quot;&gt;
+          猛击我吧
+  &lt;/button&gt;
+</code></pre><p>提示框 tooltip 的默认触发事件是 hover 和 focus，而弹出框 popover 是 click</p>
+<p>提示框 tooltip 只有一个内容(title)，而弹出框不仅可以设置标题（title）还可以设置内容(content)</p>
+<ol start="8">
+<li>警告框–结构与样式</li>
+</ol>
+<pre><code>&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot; id=&quot;myAlert&quot;&gt;
+    &lt;h4&gt;谨防被骗&lt;/h4&gt;
+    &lt;p&gt;请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...&lt;/p&gt;
+    &lt;button type=&quot;button&quot;  class=&quot;btn btn-danger&quot; id=&quot;close&quot;&gt;关闭&lt;/button&gt;
+&lt;/div&gt;
+</code></pre><p>通过下面的JavaScript代码来触发：</p>
+<pre><code>$(function(){
+    $(&quot;#close&quot;).on(&quot;click&quot;,function(){
+        $(this).alert(&quot;close&quot;);
+    });
+});
+</code></pre><ol start="9">
+<li>按钮插件–模拟单选择按钮</li>
+</ol>
+<pre><code>&lt;div class=&quot;btn-group&quot;&gt;
+    &lt;label class=&quot;btn btn-primary&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;options1&quot;&gt;男
+    &lt;/label&gt;
+    &lt;label class=&quot;btn btn-primary&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;options2&quot;&gt;女
+    &lt;/label&gt;
+    &lt;label class=&quot;btn btn-primary&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;options3&quot;&gt;未知
+    &lt;/label&gt;
+&lt;/div&gt;
+</code></pre><p>注：使用这种效果的时候，无需借助JavaScript代码来触发，因为默认Bootstrap就已经为用户初始化好了。</p>
+<ol start="10">
+<li>按钮插件–模拟复选按钮</li>
+</ol>
+<pre><code>&lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot;&gt;
+    &lt;label class=&quot;btn btn-primary&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;options&quot; id=&quot;options1&quot;&gt;电影
+    &lt;/label&gt;
+    &lt;label class=&quot;btn btn-primary&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;options&quot; id=&quot;options2&quot;&gt;音乐
+    &lt;/label&gt;
+    &lt;label class=&quot;btn btn-primary&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;options&quot; id=&quot;options3&quot;&gt;游戏
+    &lt;/label&gt;
+    &lt;label class=&quot;btn btn-primary&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;options&quot; id=&quot;options4&quot;&gt;摄影
+    &lt;/label&gt;
+&lt;/div&gt;
+
+</code></pre><ol start="10">
+<li>按钮插件–JavaScript用法</li>
+</ol>
+<p>按钮插件还可以通过调用button函数，然后给button函数传入具体的参数，实现不同的效果。而其中有两个参数是固定不变的，即toggle和reset。其他的都可以随意定义：</p>
+<p>1、切换按钮状态（得到焦点）：</p>
+<pre><code>$(&quot;#mybutton&quot;).button(&quot;toggle&quot;)
+2、重新恢复按钮：
+</code></pre><pre><code>$(&quot;#mybutton&quot;).button(&quot;reset&quot;)
+如下代码：
+</code></pre><pre><code>$(function() {
+      $(&quot;#mybutton&quot;).click(function(){
+         $(this).button(&#39;loading&#39;).delay(1000).queue(function() {
+            $(this).button(&#39;reset&#39;);
+         });        
+      });
+});
+</code></pre><p>3、任意参数：</p>
+<p>$(“#mybutton”).button(“任意字符参数名”)<br>上面代码作用：替换 data-任意字符参数名-text 的属性值为“按钮上显示的文本值”。如下代码：</p>
+<p>html:</p>
+<pre><code>&lt;button type=&quot;button&quot; data-toggle=&quot;button&quot; class=&quot;btn btn-primary&quot; id=&quot;mybutton&quot; data-complete-text=&quot;Loading finished&quot; &gt;确认&lt;/button&gt;
+</code></pre><p>js代码：</p>
+<pre><code> $(function() {
+      $(&quot;#mybutton&quot;).click(function(){
+         $(this).button(&#39;loading&#39;).delay(1000).queue(function() {
+            $(this).button(&#39;complete&#39;);
+         });        
+      });
+ });
+</code></pre>
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Reprint please specify:
+                    </span>
+                    <a href="http://zhuowenzhi.github.io" class="b-link-green">指尖上的盛夏</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/03/15/bootstrap/tabs/" class="b-link-green">选项卡</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2019/03/15/bootstrap/collapse/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="手风琴">
+                        
+                        <span class="card-title">手风琴</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">手风琴最关键的部分，就是每个标题对应有一个内容，在Bootstrap框架中将这两个部分组合起来称为一个panel页板，如右边效果所示，他就有三个panel面板，将这三个面板组合在一起，就是一个面板组合 panel-group，也就是手风琴的</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/bootstrap/" class="post-category" target="_blank">
+                                    bootstrap
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/bootstrap-collapse/" target="_blank">
+                        <span class="chip bg-color">bootstrap  collapse</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/15/bootstrap/dropdown/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="下拉菜单">
+                        
+                        <span class="card-title">下拉菜单</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">&lt;h3&gt;示例1&lt;/h3&gt;
+&lt;div class=&quot;navbar navbar-default&quot; id=&quot;navmenu&quot;&gt;
+    &lt;a href=&quot</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/bootstrap/" class="post-category" target="_blank">
+                                    bootstrap
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/bootstrap-dropdown/" target="_blank">
+                        <span class="chip bg-color">bootstrap  dropdown</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:xxx@xx.xx" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=123123123" class="tooltipped" data-tooltip="QQ联系我: 123123123" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
