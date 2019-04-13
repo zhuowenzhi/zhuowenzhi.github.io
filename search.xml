@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2019/04/13/javascript/ji-chu-zhi-shi/this/this/"/>
+      <url>/2019/04/13/javascript/ji-chu-zhi-shi/this/this/</url>
+      
+        <content type="html"><![CDATA[function identify () {    return this.name.toUpperCase()}function speak () {    var greeting = "hello" + identify.call( this )    console.log( greeting )}var me = {    name: "zzz"}var you = {    name: "cgl"}identify.call( me )identify.call ( you )speak.call( me )speak.call( you )]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>json</title>
       <link href="/2019/04/13/json/json/"/>
       <url>/2019/04/13/json/json/</url>
@@ -1491,7 +1504,7 @@
       <link href="/2019/02/16/javascript/ji-chu-zhi-shi/this/javascript-this/"/>
       <url>/2019/02/16/javascript/ji-chu-zhi-shi/this/javascript-this/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><p>this 关键字是JavaScript中最复杂的关键字之一。它是一个很特别的关键字，被自动定义在所有函数中。</p>]]></content>
       
       
       <categories>

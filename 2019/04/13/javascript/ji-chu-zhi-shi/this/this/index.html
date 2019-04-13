@@ -4,9 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript this, 指尖上的盛夏">
-    <meta name="description" content="thisthis 关键字是JavaScript中最复杂的关键字之一。它是一个很特别的关键字，被自动定义在所有函数中。
-">
+    <meta name="keywords" content="指尖上的盛夏">
+    <meta name="description" content="function identify () {
+    return this.name.toUpperCase()
+}
+
+function speak () {
+    var greeting = &#34;hello&#34; + identify.c">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JavaScript this | 指尖上的盛夏</title>
+    <title>指尖上的盛夏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        JavaScript this
+                        
                     </div>
                 </div>
             </div>
@@ -373,25 +377,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/JavaScript-this/" target="_blank">
-                                <span class="chip bg-color">JavaScript-this</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
-                                JavaScript
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -399,7 +390,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-02-16
+                    2019-04-13
                 </div>
 
                 
@@ -415,8 +406,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><p>this 关键字是JavaScript中最复杂的关键字之一。它是一个很特别的关键字，被自动定义在所有函数中。</p>
+                function identify () {
+    return this.name.toUpperCase()
+}
 
+function speak () {
+    var greeting = "hello" + identify.call( this )
+    console.log( greeting )
+}
+
+var me = {
+    name: "zzz"
+}
+
+var you = {
+    name: "cgl"
+}
+
+identify.call( me )
+identify.call ( you )
+
+speak.call( me )
+speak.call( you )
             </div>
             <hr>
 
@@ -563,7 +574,7 @@
                     </span>
                     <a href="http://zhuowenzhi.github.io" class="b-link-green">指尖上的盛夏</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/16/javascript/ji-chu-zhi-shi/this/javascript-this/" class="b-link-green">JavaScript this</a>
+                    <a href="/2019/04/13/javascript/ji-chu-zhi-shi/this/this/" class="b-link-green"></a>
                 </p>
             </div>
         </div>
@@ -586,44 +597,38 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/02/16/javascript/she-ji-mo-shi/she-ji-mo-shi/">
+                <a href="/2019/04/13/javascript/ji-chu-zhi-shi/this/this/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript 设计模式">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">JavaScript 设计模式</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">构造器模式
-</div>
+                    <div class="summary block-with-text">function identify () {
+    return this.name.toUpperCase()
+}
+
+function speak () {
+    var greeting = "hello" + identify.c</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-13
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/设计模式/" class="post-category" target="_blank">
-                                    设计模式
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            指尖上的盛夏
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/设计模式/" target="_blank">
-                        <span class="chip bg-color">设计模式</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -634,33 +639,32 @@
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/16/javascript/ji-chu-zhi-shi/yuan-xing-lian/0305/">
+                <a href="/2019/04/13/json/json/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JavaScript原型继承">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="json">
                         
-                        <span class="card-title">JavaScript原型继承</span>
+                        <span class="card-title">json</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-var F = function(){};
-Object.prototype.a=function(){};
-Function.prototype.b=function(){};
-var f = new F();
-
-调用的时候能取到a不能</div>
+                    <div class="summary block-with-text">JSON(JavaScript对象字面量表示法)JSON 是一种数据交互格式
+JSON 独立于编程语言
+JSON基于JavaScript对象字面量表示法
+JSON表达数据的方式对通用的编程很友好
+正确的JSON语法名称 - 值对
+名称总是要</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
-                                    JavaScript
+                            <a href="/categories/JSON/" class="post-category" target="_blank">
+                                    JSON
                                 </a>
                             
                             
@@ -670,8 +674,8 @@ var f = new F();
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript原型继承/" target="_blank">
-                        <span class="chip bg-color">JavaScript原型继承</span>
+                    <a href="/tags/JSON/" target="_blank">
+                        <span class="chip bg-color">JSON</span>
                     </a>
                     
                 </div>
