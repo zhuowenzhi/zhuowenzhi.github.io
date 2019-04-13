@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2019/04/13/json/json/"/>
-      <url>/2019/04/13/json/json/</url>
-      
-        <content type="html"><![CDATA[{"loveEat":false}]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>json</title>
       <link href="/2019/04/13/json/json/"/>
       <url>/2019/04/13/json/json/</url>
@@ -43,10 +30,10 @@
     
     <entry>
       <title></title>
-      <link href="/2019/04/10/2019/04/1/"/>
-      <url>/2019/04/10/2019/04/1/</url>
+      <link href="/2019/04/10/2019/04/jing-dian-mian-shi-ti/"/>
+      <url>/2019/04/10/2019/04/jing-dian-mian-shi-ti/</url>
       
-        <content type="html"><![CDATA[/** * 这道题的经典之处在于它综合考察了面试者的JavaScript的综合能力 * 包含了变量定义提升、 * this指针指向、 * 运算符优先级、 * 原型、 * 继承、 * 全局变量污染、 * 对象属性及原型属性优先级等知识 *///  创建了Foo函数function Foo () {    // 为Foo函数创建了getName的静态属性存储了一个匿名函数    getName = function () {        console.log(1)    }    return this}// 为Foo的原型对象创建了一个叫getName的匿名函数Foo.getName = function () {    console.log(2)}Foo.prototype.getName = function () {    console.log(3)}// 通过函数变量表达式创建了一个getName函数var getName = function () {    console.log(4)}function getName () {    console.log(5)}// Foo.getName自然是访问Foo函数上存储的静态属性Foo.getName()            //2getName()                //4Foo().getName()          //1getName()                //1new Foo.getName()        //2new new Foo().getName()  //3// 第一问Foo.getName() function User (name) {    var name = name   //私有属性    this.name = name  //公有属性    function getName ()  {  //私有方法        return name    }}User.prototype.getName = function () {//公有方法    return this.name}User.name = 'zwz' //静态属性User.getName = function () { //静态方法    return this.name}var zz = new User('zwz')  //实例化// 调用公有属性，公有方法，我们必须先实例化对象，也据说new操作符实例化对象，就可构造实例化对象的方法和属性，并且公有方法是不能调用私有方法和静态方法的//静态方法和静态属性就是我们无需实例化就可以调用的// 而对象的私有方法和属性，外部是不可以访问的// 第二问getName() // 直接调用getName()，既然是直接调用那么就是访问当前上下文作用域内的叫getName() 的函数，和123没用关系// 函数声明function zwz (type) {    return type === 'zwz'}// 函数表达式var zwz = function (type) {    return type === 'zwz'}var getName  //undefinedgetName()    //TypeError:getName is not a functionvar getName = function () {    console.log(zwz)}var getName  //undefinedgetName()    function getName() {    console.log(zwz)}// 函数声明和函数表达式是存在区别的，函数声明在JS解析时进行函数提升，因此在同一个作用域内，不管函数声明定义在哪里，该函数都可以调用而函数表达式的值是在JS运行时确定的，并且在表达式完成赋值后，该函数才能调用。所所以4覆盖了5]]></content>
+        <content type="html"><![CDATA[<ul><li>这道题的经典之处在于它综合考察了面试者的JavaScript的综合能力<ul><li>包含了变量定义提升、</li><li>this指针指向、</li><li>运算符优先级、</li><li>原型、</li><li>继承、</li><li>全局变量污染、</li><li>对象属性及原型属性优先级等知识</li></ul></li></ul><pre><code>//  创建了Foo函数function Foo () {    // 为Foo函数创建了getName的静态属性存储了一个匿名函数    getName = function () {        console.log(1)    }    return this}// 为Foo的原型对象创建了一个叫getName的匿名函数Foo.getName = function () {    console.log(2)}Foo.prototype.getName = function () {    console.log(3)}// 通过函数变量表达式创建了一个getName函数var getName = function () {    console.log(4)}function getName () {    console.log(5)}// Foo.getName自然是访问Foo函数上存储的静态属性Foo.getName()            //2getName()                //4Foo().getName()          //1getName()                //1new Foo.getName()        //2new new Foo().getName()  //3</code></pre><h3 id="第一问Foo-getName"><a href="#第一问Foo-getName" class="headerlink" title="第一问Foo.getName()"></a>第一问Foo.getName()</h3><pre><code>function User (name) {    var name = name   //私有属性    this.name = name  //公有属性    function getName ()  {  //私有方法        return name    }}User.prototype.getName = function () {//公有方法    return this.name}User.name = &#39;zwz&#39; //静态属性User.getName = function () { //静态方法    return this.name}var zz = new User(&#39;zwz&#39;)  //实例化</code></pre><ul><li><p>调用公有属性，公有方法，我们必须先实例化对象，也据说new操作符实例化对象，就可构造实例化对象的方法和属性，并且公有方法是不能调用私有方法和静态方法的</p></li><li><p>静态方法和静态属性就是我们无需实例化就可以调用的<br>而对象的私有方法和属性，外部是不可以访问的</p></li></ul><h3 id="第二问getName"><a href="#第二问getName" class="headerlink" title="第二问getName()"></a>第二问getName()</h3><p>直接调用getName()，既然是直接调用那么就是访问当前上下文作用域内的叫getName() 的函数，和123没用关系</p><pre><code>// 函数声明function zwz (type) {    return type === &#39;zwz&#39;}// 函数表达式var zwz = function (type) {    return type === &#39;zwz&#39;}var getName  //undefinedgetName()    //TypeError:getName is not a functionvar getName = function () {    console.log(zwz)}var getName  //undefinedgetName()    function getName() {    console.log(zwz)}</code></pre><p> 函数声明和函数表达式是存在区别的，函数声明在JS解析时进行函数提升，因此在同一个作用域内，不管函数声明定义在哪里，该函数都可以调用而函数表达式的值是在JS运行时确定的，并且在表达式完成赋值后，该函数才能调用。所所以4覆盖了5</p>]]></content>
       
       
       
@@ -72,7 +59,7 @@
       <link href="/2019/04/06/java/ji-chu/ji-chu/"/>
       <url>/2019/04/06/java/ji-chu/ji-chu/</url>
       
-        <content type="html"><![CDATA[<h3 id="1-变量"><a href="#1-变量" class="headerlink" title="1. 变量"></a>1. 变量</h3><p>变量：本质上代表应该可操作的存储空间，空间位置我确定的，值是不确定的</p><p>double，long 8字节</p><p>int  4字节</p><p>变量作为程序中最基本的存储单元，要素包括变量名，变量类型和作用域。变量在使用钱必须对其声明，只有在变量声明以后才能为其分配相应长度存储空间。</p><h3 id="2-自动类型转换-amp-强制转换"><a href="#2-自动类型转换-amp-强制转换" class="headerlink" title="2. 自动类型转换 &amp; 强制转换"></a>2. 自动类型转换 &amp; 强制转换</h3><p> 自动类型转换指容量小的数据类型转为容量大的自动类型</p><h3 id="3-溢出"><a href="#3-溢出" class="headerlink" title="3. 溢出"></a>3. 溢出</h3>]]></content>
+        <content type="html"><![CDATA[<h3 id="1-变量"><a href="#1-变量" class="headerlink" title="1. 变量"></a>1. 变量</h3><p>变量：本质上代表应该可操作的存储空间，空间位置我确定的，值是不确定的</p><p>double，long 8字节</p><p>int  4字节</p><p>变量作为程序中最基本的存储单元，要素包括变量名，变量类型和作用域。变量在使用钱必须对其声明，只有在变量声明以后才能为其分配相应长度存储空间。</p><h3 id="2-自动类型转换-amp-强制转换"><a href="#2-自动类型转换-amp-强制转换" class="headerlink" title="2. 自动类型转换 &amp; 强制转换"></a>2. 自动类型转换 &amp; 强制转换</h3><p> 自动类型转换指容量小的数据类型转为容量大的自动类型</p>]]></content>
       
       
       <categories>
@@ -193,19 +180,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/2019/04/04/css/1/"/>
-      <url>/2019/04/04/css/1/</url>
-      
-        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>Document</title>    <style>        body{            width: 100%;        }        .san {            /* width: 0;            height: 0;            border-top: 40px solid transparent;            border-left: 40px solid transparent;            border-right: 40px solid transparent;            border-bottom: 40px solid #ff0000; */            height:32px;            background-color:#f1ee18;/*所有识别*/            .background-color: #00deff\9; /*IE6、7、8识别*/            +background-color: #a200ff;/*IE6、7识别*/            _background-color: #1e0bd1;/*IE6识别*/        },       div {           height: 400px;           border: 1px solid #ccc;       }       .top {            width:100%;           margin: 0 auto;       }       .left, .right{            width: 49%;            float: left;       }       h1 {        -webkit-text-size-adjust:none;        font-size: 20px;       }    </style><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>      <div class="san">    </div>    <div class="top"></div>    <div class="left"></div>    <div class="right"></div>    <h1>wwwwwwwww</h1></body></html>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>表单</title>
       <link href="/2019/04/04/html5/biao-dan/biao-dan/"/>
       <url>/2019/04/04/html5/biao-dan/biao-dan/</url>
@@ -231,51 +205,25 @@
     
     
     <entry>
-      <title>字符串</title>
-      <link href="/2019/04/03/shu-ju-jie-gou/zi-fu-chuan/zi-fu-chuan/"/>
-      <url>/2019/04/03/shu-ju-jie-gou/zi-fu-chuan/zi-fu-chuan/</url>
+      <title>Vue组件</title>
+      <link href="/2019/03/18/vue/kai-fa-guo-cheng-yu-dao-de-wen-ti/zu-jian/"/>
+      <url>/2019/03/18/vue/kai-fa-guo-cheng-yu-dao-de-wen-ti/zu-jian/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="父组件使用子组件"><a href="#父组件使用子组件" class="headerlink" title="父组件使用子组件"></a>父组件使用子组件</h1><p>需要在父组件中引入子组件声明子组件的名字</p><pre><code> components: {     子组件名字},</code></pre><p>使用路由路径要配对</p><p>在父组件传值过程中，遇到传过去的值为<code>undefined</code>，原因是在父组件中的data未定，导致子组件的数据也是undefined</p>]]></content>
       
       
       <categories>
           
-          <category> 数据结构 </category>
+          <category> vue </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 字符串String </tag>
+            <tag> Vue组件 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2019/03/24/android/zhen-ji-diao-shi-ge-chong-keng/"/>
-      <url>/2019/03/24/android/zhen-ji-diao-shi-ge-chong-keng/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2019/03/18/vue/kai-fa-guo-cheng-yu-dao-de-wen-ti/zu-jian/"/>
-      <url>/2019/03/18/vue/kai-fa-guo-cheng-yu-dao-de-wen-ti/zu-jian/</url>
-      
-        <content type="html"><![CDATA[<p>父组件使用子组件</p><p>需要在父组件中声明子组件的名字</p><pre><code> components: {     子组件名字},</code></pre><p>使用路由路径要配对</p>]]></content>
-      
-      
       
     </entry>
     
@@ -446,11 +394,11 @@
     
     
     <entry>
-      <title>双向数据绑定</title>
+      <title>Vue双向数据绑定</title>
       <link href="/2019/03/17/vue/yuan-ma/shuang-xiang-shu-ju-bang-ding/"/>
       <url>/2019/03/17/vue/yuan-ma/shuang-xiang-shu-ju-bang-ding/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="Vue双向数据绑定原理"><a href="#Vue双向数据绑定原理" class="headerlink" title="Vue双向数据绑定原理"></a>Vue双向数据绑定原理</h1><p>Vue最核心的动能有两个，一是数据绑定系统，二是组件系统。</p><h3 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h3><h3 id="双向数据绑定的实现"><a href="#双向数据绑定的实现" class="headerlink" title="双向数据绑定的实现"></a>双向数据绑定的实现</h3>]]></content>
       
       
       <categories>
@@ -475,7 +423,7 @@
       <link href="/2019/03/16/es6/jian-tou-han-shu/jian-tou-han-shu/"/>
       <url>/2019/03/16/es6/jian-tou-han-shu/jian-tou-han-shu/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>() =&gt; {}</p>]]></content>
       
       
       <categories>
@@ -500,7 +448,7 @@
       <link href="/2019/03/16/vue/ji-cheng-vue/gao-fang-bie-ren-de-app/"/>
       <url>/2019/03/16/vue/ji-cheng-vue/gao-fang-bie-ren-de-app/</url>
       
-        <content type="html"><![CDATA[<ol><li><p>Chrome调试查看DOM结构</p></li><li><p>Header，Body里面查看js/css引用，搜索相应的js库</p></li><li><p>查看source，network中的js，使用饭编与断点进行调试。</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>Chrome调试查看DOM结构</p></li><li><p>Header，Body里面查看js/css引用，搜索相应的js库</p></li><li><p>查看source，network中的js，使用断点进行调试。</p></li></ol>]]></content>
       
       
       
@@ -834,31 +782,6 @@
     
     
     <entry>
-      <title>url-loader</title>
-      <link href="/2019/03/14/vue/webpack/url-loader/"/>
-      <url>/2019/03/14/vue/webpack/url-loader/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> Webpack </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Webpack </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>css-loader</title>
       <link href="/2019/03/14/vue/webpack/css-loader/"/>
       <url>/2019/03/14/vue/webpack/css-loader/</url>
@@ -1138,7 +1061,7 @@
       <link href="/2019/03/11/es6/zi-fu-chuan-he-zheng-ze-biao-da-shi/string/"/>
       <url>/2019/03/11/es6/zi-fu-chuan-he-zheng-ze-biao-da-shi/string/</url>
       
-        <content type="html"><![CDATA[// ```console.log("\u0061");console.log("\uD842\uDFB7");console.log("\u{20BB7}");//𠮷var str = "𠮷a"console.log(str.charCodeAt(0));console.log(str.charCodeAt(1));console.log(str.codePointAt(0));console.log(str.codePointAt(1));console.log(str.codePointAt(2));// ₻7function is32Bit(c) {    return c.codePointAt(0) > 0xFFFF;}console.log(is32Bit('𠮷'));console.log(is32Bit('a'));console.log('\u01D1'.normalize('NFC') === '\u004F\u030c'.normalize('NFC'));console.log('\u01D1'.normalize('NFD') === '\u004F\u030c'.normalize('NFD'));console.log('\u01D1'.normalize('NFKC') === '\u004F\u030c'.normalize('NFKC'));console.log('\u01D1'.normalize('NFKD') === '\u004F\u030c'.normalize('NFKD'));let text = '𠮷'console.log(text.length);console.log(/^.$/.test(text));console.log(/^.$/u.test(text));console.log("+++++++++++++++++++++++++");function codePointLength(text) {    let result = text.match(/[\s\S]/gu)    return result ? result.length : 0}console.log(codePointLength("abc"));console.log(codePointLength("𠮷bc"));// ```]]></content>
+        <content type="html"><![CDATA[<pre><code>console.log(&quot;\u0061&quot;);console.log(&quot;\uD842\uDFB7&quot;);console.log(&quot;\u{20BB7}&quot;);//𠮷var str = &quot;𠮷a&quot;console.log(str.charCodeAt(0));console.log(str.charCodeAt(1));console.log(str.codePointAt(0));console.log(str.codePointAt(1));console.log(str.codePointAt(2));// ₻7function is32Bit(c) {    return c.codePointAt(0) &gt; 0xFFFF;}console.log(is32Bit(&#39;𠮷&#39;));console.log(is32Bit(&#39;a&#39;));console.log(&#39;\u01D1&#39;.normalize(&#39;NFC&#39;) === &#39;\u004F\u030c&#39;.normalize(&#39;NFC&#39;));console.log(&#39;\u01D1&#39;.normalize(&#39;NFD&#39;) === &#39;\u004F\u030c&#39;.normalize(&#39;NFD&#39;));console.log(&#39;\u01D1&#39;.normalize(&#39;NFKC&#39;) === &#39;\u004F\u030c&#39;.normalize(&#39;NFKC&#39;));console.log(&#39;\u01D1&#39;.normalize(&#39;NFKD&#39;) === &#39;\u004F\u030c&#39;.normalize(&#39;NFKD&#39;));let text = &#39;𠮷&#39;console.log(text.length);console.log(/^.$/.test(text));console.log(/^.$/u.test(text));console.log(&quot;+++++++++++++++++++++++++&quot;);function codePointLength(text) {    let result = text.match(/[\s\S]/gu)    return result ? result.length : 0}console.log(codePointLength(&quot;abc&quot;));console.log(codePointLength(&quot;𠮷bc&quot;));</code></pre>]]></content>
       
       
       
@@ -1216,19 +1139,6 @@
             <tag> ES6 块级声明 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2019/03/10/es6/kuai-ji-zuo-yong-yu/hosting/"/>
-      <url>/2019/03/10/es6/kuai-ji-zuo-yong-yu/hosting/</url>
-      
-        <content type="html"><![CDATA[function getValue(conditon) {    if (conditon) {        // var value = "blue"        let value = "blue";        return value;    } else {        // return null        console.log(value);            }}condition = trueif (condition) {    const maxItems = 5;    // const maxItems = 10;}const person = {    name :"Nicholas"}// person = {//     name : "Greg"// }person.name = "Greg"//类型错误：分配给常量变量。 TypeError: Assignment to constant variable.// var func = [];// for (const i = 0;i < 10; i++) {//     func.push(function() {//         console.log(i);//     })// }var func = [];var object = {    a: true,    b: true,    c: true}for (const key in object) {    func.push(function() {        console.log(key);            })}func.forEach(function(func) {    func();})var RegExp = "hello";console.log(window.RegExp);]]></content>
-      
-      
       
     </entry>
     
@@ -1439,49 +1349,10 @@
     
     <entry>
       <title></title>
-      <link href="/2019/02/17/2019/02/16/chui-zhi-shui-ping-ju-zhong/"/>
-      <url>/2019/02/17/2019/02/16/chui-zhi-shui-ping-ju-zhong/</url>
-      
-        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>Document</title>    <style>        .out {            width: 200px;            height: 200px;            border: 10px #ccc solid;            padding: 10px;            background-color: black;            margin: 10px;                   }        .inner {            width: 20px;            height: 20px;            border: 10px #ccc solid;            padding: 10px;            background-color:#fff;            margin: 10px;            /* position: absolute;            top: 50%;            left: 50%;            transform: translate(-50%, -50%) */            /* position: absolute;            top: 0;            left: 0;            right: 0;            bottom: 0;            margin: auto; */            /* display: flex;            justify-content: center;            align-content: center; */            /* display: table-cell;            text-align: center;            vertical-align: middle; */                    }    </style><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>    <div class="out">        <div class="inner"></div>    </div></body></html>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2019/02/17/2019/02/16/boxmodel/"/>
-      <url>/2019/02/17/2019/02/16/boxmodel/</url>
-      
-        <content type="html"><![CDATA[<!-- ``` --><!-- <!DOCTYPE html> --><html lang="en"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>Document</title>    <style>        div{            width: 200px;            height: 200px;            border: 10px #ccc solid;            padding: 10px;            background-color: black;            margin: 10px;            box-sizing: content-box;        }        /* span {            background-color: blanchedalmond;            width: 20px;            height: 20px;            border: 1px #ccc solid;            padding: 10px 20px;            margin: 10px 20px;        } */    </style><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>    <div id="div">        <!-- <span id="span">cccccccccc </span> -->    </div></body><script>var div = document.getElementById('div').offsetHeight || clientHeightconsole.log("高度为" + div);</script></html><!-- ``` -->]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2019/02/17/2019/02/16/position/"/>
-      <url>/2019/02/17/2019/02/16/position/</url>
-      
-        <content type="html"><![CDATA[```<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>Document</title>    <style>        .div1,.div2,.div3 {            width: 200px;            height: 200px;            border: 1px #ccc solid;        }        .div1 {            background-color: red;        }        .div2 {            background-color: green;        }        .div3 {            background-color: yellow;        }        .div-container1 .div2{            position: static;        }        .div-container2 .div2{            position:fixed;            left:500px;            top:5px;        }        .div-container3 .div2{            position: sticky;            top: 200px;            left: 250px;        }        .div-container4 {            position: fixed;            top: 3px;            left: 300px;        }        .div-container4 .div2{            position: inherit;        }        .div-container5 .div2{            position: initial;        }        .div-container6 .div2{            position: relative;        }        .div-container7 .div2{            position: absolute;        }        .div-container7 .div2{            position: static;        }        .div-container8 .div2{            position: static;        }        .div-container9 .div2{            position: static;        }    </style><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>    <h5>static   `static`默认值。没有定位，元素出现在正常的流中。</h5>    <div class="div-container div-container1">        <div class="div1">static3</div>        <div class="div2">static</div>        <div class="div3">static3</div>    </div>          <h5>fixed   `fixed`生成固定定位的元素，相对于浏览器窗口进行定位。</h5>    <div class="div-container div-container2">        <div class="div1">static3</div>        <div class="div2">fixed</div>        <div class="div3">static3</div>    </div>    <h5>sticky   `sticky`粘性定位，该定位基于用户滚动的位置。</h5>    <div class="div-container div-container3">        <div class="div1">static3</div>        <div class="div2">sticky</div>        <div class="div3">static3</div>    </div>    <h5>inherit    `inherit`规定应该从父元素继承 position 属性的值。</h5>    <div class="div-container div-container4">        <div class="div1">static3</div>        <div class="div2">inherit</div>        <div class="div3">static3</div>    </div>    <h5>initial    `initial`设置该属性为默认值</h5>    <div class="div-container div-container5">        <div class="div1">static3</div>        <div class="div2">initial</div>        <div class="div3">static3</div>    </div>    <h5>Relative      `relative`生成相对定位的元素，相对于其正常位置进行定位。</h5>    <div class="div-container div-container6">        <div class="div1">static1</div>        <div class="div2">relative1</div>        <div class="div3">static1</div>    </div>    <h5>Absolute     `absolute`生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。</h5>    <div class="div-container div-container7">        <div class="div1">static2</div>        <div class="div2">absolute2</div>        <div class="div3">static2</div>    </div>    <h5>Relative contains Absolute</h5>    <div class="div-container div-container8">        <div class="div1">static3</div>        <div class="div2">absolute3</div>        <div class="div3">static3</div>    </div>    <h5>Absolute contains Absolute</h5>    <div class="div-container div-container9">        <div class="div1">static3</div>        <div class="div2">absolute3</div>        <div class="div3">static3</div>    </div>  </body></html><!-- 块级元素和行内元素区别        * 行内元素与块级元素直观上的区别            行内元素会在一条直线上排列，都是同一行的，水平方向排列            块级元素各占据一行，垂直方向排列。块级元素从新行开始结束接着一个断行。        * 块级元素可以包含行内元素和块级元素。行内元素不能包含块级元素。        * 行内元素与块级元素属性的不同，主要是盒模型属性上            行内元素设置width无效，height无效(可以设置line-height)，margin上下无效，padding上下无效（是有效的，只是不像块级元素会影响其他行） -->```]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
       <link href="/2019/02/17/2019/02/16/clone/"/>
       <url>/2019/02/17/2019/02/16/clone/</url>
       
-        <content type="html"><![CDATA[```/** * 浅克隆对象只会被克隆最外部的一层, * 至于更深层的对象,则依然是通过引用指向同一块堆内存. * @param {*} o  */function shallow(o) {    const obj = {}    for (const i in o) {        obj[i] = o[i]                }    return obj}// 被克隆对象const oldObj = {    a: 1,    b: ['aaa', 'bbbb'],    old: {        zwz: {            name:111        }    }}const newObj = shallow(oldObj)console.log(newObj.old.zwz, oldObj.old.zwz)console.log(newObj.old.zwz === oldObj.old.zwz)// { name: 111 } { name: 111 }// truenewObj.old.zwz.name = '卓文智'console.log(newObj.old.zwz, oldObj.old.zwz)// { name: '卓文智' } { name: '卓文智' }// 深度克隆// 1.JOSN.parse()// JSON对象parse方法可以将JSON字符串反序列化成JS对象，// stringify方法可以将JS对象序列化成JSON字符串,// 这两个方法结合起来就能产生一个便捷的深克隆const newObjDeep1 = JSON.parse(JSON.stringify(oldObj))console.log(newObjDeep1.old.zwz, oldObj.old.zwz)console.log(newObjDeep1.old.zwz === oldObj.old.zwz)// { name: 111 } { name: 111 }// falsenewObjDeep1.old.zwz.name = '卓文智zzz'console.log(newObjDeep1.old.zwz, oldObj.old.zwz)// { name: '卓文智zzz' } { name: '卓文智' }// JOSN.parse()坑// 1.他无法实现对函数 、RegExp等特殊对象的克隆;// 2.会抛弃对象的constructor,所有的构造函数会指向Object;// 3.对象有循环引用,会报错;// 构造函数function person(name) {    this.name = name}const cgl = new person('cgl')// 函数function say() {    console.log('haaa')}const oldObj2 = {    a: say,    b: new Array(1),    c: new RegExp('ab+c', 'i'),    d: cgl}console.log('*************JSON.parse***********')const newObj2 = JSON.parse(JSON.stringify(oldObj2))console.log(newObj2.a, oldObj2.a);//无法复制函数// undefined [Function: say]console.log(newObj2.b[0], oldObj2.b[0]);//稀疏数组 复制错误// null undefinedconsole.log(newObj2.c, oldObj2.c);//无法复制正在对象// {} /ab+c/iconsole.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向错误// [Function: Object] [Function: person]/** * 2.深度克隆函数 * 由于要面对不同的对象(正则、数组、Date等)要采用不同的处理方式， * 我们需要实现一个对象类型判断函数 */ const isType = (obj, type) => {     if (typeof obj !== 'object') return false    //  判断数据类型    const typeString = Object.prototype.toString.call(obj)    let flag    switch (type) {        case 'Array':            flag = typeString === '[object Array]'            break;        case 'Date':            flag = typeString === '[object Date]'            break;        case 'RegExp':            flag = typeString === '[object RegExp]'            break;        default:            flag = false    }    return flag }//  我们需要通过正则的扩展了解到flags属性等等,// 因此我们需要实现一个提取flags的函数const getRegExp = re => {    var flags = ''    if (re.global) flags += 'g'    if (re.ignoreCase) flags += 'i'    if (re.multiline) flags += 'm'    return flags}/** * deep clone * @param {*} parent  */const clone = parent => {    // 维护两个存储循坏的数组    const parents = []    const children = []    const _clone = parent => {        if (parent === null ) return null        if (typeof parent !== 'object') return parent        let child,proto        if (isType(parent, 'Array')) {            // 对数组做特殊处理            child = []        } else if (isType(parent, 'RegExp')) {             // 对正则对象做特殊处理             child = new RegExp(parent.source, getRegExp(parent))             if (parent.lastIndex) child.lastIndex = parent.lastIndex        } else if (isType(parent, 'RegExp')) {             // 对Date对象做特殊处理             child = new Date(parent.getTime)        } else {            // 处理对象原型            proto = Object.getPrototypeOf(parent)            // 利用Object.create切断原型链            child = Object.create(proto)        }        // 处理循环引用        const index = parents.indexOf(parent)        if (index != -1) {            // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象            return children[index]        }        parents.push(parent)        children.push(child)        for (let i in parent) {            // 递归            child[i] = _clone(parent[i])        }        return child    }    return _clone(parent)}console.log('*************clone***********')const newClone = oldObj2console.log(newClone.a, oldObj2.a);// [Function: say] [Function: say]console.log(newClone.b[0], oldObj2.b[0]);// undefined undefinedconsole.log(newClone.c, oldObj2.c);// /ab+c/i /ab+c/iconsole.log(newClone.d.constructor, oldObj2.d.constructor);// [Function: person] [Function: person]// 参考链接：https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&utm_content=note&utm_medium=reader_share&utm_source=weixin```]]></content>
+        <content type="html"><![CDATA[<pre><code>/** * 浅克隆对象只会被克隆最外部的一层, * 至于更深层的对象,则依然是通过引用指向同一块堆内存. * @param {*} o  */function shallow(o) {    const obj = {}    for (const i in o) {        obj[i] = o[i]    }    return obj}// 被克隆对象const oldObj = {    a: 1,    b: [&#39;aaa&#39;, &#39;bbbb&#39;],    old: {        zwz: {            name:111        }    }}const newObj = shallow(oldObj)console.log(newObj.old.zwz, oldObj.old.zwz)console.log(newObj.old.zwz === oldObj.old.zwz)// { name: 111 } { name: 111 }// truenewObj.old.zwz.name = &#39;卓文智&#39;console.log(newObj.old.zwz, oldObj.old.zwz)// { name: &#39;卓文智&#39; } { name: &#39;卓文智&#39; }// 深度克隆// 1.JOSN.parse()// JSON对象parse方法可以将JSON字符串反序列化成JS对象，// stringify方法可以将JS对象序列化成JSON字符串,// 这两个方法结合起来就能产生一个便捷的深克隆const newObjDeep1 = JSON.parse(JSON.stringify(oldObj))console.log(newObjDeep1.old.zwz, oldObj.old.zwz)console.log(newObjDeep1.old.zwz === oldObj.old.zwz)// { name: 111 } { name: 111 }// falsenewObjDeep1.old.zwz.name = &#39;卓文智zzz&#39;console.log(newObjDeep1.old.zwz, oldObj.old.zwz)// { name: &#39;卓文智zzz&#39; } { name: &#39;卓文智&#39; }// JOSN.parse()坑// 1.他无法实现对函数 、RegExp等特殊对象的克隆;// 2.会抛弃对象的constructor,所有的构造函数会指向Object;// 3.对象有循环引用,会报错;// 构造函数function person(name) {    this.name = name}const cgl = new person(&#39;cgl&#39;)// 函数function say() {    console.log(&#39;haaa&#39;)}const oldObj2 = {    a: say,    b: new Array(1),    c: new RegExp(&#39;ab+c&#39;, &#39;i&#39;),    d: cgl}console.log(&#39;*************JSON.parse***********&#39;)const newObj2 = JSON.parse(JSON.stringify(oldObj2))console.log(newObj2.a, oldObj2.a);//无法复制函数// undefined [Function: say]console.log(newObj2.b[0], oldObj2.b[0]);//稀疏数组 复制错误// null undefinedconsole.log(newObj2.c, oldObj2.c);//无法复制正在对象// {} /ab+c/iconsole.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向错误// [Function: Object] [Function: person]/** * 2.深度克隆函数 * 由于要面对不同的对象(正则、数组、Date等)要采用不同的处理方式， * 我们需要实现一个对象类型判断函数 */ const isType = (obj, type) =&gt; {     if (typeof obj !== &#39;object&#39;) return false    //  判断数据类型    const typeString = Object.prototype.toString.call(obj)    let flag    switch (type) {        case &#39;Array&#39;:            flag = typeString === &#39;[object Array]&#39;            break;        case &#39;Date&#39;:            flag = typeString === &#39;[object Date]&#39;            break;        case &#39;RegExp&#39;:            flag = typeString === &#39;[object RegExp]&#39;            break;        default:            flag = false    }    return flag }//  我们需要通过正则的扩展了解到flags属性等等,// 因此我们需要实现一个提取flags的函数const getRegExp = re =&gt; {    var flags = &#39;&#39;    if (re.global) flags += &#39;g&#39;    if (re.ignoreCase) flags += &#39;i&#39;    if (re.multiline) flags += &#39;m&#39;    return flags}/** * deep clone * @param {*} parent  */const clone = parent =&gt; {    // 维护两个存储循坏的数组    const parents = []    const children = []    const _clone = parent =&gt; {        if (parent === null ) return null        if (typeof parent !== &#39;object&#39;) return parent        let child,proto        if (isType(parent, &#39;Array&#39;)) {            // 对数组做特殊处理            child = []        } else if (isType(parent, &#39;RegExp&#39;)) {             // 对正则对象做特殊处理             child = new RegExp(parent.source, getRegExp(parent))             if (parent.lastIndex) child.lastIndex = parent.lastIndex        } else if (isType(parent, &#39;RegExp&#39;)) {             // 对Date对象做特殊处理             child = new Date(parent.getTime)        } else {            // 处理对象原型            proto = Object.getPrototypeOf(parent)            // 利用Object.create切断原型链            child = Object.create(proto)        }        // 处理循环引用        const index = parents.indexOf(parent)        if (index != -1) {            // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象            return children[index]        }        parents.push(parent)        children.push(child)        for (let i in parent) {            // 递归            child[i] = _clone(parent[i])        }        return child    }    return _clone(parent)}console.log(&#39;*************clone***********&#39;)const newClone = oldObj2console.log(newClone.a, oldObj2.a);// [Function: say] [Function: say]console.log(newClone.b[0], oldObj2.b[0]);// undefined undefinedconsole.log(newClone.c, oldObj2.c);// /ab+c/i /ab+c/iconsole.log(newClone.d.constructor, oldObj2.d.constructor);// [Function: person] [Function: person]// 参考链接：https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weixin</code></pre>]]></content>
       
       
       
@@ -1494,7 +1365,7 @@
       <link href="/2019/02/17/2019/02/16/this/"/>
       <url>/2019/02/17/2019/02/16/this/</url>
       
-        <content type="html"><![CDATA[```// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。// Function.prototype 的 call 或 apply 方法将 this 值绑定到调用中的特定对象// Function.prototype.apply()// apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。var numbers = [5, 2, 3, 6]var max = Math.max.apply(null, numbers)console.log(max)// 6var min = Math.min.apply(null, numbers)console.log(min);// 2// Function.prototype.bind()// bind()方法创建一个新的函数，在调用时设置this关键字为提供的值。// 并在调用新函数时，将给定参数列表作为原函数的参数序列的前若干项var module = {    x: 42,    getX: function(){        return this.x    }}var unboundGetX = module.getXconsole.log(unboundGetX())// undefinedvar boundGetX = unboundGetX.bind(module)console.log(boundGetX())// 42// Function.prototype.call()// call() 方法调用一个函数, 其具有一个指定的this值和分别地提供的参数(参数的列表)。\function Product(name, price) {    this.name = name    this.price = price}function Food(name, price) {    Product.call(this, name, price)     this.categroy = 'food'}console.log(new Food('cheese', 5).name);// cheeseconsole.log('*************  读程序  ************');var a = 3function Text() {    var a =0    console.log(a)    console.log(this.a)    var a    console.log(a)}Text()   // 0// undefined// 0new Text()// 0// undefined// 0setTimeout(Text, 100)// 0// undefined// 0```]]></content>
+        <content type="html"><![CDATA[<pre><code>// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。// Function.prototype 的 call 或 apply 方法将 this 值绑定到调用中的特定对象// Function.prototype.apply()// apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。var numbers = [5, 2, 3, 6]var max = Math.max.apply(null, numbers)console.log(max)// 6var min = Math.min.apply(null, numbers)console.log(min);// 2// Function.prototype.bind()// bind()方法创建一个新的函数，在调用时设置this关键字为提供的值。// 并在调用新函数时，将给定参数列表作为原函数的参数序列的前若干项var module = {    x: 42,    getX: function(){        return this.x    }}var unboundGetX = module.getXconsole.log(unboundGetX())// undefinedvar boundGetX = unboundGetX.bind(module)console.log(boundGetX())// 42// Function.prototype.call()// call() 方法调用一个函数, 其具有一个指定的this值和分别地提供的参数(参数的列表)。\function Product(name, price) {    this.name = name    this.price = price}function Food(name, price) {    Product.call(this, name, price)     this.categroy = &#39;food&#39;}console.log(new Food(&#39;cheese&#39;, 5).name);// cheeseconsole.log(&#39;*************  读程序  ************&#39;);var a = 3function Text() {    var a =0    console.log(a)    console.log(this.a)    var a    console.log(a)}Text()   // 0// undefined// 0new Text()// 0// undefined// 0setTimeout(Text, 100)// 0// undefined// 0</code></pre>]]></content>
       
       
       
@@ -1507,7 +1378,7 @@
       <link href="/2019/02/17/2019/02/16/bi-bao/"/>
       <url>/2019/02/17/2019/02/16/bi-bao/</url>
       
-        <content type="html"><![CDATA[```/** * bar()是定义在 foo() 里的内部函数，仅在该函数体内可用。 * bar()内没有自己的局部变量，然而它可以访问到外部函数的变量， * bar() 可以使用父函数 foo() 中声明的变量 name  */function foo() {    var name = 1;        //name 是一个被 foo 创建的局部变量    function bar(){      //bar() 是内部函数,一个闭包       console.log(name); //使用了父函数中声明的变量           }    bar()}// foo()function F() {    var f = []    for (var i = 0; i ]]></content>
+        <content type="html"><![CDATA[<pre><code>/** * bar()是定义在 foo() 里的内部函数，仅在该函数体内可用。 * bar()内没有自己的局部变量，然而它可以访问到外部函数的变量， * bar() 可以使用父函数 foo() 中声明的变量 name  */function foo() {    var name = 1;        //name 是一个被 foo 创建的局部变量    function bar(){      //bar() 是内部函数,一个闭包       console.log(name); //使用了父函数中声明的变量    }    bar()}// foo()function F() {    var f = []    for (var i = 0; i &lt;= 2; i++) {        console.log(i);        f[i] = function() {            console.log(i);        }    }    return f}var f = new F()for (var i = 0; i &lt; f.length; i++) {   f[i]();}// 3// 3// 3</code></pre>]]></content>
       
       
       
@@ -1520,7 +1391,7 @@
       <link href="/2019/02/17/2019/02/16/shu-ju-lei-xing-zhuan-huan/"/>
       <url>/2019/02/17/2019/02/16/shu-ju-lei-xing-zhuan-huan/</url>
       
-        <content type="html"><![CDATA[```var num = 1var str = 'str'var arr = [1,2,3]var boo = truevar obj = new Object()var und = undefinedvar oNull = nullconst sym = Symbol()function foo() {}console.log('******   []   *****');console.log( [] == 0 )console.log( [] == null )console.log( [] == undefined )console.log( [] == false )console.log( [] == '' )// true// false// false// true// trueconsole.log('******   0   *****');console.log( 0 == null )console.log( 0 == undefined )console.log( 0 == false )console.log( 0 == '' )// false// false// true// trueconsole.log('******  null   *****');console.log( null == '' )console.log( null == undefined )console.log( null == false )console.log( null == '' )// false// true// false// falseconsole.log('******  undefined   *****');console.log( undefined == '' )console.log( undefined == false )console.log( undefined == '' )// false// true// false// falseconsole.log('******  false   *****');console.log( false == '' )// true```]]></content>
+        <content type="html"><![CDATA[<pre><code>var num = 1var str = &#39;str&#39;var arr = [1,2,3]var boo = truevar obj = new Object()var und = undefinedvar oNull = nullconst sym = Symbol()function foo() {}console.log(&#39;******   []   *****&#39;);console.log( [] == 0 )console.log( [] == null )console.log( [] == undefined )console.log( [] == false )console.log( [] == &#39;&#39; )// true// false// false// true// trueconsole.log(&#39;******   0   *****&#39;);console.log( 0 == null )console.log( 0 == undefined )console.log( 0 == false )console.log( 0 == &#39;&#39; )// false// false// true// trueconsole.log(&#39;******  null   *****&#39;);console.log( null == &#39;&#39; )console.log( null == undefined )console.log( null == false )console.log( null == &#39;&#39; )// false// true// false// falseconsole.log(&#39;******  undefined   *****&#39;);console.log( undefined == &#39;&#39; )console.log( undefined == false )console.log( undefined == &#39;&#39; )// false// true// false// falseconsole.log(&#39;******  false   *****&#39;);console.log( false == &#39;&#39; )// true</code></pre>]]></content>
       
       
       
@@ -1533,7 +1404,7 @@
       <link href="/2019/02/17/2019/02/16/shu-ju-lei-xing-pan-duan/"/>
       <url>/2019/02/17/2019/02/16/shu-ju-lei-xing-pan-duan/</url>
       
-        <content type="html"><![CDATA[```var num = 1var str = 'str'var arr = [1,2,3]var boo = truevar obj = new Object()var und = undefinedvar objNull = nullconst sym = Symbol()function foo() {}// 1.typeof 可以对基本类型做出准确的判断，但对于引用类型力不从心console.log('***********typeof*********');console.log(typeof num)console.log(typeof str)console.log(typeof arr)console.log(typeof boo)console.log(typeof obj)console.log(typeof und)console.log(typeof objNull)console.log(typeof sym)console.log(typeof foo)// number// string// object// boolean// object// undefined// object// symbol// function// 2.instanceof 判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假console.log('***********instanceof*********');console.log( num instanceof Array)console.log( str instanceof Array) console.log( arr instanceof Array)console.log( boo instanceof Array)console.log( obj instanceof Array)console.log( und instanceof Array)console.log( objNull instanceof Array)console.log( sym instanceof Array)console.log( foo instanceof Array)// false// false// true// false// false// false// false// false// false// 3. constructor 查看对象对应的构造函数console.log('***********constructor*********');console.log( num.constructor == Array)console.log( str.constructor == Array) console.log( arr.constructor ==  Array)console.log( boo.constructor ==  Array)console.log( obj.constructor ==  Array)// console.log( und.constructor ==  Array)//报错// console.log( objNull.constructor ==  Array)//报错console.log( sym.constructor ==  Array)console.log( foo.constructor ==  Array)// false// false// true// false// false// false// false// false// 4.Object.prototype.toString  // toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，// 更严格的讲，是 toString运行时this指向的对象类型, 返回的类型console.log('***********Object.prototype.toString*********');console.log(Object.prototype.toString (num))console.log(Object.prototype.toString (str))console.log(Object.prototype.toString (arr))console.log(Object.prototype.toString (boo))console.log(Object.prototype.toString (obj))console.log(Object.prototype.toString (und))console.log(Object.prototype.toString (objNull))console.log(Object.prototype.toString (sym))console.log(Object.prototype.toString (foo))// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]console.log('***********Object.prototype.toString.call()*********');console.log(Object.prototype.toString.call (num))console.log(Object.prototype.toString.call (str))console.log(Object.prototype.toString.call (arr))console.log(Object.prototype.toString.call (boo))console.log(Object.prototype.toString.call (obj))console.log(Object.prototype.toString.call (und))console.log(Object.prototype.toString.call (objNull))console.log(Object.prototype.toString.call (sym))console.log(Object.prototype.toString.call (foo))// [object Number]// [object String]// [object Array]// [object Boolean]// [object Object]// [object Undefined]// [object Null]// [object Symbol]// [object Function]```]]></content>
+        <content type="html"><![CDATA[<pre><code>var num = 1var str = &#39;str&#39;var arr = [1,2,3]var boo = truevar obj = new Object()var und = undefinedvar objNull = nullconst sym = Symbol()function foo() {}// 1.typeof 可以对基本类型做出准确的判断，但对于引用类型力不从心console.log(&#39;***********typeof*********&#39;);console.log(typeof num)console.log(typeof str)console.log(typeof arr)console.log(typeof boo)console.log(typeof obj)console.log(typeof und)console.log(typeof objNull)console.log(typeof sym)console.log(typeof foo)// number// string// object// boolean// object// undefined// object// symbol// function// 2.instanceof 判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假console.log(&#39;***********instanceof*********&#39;);console.log( num instanceof Array)console.log( str instanceof Array) console.log( arr instanceof Array)console.log( boo instanceof Array)console.log( obj instanceof Array)console.log( und instanceof Array)console.log( objNull instanceof Array)console.log( sym instanceof Array)console.log( foo instanceof Array)// false// false// true// false// false// false// false// false// false// 3. constructor 查看对象对应的构造函数console.log(&#39;***********constructor*********&#39;);console.log( num.constructor == Array)console.log( str.constructor == Array) console.log( arr.constructor ==  Array)console.log( boo.constructor ==  Array)console.log( obj.constructor ==  Array)// console.log( und.constructor ==  Array)//报错// console.log( objNull.constructor ==  Array)//报错console.log( sym.constructor ==  Array)console.log( foo.constructor ==  Array)// false// false// true// false// false// false// false// false// 4.Object.prototype.toString  // toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，// 更严格的讲，是 toString运行时this指向的对象类型, 返回的类型console.log(&#39;***********Object.prototype.toString*********&#39;);console.log(Object.prototype.toString (num))console.log(Object.prototype.toString (str))console.log(Object.prototype.toString (arr))console.log(Object.prototype.toString (boo))console.log(Object.prototype.toString (obj))console.log(Object.prototype.toString (und))console.log(Object.prototype.toString (objNull))console.log(Object.prototype.toString (sym))console.log(Object.prototype.toString (foo))// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]console.log(&#39;***********Object.prototype.toString.call()*********&#39;);console.log(Object.prototype.toString.call (num))console.log(Object.prototype.toString.call (str))console.log(Object.prototype.toString.call (arr))console.log(Object.prototype.toString.call (boo))console.log(Object.prototype.toString.call (obj))console.log(Object.prototype.toString.call (und))console.log(Object.prototype.toString.call (objNull))console.log(Object.prototype.toString.call (sym))console.log(Object.prototype.toString.call (foo))// [object Number]// [object String]// [object Array]// [object Boolean]// [object Object]// [object Undefined]// [object Null]// [object Symbol]// [object Function]</code></pre>]]></content>
       
       
       
@@ -1608,7 +1479,7 @@
       
         <tags>
             
-            <tag> JavaScript this </tag>
+            <tag> JavaScript-this </tag>
             
         </tags>
       

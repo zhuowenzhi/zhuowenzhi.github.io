@@ -651,7 +651,7 @@ p是块级元素只能包含内联元素，而不能包含块级元素，还有h
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/17/2019/02/16/chui-zhi-shui-ping-ju-zhong/">
+                <a href="/2019/02/17/2019/02/16/clone/">
                     <div class="card-image">
                         
                         
@@ -661,18 +661,14 @@ p是块级元素只能包含内联元素，而不能包含块级元素，还有h
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-
-
-    
-    
-    
-    Document
-    
-        .out {
-            width: 200px;
-            height: 200px;
-            bord</div>
+                    <div class="summary block-with-text">/**
+ * 浅克隆对象只会被克隆最外部的一层,
+ * 至于更深层的对象,则依然是通过引用指向同一块堆内存.
+ * @param {*} o 
+ */
+function shallow(o) {
+    const obj = {}
+   </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17

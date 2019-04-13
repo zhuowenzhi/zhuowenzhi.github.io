@@ -6,22 +6,19 @@
     <meta charset="utf-8">
     <meta name="keywords" content="指尖上的盛夏">
     <meta name="description" content="
+这道题的经典之处在于它综合考察了面试者的JavaScript的综合能力
+包含了变量定义提升、
+this指针指向、
+运算符优先级、
+原型、
+继承、
+全局变量污染、
+对象属性及原型属性优先级等知识
 
 
-    
-    
-    
-    appcache
 
-
-    APP Cache Demo
-    
-        
-        
-    
-
-
-    window.addEventListener(&#39;load&#39;, fu">
+//  创建了Foo函数
+functi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -401,7 +398,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-03-18
+                    2019-04-10
                 </div>
 
                 
@@ -417,39 +414,107 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <!DOCTYPE html>
-<html lang="en" manifest="manifest.appcache">
-<head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>appcache</title>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
-<body>
-    <h1>APP Cache Demo</h1>
-    <ul>
-        <li><img src="/2019/03/18/html5/cun-chu/appcache/../../../../public/images/html5/1.png" alt=""></li>
-        <li><img src="/2019/03/18/html5/cun-chu/appcache/../../../../public/images/html5/2.png" alt=""></li>
-    </ul>
-</body>
-<script>
-    window.addEventListener('load', function() {
-        window.applicationCache.addEventListener('updateready',function(e) {
-            console.log(window.applicationCache.status);
-            if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-                window.applicationCache.swapCache();
-                if(confirm('A new version of this site is avaliable,load it?')) {
-                    window.location.reload();
-                }
-            } else {
-                console.log("manifest didn\'t change");
-            }
-        }, false);
-    }, false);
-</script>
-</html>
+                <ul>
+<li>这道题的经典之处在于它综合考察了面试者的JavaScript的综合能力<ul>
+<li>包含了变量定义提升、</li>
+<li>this指针指向、</li>
+<li>运算符优先级、</li>
+<li>原型、</li>
+<li>继承、</li>
+<li>全局变量污染、</li>
+<li>对象属性及原型属性优先级等知识</li>
+</ul>
+</li>
+</ul>
+<pre><code>//  创建了Foo函数
+function Foo () {
+    // 为Foo函数创建了getName的静态属性存储了一个匿名函数
+    getName = function () {
+        console.log(1)
+    }
+    return this
+}
+
+// 为Foo的原型对象创建了一个叫getName的匿名函数
+Foo.getName = function () {
+    console.log(2)
+}
+
+Foo.prototype.getName = function () {
+    console.log(3)
+}
+
+// 通过函数变量表达式创建了一个getName函数
+var getName = function () {
+    console.log(4)
+}
+
+function getName () {
+    console.log(5)
+}
+
+// Foo.getName自然是访问Foo函数上存储的静态属性
+Foo.getName()            //2
+
+getName()                //4
+
+Foo().getName()          //1
+
+getName()                //1
+
+new Foo.getName()        //2
+
+new new Foo().getName()  //3
+</code></pre><h3 id="第一问Foo-getName"><a href="#第一问Foo-getName" class="headerlink" title="第一问Foo.getName()"></a>第一问Foo.getName()</h3><pre><code>function User (name) {
+    var name = name   //私有属性
+    this.name = name  //公有属性
+    function getName ()  {  //私有方法
+        return name
+    }
+}
+
+User.prototype.getName = function () {//公有方法
+    return this.name
+}
+
+User.name = &#39;zwz&#39; //静态属性
+User.getName = function () { //静态方法
+    return this.name
+}
+
+var zz = new User(&#39;zwz&#39;)  //实例化
+</code></pre><ul>
+<li><p>调用公有属性，公有方法，我们必须先实例化对象，也据说new操作符实例化对象，就可构造实例化对象的方法和属性，并且公有方法是不能调用私有方法和静态方法的</p>
+</li>
+<li><p>静态方法和静态属性就是我们无需实例化就可以调用的<br>而对象的私有方法和属性，外部是不可以访问的</p>
+</li>
+</ul>
+<h3 id="第二问getName"><a href="#第二问getName" class="headerlink" title="第二问getName()"></a>第二问getName()</h3><p>直接调用getName()，既然是直接调用那么就是访问当前上下文作用域内的叫getName() 的函数，和123没用关系</p>
+<pre><code>// 函数声明
+function zwz (type) {
+    return type === &#39;zwz&#39;
+}
+
+// 函数表达式
+var zwz = function (type) {
+    return type === &#39;zwz&#39;
+}
+
+var getName  //undefined
+getName()    //TypeError:getName is not a function
+var getName = function () {
+    console.log(zwz)
+}
+
+var getName  //undefined
+getName()    
+function getName() {
+    console.log(zwz)
+}
+</code></pre><p> 函数声明和函数表达式是存在区别的，函数声明在JS解析时进行函数提升，因此在同一个作用域内，不管函数声明定义在哪里，该函数都可以调用而函数表达式的值是在JS运行时确定的，并且在表达式完成赋值后，该函数才能调用。所所以4覆盖了5</p>
+
             </div>
-            <hr/>
+            <hr>
 
             
             <style>
@@ -594,7 +659,7 @@
                     </span>
                     <a href="http://zhuowenzhi.github.io" class="b-link-green">指尖上的盛夏</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/18/html5/cun-chu/appcache/" class="b-link-green"></a>
+                    <a href="/2019/04/10/2019/04/jing-dian-mian-shi-ti/" class="b-link-green"></a>
                 </p>
             </div>
         </div>
@@ -619,33 +684,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/03/18/vue/kai-fa-guo-cheng-yu-dao-de-wen-ti/zu-jian/">
+                <a href="/2019/04/13/json/json/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue组件">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="json">
                         
-                        <span class="card-title">Vue组件</span>
+                        <span class="card-title">json</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">父组件使用子组件需要在父组件中引入子组件声明子组件的名字
- components: {
-     子组件名字
-},
-
-使用路由路径要配对
-在父组件传值过程中，遇到传过去的值为undefined，原因是在父组件中的data未定，导致子组件的数</div>
+                    <div class="summary block-with-text">JSON(JavaScript对象字面量表示法)JSON 是一种数据交互格式
+JSON 独立于编程语言
+JSON基于JavaScript对象字面量表示法
+JSON表达数据的方式对通用的编程很友好
+正确的JSON语法名称 - 值对
+名称总是要</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-18
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-13
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue/" class="post-category" target="_blank">
-                                    vue
+                            <a href="/categories/JSON/" class="post-category" target="_blank">
+                                    JSON
                                 </a>
                             
                             
@@ -655,8 +719,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue组件/" target="_blank">
-                        <span class="chip bg-color">Vue组件</span>
+                    <a href="/tags/JSON/" target="_blank">
+                        <span class="chip bg-color">JSON</span>
                     </a>
                     
                 </div>
@@ -670,52 +734,30 @@
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/18/html5/cun-chu/chi-xian-huan-cun/">
+                <a href="/2019/04/09/2019/04/gao-xin-xing-ke-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="HTML5离线存储">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">HTML5离线存储</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">离线缓存：可以让web应用在离线的情况下继续使用，通过manifest文件指明需要缓存的资源
-检测是否离:navigator.onLine
-浏览器支持
-使用
-创建manifest文件
-
-HTML引用manifest文件
-
-
-
-
-
-在服务器添</div>
+                    <div class="summary block-with-text">web前端实习生（2020届毕业生）
+1、掌握HTML、Javascript、CSS、ajax等前端开发技术，熟悉jQuery/vue等主流前端开发框架，熟悉css2/css3，掌握各种布局原理，能灵活应用
+2、了解设计模式，掌握MVC等设</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/HTML5/" class="post-category" target="_blank">
-                                    HTML5
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            指尖上的盛夏
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/HTML5离线存储/" target="_blank">
-                        <span class="chip bg-color">HTML5离线存储</span>
-                    </a>
-                    
                 </div>
                 
             </div>

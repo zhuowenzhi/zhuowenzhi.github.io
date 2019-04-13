@@ -5,12 +5,10 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="指尖上的盛夏">
-    <meta name="description" content="// ```
-console.log(&#34;\u0061&#34;);
-console.log(&#34;\uD842\uDFB7&#34;);
-console.log(&#34;\u{20BB7}&#34;);//𠮷
-var str = &#34;𠮷a&#34;
-console.log(str">
+    <meta name="description" content="console.log(&amp;quot;\u0061&amp;quot;);
+console.log(&amp;quot;\uD842\uDFB7&amp;quot;);
+console.log(&amp;quot;\u{20BB7}&amp;quot;);//𠮷
+var str ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -406,11 +404,10 @@ console.log(str">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                // ```
-console.log("\u0061");
-console.log("\uD842\uDFB7");
-console.log("\u{20BB7}");//𠮷
-var str = "𠮷a"
+                <pre><code>console.log(&quot;\u0061&quot;);
+console.log(&quot;\uD842\uDFB7&quot;);
+console.log(&quot;\u{20BB7}&quot;);//𠮷
+var str = &quot;𠮷a&quot;
 console.log(str.charCodeAt(0));
 console.log(str.charCodeAt(1));
 
@@ -419,23 +416,23 @@ console.log(str.codePointAt(1));
 console.log(str.codePointAt(2));
 // ₻7
 function is32Bit(c) {
-    return c.codePointAt(0) > 0xFFFF;
+    return c.codePointAt(0) &gt; 0xFFFF;
 }
-console.log(is32Bit('𠮷'));
-console.log(is32Bit('a'));
+console.log(is32Bit(&#39;𠮷&#39;));
+console.log(is32Bit(&#39;a&#39;));
 
-console.log('\u01D1'.normalize('NFC') === '\u004F\u030c'.normalize('NFC'));
-console.log('\u01D1'.normalize('NFD') === '\u004F\u030c'.normalize('NFD'));
-console.log('\u01D1'.normalize('NFKC') === '\u004F\u030c'.normalize('NFKC'));
-console.log('\u01D1'.normalize('NFKD') === '\u004F\u030c'.normalize('NFKD'));
+console.log(&#39;\u01D1&#39;.normalize(&#39;NFC&#39;) === &#39;\u004F\u030c&#39;.normalize(&#39;NFC&#39;));
+console.log(&#39;\u01D1&#39;.normalize(&#39;NFD&#39;) === &#39;\u004F\u030c&#39;.normalize(&#39;NFD&#39;));
+console.log(&#39;\u01D1&#39;.normalize(&#39;NFKC&#39;) === &#39;\u004F\u030c&#39;.normalize(&#39;NFKC&#39;));
+console.log(&#39;\u01D1&#39;.normalize(&#39;NFKD&#39;) === &#39;\u004F\u030c&#39;.normalize(&#39;NFKD&#39;));
 
-let text = '𠮷'
+let text = &#39;𠮷&#39;
 console.log(text.length);
 console.log(/^.$/.test(text));
 console.log(/^.$/u.test(text));
 
 
-console.log("+++++++++++++++++++++++++");
+console.log(&quot;+++++++++++++++++++++++++&quot;);
 
 
 function codePointLength(text) {
@@ -443,10 +440,10 @@ function codePointLength(text) {
     return result ? result.length : 0
 }
 
-console.log(codePointLength("abc"));
-console.log(codePointLength("𠮷bc"));
+console.log(codePointLength(&quot;abc&quot;));
+console.log(codePointLength(&quot;𠮷bc&quot;));
 
-// ```
+</code></pre>
             </div>
             <hr>
 

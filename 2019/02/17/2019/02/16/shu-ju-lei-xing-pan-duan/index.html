@@ -5,14 +5,13 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="指尖上的盛夏">
-    <meta name="description" content="```
-var num = 1
-var str = &#39;str&#39;
+    <meta name="description" content="var num = 1
+var str = &amp;#39;str&amp;#39;
 var arr = [1,2,3]
 var boo = true
 var obj = new Object()
 var und = undefined
-var objNull ">
+var objN">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -408,9 +407,8 @@ var objNull ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                ```
-var num = 1
-var str = 'str'
+                <pre><code>var num = 1
+var str = &#39;str&#39;
 var arr = [1,2,3]
 var boo = true
 var obj = new Object()
@@ -419,7 +417,7 @@ var objNull = null
 const sym = Symbol()
 function foo() {}
 // 1.typeof 可以对基本类型做出准确的判断，但对于引用类型力不从心
-console.log('***********typeof*********');
+console.log(&#39;***********typeof*********&#39;);
 
 console.log(typeof num)
 console.log(typeof str)
@@ -441,7 +439,7 @@ console.log(typeof foo)
 // function
 
 // 2.instanceof 判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假
-console.log('***********instanceof*********');
+console.log(&#39;***********instanceof*********&#39;);
 
 console.log( num instanceof Array)
 console.log( str instanceof Array) 
@@ -462,7 +460,7 @@ console.log( foo instanceof Array)
 // false
 // false
 // 3. constructor 查看对象对应的构造函数
-console.log('***********constructor*********');
+console.log(&#39;***********constructor*********&#39;);
 console.log( num.constructor == Array)
 console.log( str.constructor == Array) 
 console.log( arr.constructor ==  Array)
@@ -484,7 +482,7 @@ console.log( foo.constructor ==  Array)
 // 4.Object.prototype.toString  
 // toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，
 // 更严格的讲，是 toString运行时this指向的对象类型, 返回的类型
-console.log('***********Object.prototype.toString*********');
+console.log(&#39;***********Object.prototype.toString*********&#39;);
 console.log(Object.prototype.toString (num))
 console.log(Object.prototype.toString (str))
 console.log(Object.prototype.toString (arr))
@@ -503,7 +501,7 @@ console.log(Object.prototype.toString (foo))
 // [object Object]
 // [object Object]
 // [object Object]
-console.log('***********Object.prototype.toString.call()*********');
+console.log(&#39;***********Object.prototype.toString.call()*********&#39;);
 console.log(Object.prototype.toString.call (num))
 console.log(Object.prototype.toString.call (str))
 console.log(Object.prototype.toString.call (arr))
@@ -523,7 +521,7 @@ console.log(Object.prototype.toString.call (foo))
 // [object Symbol]
 // [object Function]
 
-```
+</code></pre>
             </div>
             <hr>
 
@@ -705,14 +703,13 @@ console.log(Object.prototype.toString.call (foo))
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">```
-var num = 1
-var str = 'str'
+                    <div class="summary block-with-text">var num = 1
+var str = &#39;str&#39;
 var arr = [1,2,3]
 var boo = true
 var obj = new Object()
 var und = undefined
-var oNull = </div>
+var oNul</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17

@@ -5,11 +5,10 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="指尖上的盛夏">
-    <meta name="description" content="```
-// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。
+    <meta name="description" content="// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。
 // Function.prototype 的 call 或 apply 方法将 this 值绑定到调用中的特定对象
 
-// Funct">
+// Function.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -405,8 +404,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                ```
-// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。
+                <pre><code>// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。
 // Function.prototype 的 call 或 apply 方法将 this 值绑定到调用中的特定对象
 
 // Function.prototype.apply()
@@ -446,12 +444,12 @@ function Product(name, price) {
 
 function Food(name, price) {
     Product.call(this, name, price) 
-    this.categroy = 'food'
+    this.categroy = &#39;food&#39;
 }
-console.log(new Food('cheese', 5).name);
+console.log(new Food(&#39;cheese&#39;, 5).name);
 // cheese
 
-console.log('*************  读程序  ************');
+console.log(&#39;*************  读程序  ************&#39;);
 var a = 3
 function Text() {
     var a =0
@@ -473,7 +471,7 @@ setTimeout(Text, 100)
 // undefined
 // 0
 
-```
+</code></pre>
             </div>
             <hr>
 
@@ -655,14 +653,14 @@ setTimeout(Text, 100)
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">```
-/**
+                    <div class="summary block-with-text">/**
  * 浅克隆对象只会被克隆最外部的一层,
  * 至于更深层的对象,则依然是通过引用指向同一块堆内存.
  * @param {*} o 
  */
 function shallow(o) {
-    const obj = {}</div>
+    const obj = {}
+   </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17
@@ -695,13 +693,13 @@ function shallow(o) {
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">```
-
+                    <div class="summary block-with-text">
 /**
  * bar()是定义在 foo() 里的内部函数，仅在该函数体内可用。
  * bar()内没有自己的局部变量，然而它可以访问到外部函数的变量，
  * bar() 可以使用父函数 foo() 中声明的变量 name 
- *</div>
+ */
+fu</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17

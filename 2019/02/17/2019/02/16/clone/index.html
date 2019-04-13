@@ -5,14 +5,14 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="指尖上的盛夏">
-    <meta name="description" content="```
-/**
+    <meta name="description" content="/**
  * 浅克隆对象只会被克隆最外部的一层,
  * 至于更深层的对象,则依然是通过引用指向同一块堆内存.
  * @param {*} o 
  */
 function shallow(o) {
-    const obj = {}">
+    const obj = {}
+   ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -408,8 +408,7 @@ function shallow(o) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                ```
-/**
+                <pre><code>/**
  * 浅克隆对象只会被克隆最外部的一层,
  * 至于更深层的对象,则依然是通过引用指向同一块堆内存.
  * @param {*} o 
@@ -418,14 +417,14 @@ function shallow(o) {
     const obj = {}
     for (const i in o) {
         obj[i] = o[i]
-            
+
     }
     return obj
 }
 // 被克隆对象
 const oldObj = {
     a: 1,
-    b: ['aaa', 'bbbb'],
+    b: [&#39;aaa&#39;, &#39;bbbb&#39;],
     old: {
         zwz: {
             name:111
@@ -438,9 +437,9 @@ console.log(newObj.old.zwz, oldObj.old.zwz)
 console.log(newObj.old.zwz === oldObj.old.zwz)
 // { name: 111 } { name: 111 }
 // true
-newObj.old.zwz.name = '卓文智'
+newObj.old.zwz.name = &#39;卓文智&#39;
 console.log(newObj.old.zwz, oldObj.old.zwz)
-// { name: '卓文智' } { name: '卓文智' }
+// { name: &#39;卓文智&#39; } { name: &#39;卓文智&#39; }
 
 
 // 深度克隆
@@ -457,9 +456,9 @@ console.log(newObjDeep1.old.zwz, oldObj.old.zwz)
 console.log(newObjDeep1.old.zwz === oldObj.old.zwz)
 // { name: 111 } { name: 111 }
 // false
-newObjDeep1.old.zwz.name = '卓文智zzz'
+newObjDeep1.old.zwz.name = &#39;卓文智zzz&#39;
 console.log(newObjDeep1.old.zwz, oldObj.old.zwz)
-// { name: '卓文智zzz' } { name: '卓文智' }
+// { name: &#39;卓文智zzz&#39; } { name: &#39;卓文智&#39; }
 
 // JOSN.parse()坑
 // 1.他无法实现对函数 、RegExp等特殊对象的克隆;
@@ -471,20 +470,20 @@ function person(name) {
     this.name = name
 }
 
-const cgl = new person('cgl')
+const cgl = new person(&#39;cgl&#39;)
 
 // 函数
 function say() {
-    console.log('haaa')
+    console.log(&#39;haaa&#39;)
 }
 
 const oldObj2 = {
     a: say,
     b: new Array(1),
-    c: new RegExp('ab+c', 'i'),
+    c: new RegExp(&#39;ab+c&#39;, &#39;i&#39;),
     d: cgl
 }
-console.log('*************JSON.parse***********')
+console.log(&#39;*************JSON.parse***********&#39;)
 
 const newObj2 = JSON.parse(JSON.stringify(oldObj2))
 console.log(newObj2.a, oldObj2.a);//无法复制函数
@@ -503,20 +502,20 @@ console.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向�
  * 我们需要实现一个对象类型判断函数
  */
 
- const isType = (obj, type) => {
-     if (typeof obj !== 'object') return false
+ const isType = (obj, type) =&gt; {
+     if (typeof obj !== &#39;object&#39;) return false
     //  判断数据类型
     const typeString = Object.prototype.toString.call(obj)
     let flag
     switch (type) {
-        case 'Array':
-            flag = typeString === '[object Array]'
+        case &#39;Array&#39;:
+            flag = typeString === &#39;[object Array]&#39;
             break;
-        case 'Date':
-            flag = typeString === '[object Date]'
+        case &#39;Date&#39;:
+            flag = typeString === &#39;[object Date]&#39;
             break;
-        case 'RegExp':
-            flag = typeString === '[object RegExp]'
+        case &#39;RegExp&#39;:
+            flag = typeString === &#39;[object RegExp]&#39;
             break;
         default:
             flag = false
@@ -526,11 +525,11 @@ console.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向�
 
 //  我们需要通过正则的扩展了解到flags属性等等,
 // 因此我们需要实现一个提取flags的函数
-const getRegExp = re => {
-    var flags = ''
-    if (re.global) flags += 'g'
-    if (re.ignoreCase) flags += 'i'
-    if (re.multiline) flags += 'm'
+const getRegExp = re =&gt; {
+    var flags = &#39;&#39;
+    if (re.global) flags += &#39;g&#39;
+    if (re.ignoreCase) flags += &#39;i&#39;
+    if (re.multiline) flags += &#39;m&#39;
     return flags
 }
 
@@ -538,25 +537,25 @@ const getRegExp = re => {
  * deep clone
  * @param {*} parent 
  */
-const clone = parent => {
+const clone = parent =&gt; {
     // 维护两个存储循坏的数组
     const parents = []
     const children = []
 
-    const _clone = parent => {
+    const _clone = parent =&gt; {
         if (parent === null ) return null
-        if (typeof parent !== 'object') return parent
+        if (typeof parent !== &#39;object&#39;) return parent
 
         let child,proto
 
-        if (isType(parent, 'Array')) {
+        if (isType(parent, &#39;Array&#39;)) {
             // 对数组做特殊处理
             child = []
-        } else if (isType(parent, 'RegExp')) {
+        } else if (isType(parent, &#39;RegExp&#39;)) {
              // 对正则对象做特殊处理
              child = new RegExp(parent.source, getRegExp(parent))
              if (parent.lastIndex) child.lastIndex = parent.lastIndex
-        } else if (isType(parent, 'RegExp')) {
+        } else if (isType(parent, &#39;RegExp&#39;)) {
              // 对Date对象做特殊处理
              child = new Date(parent.getTime)
         } else {
@@ -586,7 +585,7 @@ const clone = parent => {
 }
 
 
-console.log('*************clone***********')
+console.log(&#39;*************clone***********&#39;)
 
 const newClone = oldObj2
 
@@ -602,10 +601,9 @@ console.log(newClone.d.constructor, oldObj2.d.constructor);
 
 
 
-// 参考链接：https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&utm_content=note&utm_medium=reader_share&utm_source=weixin
+// 参考链接：https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weixin
 
-```
-
+</code></pre>
             </div>
             <hr>
 
@@ -777,39 +775,40 @@ console.log(newClone.d.constructor, oldObj2.d.constructor);
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/02/17/2019/02/16/position/">
+                <a href="/2019/02/18/http/liu-lan-qi-huan-cun-ji-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="HTTP浏览器缓存机制">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">HTTP浏览器缓存机制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">```
-
-
-
-    
-    
-    
-    Document
-    
-        .div1,.div2,.div3 {
-            width: 200px;
-            height: 200px;</div>
+                    <div class="summary block-with-text">浏览器缓存浏览器缓存就是把一个以及请求过的Web资源(如html页面，图片，数据，js等等)拷贝一份副本存储在浏览器中。缓存会根据进来的请求保存输出内容的副本。当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-18
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            指尖上的盛夏
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTTP/" class="post-category" target="_blank">
+                                    HTTP
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/浏览器缓存机制/" target="_blank">
+                        <span class="chip bg-color">浏览器缓存机制</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -831,11 +830,10 @@ console.log(newClone.d.constructor, oldObj2.d.constructor);
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">```
-// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。
+                    <div class="summary block-with-text">// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。
 // Function.prototype 的 call 或 apply 方法将 this 值绑定到调用中的特定对象
 
-// Funct</div>
+// Function.</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17

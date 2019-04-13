@@ -5,13 +5,13 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="指尖上的盛夏">
-    <meta name="description" content="```
-
+    <meta name="description" content="
 /**
  * bar()是定义在 foo() 里的内部函数，仅在该函数体内可用。
  * bar()内没有自己的局部变量，然而它可以访问到外部函数的变量，
  * bar() 可以使用父函数 foo() 中声明的变量 name 
- *">
+ */
+fu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -407,8 +407,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                ```
-
+                <pre><code>
 /**
  * bar()是定义在 foo() 里的内部函数，仅在该函数体内可用。
  * bar()内没有自己的局部变量，然而它可以访问到外部函数的变量，
@@ -418,7 +417,7 @@ function foo() {
     var name = 1;        //name 是一个被 foo 创建的局部变量
     function bar(){      //bar() 是内部函数,一个闭包
        console.log(name); //使用了父函数中声明的变量
-       
+
     }
     bar()
 }
@@ -427,7 +426,26 @@ function foo() {
 
 function F() {
     var f = []
-    for (var i = 0; i 
+    for (var i = 0; i &lt;= 2; i++) {
+        console.log(i);
+        f[i] = function() {
+            console.log(i);
+        }
+    }
+    return f
+}
+
+var f = new F()
+
+for (var i = 0; i &lt; f.length; i++) {
+   f[i]();
+}
+
+// 3
+// 3
+// 3
+
+</code></pre>
             </div>
             <hr>
 
@@ -609,11 +627,10 @@ function F() {
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">```
-// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。
+                    <div class="summary block-with-text">// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。
 // Function.prototype 的 call 或 apply 方法将 this 值绑定到调用中的特定对象
 
-// Funct</div>
+// Function.</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17
@@ -646,14 +663,13 @@ function F() {
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">```
-var num = 1
-var str = 'str'
+                    <div class="summary block-with-text">var num = 1
+var str = &#39;str&#39;
 var arr = [1,2,3]
 var boo = true
 var obj = new Object()
 var und = undefined
-var oNull = </div>
+var oNul</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17
