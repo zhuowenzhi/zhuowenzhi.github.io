@@ -1,0 +1,2124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>json</title>
+      <link href="/2019/04/13/json/json/"/>
+      <url>/2019/04/13/json/json/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> JSON </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JSON </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/04/10/2019/04/1/"/>
+      <url>/2019/04/10/2019/04/1/</url>
+      
+        <content type="html"><![CDATA[/** * 这道题的经典之处在于它综合考察了面试者的JavaScript的综合能力 * 包含了变量定义提升、 * this指针指向、 * 运算符优先级、 * 原型、 * 继承、 * 全局变量污染、 * 对象属性及原型属性优先级等知识 *///  创建了Foo函数function Foo () {    // 为Foo函数创建了getName的静态属性存储了一个匿名函数    getName = function () {        console.log(1)    }    return this}// 为Foo的原型对象创建了一个叫getName的匿名函数Foo.getName = function () {    console.log(2)}Foo.prototype.getName = function () {    console.log(3)}// 通过函数变量表达式创建了一个getName函数var getName = function () {    console.log(4)}function getName () {    console.log(5)}// Foo.getName自然是访问Foo函数上存储的静态属性Foo.getName()            //2getName()                //4Foo().getName()          //1getName()                //1new Foo.getName()        //2new new Foo().getName()  //3// 第一问Foo.getName() function User (name) {    var name = name   //私有属性    this.name = name  //公有属性    function getName ()  {  //私有方法        return name    }}User.prototype.getName = function () {//公有方法    return this.name}User.name = 'zwz' //静态属性User.getName = function () { //静态方法    return this.name}var zz = new User('zwz')  //实例化// 调用公有属性，公有方法，我们必须先实例化对象，也据说new操作符实例化对象，就可构造实例化对象的方法和属性，并且公有方法是不能调用私有方法和静态方法的//静态方法和静态属性就是我们无需实例化就可以调用的// 而对象的私有方法和属性，外部是不可以访问的// 第二问getName() // 直接调用getName()，既然是直接调用那么就是访问当前上下文作用域内的叫getName() 的函数，和123没用关系// 函数声明function zwz (type) {    return type === 'zwz'}// 函数表达式var zwz = function (type) {    return type === 'zwz'}var getName  //undefinedgetName()    //TypeError:getName is not a functionvar getName = function () {    console.log(zwz)}var getName  //undefinedgetName()    function getName() {    console.log(zwz)}// 函数声明和函数表达式是存在区别的，函数声明在JS解析时进行函数提升，因此在同一个作用域内，不管函数声明定义在哪里，该函数都可以调用而函数表达式的值是在JS运行时确定的，并且在表达式完成赋值后，该函数才能调用。所所以4覆盖了5]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/04/09/2019/04/gao-xin-xing-ke-ji/"/>
+      <url>/2019/04/09/2019/04/gao-xin-xing-ke-ji/</url>
+      
+        <content type="html"><![CDATA[<p>web前端实习生（2020届毕业生）</p><p>1、掌握HTML、Javascript、CSS、ajax等前端开发技术，熟悉jQuery/vue等主流前端开发框架，熟悉css2/css3，掌握各种布局原理，能灵活应用</p><p>2、了解设计模式，掌握MVC等设计思想，了解数据与表现解耦方法</p><h1 id="面试前准备"><a href="#面试前准备" class="headerlink" title="面试前准备"></a>面试前准备</h1><h3 id="1-前端代码解耦-编写可维护的JavaScript"><a href="#1-前端代码解耦-编写可维护的JavaScript" class="headerlink" title="1. 前端代码解耦(编写可维护的JavaScript)"></a>1. 前端代码解耦(编写可维护的JavaScript)</h3><p>解耦就是更改其中一个代码对另一个不影响，模块化编程</p><ol><li><p>Javascript自身代码解耦</p><ul><li>划分清晰的js模块</li><li>组织高内聚的js模块</li><li>设计透明的js模块依赖和通信</li></ul></li><li><p>前端与后端解耦</p><ul><li>接口参数类型：ajax还是jsonp</li><li>入参要求</li><li>返回的编码格式</li></ul></li><li><p>JavaScript与HTML解耦</p><ul><li>HTML和JavaScript的分离</li><li>JavaScript尽量依赖DOM的class</li><li>为重复使用的dom创建变量 在你的代码里面，尽量在模块顶部声明依赖的DOM元素，后期改动方便，而且也提升代码执行效率。</li><li>划分模块按功能划分</li></ul></li></ol><p>简单理解就是 函数拆分，每个函数都独立处理和别的函数无关而不是所有的if else 逻辑全都是一个大函数里面</p><h3 id="2-MVC设计模式"><a href="#2-MVC设计模式" class="headerlink" title="2. MVC设计模式"></a>2. MVC设计模式</h3><ol><li><p>Model(模型)表示应用程序核心(比如数据库记录表)</p></li><li><p>View(视图)显示数据</p></li><li><p>Controller模式同时对HTML，CSS和JavaScript的完全控制</p></li></ol><h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><ol><li>行内元素，块级元素，空元素</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java基础</title>
+      <link href="/2019/04/06/java/ji-chu/ji-chu/"/>
+      <url>/2019/04/06/java/ji-chu/ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-变量"><a href="#1-变量" class="headerlink" title="1. 变量"></a>1. 变量</h3><p>变量：本质上代表应该可操作的存储空间，空间位置我确定的，值是不确定的</p><p>double，long 8字节</p><p>int  4字节</p><p>变量作为程序中最基本的存储单元，要素包括变量名，变量类型和作用域。变量在使用钱必须对其声明，只有在变量声明以后才能为其分配相应长度存储空间。</p><h3 id="2-自动类型转换-amp-强制转换"><a href="#2-自动类型转换-amp-强制转换" class="headerlink" title="2. 自动类型转换 &amp; 强制转换"></a>2. 自动类型转换 &amp; 强制转换</h3><p> 自动类型转换指容量小的数据类型转为容量大的自动类型</p><h3 id="3-溢出"><a href="#3-溢出" class="headerlink" title="3. 溢出"></a>3. 溢出</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基础面试题</title>
+      <link href="/2019/04/04/css/50-dao-css-ji-chu-ti/"/>
+      <url>/2019/04/04/css/50-dao-css-ji-chu-ti/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-盒子模型"><a href="#1-盒子模型" class="headerlink" title="1. 盒子模型"></a>1. 盒子模型</h3><p>标准盒子模型：宽度 = 内容宽度(content) + border +padding + margin</p><p>低版本IE盒子模型：宽度 = 内容宽度(content + border + padding) + margin</p><h3 id="2-box-sizing属性"><a href="#2-box-sizing属性" class="headerlink" title="2. box-sizing属性"></a>2. box-sizing属性</h3><p>用来控制盒子模型的解析模式，默认为content-box</p><ol><li><p>content-box：W3C的标准盒子模型，设置元素的height/width属性是content部分的宽/高</p></li><li><p>border-box：IE传统盒子模型，设置元素的height/width属性是content+border+padding部分的宽/高</p></li></ol><h3 id="3-display有哪些值"><a href="#3-display有哪些值" class="headerlink" title="3. display有哪些值"></a>3. display有哪些值</h3><ol><li><p>inline 内联</p></li><li><p>none   隐藏</p></li><li><p>block  块显示</p></li><li><p>table  表格显示</p></li><li><p>list-item 项目列表</p></li><li><p>inline-block </p></li></ol><h3 id="4-CSS3有哪些新特性"><a href="#4-CSS3有哪些新特性" class="headerlink" title="4. CSS3有哪些新特性"></a>4. CSS3有哪些新特性</h3><ol><li><p>RGBA和透明度</p></li><li><p>background-image background-origin(content-box/padding-box/border-box)</p></li><li><p>word-warp(对长的不可分割单词换行) word-warp:break-word</p></li><li><p>文字阴影：text-shadow:5px 5px 5px #FF0000;(水平阴影，垂直阴影，模糊距离，阴影颜色)</p></li><li><p>font-face属性：定义自己的字体</p></li><li><p>圆角：border-radius</p></li><li><p>边框图片：border-image:url(border.png) 30 30 round</p></li><li><p>盒阴影：box-shadow:10px 10px 5px #888888</p></li><li><p>媒体查询：定义两套CSS，当浏览器尺寸变化是会才有不同的属性</p></li></ol><h3 id="5-CSS创建三角形的原理"><a href="#5-CSS创建三角形的原理" class="headerlink" title="5. CSS创建三角形的原理"></a>5. CSS创建三角形的原理</h3><pre><code>width: 0;height: 0;border-top: 40px solid transparent;border-left: 40px solid transparent;border-right: 40px solid transparent;border-bottom: 40px solid #ff0000;</code></pre><h3 id="6-absolute的containing-block计算方式跟正常文档流有什么不同"><a href="#6-absolute的containing-block计算方式跟正常文档流有什么不同" class="headerlink" title="6. absolute的containing block计算方式跟正常文档流有什么不同"></a>6. absolute的containing block计算方式跟正常文档流有什么不同</h3><p>无论属于哪种，都要先找到其祖先元素最近的position值不为static的元素，然后再判断</p><ol><li><p>若次元素为inline元素，则containing block为能够包含这个元素生成的第一个和最后一个inline box的padding box(除margin，border外的区域)最小矩形</p></li><li><p>否则，则由这个祖先元素的padding box</p></li></ol><p>如果都找不到，则为initial containing block</p><p>补充：</p><ol><li><p>static/relative：简单说就是它的父元素的内容框</p></li><li><p>absolute：向上找到的最近定位为absolute/relative</p></li><li><p>fixed：他的containing block一律为根元素</p></li></ol><p>包含块(Containing Block)</p><p>包含块简单理解就是一个定位参考块，就是”大盒子里套小盒子”中那个大盒子。元素有positon属性就必然涉及到包含块。先简单总结一下。</p><h3 id="7-CSS里的visibility属性有个collapse属性值，在不同浏览器下有什么区别"><a href="#7-CSS里的visibility属性有个collapse属性值，在不同浏览器下有什么区别" class="headerlink" title="7. CSS里的visibility属性有个collapse属性值，在不同浏览器下有什么区别"></a>7. CSS里的visibility属性有个collapse属性值，在不同浏览器下有什么区别</h3><p>当一个元素的visibility属性被设置为collapse值后。对于一般的元素，它的表现跟hidden是一样的</p><ol><li><p>chrome中，使用collapse值和使用hidden没有什么区别</p></li><li><p>Firefox，opera和IE，使用collapse值和使用display：none没有什么区别</p></li></ol><h3 id="8-display-none和visibility-hidden的区别"><a href="#8-display-none和visibility-hidden的区别" class="headerlink" title="8. display:none和visibility:hidden的区别"></a>8. display:none和visibility:hidden的区别</h3><p>display:none：不显示对应的元素，在文档布局中不再分配空间(回流+重绘)</p><p>visibility:hidden隐藏对应的元素，在文档布局中仍然保留原来的空间(重绘)</p><p>明确页面在文档加载完成之后到完全显示中间的过程是</p><ol><li>根据文档生成DOM树（包括display:none的节点）</li><li>在DOM树基础上根据节点的几何属性（margin/padding/width/height等)生成render树（不包括display:none、head节点但会包含visibility:hidden节点）</li><li>在render树基础上进行进一步渲染包括color,outline等样式</li></ol><p><code>reflow</code>:当render树中的一部分或者全部因为大小边距等问题发生改变而需要重建的过程叫做回流</p><p><code>repaint</code>:当元素的一部分属性发生变化，如外观背景色不会引起布局变化而需要重新渲染的过程叫做重绘</p><p>减少回流的几点建议：</p><ol><li><p>减少不必要的DOM深度</p></li><li><p>精简CSS，去掉没用的css</p></li><li><p>避免不必要的复杂css选择符，尤其是使用子选择权，或消耗更多的cpu去做选择器匹配</p></li><li><p>直接改变className，如果动态改变样式，则使用cssText（考虑没有优化的浏览器）</p></li><li><p>.不要经常访问会引起浏览器flush队列的属性，如果你确实要访问，利用缓存</p></li><li><p>让元素脱离动画流，减少回流的Render Tree的规模</p></li></ol><h3 id="9-position跟display、overflow、float这些特性相互叠加后会怎么样？"><a href="#9-position跟display、overflow、float这些特性相互叠加后会怎么样？" class="headerlink" title="9. position跟display、overflow、float这些特性相互叠加后会怎么样？"></a>9. position跟display、overflow、float这些特性相互叠加后会怎么样？</h3><p>display属性规定元素一个生成的框的类型</p><p>position属性规定元素的定位</p><p>float属性是一种布局方式，定义元素在哪个方向浮动</p><p>类似于优先级机制：position：absolute/fixed优先级最高，有他们在时，float不起作用，display值需要调整。float 或者absolute定位的元素，只能是块元素或表格。</p><h3 id="10-对BFC规范-会计格式化上下文-blbok-formatting-content-的理解"><a href="#10-对BFC规范-会计格式化上下文-blbok-formatting-content-的理解" class="headerlink" title="10. 对BFC规范(会计格式化上下文:blbok formatting content)的理解"></a>10. 对BFC规范(会计格式化上下文:blbok formatting content)的理解</h3><p>BFC规定了内部的block box如何布局</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> css </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浏览器兼容</title>
+      <link href="/2019/04/04/css/liu-lan-qi-jian-rong-wen-ti/liu-lan-qi-jian-rong/"/>
+      <url>/2019/04/04/css/liu-lan-qi-jian-rong-wen-ti/liu-lan-qi-jian-rong/</url>
+      
+        <content type="html"><![CDATA[<p>不同浏览器的标签默认的margin和padding不同</p><pre><code>* { margin:0; padding:0; }`</code></pre><p>块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大,hack：display:inline;将其转化为行内属性</p><p> 渐进的识别方式，从总体逐渐排除局部。首先，巧妙的使用”9”,这一标记，将IE浏览器从所有情况中分离出来。接着，再次使用”+”将IE8和IE7，IE6分离开来，这样子IE8已经独立识别</p><pre><code>background-color:#f1ee18;/*所有识别*/.background-color: #00deff\9; /*IE6、7、8识别*/+background-color: #a200ff;/*IE6、7识别*/_background-color: #1e0bd1;/*IE6识别*/ </code></pre><p>设置较小高度标签(小于10px)，再IE6，IE7中高度超出自己设置的高度。hack:给超出高度的标签设置overflow:hidden;或者设置行高line-height小于你设置的高度。</p><p>IE下，可以使用获取常规属性的方法来获取自定义属性,也可以使用getAttribute()获取自定义属性；Firefox下，只能使用getAttribute()获取自定义属性。解决方法:统一通过getAttribute()获取自定义属性。</p><p>Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,可通过加入 CSS 属性 -webkit-text-size-adjust:none</p><p>超链接访问过后hover样式就不出现，被点击访问过的超链接不再具有hover和active了。解决方法是改变CSS属性的排列顺序:L-V-H-A(love hate):a:link{} a:visited{} a:hover{} a:active{}</p><p>为什么要初始化CSS样式</p><p>因为浏览器的兼容问题，不同浏览器对有些标签的默认样式是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> css </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 浏览器兼容 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>构造器模式</title>
+      <link href="/2019/04/04/javascript/she-ji-mo-shi/constructor/constructor/"/>
+      <url>/2019/04/04/javascript/she-ji-mo-shi/constructor/constructor/</url>
+      
+        <content type="html"><![CDATA[<h3 id="构造器模式"><a href="#构造器模式" class="headerlink" title="构造器模式"></a>构造器模式</h3><p>在面向对象编程中，构造器是一个当新创建对象的内存被分配后，用来初始化该对象的一个特殊函数。</p><h3 id="创建对象的三种基本方式"><a href="#创建对象的三种基本方式" class="headerlink" title="创建对象的三种基本方式"></a>创建对象的三种基本方式</h3><pre><code>var newObject = {};var newObject = Object.create( null )var newObject = new Object()</code></pre><h3 id="将一个键值赋给一个对象"><a href="#将一个键值赋给一个对象" class="headerlink" title="将一个键值赋给一个对象"></a>将一个键值赋给一个对象</h3><pre><code>newObject.someKey = &quot;Hello World&quot;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 构造器模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Inspector</title>
+      <link href="/2019/04/04/node/node-diao-shi-ru-men/inspector/"/>
+      <url>/2019/04/04/node/node-diao-shi-ru-men/inspector/</url>
+      
+        <content type="html"><![CDATA[<p>可查看当前上下文变量、</p><p>可观察当前函数调用栈</p><p>不入侵代码</p><p>可暂停状态下执行指定代码</p><p>Inspector的构成</p><p>WebSockets服务</p><p>Inspector协议</p><p>HTTP服务</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Inspector调试node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/04/04/css/1/"/>
+      <url>/2019/04/04/css/1/</url>
+      
+        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>Document</title>    <style>        body{            width: 100%;        }        .san {            /* width: 0;            height: 0;            border-top: 40px solid transparent;            border-left: 40px solid transparent;            border-right: 40px solid transparent;            border-bottom: 40px solid #ff0000; */            height:32px;            background-color:#f1ee18;/*所有识别*/            .background-color: #00deff\9; /*IE6、7、8识别*/            +background-color: #a200ff;/*IE6、7识别*/            _background-color: #1e0bd1;/*IE6识别*/        },       div {           height: 400px;           border: 1px solid #ccc;       }       .top {            width:100%;           margin: 0 auto;       }       .left, .right{            width: 49%;            float: left;       }       h1 {        -webkit-text-size-adjust:none;        font-size: 20px;       }    </style><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>      <div class="san">    </div>    <div class="top"></div>    <div class="left"></div>    <div class="right"></div>    <h1>wwwwwwwww</h1></body></html>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>表单</title>
+      <link href="/2019/04/04/html5/biao-dan/biao-dan/"/>
+      <url>/2019/04/04/html5/biao-dan/biao-dan/</url>
+      
+        <content type="html"><![CDATA[<p>HTML5新增的表单元素</p><ul><li><p>datalist</p></li><li><p>keygen</p></li><li><p>output</p></li></ul><p>datalist 元素规定输入域的选项列表，</p><p>列表是通过datalist内的option元素创建的</p><p>如需把datalist绑定到输入域，请用输入域的list属性引用datalist的id</p><pre><code>  Webpage: &lt;input type=&quot;url&quot; list=&quot;url_list&quot; name=&quot;link&quot; /&gt;    &lt;datalist id=&quot;url_list&quot;&gt;    &lt;option label=&quot;W3School&quot; value=&quot;http://www.W3School.com.cn&quot; /&gt;    &lt;option label=&quot;Google&quot; value=&quot;http://www.google.com&quot; /&gt;    &lt;option label=&quot;Microsoft&quot; value=&quot;http://www.microsoft.com&quot; /&gt;    &lt;/datalist&gt;</code></pre><p>keygen 元素的作用是提供一种验证用户的可靠方法。</p><p>keygen 元素是密钥对生成器（key-pair generator）。当提交表单时，会生成两个键，一个是私钥，一个公钥。</p><p>私钥（private key）存储于客户端，公钥（public key）则被发送到服务器。公钥可用于之后验证用户的客户端证书（client certificate）。</p><p>output 元素</p><p>output 元素用于不同类型的输出，比如计算或脚本输出</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML5 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML5新增的表单元素 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字符串</title>
+      <link href="/2019/04/03/shu-ju-jie-gou/zi-fu-chuan/zi-fu-chuan/"/>
+      <url>/2019/04/03/shu-ju-jie-gou/zi-fu-chuan/zi-fu-chuan/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串String </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/03/24/android/zhen-ji-diao-shi-ge-chong-keng/"/>
+      <url>/2019/03/24/android/zhen-ji-diao-shi-ge-chong-keng/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/03/18/vue/kai-fa-guo-cheng-yu-dao-de-wen-ti/zu-jian/"/>
+      <url>/2019/03/18/vue/kai-fa-guo-cheng-yu-dao-de-wen-ti/zu-jian/</url>
+      
+        <content type="html"><![CDATA[<p>父组件使用子组件</p><p>需要在父组件中声明子组件的名字</p><pre><code> components: {     子组件名字},</code></pre><p>使用路由路径要配对</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/03/18/html5/cun-chu/appcache/"/>
+      <url>/2019/03/18/html5/cun-chu/appcache/</url>
+      
+        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en" manifest="manifest.appcache"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>appcache</title><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>    <h1>APP Cache Demo</h1>    <ul>        <li><img src="/2019/03/18/html5/cun-chu/appcache/../../../../public/images/html5/1.png" alt=""></li>        <li><img src="/2019/03/18/html5/cun-chu/appcache/../../../../public/images/html5/2.png" alt=""></li>    </ul></body><script>    window.addEventListener('load', function() {        window.applicationCache.addEventListener('updateready',function(e) {            console.log(window.applicationCache.status);            if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {                window.applicationCache.swapCache();                if(confirm('A new version of this site is avaliable,load it?')) {                    window.location.reload();                }            } else {                console.log("manifest didn\'t change");            }        }, false);    }, false);</script></html>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML5离线存储</title>
+      <link href="/2019/03/18/html5/cun-chu/chi-xian-huan-cun/"/>
+      <url>/2019/03/18/html5/cun-chu/chi-xian-huan-cun/</url>
+      
+        <content type="html"><![CDATA[<p>离线缓存：可以让web应用在离线的情况下继续使用，通过manifest文件指明需要缓存的资源</p><p>检测是否离:navigator.onLine</p><p>浏览器支持</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul><li><p>创建manifest文件</p></li><li><p>HTML引用manifest文件</p></li></ul><html manifest="sample.appcache"><ul><li><p>在服务器添加mine-type text/cache-manifest</p></li><li><p>更新</p></li></ul><p>如果资源有修改，则必须通过修改manifest文件来刷新被缓存的文件列表</p><h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ol><li>完成离线</li><li>资源被缓存，加载更快</li><li>降低server负载</li></ol><h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><ol><li><p>含有manifest属性的当前请求页无论如何都会被缓存</p></li><li><p>更新需要建立在manifest文件的更，文件更新后是需要页面再次刷新的(两次刷新才能获取资源)</p></li><li><p>更新是全局性的，无法单独更新某个文件</p></li><li><p>对于凯娜姐的参数编号是敏感的，任何一个参数的修改都会被master更新缓存（重复缓存含参页面）index.html和index.html?renew=1会被认为是不同文件，分别缓存</p></li></ol><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ol><li><p>单地址页面</p></li><li><p>对实时性要求不高的业务</p></li><li><p>离线webapp</p></li></ol></html>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML5 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML5离线存储 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/03/17/html5/cun-chu/indexeddb/"/>
+      <url>/2019/03/17/html5/cun-chu/indexeddb/</url>
+      
+        <content type="html"><![CDATA[```<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>Document</title><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><script>    var db;    var arrKey = [];    var openRequest;    var lastCursor;    var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;    var dbName = "person";    var tableName = "testTable";    function init () {        // 数据库存在的话就打开        openRequest = indexedDB.open(dbName);        // 数据库不存在就新建        // onupgradeneeded事件在新的数据库创建或版本改变时触发        openRequest.onupgradeneeded = function(e) {            console.log("running onupgradeneeded");            var thisDb = e.target.result;            console.log(thisDb.version);            // 数据库建表            if (!thisDb.objectStoreNames.contains(tableName)) {                console.log("I need to create the objectStoreNames");                var objectStore = thisDb.createObjectStore(tableNmae, { keyPath: "id", autoIncrement:true });//主键                objectStore.createIndex("name", "name", { unique: false});//是否能被索引                objectStore.createIndex("phone", "phone", { unique: false});            }        }        // 已经创建好的数据库        openRequest.onsuccess = function(e) {            db = e.target.result;            console.log(db.version);            db.onerror = function(event) {                alert("database error" + event.target.errorCode)                console.dir(event.target);                            }            if (db.objectStoreNames.contains(tableName)) {                console.log("contain table" + tableName);                // 事务可读机制保证一致性和可靠性                var tansaction = db.tansaction([tableName], "readwirte");                tansaction.oncomplete = function(event) {                    console.log("All done");                }                tansaction.onerror = function(event) {                    console.dir(event);                }                // 得到表的对象                var objectStore = tansaction.objectStore(tableName);                // 使用游标遍历（遍历表）                objectStore.openCursor().onsuccess = function(event) {                    var cursor = event.target.result;                    if (cursor) {                        console.log(cursor.key);                        console.log(cursor.value);                        reder({                            key:cursor.key,                            name:cursor.value["name"],                            phone:cursor.value["phone"],                            address:cursor.value["address"]                        })                        lastCursor = cursor.key;                        // 执行下一条                        cursor.continue();                    } else {                        console.log("Done with cursor");                    }                };                objectStore.openCursor().onerror = function () {                    console.dir(event);                }            }        }        //         openRequest.onerror = function(e) {        }  }        // add        document.querySelector('#add').addEventListener('click', function() {            var name = document.querySelector('#name').value;            var phone = document.querySelector('#phone').value;            var address = document.querySelector('#address').value;            var person = {                "name": name,                "phone": phone,                "address": address            }            var transaction = db.transaction([tableName], "readwrite");            transaction.compelete = function(event) {                console.log("transaction compelete");            };            transaction.onerror = function() {                console.log(event);            }            var objectStore = transaction.objectStore(tableName);            objectStore.add(person);            objectStore.openCursor().onsuccess = function(event) {                cursor = event.target.result;                var key;                if (lastCursor == null) {                    key = cursor.key;                    lastCursor = key;                } else {                    key = ++ lastCursor;                }                reder({                    key: key,                    name: name,                    phone: phone,                    address: address                });                console.log("success add new record !key" + key);                console.dir(person)            }        })        // delete        function deleteRecord(id) {            var transaction = db.transaction([tableName], "readwrite")            transaction.oncomplete = function(event) {                console.log("transaction complete")            }            transaction.onerror = function(event) {                console.dir(event);            }            var objectStore = transaction.objectStore(tableName);            var removeKey = parseInt(id);            var getRequest = function(e) {                var result = getRequest.result;                console.log(result);            }            var request = objectStore.delete(removeKey);            request.onsuccess = function(e) {                console.log("success delete record");            };            request.onerror = function(e) {                console.log("error delete record:" + e);            }            // 隐藏要删除的元素            document.getElementById(removeKey).style.display="none";        }        // 删除DB        document.querySelector("#deleteDB").addEventListener('click', function() {            var deleteDB = indexedDB.deleteDatabase(dbName);            var content = document.querySelector('#content');            while(content.firstChild) {                content.removeChild(content.firstChild);            }            deleteDB.onsuccess = function(event) {                console.log("success delete database");            };            deleteDB.onerror = function(event) {                console.log(event.target);            }        })        // 查询        document.querySelector('#seleteBtn').addEventListener('click', function() {            var curName = document.getElementById('selName').value;            var transaction = db.transaction([tableName], "readwrite");            transaction.compelete = function(event) {                console.log("transaction compelete");            };            transaction.onerror = function() {                console.log(event);            }            var objectStore = transaction.objectStore(tableName);            var boundKeyRange = IDBKeyRange.objectStore(curName);            objectStore.index("name").openCursor(boundKeyRange).onsuccess = function() {                var cursor = event.target.result;                if (!cursor) {                    return                }                var rowData = cursor.value;                console.log(rowData);                document.getElementById('content').innerHTML = '';                reder({                    key: cursor.value.id,                    name: cursor.value["name"],                    phone: cursor.value["phone"],                    address: cursor.value["address"]                });                cursor.continue();            }        })  </script></body></html>```]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML5关系型数据库存储</title>
+      <link href="/2019/03/17/html5/cun-chu/shu-ju-ku-cun-chu/"/>
+      <url>/2019/03/17/html5/cun-chu/shu-ju-ku-cun-chu/</url>
+      
+        <content type="html"><![CDATA[<p>Web SQL 和 IndexedDB</p><p>一种能在浏览器中持久化地存储结构化数据的数据库，并且为web应用提供了丰富的查询能力</p><p>浏览器支持</p><p>chrome 11 +</p><p>opera 不支持</p><p>Firefox 4+</p><p>IE 10+</p><p>存储结构</p><p>IndexedDB是按域名分配独立空间，一个独立域名下可以创建多个数据库，每个数据库可以创建多个对象存储空间（表），一个对象存储空间可以存储多个对象数据</p><h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><h3 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h3><h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML5 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML5关系型数据库存储 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/03/17/html5/cun-chu/localstorage/"/>
+      <url>/2019/03/17/html5/cun-chu/localstorage/</url>
+      
+        <content type="html"><![CDATA[```<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="utf-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <title>本地存储图片</title>    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>    <!-- <img src="../../../../public/images/html5/2.png" alt=""> --></body><script>var src ="../../../../public/images/html5/2.png"function set(key) {    var img = document.createElement('img');    img.addEventListener('load', function() {                var imgCanvas = document.createElement('canvas');        var imgContext = imgCanvas.getContext('2d')                imgCanvas.width = this.width        imgCanvas.height = this.height        imgContext.drawImage(this, 0, 0, this.width, this.height)        var imgAsDataURL = imgCanvas.toDataURL('images/png')        try {            localStorage.setItem(key, imgAsDataURL)        } catch (e) {            console.log("failed" + e)        }    }, false)    img.src = src  }    // 获取图片并渲染     function get(key) {        var srcStr = localStorage.getItem(key)        var imgObj = document.createElement('img')        imgObj.src = srcStr        document.body.appendChild(imgObj)    }</script></html>```]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML5本地存储</title>
+      <link href="/2019/03/17/html5/cun-chu/ben-di-cun-chu/"/>
+      <url>/2019/03/17/html5/cun-chu/ben-di-cun-chu/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>API : localStorage &amp;&amp; sessionStorage</p></li><li><p>存储形式 : key —&gt;value</p></li><li><p>过期 : 永久存储，永不失效</p></li><li><p>大小 : 官方给出是每个域名5M</p></li></ul><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>localStorage API</p><ul><li><p>getItem : 取记录</p></li><li><p>setItem : 设置</p></li><li><p>removeItem : 移除</p></li><li><p>key : 取索引</p></li><li><p>clear : 全部删掉</p></li></ul><p>sessionStorage</p><p>重新打开浏览器或者关闭浏览器消失</p><h3 id="H5本地存储"><a href="#H5本地存储" class="headerlink" title="H5本地存储"></a>H5本地存储</h3><p>数组 ： 直接不能存，要把数组序列化成字符串就可以</p><p>json数据 ：直接不能存，把json数据parse成对象，stringfiy转成字符串</p><p>图片</p><p>脚本 ： ajax</p><p>样式文件</p><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol><li><p>使用前要判断浏览器是否支持</p></li><li><p>写数据时，需要异常处理，避免超出容量抛错</p></li><li><p>避免把敏感信息存入localStorage</p></li><li><p>key的唯一性</p></li></ol><h3 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h3><ol><li><p>存储更新策略，过期控制</p></li><li><p>子域名之间不能共享数据</p></li><li><p>超出存储大小之后如何存储（LRU，FIFO）</p></li><li><p>server端如何取到</p></li></ol><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol><li><p>利用本地存储数据，减少网络传输</p></li><li><p>弱网络环境下，高延迟，低宽带，尽量把数据本地化</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML5 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML5本地存储 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML5缓存</title>
+      <link href="/2019/03/17/html5/cun-chu/h5-cun-chu/"/>
+      <url>/2019/03/17/html5/cun-chu/h5-cun-chu/</url>
+      
+        <content type="html"><![CDATA[<p>客户端储存历程</p><h3 id="远古时期"><a href="#远古时期" class="headerlink" title="远古时期"></a>远古时期</h3><ul><li>cookies的用法和缺陷</li><li>userdata</li></ul><h3 id="HTML时代"><a href="#HTML时代" class="headerlink" title="HTML时代"></a>HTML时代</h3><ul><li>localStorage</li><li>application cache</li><li>indexedDB</li></ul><ol><li>使用规范</li><li>每种存储的特点以及解决的问题</li><li>在大型站点的使用</li><li>具体业务适用的场景</li></ol><h3 id="HTML5储存"><a href="#HTML5储存" class="headerlink" title="HTML5储存"></a>HTML5储存</h3><p>如何实现把图片放在客户端</p><p>如何实现跨域请求</p><p>如何做到真正的离线访问web应用</p><p>如何实现一个客户端的数据库</p><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul><li><p>H5之前如何实现存储</p></li><li><p>H5的几种常见的存储方式</p></li><li><p>localStorage &amp;&amp; sessionStorage</p></li><li><p>application cache 的介绍和应用</p></li><li><p>indexDB的介绍和使用场景</p></li></ul><h3 id="关于存储"><a href="#关于存储" class="headerlink" title="关于存储"></a>关于存储</h3><ul><li><p>cache</p></li><li><p>磁盘文件</p></li><li><p>数据库</p></li><li><p>内存</p></li></ul><h3 id="H5之前"><a href="#H5之前" class="headerlink" title="H5之前"></a>H5之前</h3><p>H5之前浏览器端使用cookies去存客户端的一些内容</p><p>cookies 的特点</p><ol><li><p><code>http请求头上会带着</code>：一个比较大的缺点，一个http请求要通过三次握手，要去请求回包，整个过程比较长，请求头又带着一堆,会显得非常臃肿</p></li><li><p><code>大小4k</code>: 对于每一个域名，浏览器客户端只会存4k大小，不能放更多</p></li><li><p><code>主domain污染</code>：每一个子域名都放在主域名下，子域名去访问一条记录或者http请求都会带着主域名，会造成主域名cookies的污染，产生安全隐患</p></li></ol><p>cookies在浏览器存储形态</p><p>name value domain path expires size http secure</p><p>UserDate</p><ol><li>只有IE支持</li></ol><h3 id="H5存储"><a href="#H5存储" class="headerlink" title="H5存储"></a>H5存储</h3><ul><li><p>解决4k大小问题</p></li><li><p>解决请求头常带存储信息的问题</p></li><li><p>解决关系型存储的问题</p></li><li><p>跨浏览器</p></li></ul><h3 id="H5的存储"><a href="#H5的存储" class="headerlink" title="H5的存储"></a>H5的存储</h3><ul><li><p>本地存储 (localStorage &amp;&amp; sessionStorage)</p></li><li><p>离线存储 (application cache)</p></li><li><p>IndexedDB 和 WebSQL</p></li></ul><h3 id="H5存储优势"><a href="#H5存储优势" class="headerlink" title="H5存储优势"></a>H5存储优势</h3><ol><li><p>存储空间大</p></li><li><p>接口丰富</p></li><li><p>数据相对安全</p></li><li><p>关系型</p></li><li><p>省流量</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML5 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML5缓存 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>angular</title>
+      <link href="/2019/03/17/angular/ji-chu-zhi-shi/zu-jian-he-zu-jian-shu/"/>
+      <url>/2019/03/17/angular/ji-chu-zhi-shi/zu-jian-he-zu-jian-shu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><p>模块</p><p>组件</p><p>元数据</p><p>模板</p><p>数据绑定</p><p>服务</p><p>指令</p><p>依赖注入</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> angular </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> angular组件和组件树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>双向数据绑定</title>
+      <link href="/2019/03/17/vue/yuan-ma/shuang-xiang-shu-ju-bang-ding/"/>
+      <url>/2019/03/17/vue/yuan-ma/shuang-xiang-shu-ju-bang-ding/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>箭头函数</title>
+      <link href="/2019/03/16/es6/jian-tou-han-shu/jian-tou-han-shu/"/>
+      <url>/2019/03/16/es6/jian-tou-han-shu/jian-tou-han-shu/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 箭头函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>高仿别人的app</title>
+      <link href="/2019/03/16/vue/ji-cheng-vue/gao-fang-bie-ren-de-app/"/>
+      <url>/2019/03/16/vue/ji-cheng-vue/gao-fang-bie-ren-de-app/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>Chrome调试查看DOM结构</p></li><li><p>Header，Body里面查看js/css引用，搜索相应的js库</p></li><li><p>查看source，network中的js，使用饭编与断点进行调试。</p></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue集成</title>
+      <link href="/2019/03/16/vue/ji-cheng-vue/ji-cheng-vue/"/>
+      <url>/2019/03/16/vue/ji-cheng-vue/ji-cheng-vue/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>单页面，多页面引入Vue.js</p></li><li><p>复杂单页面应用Vue.cli工具</p></li><li><p>开发工作流</p></li></ol><ul><li><p>需求调研</p></li><li><p>交互设计，逻辑设计，接口设计</p></li><li><p>代码实验，测试运行，线上部署</p></li></ul><ol start="4"><li>git</li></ol><ul><li><p>git clone 地址 (远程仓库下载代码到本地目录)</p></li><li><p>git status (查看在哪个分支和有无提交)</p></li><li><p>ls (查看)</p></li><li><p>git branch -a (查看本地分支远程分支)</p></li><li><p>git branch</p></li><li><p>touch 文件名 (创建文件)</p></li><li><p>git add . (将所有本地文件添加到待提交待处理的状态)</p></li><li><p>git commit -m “注释” (本次提交注释)</p></li><li><p>git remote -v (查看推送到哪里去)</p></li><li><p>git push origin master (提交到远程主干分支)</p></li><li><p>git checkout -b 分支名 (创建分支)</p></li><li><p>git checkout 分支名 (切换分支)</p></li><li><p>git merge 分支名 (合并分支)</p></li><li><p>git branch -D 分支名 (删除本地分支)</p></li><li><p>git branch -a (查看本地远程分支)</p></li><li><p>git push origin :分支名 (删除远程分支)</p></li><li><p>git reset –haed head^ (回退)</p></li><li><p>git log(日志)</p></li><li><p>git relog</p></li><li><p>git reset –hard HEAD@{1}</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue集成 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vuex</title>
+      <link href="/2019/03/16/vue/he-xin-ji-zhu/vuex/"/>
+      <url>/2019/03/16/vue/he-xin-ji-zhu/vuex/</url>
+      
+        <content type="html"><![CDATA[<p>多个视图依赖同一状态(例：导航栏)</p><p>不同视图的行为需要变更同一状态(例：评论弹幕)</p><p>Vuex</p><ul><li><p>为Vue.js开发的状态管理模式</p></li><li><p>组件状态集中管理</p></li><li><p>组件状态改变遵循统一的规则</p></li></ul><h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><p>console.log</p><p>console.error</p><p>alert(阻塞行为，不点不进行下一步)</p><p>debugger</p><p>output</p><p>network</p><p>slow 3G(很慢让你看)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue-vuex </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>组件化</title>
+      <link href="/2019/03/16/vue/he-xin-ji-zhu/zu-jian-hua/"/>
+      <url>/2019/03/16/vue/he-xin-ji-zhu/zu-jian-hua/</url>
+      
+        <content type="html"><![CDATA[<p>组件化思想</p><p>组件化</p><ul><li><p>独立的</p></li><li><p>可复用的</p></li><li><p>整体化的</p></li></ul><p>为什么要组件化</p><ul><li><p>实现功能模块的复用</p></li><li><p>高执行效率(渲染)</p></li><li><p>开发单页面复杂应用</p></li></ul><p>如何拆分</p><ul><li><p>300行原则(组件代码尽量不超过300行)</p></li><li><p>复用原则(导航栏)</p></li><li><p>业务复杂性原则</p></li></ul><p>组件化带来的问题</p><ul><li><p>组件状态管理</p></li><li><p>多组件的混合使用，多页面，复杂业务(vue-router)</p></li><li><p>组件间的传参，消息，事件管理(props,emit/on,bus)</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue-组件化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue-cli</title>
+      <link href="/2019/03/16/vue/he-xin-ji-zhu/vue-cli/"/>
+      <url>/2019/03/16/vue/he-xin-ji-zhu/vue-cli/</url>
+      
+        <content type="html"><![CDATA[<p>vue-cli </p><p>创建工程的两种方法</p><pre><code>npm install -g @vue/cli</code></pre><ol><li>vue create</li></ol><pre><code>vue create filename空格 + 回车选择http://localhost:8080</code></pre><ol start="2"><li>vue ui<pre><code>vue ui</code></pre></li></ol><p>工程化项目的目录</p><pre><code>组件目录package.json</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue-cli </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue-计算属性和侦听属性</title>
+      <link href="/2019/03/16/vue/ji-ben-yu-fa/ji-suan-shu-xing-he-zhen-ting-shu-xing/"/>
+      <url>/2019/03/16/vue/ji-ben-yu-fa/ji-suan-shu-xing-he-zhen-ting-shu-xing/</url>
+      
+        <content type="html"><![CDATA[<p>vue-计算属性和侦听属性</p><p>计算属性 computed:只要改变其中一个值则改变</p><p>侦听属性 watch:Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：侦听属性</p><p>watch(异步场景) computed(数据联动)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>XSS</title>
+      <link href="/2019/03/15/html/xss/xss/"/>
+      <url>/2019/03/15/html/xss/xss/</url>
+      
+        <content type="html"><![CDATA[<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p>XSS定义: 即（Cross Site Scripting）中文名称为“跨站脚本攻击”。</p><p>XSS原理</p><p>XSS攻击方式</p><p>XSS攻击防范措施</p><p>了解HTTP，Cookie，Ajax</p><h2 id="XSS的攻击方式"><a href="#XSS的攻击方式" class="headerlink" title="XSS的攻击方式"></a>XSS的攻击方式</h2><ul><li>反射型：发出请求时，XSS代码出现在URL中(攻击脚本写在URL)，作为输入提交到服务器端，服务器端解析响应后，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码，这个过程像一次反射，故叫反射型XSS。</li></ul><p>利用iframe插入广告</p><p>插入脚本攻击</p><ul><li>存储型: 存储型XSS和反射型XSS区别仅在于，提交的代码会存储在服务器端(数据库，内存，文件系统)，下次请求目标页面时不用再提交XSS代码</li></ul><h3 id="XSS攻击防范措施"><a href="#XSS攻击防范措施" class="headerlink" title="XSS攻击防范措施"></a>XSS攻击防范措施</h3><p>编码：对用户输入的数据进行HTML Entity编码(‘’ —&gt;  &amp;quot)</p><p>过滤: 移除用户上传的DOM属性，如onerror(事件相关的属性)</p><pre><code>  移除用户上传的style节点，script节点，iframe节点等</code></pre><p>校正: 避免直接对HTML entity解码</p><pre><code>  使用DOM Prase转换，矫正不配对的DOM标签</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> XSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> XSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SEO</title>
+      <link href="/2019/03/15/html/seo/seo/"/>
+      <url>/2019/03/15/html/seo/seo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="SEO-SEM"><a href="#SEO-SEM" class="headerlink" title="SEO SEM"></a>SEO SEM</h2><p>SEO(search Engine Optimization 搜索引擎优化)</p><p>SEM(search Engine Marketing 搜索引擎营销)</p><p>SEM高投入，SEO低投入</p><p>SEM短，效益快，SEO长期投入，增长快</p><p>新广告法颁布后SEM广告位少</p><h2 id="IP-PV-UV"><a href="#IP-PV-UV" class="headerlink" title="IP PV UV"></a>IP PV UV</h2><p>IP：独立IP访问的用户</p><p>PV：页面浏览量或点击量</p><p>UV：独立访问数</p><h3 id="SEO优化最重要的三要素"><a href="#SEO优化最重要的三要素" class="headerlink" title="SEO优化最重要的三要素"></a>SEO优化最重要的三要素</h3><p>标题</p><p>关键字</p><p>描述</p><h3 id="权重的提升"><a href="#权重的提升" class="headerlink" title="权重的提升"></a>权重的提升</h3><p>外链(友情链接)：外链是提升权重的方式</p><p>内链</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> SEO </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SEO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>图片轮播</title>
+      <link href="/2019/03/15/bootstrap/carousel/"/>
+      <url>/2019/03/15/bootstrap/carousel/</url>
+      
+        <content type="html"><![CDATA[<p>第一步：设计轮播图片的容器。在 Bootstrap 框架中采用 carousel 样式，并且给这个容器定义一个 ID 值，方便后面采用 data 属性来声明触发。</p><pre><code>&lt;div id=&quot;slidershow&quot; class=&quot;carousel&quot;&gt;&lt;/div&gt;</code></pre><p>第二步：设计轮播图片计数器。在容器 div.carousel 的内部添加轮播图片计算器，采用 carousel-indicators 样式，其主要功能是显示当前图片的播放顺序(有几张图片就放置几个li)，一般采用有顺列表来制作：</p><pre><code>&lt;div id=&quot;slidershow&quot; class=&quot;carousel&quot;&gt;&lt;!-- 设置图片轮播的顺序 --&gt;    &lt;ol class=&quot;carousel-indicators&quot;&gt;        &lt;li class=&quot;active&quot;&gt;1&lt;/li&gt;        &lt;li&gt;2&lt;/li&gt;        &lt;li&gt;3&lt;/li&gt;        &lt;li&gt;4&lt;/li&gt;        &lt;li&gt;5&lt;/li&gt;        ...    &lt;/ol&gt;&lt;/div&gt;</code></pre><p>在 Bootstrap 框架中，轮播图片计数器，都是以圆点向大家呈现，其具体样式如下：</p><pre><code>/*bootstrap.css文件第5835行～第5863行*/.carousel-indicators {    position: absolute; /*整个计数区域绝对定位*/    bottom: 10px; /*距容器carousel底部10px*/    z-index: 15; /*设置其在Z轴的层级*/    /*让整个计数区水平居中*/    left: 50%;    width: 60%;    padding-left: 0;    margin-left: -30%;    text-align: center;    list-style: none;}.carousel-indicators li {    display: inline-block;    width: 10px;    height: 10px;    margin: 1px;    text-indent: -999px;    cursor: pointer;    background-color: #000 \9;    background-color: rgba(0, 0, 0, 0);    border: 1px solid #fff;    border-radius: 10px;}/*设置当前状态样式*/.carousel-indicators .active {    width: 12px;    height: 12px;    margin: 0;    background-color: #fff;}</code></pre><p>第四步：设计轮播图片控制器。很多时候轮播图片还具有一个向前播放和向后播放的控制器。在 Carousel 中通过 carousel-control 样式配合 left 和 right 来实现。其中left表示向前播放，right表示向后播放。其同样放在carousel容器内：</p><pre><code>&lt;div id=&quot;slidershow&quot; class=&quot;carousel&quot;&gt;    &lt;!-- 设置图片轮播的顺序 --&gt;    &lt;ol class=&quot;carousel-indicators&quot;&gt;       …    &lt;/ol&gt;    &lt;!-- 设置轮播图片 --&gt;    &lt;div class=&quot;carousel-inner&quot;&gt;        …    &lt;/div&gt;    &lt;!-- 设置轮播图片控制器 --&gt;    &lt;a class=&quot;left carousel-control&quot; href=&quot;&quot; &gt;        &lt;span class=&quot;glyphicon glyphicon-chevron-left&quot;&gt;&lt;/span&gt;    &lt;/a&gt;    &lt;a class=&quot;right carousel-control&quot; href=&quot;&quot;&gt;        &lt;span class=&quot;glyphicon glyphicon-chevron-right&quot;&gt;&lt;/span&gt;    &lt;/a&gt;&lt;/div&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> bootstrap </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bootstrap carousel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>手风琴</title>
+      <link href="/2019/03/15/bootstrap/collapse/"/>
+      <url>/2019/03/15/bootstrap/collapse/</url>
+      
+        <content type="html"><![CDATA[<p>手风琴最关键的部分，就是每个标题对应有一个内容，在Bootstrap框架中将这两个部分组合起来称为一个panel页板，如右边效果所示，他就有三个panel面板，将这三个面板组合在一起，就是一个面板组合 panel-group，也就是手风琴的结构。如：</p><pre><code>&lt;div class=&quot;panel-group&quot; id=&quot;accordion&quot;&gt;    &lt;div class=&quot;panel panel-default&quot;&gt;        &lt;div class=&quot;panel-heading&quot;&gt;            &lt;h4 class=&quot;panel-title&quot;&gt;&lt;a data-toggle=&quot;collapse&quot; data-parent=&quot;#accordion&quot; href=&quot;#collapseOne&quot;&gt;标题一&lt;/a&gt;&lt;/h4&gt;        &lt;/div&gt;        &lt;div id=&quot;collapseOne&quot; class=&quot;panel-collapse collapse in&quot;&gt;            &lt;div class=&quot;panel-body&quot;&gt;标题一对应的内容&lt;/div&gt;        &lt;/div&gt;    &lt;/div&gt;    &lt;div class=&quot;panel panel-default&quot;&gt;        &lt;div class=&quot;panel-heading&quot;&gt;            &lt;h4 class=&quot;panel-title&quot;&gt;&lt;a data-toggle=&quot;collapse&quot; data-parent=&quot;#accordion&quot; href=&quot;#collapseTwo&quot;&gt;标题二&lt;/a&gt;&lt;/h4&gt;        &lt;/div&gt;        &lt;div id=&quot;collapseTwo&quot; class=&quot;panel-collapse collapse&quot;&gt;            &lt;div class=&quot;panel-body&quot;&gt;标题二对应的内容&lt;/div&gt;        &lt;/div&gt;    &lt;/div&gt;    &lt;div class=&quot;panel panel-default&quot;&gt;        &lt;div class=&quot;panel-heading&quot;&gt;            &lt;h4 class=&quot;panel-title&quot;&gt;&lt;a data-toggle=&quot;collapse&quot;data-parent=&quot;#accordion&quot;href=&quot;#collapseThree&quot;&gt;标题三&lt;/a&gt;&lt;/h4&gt;        &lt;/div&gt;        &lt;div id=&quot;collapseThree&quot; class=&quot;panel-collapse collapse&quot;&gt;            &lt;div class=&quot;panel-body&quot;&gt;标题三对应的内容&lt;/div&gt;        &lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><p>简单点就是一个触发器和一个折叠区：</p><pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#demo&quot;&gt;触发器&lt;/button&gt;&lt;div id=&quot;demo&quot; class=&quot;collapse in&quot;&gt;折叠区&lt;/div&gt;</code></pre><p>手风琴–声明式触发手风琴</p><p>手风琴–声明式触发手风琴（二）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> bootstrap </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bootstrap  collapse </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>选项卡</title>
+      <link href="/2019/03/15/bootstrap/tabs/"/>
+      <url>/2019/03/15/bootstrap/tabs/</url>
+      
+        <content type="html"><![CDATA[<p>选项卡组件（也就是菜单组件），对应的是 Bootstrap的 nav-tabs）</p><p>底部可以切换的选项卡面板，在 Bootstrap 中通常 tab-pane 来表示</p><pre><code>&lt;!-- 选项卡组件（菜单项nav-tabs）--&gt;&lt;ul id=&quot;myTab&quot; class=&quot;nav nav-tabs&quot; role=&quot;tablist&quot;&gt;    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#bulletin&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;公告&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;#rule&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;规则&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;#forum&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;论坛&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;#security&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;安全&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;#welfare&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;公益&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;!-- 选项卡面板 --&gt;&lt;div id=&quot;myTabContent&quot; class=&quot;tab-content&quot;&gt;    &lt;div class=&quot;tab-pane active&quot; id=&quot;bulletin&quot;&gt;公告内容面板&lt;/div&gt;    &lt;div class=&quot;tab-pane&quot; id=&quot;rule&quot;&gt;规则内容面板&lt;/div&gt;    &lt;div class=&quot;tab-pane&quot; id=&quot;forum&quot;&gt;论坛内容面板&lt;/div&gt;    &lt;div class=&quot;tab-pane&quot; id=&quot;security&quot;&gt;安全内容面板&lt;/div&gt;    &lt;div class=&quot;tab-pane&quot; id=&quot;welfare&quot;&gt;公益内容面板&lt;/div&gt;&lt;/div&gt;</code></pre><p>关键一点，选项卡中链接的锚点要与对应的面板内容容器的ID相匹配。</p><p>面板内容tab-pane都是隐藏的，只有当前面板内容才是显示的：</p><pre><code>/*bootstrap.css文件第3758行～第3763行*/.tab-content &gt; .tab-pane {    display: none;}.tab-content &gt; .active {    display: block;}</code></pre><ol><li><p>选项卡–触发切换效果</p><p> 选项卡导航链接中要设置 data-toggle=”tab”</p><p> 并且设置 data-target=”对应内容面板的选择符(一般是ID)”;</p><p> 如果是链接的话，还可以通过 href=”对应内容面板的选择符(一般是ID)”</p><p> 主要起的作用是用户点击的时候能找到该选择符所对应的面板内容 tab-pane。</p><p> 面板内容统一放在 tab-content 容器中，而且每个内容面板 tab-pane 都需要设置一个独立的选择符（最好是ID）与选项卡中的 data-target 或 href 的值匹配。</p></li><li><p>选项卡–为选择卡添加fade样式</p></li></ol><p>为了让面板的隐藏与显示在切换的过程效果更流畅，可以在面板中添加类名 fade，让其产生渐入的效果。</p><p>在添加 fade 样式时，最初的默认显示的内容面板一定要记得加上 in 类名，不然其内容用户无法看到。如下面的示例所示。</p><ol start="3"><li>选项卡–胶囊式选项卡（nav-pills）</li></ol><p>在Bootstrap除了可以让 nav-tabs 具有选项卡的切换功能之外，还可以对胶囊式 nav-pills 导航也具有选项卡的功能。我们只需要将 nav-tabs 换成 nav-pills，另外关键一点是将 data-toggle=”tab”换成data-toggle=”pill”。</p><pre><code>&lt;!-- 选项卡组件（菜单项nav-pills）--&gt;&lt;ul id=&quot;myTab&quot; class=&quot;nav nav-pills&quot; role=&quot;tablist&quot;&gt;    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#bulletin&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;公告&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;#rule&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;规则&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;#forum&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;论坛&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;#security&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;安全&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;#welfare&quot; role=&quot;tab&quot; data-toggle=&quot;pill&quot;&gt;公益&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;!-- 选项卡面板 --&gt;&lt;div id=&quot;myTabContent&quot; class=&quot;tab-content&quot;&gt;    &lt;div class=&quot;tab-pane fade in active&quot; id=&quot;bulletin&quot;&gt;公告内容面板&lt;/div&gt;    &lt;div class=&quot;tab-pane fade&quot; id=&quot;rule&quot;&gt;规则内容面板&lt;/div&gt;    &lt;div class=&quot;tab-pane fade&quot; id=&quot;forum&quot;&gt;论坛内容面板&lt;/div&gt;    &lt;div class=&quot;tab-pane fade&quot; id=&quot;security&quot;&gt;安全内容面板&lt;/div&gt;    &lt;div class=&quot;tab-pane fade&quot; id=&quot;welfare&quot;&gt;公益内容面板&lt;/div&gt;&lt;/div&gt;</code></pre><ol start="4"><li>选项卡–JavaScript触发方法</li></ol><p>调用方法:</p><p>在每个链接的单击事件中调用tab(“show”)方法，显示对应的标签面板内容。针对上面的示例，删除HTML中自定义的 data-toggle=”tab” 或 data-toggle=”pill” 的属性，然后通过下面的脚本来调用：</p><pre><code>$(function(){    $(&quot;#myTab a&quot;).click(function(e){        e.preventDefault();        $(this).tab(&quot;show&quot;);    });})</code></pre><ol start="5"><li>提示框(Tooltip)</li></ol><pre><code> &lt;h3&gt;按钮做的提示框&lt;/h3&gt;  &lt;button type=&quot;button&quot;           class=&quot;btn btn-default&quot;           data-toggle=&quot;tooltip&quot;           data-placement=&quot;left&quot;           data-original-title=&quot;提示框居左&quot;           title=&quot;&quot;&gt;  提示框居左        &lt;/button&gt;  &lt;button type=&quot;button&quot;           class=&quot;btn btn-default&quot;           data-toggle=&quot;tooltip&quot;           data-placement=&quot;top&quot;           data-original-title=&quot;提示框在顶部&quot;&gt;   提示框在顶部  &lt;/button&gt;  &lt;button type=&quot;button&quot;           class=&quot;btn btn-default&quot;           data-toggle=&quot;tooltip&quot;           data-placement=&quot;bottom&quot;           data-original-title=&quot;提示框在底部&quot;&gt;  提示框在底部               &lt;/button&gt;  &lt;button type=&quot;button&quot;           class=&quot;btn btn-default&quot;           data-toggle=&quot;tooltip&quot;           data-placement=&quot;right&quot;           data-original-title=&quot;提示框居右&quot;&gt;  提示框居右        &lt;/button&gt;  &lt;h3&gt;链接制作的提示框&lt;/h3&gt;  &lt;a class=&quot;btn btn-primary&quot;      data-toggle=&quot;tooltip&quot;      data-placement=&quot;left&quot;      title=&quot;提示框居左&quot;&gt;     提示框居左  &lt;/a&gt;  &lt;a class=&quot;btn btn-primary&quot;      data-toggle=&quot;tooltip&quot;      data-placement=&quot;top&quot;      title=&quot;提示框在顶部&quot;&gt;     提示框在顶部  &lt;/a&gt;  &lt;a class=&quot;btn btn-primary&quot;      data-toggle=&quot;tooltip&quot;      data-placement=&quot;bottom&quot;      title=&quot;提示框在底部&quot;&gt;     提示框在底部  &lt;/a&gt;  &lt;a class=&quot;btn btn-primary&quot;      data-toggle=&quot;tooltip&quot;      data-placement=&quot;right&quot;      title=&quot;提示框在居右&quot;&gt;     提示框居右  &lt;/a&gt;  &lt;a href=&quot;##&quot;      class=&quot;btn btn-primary&quot;      id=&quot;myTooltip&quot;&gt;     我是提示框  &lt;/a&gt;  &lt;a href=&quot;##&quot;      class=&quot;btn btn-primary&quot;      id=&quot;myTooltip2&quot;&gt;     我是提示框2  &lt;/a&gt;  &lt;script src=&quot;http://libs.baidu.com/jquery/1.9.0/jquery.js&quot;&gt;&lt;/script&gt;  &lt;script src=&quot;http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;  &lt;script&gt;  $(function(){    $(&#39;[data-toggle=&quot;tooltip&quot;]&#39;).tooltip();    $(&#39;#myTooltip&#39;).tooltip({      title:&quot;我是一个提示框，我在顶部出现&quot;,      placement:&#39;top&#39;    });  });  &lt;/script&gt;</code></pre><p>在Bootstrap框架中的提示框，结构非常简单，常常使用的是按钮<button>标签或者链接<a>标签来制作。不管是使用按钮还是链接来制作提示框，他们都有一个共性：</a></button></p><pre><code>通过 title 属性的值来定义提示信息(也可以使用自定义属性 data-original-title 来设置提示信息)。通过 data-placement 自定义属性来控制提示信息框的位置，根据四种不同的位置，data-placement具有四个值：top、right、bottom和left，分别表示提示框出现的位置在顶部、右边、底部和左边。还有一个最重要的参数不可缺少，data-toggle=&quot;tooltip&quot;</code></pre><p>1、如果同时设置了 data-original-title 和 title 定义提示信息，那么 data-original-title 的优先级要高于 title。只有 data-original-title 值为空时，才会取 title 的值做为提示信息的内容。</p><p>2、Bootstrap框架中的提示框的触发方式和前面介绍的插件略有不同。不能直接通过自定义的属性 data- 来触发。必须得依赖于JavaScript的代码触发。（所以右侧代码是没有动画效果的，不要着急，后面小节会有讲解。）</p><ol start="6"><li>提示框–JS触发提示框方法</li></ol><p>bootstrap框架中的提示框的触发方式和前面介绍的插件略有不同。不能直接通过自定义的属性 data- 来触发。必须得依赖于JavaScript的代码触发。</p><p>最简单的触发方式如下：</p><pre><code>$(function(){    $(&#39;[data-toggle=&quot;tooltip&quot;]&#39;).tooltip();});</code></pre><p>除此之外，也可以单独指定一个元素，在该元素上调用提示框，并且可能通过JavaScript的各种参数来实现，无需定义一些 data 属性，如：</p><pre><code>$(function(){    $(&#39;#myTooltip&#39;).tooltip({       title:&quot;我是一个提示框，我在顶部出现&quot;,       placement:&#39;top&#39;    });});</code></pre><ol start="7"><li>弹出框–弹出框的结构</li></ol><pre><code>&lt;button type=&quot;button&quot;         class=&quot;btn btn-default&quot;         data-container=&quot;body&quot;         data-placement=&quot;bottom&quot;         data-toggle=&quot;popover&quot;         data-original-title=&quot;Bootstrap弹出框标题&quot;         data-content=&quot;Bootstrap弹出框的内容&quot; &gt;        猛击我吧&lt;/button&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-default&quot;         data-container=&quot;body&quot;         data-placement=&quot;right&quot;         data-toggle=&quot;popover&quot;         title=&quot;Bootstrap弹出框标题&quot;         data-content=&quot;Bootstrap弹出框的内容&quot;&gt;        猛击我吧&lt;/a&gt;&lt;script&gt;$(function(){  $(&#39;[data-toggle=&quot;popover&quot;]&#39;).popover();});</code></pre><p>弹出框的制作结构和提示框并无太多差别，但样式风格上还是有蛮大的区别。其主要定义了弹出框边框、圆角、背景、阴影以及三角形等样式：具体代码见右侧的bootstrap.css。</p><p>Bootstrap框架中触发弹出框和提示框一样不能直接通过HTML的自定义data属性来触发。需要依赖于JavaScript脚本。<br>最简单的触发方式如下：</p><p>html代码：</p><pre><code>&lt;button type=&quot;button&quot;         class=&quot;btn btn-default&quot;         data-toggle=&quot;popover&quot;         data-placement=&quot;left&quot;         title=&quot;提示框居左&quot;         data-content=&quot;我是弹出框的内容&quot;&gt;        猛击我吧&lt;/button&gt;</code></pre><p>js代码：</p><pre><code>$(function(){    $(&#39;[data-toggle=&quot;popover&quot;]&#39;).popover();});</code></pre><p>使用JS设置参数：</p><p>html代码：</p><pre><code>&lt;button type=&quot;button&quot;          class=&quot;btn btn-default&quot;          id=&quot;myPopover&quot;&gt;          猛击我吧&lt;/button&gt;</code></pre><p>除此之外，也可以单独指定一个元素，在该元素上调用提示框，并且可能通过JavaScript的各种参数来实现，无需定义一些data属性，如：</p><pre><code>$(function(){    $(&#39;#myPopover&#39;).popover({        title:&quot;我是弹出框的标题&quot;,        content:&quot;我是弹出框的内容&quot;,        placement:&quot;top&quot;    });});</code></pre><p>弹出框–自定义结构属性</p><pre><code> &lt;button type=&quot;button&quot;          class=&quot;btn btn-default&quot;          data-toggle=&quot;popover&quot;          data-placement=&quot;bottom&quot;          title=&quot;提示框居左&quot;          data-content=&quot;我是弹出框的内容&quot;          data-trigger=&quot;hover&quot;          data-dalay=&quot;600&quot;&gt;          猛击我吧  &lt;/button&gt;</code></pre><p>提示框 tooltip 的默认触发事件是 hover 和 focus，而弹出框 popover 是 click</p><p>提示框 tooltip 只有一个内容(title)，而弹出框不仅可以设置标题（title）还可以设置内容(content)</p><ol start="8"><li>警告框–结构与样式</li></ol><pre><code>&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot; id=&quot;myAlert&quot;&gt;    &lt;h4&gt;谨防被骗&lt;/h4&gt;    &lt;p&gt;请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...&lt;/p&gt;    &lt;button type=&quot;button&quot;  class=&quot;btn btn-danger&quot; id=&quot;close&quot;&gt;关闭&lt;/button&gt;&lt;/div&gt;</code></pre><p>通过下面的JavaScript代码来触发：</p><pre><code>$(function(){    $(&quot;#close&quot;).on(&quot;click&quot;,function(){        $(this).alert(&quot;close&quot;);    });});</code></pre><ol start="9"><li>按钮插件–模拟单选择按钮</li></ol><pre><code>&lt;div class=&quot;btn-group&quot;&gt;    &lt;label class=&quot;btn btn-primary&quot;&gt;        &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;options1&quot;&gt;男    &lt;/label&gt;    &lt;label class=&quot;btn btn-primary&quot;&gt;        &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;options2&quot;&gt;女    &lt;/label&gt;    &lt;label class=&quot;btn btn-primary&quot;&gt;        &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;options3&quot;&gt;未知    &lt;/label&gt;&lt;/div&gt;</code></pre><p>注：使用这种效果的时候，无需借助JavaScript代码来触发，因为默认Bootstrap就已经为用户初始化好了。</p><ol start="10"><li>按钮插件–模拟复选按钮</li></ol><pre><code>&lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot;&gt;    &lt;label class=&quot;btn btn-primary&quot;&gt;        &lt;input type=&quot;checkbox&quot; name=&quot;options&quot; id=&quot;options1&quot;&gt;电影    &lt;/label&gt;    &lt;label class=&quot;btn btn-primary&quot;&gt;        &lt;input type=&quot;checkbox&quot; name=&quot;options&quot; id=&quot;options2&quot;&gt;音乐    &lt;/label&gt;    &lt;label class=&quot;btn btn-primary&quot;&gt;        &lt;input type=&quot;checkbox&quot; name=&quot;options&quot; id=&quot;options3&quot;&gt;游戏    &lt;/label&gt;    &lt;label class=&quot;btn btn-primary&quot;&gt;        &lt;input type=&quot;checkbox&quot; name=&quot;options&quot; id=&quot;options4&quot;&gt;摄影    &lt;/label&gt;&lt;/div&gt;</code></pre><ol start="10"><li>按钮插件–JavaScript用法</li></ol><p>按钮插件还可以通过调用button函数，然后给button函数传入具体的参数，实现不同的效果。而其中有两个参数是固定不变的，即toggle和reset。其他的都可以随意定义：</p><p>1、切换按钮状态（得到焦点）：</p><pre><code>$(&quot;#mybutton&quot;).button(&quot;toggle&quot;)2、重新恢复按钮：</code></pre><pre><code>$(&quot;#mybutton&quot;).button(&quot;reset&quot;)如下代码：</code></pre><pre><code>$(function() {      $(&quot;#mybutton&quot;).click(function(){         $(this).button(&#39;loading&#39;).delay(1000).queue(function() {            $(this).button(&#39;reset&#39;);         });              });});</code></pre><p>3、任意参数：</p><p>$(“#mybutton”).button(“任意字符参数名”)<br>上面代码作用：替换 data-任意字符参数名-text 的属性值为“按钮上显示的文本值”。如下代码：</p><p>html:</p><pre><code>&lt;button type=&quot;button&quot; data-toggle=&quot;button&quot; class=&quot;btn btn-primary&quot; id=&quot;mybutton&quot; data-complete-text=&quot;Loading finished&quot; &gt;确认&lt;/button&gt;</code></pre><p>js代码：</p><pre><code> $(function() {      $(&quot;#mybutton&quot;).click(function(){         $(this).button(&#39;loading&#39;).delay(1000).queue(function() {            $(this).button(&#39;complete&#39;);         });              }); });</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> bootstrap </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bootstrap tabs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>下拉菜单</title>
+      <link href="/2019/03/15/bootstrap/dropdown/"/>
+      <url>/2019/03/15/bootstrap/dropdown/</url>
+      
+        <content type="html"><![CDATA[<pre><code>&lt;h3&gt;示例1&lt;/h3&gt;&lt;div class=&quot;navbar navbar-default&quot; id=&quot;navmenu&quot;&gt;    &lt;a href=&quot;##&quot; class=&quot;navbar-brand&quot;&gt;W3cplus&lt;/a&gt;    &lt;ul class=&quot;nav navbar-nav&quot;&gt;        &lt;li class=&quot;dropdown&quot;&gt;            &lt;a href=&quot;##&quot; data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle&quot; role=&quot;button&quot; id=&quot;tutorial&quot;&gt;教程&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;            &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot; aria-labelledby=&quot;tutorial&quot;&gt;                &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;CSS3&lt;/a&gt;&lt;/li&gt;                &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;HTML5&lt;/a&gt;&lt;/li&gt;                &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;Sass&lt;/a&gt;&lt;/li&gt;            &lt;/ul&gt;        &lt;/li&gt;        &lt;li&gt;&lt;a href=&quot;##&quot;&gt;前端论坛&lt;/a&gt;&lt;/li&gt;        &lt;li&gt;&lt;a href=&quot;##&quot;&gt;关于我们&lt;/a&gt;&lt;/li&gt;    &lt;/ul&gt;&lt;/div&gt;&lt;h3&gt;示例2&lt;/h3&gt;&lt;ul class=&quot;nav nav-pills&quot;&gt;    &lt;li class=&quot;dropdown&quot;&gt;        &lt;a href=&quot;##&quot; data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle&quot; role=&quot;button&quot; id=&quot;tutorial&quot;&gt;教程&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;        &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot; aria-labelledby=&quot;tutorial&quot;&gt;            &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;CSS3&lt;/a&gt;&lt;/li&gt;            &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;HTML5&lt;/a&gt;&lt;/li&gt;            &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;Sass&lt;/a&gt;&lt;/li&gt;        &lt;/ul&gt;    &lt;/li&gt;    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;##&quot;&gt;前端论坛&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;##&quot;&gt;关于我们&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</code></pre><ol><li>下拉菜单–属性声明式方法</li></ol><pre><code>&lt;div class=&quot;navbar navbar-default&quot; id=&quot;navmenu&quot;&gt;    &lt;a href=&quot;##&quot; class=&quot;navbar-brand&quot;&gt;W3cplus&lt;/a&gt;    &lt;ul class=&quot;nav navbar-nav&quot;&gt;        &lt;li class=&quot;dropdown&quot;&gt;            &lt;a href=&quot;##&quot; data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle&quot; role=&quot;button&quot; id=&quot;tutorial&quot;&gt;教程&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;            &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot; aria-labelledby=&quot;tutorial&quot;&gt;                &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;CSS3&lt;/a&gt;&lt;/li&gt;                &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;HTML5&lt;/a&gt;&lt;/li&gt;                &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;Sass&lt;/a&gt;&lt;/li&gt;            &lt;/ul&gt;        &lt;/li&gt;        &lt;li&gt;&lt;a href=&quot;##&quot;&gt;前端论坛&lt;/a&gt;&lt;/li&gt;        &lt;li&gt;&lt;a href=&quot;##&quot;&gt;关于我们&lt;/a&gt;&lt;/li&gt;    &lt;/ul&gt;&lt;/div&gt;</code></pre><p>除了这种导航条之外，在胶囊式导航中也具有下拉菜单，其结构如：</p><pre><code>&lt;ul class=&quot;nav nav-pills&quot;&gt;    &lt;li class=&quot;dropdown&quot;&gt;        &lt;a href=&quot;##&quot; data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle&quot; role=&quot;button&quot; id=&quot;tutorial&quot;&gt;教程&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;        &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot; aria-labelledby=&quot;tutorial&quot;&gt;            &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;CSS3&lt;/a&gt;&lt;/li&gt;            &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;HTML5&lt;/a&gt;&lt;/li&gt;            &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;Sass&lt;/a&gt;&lt;/li&gt;        &lt;/ul&gt;    &lt;/li&gt;    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;##&quot;&gt;前端论坛&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;##&quot;&gt;关于我们&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</code></pre><p>实现下拉菜单原理：</p><p>Dropdown插件加载时，对所有带 有“data-toggle=dropdown”样式的元素绑定了事件，用户单击带有“data-toggle=dropdown”样式的链接或按钮时， 会触发JavaScript事件代码。当用户点击带有“data-toggle=dropdown”样式的链接或按钮时，下拉菜单的父容器（上面的示例是 “<li class="dropdown">”）会添加一个open类名，此时下拉菜单显示；再次单击时，JavaScript会删除刚添加的open类 名，此时下拉菜单将隐藏。</li></p><p>要制作下拉菜单，其结构基本如下：</p><pre><code>&lt;div class=&quot;dropdown&quot;&gt;    &lt;a data-toggle=&quot;dropdown&quot; href=&quot;#&quot;&gt;下拉菜单触发器&lt;/a&gt;    &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot; aria-labelledby=&quot;dLabel&quot;&gt; ... &lt;/ul&gt;&lt;/div&gt;</code></pre><p>如果触发下拉菜单的元素是一个链接元素，为了避免点击链接，页面跳到顶部，可以使用data-target=”#”来替代href=”#”：</p><pre><code>&lt;div class=&quot;dropdown&quot;&gt;    &lt;a id=&quot;dLabel&quot; role=&quot;button&quot; data-toggle=&quot;dropdown&quot; data-target=&quot;#&quot; href=&quot;/page.html&quot;&gt; Dropdown &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/a&gt;    &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot; aria-labelledby=&quot;dLabel&quot;&gt; ... &lt;/ul&gt;&lt;/div&gt;</code></pre><ol start="2"><li>下拉菜单–JavaScript触发方法</li></ol><pre><code>&lt;ul class=&quot;nav nav-pills&quot;&gt;    &lt;li class=&quot;dropdown&quot;&gt;        &lt;a href=&quot;##&quot;  class=&quot;dropdown-toggle&quot; role=&quot;button&quot; id=&quot;tutorial&quot;&gt;教程&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;        &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot; aria-labelledby=&quot;tutorial&quot;&gt;            &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;CSS3&lt;/a&gt;&lt;/li&gt;            &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;HTML5&lt;/a&gt;&lt;/li&gt;            &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;##&quot;&gt;Sass&lt;/a&gt;&lt;/li&gt;        &lt;/ul&gt;    &lt;/li&gt;    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;##&quot;&gt;前端论坛&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;##&quot;&gt;关于我们&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</code></pre><p>使用JavaScript调用dropdown()方法后，单击激活按钮，会弹出下拉菜单，再次单击的时候会收起下拉菜单。</p><pre><code>$(function(){    $(&quot;.dropdown-toggle&quot;).dropdown();})</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> bootstrap </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bootstrap  dropdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>模态弹出框</title>
+      <link href="/2019/03/15/bootstrap/modal/"/>
+      <url>/2019/03/15/bootstrap/modal/</url>
+      
+        <content type="html"><![CDATA[<h3 id="模态弹出框-modal"><a href="#模态弹出框-modal" class="headerlink" title="模态弹出框(modal)"></a>模态弹出框(modal)</h3><pre><code> &lt;button class=&quot;btn btn-success btn-lg&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;弹出&lt;/button&gt;    &lt;div class=&quot;modal fade&quot; id=&quot;myModal&quot;&gt;        &lt;div class=&quot;modal-dialog&quot;&gt;            &lt;div class=&quot;modal-content&quot;&gt;                &lt;div class=&quot;modal-header&quot;&gt;                    &lt;button class=&quot;close&quot; data-dismiss=&quot;modal&quot;&gt;                        &lt;span&gt;&amp;times;&lt;/span&gt;                        &lt;span class=&quot;sr-only&quot;&gt;关闭弹出&lt;/span&gt;                    &lt;/button&gt;                    &lt;h4 class=&quot;modal-title&quot; id=&quot;myModalLabel&quot;&gt; 标题&lt;/h4&gt;                &lt;/div&gt;                &lt;div class=&quot;modal-body&quot;&gt;zwz&lt;/div&gt;                &lt;div class=&quot;modal-footer&quot;&gt;弹出脚&lt;/div&gt;                &lt;button class=&quot;btn btn-success&quot; data-dismiss=&quot;modal&quot;&gt;关闭&lt;/button&gt;            &lt;/div&gt;        &lt;/div&gt;    &lt;/div&gt;</code></pre><!-- ![弹出框](../../../public/images/bootstrap/m1.png) --><ol><li>模态弹出窗是固定在浏览器中的</li></ol><pre><code>/*bootstrap.css文件第5379行～第5389行*/.modal {  position: fixed;  top: 0;  right: 0;  bottom: 0;  left: 0;  z-index: 1050;  display: none;  overflow: hidden;  -webkit-overflow-scrolling: touch;  outline: 0;}</code></pre><ol start="2"><li>水平居中(源代码)实现：</li></ol><pre><code>/*bootstrap.css文件第5407行～第5411行*/.modal-dialog {  position: relative;  width: auto;  margin: 10px;}</code></pre><ol start="3"><li>当浏览器视窗大于768px时，模态弹出窗的宽度为600px（源代码）实现：</li></ol><pre><code>/*bootstrap.css文件第5479行～第5491行*/@media (min-width: 768px) {  .modal-dialog {    width: 600px;    margin: 30px auto;  }  .modal-content {    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);  }  .modal-sm {    width: 300px;  }}</code></pre><ol start="4"><li>蒙层</li></ol><p>在Bootstrap框架中为模态弹出窗也添加了一个这样的蒙层样式“modal-backdrop”，只不过他默认情况下是全屏黑色的：</p><pre><code>/*bootstrap.css文件第5424行～第5432行*/.modal-backdrop {  position: fixed;  top: 0;  right: 0;  bottom: 0;  left: 0;  z-index: 1040;  background-color: #000;}</code></pre><p>同样，给其添加了一个过渡动画，从fade到in，把opacity值从0变成了0.5。上图展示的就是in状态下的效果：</p><pre><code>/*bootstrap.css文件第5433行～第5440行*/.modal-backdrop.fade {  filter: alpha(opacity=0);  opacity: 0;}.modal-backdrop.in {  filter: alpha(opacity=50);  opacity: .5;}</code></pre><ol start="5"><li>两种尺寸选择</li></ol><p>Bootstrap框架还为模态弹出窗提供了不同尺寸，一个是大尺寸样式“modal-lg”，另一个是小尺寸样式“modal-sm”。其结构上稍做调整：</p><pre><code>&lt;!-- 大尺寸模态弹出窗 --&gt;&lt;div class=&quot;modal fade bs-example-modal-lg&quot; tabindex=&quot;-1&quot;role=&quot;dialog&quot; aria-labelledby=&quot;myLargeModalLabel&quot; aria-hidden=&quot;true&quot;&gt;    &lt;divclass=&quot;modal-dialog modal-lg&quot;&gt;       &lt;divclass=&quot;modal-content&quot;&gt; ... &lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;&lt;!-- 小尺寸模态弹出窗 --&gt;&lt;divclass=&quot;modal fade bs-example-modal-sm&quot;tabindex=&quot;-1&quot;role=&quot;dialog&quot; aria-labelledby=&quot;mySmallModalLabel&quot; aria-hidden=&quot;true&quot;&gt;    &lt;divclass=&quot;modal-dialog modal-sm&quot;&gt;       &lt;divclass=&quot;modal-content&quot;&gt; ... &lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><ol start="6"><li>模态弹出框–触发模态弹出窗2种方法</li></ol><p>声明式触发方法：</p><p>方法一：模态弹出窗声明，只需要自定义两个必要的属性：data-toggle和data-target（bootstrap中声明式触发方法一般依赖于这些自定义的data-xxx 属性。比如data-toggle=”” 或者 data-dismiss=””）。例如：</p><pre><code>&lt;!-- 触发模态弹出窗的元素 --&gt;&lt;button type=&quot;button&quot; data-toggle=&quot;modal&quot; data-target=&quot;#mymodal&quot; class=&quot;btn btn-primary&quot;&gt;点击我会弹出模态弹出窗&lt;/button&gt;&lt;!-- 模态弹出窗 --&gt;&lt;div class=&quot;modal fade&quot; id=&quot;mymodal&quot;&gt;    &lt;div class=&quot;modal-dialog&quot;&gt;        &lt;div class=&quot;modal-content&quot;&gt;        &lt;!-- 模态弹出窗内容 --&gt;        &lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><p>注意以下事项：</p><p>1、<code>data-toggle必须设置为modal(toggle中文翻译过来就是触发器)；</code></p><p>2、<code>data-target可以设置为CSS的选择符，也可以设置为模态弹出窗的ID值，一般情况设置为模态弹出窗的ID值，因为ID值是唯一的值。</code></p><p>方法二：触发模态弹出窗也可以是一个链接<a>元素，那么可以使用链接元素自带的href属性替代data-target属性，如：</a></p><pre><code>&lt;!-- 触发模态弹出窗的元素 --&gt;&lt;a data-toggle=&quot;modal&quot; href=&quot;#mymodal&quot; class=&quot; btn btn-primary&quot; &gt;点击我会弹出模态弹出窗&lt;/a&gt;&lt;!-- 模态弹出窗 --&gt;&lt;div class=&quot;modal fade&quot;  id=&quot;mymodal&quot; &gt;    &lt;div class=&quot;modal-dialog&quot; &gt;        &lt;div class=&quot;modal-content&quot; &gt;        &lt;!-- 模态弹出窗内容 --&gt;        &lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><p>不过建议还是使用统一使用data-target的方式来触发。</p><ol start="7"><li>模态弹出框–为弹出框增加过度动画效果</li></ol><p>可通过给“.modal”增加类名“fade”为模态弹出框增加一个过渡动画效果。</p><pre><code>&lt;button class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;.bs-example-modal-sm&quot;&gt;小的模态弹出窗&lt;/button&gt;&lt;div class=&quot;modal fade bs-example-modal-sm&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;mySmallModalLabel&quot; aria-hidden=&quot;true&quot;&gt;    &lt;div class=&quot;modal-dialog modal-sm&quot;&gt;        &lt;div class=&quot;modal-content&quot;&gt;            &lt;div class=&quot;modal-header&quot;&gt;                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;span class=&quot;sr-only&quot;&gt;Close&lt;/span&gt;&lt;/button&gt;                &lt;h4 class=&quot;modal-title&quot;&gt;模态弹出窗标题&lt;/h4&gt;            &lt;/div&gt;            &lt;div class=&quot;modal-body&quot;&gt;                &lt;p&gt;模态弹出窗主体内容&lt;/p&gt;            &lt;/div&gt;            &lt;div class=&quot;modal-footer&quot;&gt;                &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;关闭&lt;/button&gt;                &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;保存&lt;/button&gt;            &lt;/div&gt;        &lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><p>源代码实现：</p><pre><code>/*bootstrap.css文件第5390行～第5402行*/.modal.fade .modal-dialog {  -webkit-transition: -webkit-transform .3s ease-out;       -o-transition:      -o-transform .3s ease-out;          transition:         transform .3s ease-out;  -webkit-transform: translate3d(0, -25%, 0);       -o-transform: translate3d(0, -25%, 0);          transform: translate3d(0, -25%, 0);}.modal.in .modal-dialog {  -webkit-transform: translate3d(0, 0, 0);       -o-transform: translate3d(0, 0, 0);          transform: translate3d(0, 0, 0);}</code></pre><ol start="8"><li>模态弹出框–模态弹出窗的使用（data-参数说明）</li></ol><p><img src="/2019/03/15/bootstrap/modal/../../../public/images/bootstrap/m2.jpg" alt="弹出框"></p><ol start="9"><li>模态弹出框–模态弹出窗的使用（JavaScript触发）</li></ol><pre><code>&lt;!-- 触发模态弹出窗元素 --&gt;&lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot;&gt;点击我&lt;/button&gt;&lt;!-- 模态弹出窗内容 --&gt;&lt;div class=&quot;modal&quot; id=&quot;mymodal&quot;&gt;    &lt;div class=&quot;modal-dialog&quot;&gt;        &lt;div class=&quot;modal-content&quot;&gt;            &lt;div class=&quot;modal-header&quot;&gt;                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;span class=&quot;sr-only&quot;&gt;Close&lt;/span&gt;&lt;/button&gt;                &lt;h4 class=&quot;modal-title&quot;&gt;模态弹出窗标题&lt;/h4&gt;            &lt;/div&gt;            &lt;div class=&quot;modal-body&quot;&gt;                &lt;p&gt;模态弹出窗主体内容&lt;/p&gt;            &lt;/div&gt;            &lt;div class=&quot;modal-footer&quot;&gt;                &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;关闭&lt;/button&gt;                &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;保存&lt;/button&gt;            &lt;/div&gt;        &lt;/div&gt;&lt;!-- /.modal-content --&gt;    &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;&lt;/div&gt;&lt;!-- /.modal --&gt;</code></pre><p>JavaScript触发的弹出窗代码：</p><pre><code>$(function(){  $(&quot;.btn&quot;).click(function(){    $(&quot;#mymodal&quot;).modal();  });});</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> bootstrap </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bootstrap  modal </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>bootstrap</title>
+      <link href="/2019/03/14/bootstrap/bootstrap/"/>
+      <url>/2019/03/14/bootstrap/bootstrap/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Bootstrap中的排版标题"><a href="#Bootstrap中的排版标题" class="headerlink" title="Bootstrap中的排版标题"></a>Bootstrap中的排版标题</h3><p>标题(h1~h6/.h1~h6)</p><p>副标题(small)</p><h3 id="Bootstrap中的排版-文本"><a href="#Bootstrap中的排版-文本" class="headerlink" title="Bootstrap中的排版 - 文本"></a>Bootstrap中的排版 - 文本</h3><p>段落</p><p>对齐方式</p><p>文本标记</p><h3 id="Bootstrap中的排版-对齐"><a href="#Bootstrap中的排版-对齐" class="headerlink" title="Bootstrap中的排版 - 对齐"></a>Bootstrap中的排版 - 对齐</h3><p>☑   .text-left：左对齐</p><p>☑   .text-center：居中对齐</p><p>☑   .text-right：右对齐</p><p>☑   .text-justify：两端对齐</p><h3 id="Bootstrap中的排版-大小写"><a href="#Bootstrap中的排版-大小写" class="headerlink" title="Bootstrap中的排版 - 大小写"></a>Bootstrap中的排版 - 大小写</h3><p>.text-lowercase</p><p>.text-uppercase</p><p>.text-capitalize</p><h3 id="Bootstrap中的排版-表格"><a href="#Bootstrap中的排版-表格" class="headerlink" title="Bootstrap中的排版 - 表格"></a>Bootstrap中的排版 - 表格</h3><p>☑  .table：基础表格</p><p>☑  .table-striped：斑马线表格</p><p>☑  .table-bordered：带边框的表格</p><p>☑  .table-hover：鼠标悬停高亮的表格</p><p>☑  .table-condensed：紧凑型表格</p><p>☑  .table-responsive：响应式表格</p><p>“.table”主要有三个作用：</p><p>  ☑  给表格设置了margin-bottom:20px以及设置单元内距</p><p>  ☑  在thead底部设置了一个2px的浅灰实线</p><p>  ☑  每个单元格顶部设置了一个1px的浅灰实线</p><h3 id="Bootstrap中的排版-表单"><a href="#Bootstrap中的排版-表单" class="headerlink" title="Bootstrap中的排版 - 表单"></a>Bootstrap中的排版 - 表单</h3><p>在Bootstrap框架中要实现水平表单效果，必须满足以下两个条件：</p><p>1、在<form>元素是使用类名“form-horizontal”。</form></p><p>2、配合Bootstrap框架的网格系统。（网格布局会在以后的章节中详细讲解）</p><p>在<form>元素上使用类名“form-horizontal”主要有以下几个作用：</form></p><p>1、设置表单控件padding和margin值。</p><p>2、改变“form-group”的表现形式，类似于网格系统的“row”。</p><pre><code>&lt;form action=&quot;&quot; class=&quot;form-inline&quot;&gt;    &lt;div class=&quot;form-group&quot;&gt;        &lt;label for=&quot;input&quot;&gt;input&lt;/label&gt;        &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;    &lt;/div&gt;&lt;/form&gt;</code></pre><p>在Bootstrap框架中实现这样的表单效果是轻而易举的，你只需要在<form>元素中添加类名“form-inline”即可。</form></p><p>内联表单实现原理非常简单，欲将表单控件在一行显示，就需要将表单控件设置成内联块元素（display:inline-block）。</p><p>按钮</p><p>.btn  .btn-success  btn-lg btn-block(全局大小) </p><h3 id="Bootstrap中的图片-形状"><a href="#Bootstrap中的图片-形状" class="headerlink" title="Bootstrap中的图片-形状"></a>Bootstrap中的图片-形状</h3><p>img-responsive：响应式图片，主要针对于响应式设计</p><p>img-rounded：圆角图片</p><p>img-circle：圆形图片</p><p>img-thumbnail：缩略图片</p><h3 id="Bootstrap中的辅助类"><a href="#Bootstrap中的辅助类" class="headerlink" title="Bootstrap中的辅助类"></a>Bootstrap中的辅助类</h3><p>文本颜色</p><p>背景颜色</p><p>状态设置</p><p>三角符号</p><h3 id="Bootstrap渐进"><a href="#Bootstrap渐进" class="headerlink" title="Bootstrap渐进"></a>Bootstrap渐进</h3><ul><li><p>开发响应式页面</p><p>  meta标签的viewpoint</p><pre><code>  width,height  user-scalable   initial-scale   maximun-scale</code></pre></li></ul><p>利用栅格系统适配不同的硬件</p><pre><code>栅格实现原理(768px 992px 1200px)col-lg-3(3/12 屏幕1/4) &gt; 1200pxcol-md-4(4/12 屏幕1/3) &gt; 992px &lt; 1200pxcol-sm-6(6/12 屏幕1/2) &gt; 768px &lt; 992pxcol-xs-12(12/12 满屏) &lt; 768pxcol-lg-offset-3(3/12 屏幕1/4) 左偏移1/4</code></pre><p>如何实现栅格，图标，响应式？</p><p>响应式优点：解决了设备只见的差异化展示</p><p>响应式缺点：兼容代码多，不利于加载，工作量大，对原有网站布局会产生影响</p><p>响应式设计原则：</p><h3 id="网页中的单位"><a href="#网页中的单位" class="headerlink" title="网页中的单位"></a>网页中的单位</h3><p>px  </p><pre><code>相对于屏幕分辨率的单位px大小无法跟随屏幕变化所有浏览器都支持px单位</code></pre><p>em</p><pre><code>1em = 16pxem会继承父级元素的字体大小IE部分浏览器不支持em</code></pre><p>rem</p><pre><code>rem与em类似rem会继承根元素字体大小html{font-size:62.5%}</code></pre><h3 id="字体图标的特点"><a href="#字体图标的特点" class="headerlink" title="字体图标的特点"></a>字体图标的特点</h3><p>提交小便于加载</p><p>无需重复设计</p><p>方便</p><h3 id="Bootstrap组件"><a href="#Bootstrap组件" class="headerlink" title="Bootstrap组件"></a>Bootstrap组件</h3><p>字体图标</p><pre><code>.glyphicon .glyphicon-star</code></pre><p>导航</p><pre><code>.nav.nav-tabs代表可切换的导航.nav-pills代表胶囊导航.nav-justified 垂直导航</code></pre><p>下拉菜单</p><pre><code>.dropdown控制组件下拉.dropdown-menu-right 代替.pull-right右对齐.divider 分割线</code></pre><p>控件组</p><pre><code>.input-group 表示控件组.input-group-addon可放置额外内容及图标</code></pre><p>分页 </p><pre><code>.pagination 在父元素中添加表示分页.pagination-lg 分页变大.pager放置分页区域.previous把链接左对齐.next 链接右对齐</code></pre><p>进度条</p><pre><code>.progress表示进度条.progress-bar-success.progress-bar-striped进度条颜色渐变</code></pre><p>列表</p><pre><code>.list-group代表列表组.badge代表状态数.active 代表选中状态.list-group-item.list-group-item-seccess</code></pre><p>面板(警告框,弹出框)</p><pre><code>.panel 代表面板.panel-success面板颜色.panel-body 代表面板内容.panel-footer代表页表的注脚</code></pre><h3 id="Bootstrap组件-怪异属性"><a href="#Bootstrap组件-怪异属性" class="headerlink" title="Bootstrap组件 - 怪异属性"></a>Bootstrap组件 - 怪异属性</h3><p>role</p><p>aria-label</p><p>tabIndex</p><p>data-</p><h3 id="Bootstrap插件-引用"><a href="#Bootstrap插件-引用" class="headerlink" title="Bootstrap插件 - 引用"></a>Bootstrap插件 - 引用</h3><p>Bootstrap插件依赖Bootstrap.js</p><p>Bootstrap.js基于jQuery</p><h3 id="Bootstrap插件-data属性"><a href="#Bootstrap插件-data属性" class="headerlink" title="Bootstrap插件 - data属性"></a>Bootstrap插件 - data属性</h3><p>data属性控制页面交互</p><p>$(document).off(‘.data-api’)解除属性绑定</p><p>data-toggle 按钮绑定modalJS相应方法</p><p>data-target 绑定相应弹窗内容位置</p><p>data-dismiss 实现关闭某个元素</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> bootstrap </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bootstrap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>url-loader</title>
+      <link href="/2019/03/14/vue/webpack/url-loader/"/>
+      <url>/2019/03/14/vue/webpack/url-loader/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Webpack </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Webpack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>css-loader</title>
+      <link href="/2019/03/14/vue/webpack/css-loader/"/>
+      <url>/2019/03/14/vue/webpack/css-loader/</url>
+      
+        <content type="html"><![CDATA[<p>打包处理css文件需要</p><p>安装</p><pre><code>npm i style-loader css-loader -D</code></pre><p>在webpack.config.js配置文件新增一个节点module，在module上有一个rule属性，是个数组，存放了第三方文件的匹配和处理规则</p><p>less</p><p>先安装less</p><pre><code>npm install less --save-dev</code></pre><p>安装loader</p><pre><code>npm i less-loader -D</code></pre><p>sass</p><pre><code>npm i sass --save-dev</code></pre><p>安装loader</p><pre><code>npm i sass-loader -D</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> loader </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css-loader </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>html-webpack-plugin</title>
+      <link href="/2019/03/14/vue/webpack/html-webpack-plugin/"/>
+      <url>/2019/03/14/vue/webpack/html-webpack-plugin/</url>
+      
+        <content type="html"><![CDATA[<p>安装</p><pre><code>npm i html-webpack-plugin -D</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue html-webpack-plugin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>webpack-dev-server</title>
+      <link href="/2019/03/14/vue/webpack/webpack-dev-server/"/>
+      <url>/2019/03/14/vue/webpack/webpack-dev-server/</url>
+      
+        <content type="html"><![CDATA[<p>使用webpack-dev-server这个工具，来实现自动打包编译的功能</p><pre><code>npm i webpack-dev-server -D</code></pre><p>webpack-dev-server常用命令</p><p>自动打开浏览器：”dev”: “webpack-dev-server –open”</p><p>自动端口：”dev”: “webpack-dev-server –open –port 3000”</p><p>无刷新：”dev”: “webpack-dev-server –open –port 3000 –hot”</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue webpack-dev-server </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>webpack基本配置</title>
+      <link href="/2019/03/14/vue/webpack/webpack-ji-ben-pei-zhi/"/>
+      <url>/2019/03/14/vue/webpack/webpack-ji-ben-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<pre><code>// 这个配置文件就是一个JS文件，通过node中的模块操作，向外暴露了一个配置对象const path = require(&#39;path&#39;)module.exports = {    // 在配置文件中，需要手动指定入口和出口     //入口，表示要使用webpack打包哪个文件    entry: path.join(__dirname, &#39;./src/main.js&#39;),     output: {        //指定 打包好的文件输出到哪个目录        path: path.join(__dirname, &#39;./dist&#39;),          //指定输出的文件名        filename: &#39;bunble2.js&#39;      }}</code></pre><p>webpack 命令执行</p><ol><li>webpack 发现，我们并没有痛感命令的形式，给定指定的入口和出口</li><li>webpack 去根目录寻找‘webpack.config.js’的配置文件</li><li>解析配置文件，导出配置对象</li><li>当webpack拿到配置对象后，就拿到了配置对象中指定的入口和出口，然后进行打包构建</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue webpack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浏览器兼容性问题与解决方案</title>
+      <link href="/2019/03/13/2019/03/13-liu-lan-qi-jian-rong-xing-wen-ti-yu-jie-jue-fang-an/"/>
+      <url>/2019/03/13/2019/03/13-liu-lan-qi-jian-rong-xing-wen-ti-yu-jie-jue-fang-an/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同<br>问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>碰到频率:100%<br>解决方案：CSS里 <em>{margin:0;padding:0;}<br>备注：这个是最常见的也是最易解决的一个浏览器兼容性问题，几乎所有的CSS文件开头都会用通配符</em>来设置各个标签的内外补丁是0。</p></li><li><p>浏览器兼容问题二：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大<br>问题症状:常见症状是IE6中后面的一块被顶到下一行<br>碰到频率：90%（稍微复杂点的页面都会碰到，float布局最常见的浏览器兼容问题）<br>解决方案：在float的标签样式控制中加入 display:inline;将其转化为行内属性<br>备注：我们最常用的就是div+CSS布局了，而div就是一个典型的块属性标签，横向布局的时候我们通常都是用div float实现的，横向的间距设置如果用margin实现，这就是一个必然会碰到的兼容性问题。</p></li><li><p>浏览器兼容问题三：设置较小高度标签（一般小于10px），在IE6，IE7，遨游中高度超出自己设置高度<br>问题症状：IE6、7和遨游里这个标签的高度不受控制，超出自己设置的高度<br>碰到频率：60%<br>解决方案：给超出高度的标签设置overflow:hidden;或者设置行高line-height 小于你设置的高度。<br>备注：这种情况一般出现在我们设置小圆角背景的标签里。出现这个问题的原因是IE8之前的浏览器都会给标签一个最小默认的行高的高度。即使你的标签是空的，这个标签的高度还是会达到默认的行高。</p></li><li><p>浏览器兼容问题四：行内属性标签，设置display:block后采用float布局，又有横行的margin的情况，IE6间距bug<br>问题症状：IE6里的间距比超过设置的间距<br>碰到几率：20%<br>解决方案 ： 在display:block;后面加入display:inline;display:table;<br>备注：行内属性标签，为了设置宽高，我们需要设置display:block;(除了input标签比较特殊)。在用float布局并有横向的margin后，在IE6下，他就具有了块属性float后的横向margin的bug。不过因为它本身就是行内属性标签，所以我们再加上display:inline的话，它的高宽就不可设了。这时候我们还需要在display:inline后面加入display:talbe。</p></li><li><p>浏览器兼容问题五：图片默认有间距<br>问题症状：几个img标签放在一起的时候，有些浏览器会有默认的间距，加了问题一中提到的通配符也不起作用。<br>碰到几率：20%<br>解决方案：使用float属性为img布局<br>备注 ： 因为img标签是行内属性标签，所以只要不超出容器宽度，img标签都会排在一行里，但是部分浏览器的img标签之间会有个间距。去掉这个间距使用float是正道。（我的一个学生使用负margin，虽然能解决，但负margin本身就是容易引起浏览器兼容问题的用法，所以我禁止他们使用）</p></li><li><p>浏览器兼容问题六：标签最低高度设置min-height不兼容<br>问题症状：因为min-height本身就是一个不兼容的CSS属性，所以设置min-height时不能很好的被各个浏览器兼容<br>碰到几率：5%<br>解决方案：如果我们要设置一个标签的最小高度200px，需要进行的设置为：{min-height:200px; height:auto !important; height:200px; overflow:visible;}<br>备注：在B/S系统前端开时，有很多情况下我们又这种需求。当内容小于一个值（如300px）时。容器的高度为300px；当内容高度大于这个值时，容器高度被撑高，而不是出现滚动条。这时候我们就会面临这个兼容性问题。</p></li><li><p>浏览器兼容问题七：透明度的兼容CSS设置<br>一般在ie中用的是filter:alpha(opacity=0);这个属性来设置div或者是块级元素的透明度，而在firefox中，一般就是直接使用opacity:0,对于兼容的，一般的做法就是在书写css样式的将2个都写上就行，就能实现兼容</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 浏览器兼容性 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>iframe缺点</title>
+      <link href="/2019/03/13/2019/03/13iframe-que-dian/"/>
+      <url>/2019/03/13/2019/03/13iframe-que-dian/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>iframe会阻塞主页面的 Onload 事件；</p></li><li><p>搜索引擎的检索程序无法解读这种页面，不利于 SEO;</p></li><li><p>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。</p></li><li><p>使用iframe之前需要考虑这两个缺点。如果需要使用 iframe ，最好是通过 javascript</p></li><li><p>动态给iframe添加 src 属性值，这样可以绕开以上两个问题。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML iframe </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>对WEB标准以及W3C的理解与认识</title>
+      <link href="/2019/03/13/2019/03/13-dui-web-biao-zhun-yi-ji-w3c-de-li-jie-yu-ren-shi/"/>
+      <url>/2019/03/13/2019/03/13-dui-web-biao-zhun-yi-ji-w3c-de-li-jie-yu-ren-shi/</url>
+      
+        <content type="html"><![CDATA[<p>对WEB标准以及W3C的理解与认识</p><ul><li>标签闭合</li><li>标签小写</li><li>不乱嵌套</li><li>提供搜索机器人搜索几率</li><li>使用外链css和js脚本</li><li>结构行为表现的分离</li><li>文件下载与页面速度更快</li><li>内容能被更多的用户所访问</li><li>内容能被更广泛的设备所访问</li><li>更少的代码和组件</li><li>容易维护</li><li>改版方便</li><li>不需要变动页面内容</li><li>提供打印本而不需要复制内容</li><li>提供网站易用性</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB标准 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浏览器内核</title>
+      <link href="/2019/03/13/2019/03/13-liu-lan-qi-nei-he/"/>
+      <url>/2019/03/13/2019/03/13-liu-lan-qi-nei-he/</url>
+      
+        <content type="html"><![CDATA[<p>浏览器内核</p><ul><li>IE: trident</li><li>FireFox: gecko</li><li>Safari: webkit</li><li>Oprea: presto,Blink</li><li>Chrome:Blink</li></ul><p>对浏览器内核的理解</p><ul><li><p>主要分成两部分：渲染引擎(layout engineer或 Rendering Engine) 和 JS 引擎。</p></li><li><p>渲染引擎：负责取得网页的内容（HTML、 XML 、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p></li><li><p>JS引擎则：解析和执行 javascript 来实现网页的动态效果。</p></li><li><p>最开始渲染引擎和JS引擎并没有区分的很明确，后来 JS 引擎越来越独立，内核就倾向于只指渲染引擎。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 浏览器内核 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浏览器页面构成</title>
+      <link href="/2019/03/13/2019/03/13-liu-lan-qi-ye-mian-gou-cheng/"/>
+      <url>/2019/03/13/2019/03/13-liu-lan-qi-ye-mian-gou-cheng/</url>
+      
+        <content type="html"><![CDATA[<p>浏览器页面由哪些构成，分别是什么，作用是什么？</p><ul><li>构成：结构层，表示层，行为层</li><li>分别是：HTML，CSS，JavaScript</li><li>HTML实现页面结构，CSS完成页面表现与风格，JavaScript实现一些客户端功能与业务。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 浏览器页面 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>正则表达式</title>
+      <link href="/2019/03/11/es6/zi-fu-chuan-he-zheng-ze-biao-da-shi/zheng-ze-biao-da-shi/"/>
+      <url>/2019/03/11/es6/zi-fu-chuan-he-zheng-ze-biao-da-shi/zheng-ze-biao-da-shi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="正则表达式u修饰符"><a href="#正则表达式u修饰符" class="headerlink" title="正则表达式u修饰符"></a>正则表达式u修饰符</h3><p>正则表达式可以完成简单的字符串操作，但默认将字符串的每个字符按照16位编码单元处理。为解决这个问题，ES6给正则表达式定义一个支持Unicode的u修饰符</p><h4 id="u修饰符实例"><a href="#u修饰符实例" class="headerlink" title="u修饰符实例"></a>u修饰符实例</h4><pre><code>let text = &#39;𠮷&#39;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 正则表达式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字符串</title>
+      <link href="/2019/03/11/es6/zi-fu-chuan-he-zheng-ze-biao-da-shi/zi-fu-de-unicode-biao-shi-fa/"/>
+      <url>/2019/03/11/es6/zi-fu-chuan-he-zheng-ze-biao-da-shi/zi-fu-de-unicode-biao-shi-fa/</url>
+      
+        <content type="html"><![CDATA[<h3 id="字符的Unicode表示法"><a href="#字符的Unicode表示法" class="headerlink" title="字符的Unicode表示法"></a>字符的Unicode表示法</h3><p>JavaScript允许采用<code>\uxxxx</code>表示一个字符，其中xxxx表示字符的码点。</p><pre><code>console.log(&quot;\u0061&quot;);//a</code></pre><p>但是这种表示法只限于<code>\u0000 -- \uFFFF</code>之间的字符。超出这个范围的字符，必须用双字节表示法表达</p><pre><code>console.log(&quot;\uD842\uDFB7&quot;);//𠮷</code></pre><p>上面代码表示，如果在\u后面跟上超过0xFFFF的数值(比如\u20BB7),JavaScript就会理解成\u20BB+7,由于\u20BB是一个不可打印字符，所以会显示一个空格，后面跟一个7(₻7)</p><p>ES6对这点做了改进，只要将码点放入大括号，就能正确解读该字符</p><pre><code>console.log(&quot;\u{20BB7}&quot;);//𠮷</code></pre><p>JavaScript 方法表示一个字符</p><ol><li>‘\z’ === ‘z’  //true</li><li>‘\172’ === ‘z’   //true</li><li>‘\x7A’ === ‘z’   //true</li><li>‘\u007A’ === ‘z’   //true</li><li>‘\u{7A}’ === ‘z’   //true</li></ol><h3 id="codePointAt"><a href="#codePointAt" class="headerlink" title="codePointAt()"></a>codePointAt()</h3><p>JavaScript内部，字符以UTF-16的格式存储，每个字符固定为2字节，对于那些需要4个字节存储的字符(码点大于0xFFFF的字符)，JavaScript会认为他们是两个字节。</p><p>“𠮷”字码点是0x20BB7,UTF-16编码为0xD842 0xDFB7(十进制为55362 57271)，需要4个字节存储。对于4个字节的字符，JavaScript不能正确处理，字符串长度就会误判长度为2，而且charAt方法无法读取整个字符，charCodeAt方法只能返回前2个字节和后2个字节的值。</p><p>ES6提供的codePointAt()方法，能够正确处理4个字节存储的字符，返回一个字符的码点。</p><pre><code>var str = &quot;𠮷a&quot;console.log(str.charCodeAt(0));console.log(str.charCodeAt(1));console.log(str.codePointAt(0));console.log(str.codePointAt(1));console.log(str.codePointAt(2));//55362//57271//134071//57271//97</code></pre><p>codePointAt()检测一个字符占用的编码单元数量</p><pre><code>function is32Bit(c) {    return c.codePointAt(0) &gt; 0xFFFF;}console.log(is32Bit(&#39;𠮷&#39;));console.log(is32Bit(&#39;a&#39;));//true//false</code></pre><h3 id="String-fromCodePoint"><a href="#String-fromCodePoint" class="headerlink" title="String.fromCodePoint()"></a>String.fromCodePoint()</h3><p>String.fromCodePoint()方法根据指定的码位生成一个字符。</p><pre><code>console.log(String.fromCodePoint(134071));//𠮷</code></pre><h3 id="normalize"><a href="#normalize" class="headerlink" title="normalize()"></a>normalize()</h3><p>ES6为字符串实例化提供了normalize方法，用来将两个字符的不同表示方法统一为同样的形式，称为Unicode正规化。</p><pre><code>console.log(&#39;\u01D1&#39;.normalize() === &#39;\u004F\u030c&#39;.normalize());//true</code></pre><p>normalize接受4个参数</p><ul><li>NFC 标准等价合成</li><li>NFD 标准等价分解</li><li>NFKC 兼容等价合成</li><li>NFKD 兼容等价分解</li></ul><p>在对比字符串之前，一定要把它们标准化为同一形式</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/03/11/es6/zi-fu-chuan-he-zheng-ze-biao-da-shi/string/"/>
+      <url>/2019/03/11/es6/zi-fu-chuan-he-zheng-ze-biao-da-shi/string/</url>
+      
+        <content type="html"><![CDATA[// ```console.log("\u0061");console.log("\uD842\uDFB7");console.log("\u{20BB7}");//𠮷var str = "𠮷a"console.log(str.charCodeAt(0));console.log(str.charCodeAt(1));console.log(str.codePointAt(0));console.log(str.codePointAt(1));console.log(str.codePointAt(2));// ₻7function is32Bit(c) {    return c.codePointAt(0) > 0xFFFF;}console.log(is32Bit('𠮷'));console.log(is32Bit('a'));console.log('\u01D1'.normalize('NFC') === '\u004F\u030c'.normalize('NFC'));console.log('\u01D1'.normalize('NFD') === '\u004F\u030c'.normalize('NFD'));console.log('\u01D1'.normalize('NFKC') === '\u004F\u030c'.normalize('NFKC'));console.log('\u01D1'.normalize('NFKD') === '\u004F\u030c'.normalize('NFKD'));let text = '𠮷'console.log(text.length);console.log(/^.$/.test(text));console.log(/^.$/u.test(text));console.log("+++++++++++++++++++++++++");function codePointLength(text) {    let result = text.match(/[\s\S]/gu)    return result ? result.length : 0}console.log(codePointLength("abc"));console.log(codePointLength("𠮷bc"));// ```]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>全局块作用域</title>
+      <link href="/2019/03/11/es6/kuai-ji-zuo-yong-yu/quan-ju-kuai-zuo-yong-yu/"/>
+      <url>/2019/03/11/es6/kuai-ji-zuo-yong-yu/quan-ju-kuai-zuo-yong-yu/</url>
+      
+        <content type="html"><![CDATA[<p>var 被用于全局作用域时，他会创建一个新的全局变量作为全局对象(浏览器环境中的window对象)的属性。这意味着var可能会无意中覆盖一个已经存在的全局属性。</p><pre><code>var RegExp = &quot;hello&quot;;console.log(window.RegExp);</code></pre><p>如果在全局作用域中使用let或者const，会在全局作用域下创建一个新的绑定，但该绑定不会添加为全局对象的属性。用let和const不能覆盖全局变量，而只能覆盖它。</p><p>使用块级作用域最佳实践：默认使用const，只在确实需要改变变量的值时使用let。这样就可以在某种程度上实现代码的不可变，从而防止某些错误的产生。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 全局块作用域 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>循坏中的块级作用域绑定</title>
+      <link href="/2019/03/10/es6/kuai-ji-zuo-yong-yu/xun-pi-zhong-de-kuai-ji-zuo-yong-yu-bang-ding/"/>
+      <url>/2019/03/10/es6/kuai-ji-zuo-yong-yu/xun-pi-zhong-de-kuai-ji-zuo-yong-yu-bang-ding/</url>
+      
+        <content type="html"><![CDATA[<pre><code>for (var i = 0; i &lt; 10; i++) {}console.log(i);</code></pre><p>console.log(i)由于var声明得到提升，变量i在循坏结束后仍然可以访问。</p><pre><code>for (let i = 0; i &lt; 10; i++) {}console.log(i);//ReferenceError: i is not defined</code></pre><p>使用let声明，变量i只存在于for循坏中，一旦循坏结束，在其他地方均无法访问到该变量。</p><h3 id="循坏中的函数"><a href="#循坏中的函数" class="headerlink" title="循坏中的函数"></a>循坏中的函数</h3><pre><code>var func = [];for (var i = 0; i &lt; 10; i++) {    func.push(function () {        console.log(i);    })}func.forEach(function(func) {    func();})</code></pre><p>输出10次10，这里是因为循环里的每次迭代同时共享变量i，循坏内部创建的函数全都保留了对相同变量相同的引用。循坏结束时变量i的值为10，所以每次调用console.log(i)都会输出10</p><p>for循环是同步任务，i在不断增加直到等于length时候，循环不再执行，即等于10</p><p>而循环内部函数是异步函数，也就是说内部的console.log(i)的执行任务被排在了任务队列的最后，所以for循环本身会先执行10次，但是不执行回调里面的任务，for循环都结束时，回调函数里面的console.log才开始执行第一次，所以每次输出都是10.</p><p>为解决这个问题，在循环中使用立即执行函数表达式(IIFE),以强行生成计数器变量的副本。</p><pre><code>var func = [];for (var i = 0; i &lt; 10; i++) {    func.push(function (value) {        return function() {            console.log(value);        }    }(i))}func.forEach(function(func) {    func();})</code></pre><p>输出0~9</p><p>在循坏内部，IIFE表达式为接受的每一个变量i都创建了一个副本并存储为变量value，这个变量的值就是相应迭代创建的函数所使用的值，因此调用的每个函数都会像从0到9循坏一样得到期望的值。let和const提供的块级作用域让我们无须再这样子折腾。</p><p>疑惑</p><ul><li>为什么立即执行函数就能得到每个迭代的值？</li></ul><p>使用let声明，每次迭代循坏都会创建一个新变量，并以之前迭代中同名变量的值将其迟世红。</p><h2 id="循坏中的const声明"><a href="#循坏中的const声明" class="headerlink" title="循坏中的const声明"></a>循坏中的const声明</h2><p>普通的for循坏，可以在初始化变量时使用const，但是要更改这个变量的值就会抛出错误</p><pre><code>var func = [];for (const i = 0;i &lt; 10; i++) {    func.push(function() {        console.log(i);    })}</code></pre><p>TypeError: Assignment to constant variable.<br>类型错误：分配给常量变量。</p><p>在循坏的第一个迭代中，i是0，迭代执行成功。执行i++，这条语句试图修改常量，因此抛出错误。</p><p>在for-in 或者 for-of循坏中使用const的行为与使用let一致。不会报错。</p><pre><code>var func = [];var object = {    a: true,    b: true,    c: true}for (const key in object) {    func.push(function() {        console.log(key);    })}func.forEach(function(func) {    func();})</code></pre><p>const 运用在for-in 和for-of循环中，每次迭代不会像前面的for一样修改已有绑定，而是创建一个新的绑定。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 循坏中的块级作用域绑定 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>块级声明</title>
+      <link href="/2019/03/10/es6/kuai-ji-zuo-yong-yu/kuai-ji-sheng-ming/"/>
+      <url>/2019/03/10/es6/kuai-ji-zuo-yong-yu/kuai-ji-sheng-ming/</url>
+      
+        <content type="html"><![CDATA[<h1 id="块级声明"><a href="#块级声明" class="headerlink" title="块级声明"></a>块级声明</h1><p>块级声明：用于在指定块的作用域之外无法访问的变量。块级作用域（词法作用域）存在于 </p><ul><li>函数内部</li><li>块中{这里之间区域}</li></ul><h2 id="let声明"><a href="#let声明" class="headerlink" title="let声明"></a>let声明</h2><ul><li>let可以把变量限制在当前作用域中</li><li><code>同一作用域</code>let禁止重复定义已经存在的标识符</li></ul><p>变量value被let关键字声明之后不再被提升至函数顶部，执行流离开if块，value立刻被销毁。如果condition值为false，就永远不会声明并初始化value。</p><pre><code>function getValue(conditon) {    if (conditon) {        let value = &quot;blue&quot;;        return value;    } else {        // return null        console.log(value);    }}getValue(&#39;&#39;)</code></pre><p>ReferenceError: value is not defined</p><h2 id="const声明"><a href="#const声明" class="headerlink" title="const声明"></a>const声明</h2><ul><li>const声明的是常量，其值一旦被设定后不可更改。通过const声明的常量必须进行初始化。</li><li>在同一作用域用const声明已经存在的变量也会导致语法错误</li></ul><pre><code>const maxItems = 30;const maxItems = 10;const name;</code></pre><p>const name报错：SyntaxError: Missing initializer in const declaration</p><p>const maxItems = 10报错： SyntaxError: Identifier ‘maxItems’ has already been declared</p><h3 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h3><pre><code>const 和 let 都是块级标识符，所以常量也是在当前代码块内有效，一旦执行到块外会立即被销毁。常量同样不会提升至作用域顶部。</code></pre><pre><code>if (condition) {    const maxItems = 5;}//此处无法访问maxItems//ReferenceError: maxItems is not defined</code></pre><h3 id="const声明对象"><a href="#const声明对象" class="headerlink" title="const声明对象"></a>const声明对象</h3><p>const声明对象不允许修改绑定，但允许修改该对象的属性值。</p><ul><li>修改绑定是变量指向的地址变了</li><li>修改值是变量指向的地址没变，但是地址上的值变了</li></ul><pre><code>const person = {    name :&quot;Nicholas&quot;}person = {    name : &quot;Greg&quot;}person.name = &quot;Greg&quot;//类型错误：分配给常量变量。 TypeError: Assignment to constant variable.</code></pre><p>person.name修改的是person包含的值</p><p>如果直接给person赋值，即要改变person的绑定，就会报错</p><h2 id="临时死区-TDZ"><a href="#临时死区-TDZ" class="headerlink" title="临时死区(TDZ)"></a>临时死区(TDZ)</h2><p>ES6 明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。</p><p>在代码块内，使用 let 和 const 命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。</p><pre><code>if (condition) {    console.log(typeof value);    let value = &quot;bule&quot;;}// ReferenceError: value is not defined</code></pre><p> console.log(typeof value)会抛出语法错误，用let定义并初始化变量value语句不会执行。此时value还位于JavaScript社区所谓的临时死区中。</p><p> TDZ用来描述let和const变量不提升效果。</p><pre><code> console.log(typeof value);//undefinedif (condition) {    let value = &quot;bule&quot;;}</code></pre><p>typeof是在声明变量value的代码块之外执行的，此时value并不在TDZ中，这也就意味着不存在value这个绑定，typeof操作最终返回undefined</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 块级声明 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/03/10/es6/kuai-ji-zuo-yong-yu/hosting/"/>
+      <url>/2019/03/10/es6/kuai-ji-zuo-yong-yu/hosting/</url>
+      
+        <content type="html"><![CDATA[function getValue(conditon) {    if (conditon) {        // var value = "blue"        let value = "blue";        return value;    } else {        // return null        console.log(value);            }}condition = trueif (condition) {    const maxItems = 5;    // const maxItems = 10;}const person = {    name :"Nicholas"}// person = {//     name : "Greg"// }person.name = "Greg"//类型错误：分配给常量变量。 TypeError: Assignment to constant variable.// var func = [];// for (const i = 0;i < 10; i++) {//     func.push(function() {//         console.log(i);//     })// }var func = [];var object = {    a: true,    b: true,    c: true}for (const key in object) {    func.push(function() {        console.log(key);            })}func.forEach(function(func) {    func();})var RegExp = "hello";console.log(window.RegExp);]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>var变量提升</title>
+      <link href="/2019/03/10/es6/kuai-ji-zuo-yong-yu/var-sheng-ming-yi-ji-bian-liang-ti-sheng-ji-zhi/"/>
+      <url>/2019/03/10/es6/kuai-ji-zuo-yong-yu/var-sheng-ming-yi-ji-bian-liang-ti-sheng-ji-zhi/</url>
+      
+        <content type="html"><![CDATA[<p>Hosting机制：在函数作用域或者全局作用域中通过关键字var声明的变量，无论实际上是在哪里声明的，都会被当作在<code>当前作用域</code>顶部声明的变量。</p><pre><code>function getValue(conditon) {    if (conditon) {        var value = &quot;blue&quot;        return value;    } else {        return null    }}</code></pre><p>变量提升后<br>JavaScript引擎会将getValue函数修改成这样</p><pre><code>function getValue(conditon) {    var value;    if (conditon) {        value = &quot;blue&quot;        return value;    } else {        return null    }}</code></pre><p>变量value被提升至函数顶部,而初始化操作依旧停留在原处，这意味着else也可以访问到value该变量，由于此时变量尚未初始化，所以其值为undefined</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 Hosting </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>选择器</title>
+      <link href="/2019/03/03/css/xuan-ze-qi-you-xian-ji/"/>
+      <url>/2019/03/03/css/xuan-ze-qi-you-xian-ji/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-CSS3的选择器-nth-child"><a href="#1-CSS3的选择器-nth-child" class="headerlink" title="1. CSS3的选择器:nth-child()"></a>1. CSS3的选择器:nth-child()</h3><p>:nth-child():选择从第一开始<br>Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1）</p><h3 id="2-CSS-选择器有哪些"><a href="#2-CSS-选择器有哪些" class="headerlink" title="2. CSS 选择器有哪些"></a>2. CSS 选择器有哪些</h3><ol><li>id选择器</li><li>class类选择器</li><li>标签选择器</li><li>相邻选择器(h1 + p)</li><li>子选择器(ul &gt; li)</li><li>后代选择器(li a)</li><li>通配符选择器(*)</li><li>属性选择器(a[rel = “external”])</li><li>伪类选择器(a:hover)</li></ol><h3 id="3-可继承的属性"><a href="#3-可继承的属性" class="headerlink" title="3. 可继承的属性"></a>3. 可继承的属性</h3><p>font-size, font-family, color</p><h3 id="4-不可继承的样式"><a href="#4-不可继承的样式" class="headerlink" title="4. 不可继承的样式"></a>4. 不可继承的样式</h3><p>border, padding, margin, width, height</p><p>优先级（就近原则）：!important &gt; [ id &gt; class &gt; tag ]<br>!important 比内联优先级高</p><h3 id="5-优先级计算原则"><a href="#5-优先级计算原则" class="headerlink" title="5.优先级计算原则"></a>5.优先级计算原则</h3><p>元素选择符：1</p><p>class：10</p><p>id：100</p><p>元素标签：1000</p><h3 id="6-CSS3的新增伪类"><a href="#6-CSS3的新增伪类" class="headerlink" title="6.CSS3的新增伪类"></a>6.CSS3的新增伪类</h3><ol><li>p:first-of-type</li><li>p:last-of-type</li><li>p:only-type</li><li>p:nth-child(2)</li><li>:checked</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> css </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 选择器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/03/03/javascript/ji-chu-zhi-shi/bi-bao/0303/"/>
+      <url>/2019/03/03/javascript/ji-chu-zhi-shi/bi-bao/0303/</url>
+      
+        <content type="html"><![CDATA[function Foo() {    var i = 0    return function() {        console.log(i++)    }}var f1 = Foo()var f2 = Foo()f1()f1()f2()]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>自我介绍</title>
+      <link href="/2019/03/03/2019/03/zi-wo-jie-shao/"/>
+      <url>/2019/03/03/2019/03/zi-wo-jie-shao/</url>
+      
+        <content type="html"><![CDATA[<p>学习经历 项目经历 工作经历 个人优势</p><p>1分钟</p><p>5分钟</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTTP的状态码</title>
+      <link href="/2019/03/03/http/http-zhuang-tai-ma/"/>
+      <url>/2019/03/03/http/http-zhuang-tai-ma/</url>
+      
+        <content type="html"><![CDATA[<ol><li>100 continue 继续</li><li>200 ok 正常返回信息</li><li>201 created 请求成功并且服务器创建了新的资源</li><li>202 accepted 服务器已经接受请求但是尚未处理</li><li>301 moved permanently 请求的网页已经永久移动到新位置</li><li>302 found 临时重定向</li><li>303 see other 临时重定向</li><li>304 not modified 自从上次请求后，请求的网页未修改过</li><li>400 bad request 服务器无法理解请求的格式</li><li>401 unauthorized 请求未授权</li><li>403 forbidden 禁止访问</li><li>404 not found 找不到与url匹配的资源</li><li>500 internal server error 服务端错误</li><li>503 service unavailable 服务器暂时无法处理请求</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTTP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP状态码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/03/03/javascript/ji-chu-zhi-shi/shen-du-ke-long/"/>
+      <url>/2019/03/03/javascript/ji-chu-zhi-shi/shen-du-ke-long/</url>
+      
+        <content type="html"><![CDATA[```// js对象的深度克隆代码实现function clone(obj) {    var buf    if (obj instanceof Array) {        buf = [] //创建一个空数组        var i = obj.length        while (i--) {            buf[i] = clone(obj[i])        }        return buf    } else if (obj instanceof Object) {        buf ={} //创建一个空对象        for (var k in obj) {            buf[k] = clone(obj[k])        }        return buf    }else{        return obj    }}```]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/23/2019/02/23/compute/"/>
+      <url>/2019/02/23/2019/02/23/compute/</url>
+      
+        <content type="html"><![CDATA[compute(10,100);var compute = function(A,B) {  console.info(A * B) ;}; function compute(A,B){   console.info(A + B); } function compute(A,B){   console.info((A + B)*2); } compute(2,10);]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/23/2019/02/23/foo/"/>
+      <url>/2019/02/23/2019/02/23/foo/</url>
+      
+        <content type="html"><![CDATA[var obj = {    name:"zhangsan",     sayName:function(){       console.info(this.name);     }   }   var wfunc = obj.sayName;   obj.sayName();   wfunc();   var name = "lisi";   obj.sayName();   wfunc();]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>onclcik两次才触发block</title>
+      <link href="/2019/02/19/cuo-dian/display-liang-ci-cai-you-block/"/>
+      <url>/2019/02/19/cuo-dian/display-liang-ci-cai-you-block/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2019/02/19/cuo-dian/display-liang-ci-cai-you-block/../../../public/images/html/display.png" alt="第二次请求"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 错点总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>p标签不能内嵌div</title>
+      <link href="/2019/02/19/cuo-dian/p-biao-qian-bu-neng-nei-qian-div/"/>
+      <url>/2019/02/19/cuo-dian/p-biao-qian-bu-neng-nei-qian-div/</url>
+      
+        <content type="html"><![CDATA[<p>在开发音乐webAPP时，我在p内嵌了div，发现div单独出来了</p><p><img src="/2019/02/19/cuo-dian/p-biao-qian-bu-neng-nei-qian-div/../../../public/images/html/p.png" alt="第二次请求"></p><p>p是块级元素只能包含内联元素，而不能包含块级元素，还有h1-h6，dt，也是如此</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 错点总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTTP浏览器缓存机制</title>
+      <link href="/2019/02/18/http/liu-lan-qi-huan-cun-ji-zhi/"/>
+      <url>/2019/02/18/http/liu-lan-qi-huan-cun-ji-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h2><pre><code>浏览器缓存就是把一个以及请求过的Web资源(如html页面，图片，数据，js等等)拷贝一份副本存储在浏览器中。缓存会根据进来的请求保存输出内容的副本。当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。</code></pre><h3 id="使用缓存"><a href="#使用缓存" class="headerlink" title="使用缓存"></a>使用缓存</h3><pre><code>(1) 减少网络带宽消耗(2) 降低服务器压力(3) 减少网络延迟，加快页面打开速度</code></pre><h3 id="浏览器缓存规则"><a href="#浏览器缓存规则" class="headerlink" title="浏览器缓存规则"></a>浏览器缓存规则</h3><pre><code>规则是在HTTP协议头信息(cache-control)和HTML页面的meta标签中定义的。从新鲜度和校验值两个维度来规定浏览器是否可以直接使用缓存中的副本，还是需要去服务器获取更新的版本`新鲜度(过期机制)`：也就是浏览器副本有效期。一个缓存副本必须满足以下条件，浏览器会认为它是足够新的。    * 含有完整的过期时间控制有信息(HTPP协议报头)，并且仍在有效期内    * 浏览器以及使用过这个缓存副本，并且在一个会话中已经检查过新鲜度`校验值(验证机制)`：服务器返回资源的时候有时在控制头信息带上这个资源的实体标签ETag(EntityTag),它可以作为浏览器再次请求过程的校验标识。如果发现标识不匹配，说明资源已经被修改或过期，浏览器需重新获取资源内容。</code></pre><p>第一次请求<br><img src="../../../public/images/http/cha.png" alt="第一次请求"></p><p>第二次请求<br><img src="../../../public/images/http/cache.png" alt="第二次请求"></p><p>ETag: “195-58226db2f14fc”</p><p>If-Modified-Since: Mon, 18 Feb 2019 08:24:41 GMT</p><p>If-None-Match: “195-58226db2f14fc”</p><p>如果从  Mon, 18 Feb 2019 08:24:41 GMT  这个时间短以后图片修改过则重新请求，如果该图片最新的ETag和If-None-Match的值不匹配则重新请求</p><p>第二次响应信息为304意味着从本地取缓存，节省了图片在网络上传输的时间</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTTP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 浏览器缓存机制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/17/2019/02/16/chui-zhi-shui-ping-ju-zhong/"/>
+      <url>/2019/02/17/2019/02/16/chui-zhi-shui-ping-ju-zhong/</url>
+      
+        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>Document</title>    <style>        .out {            width: 200px;            height: 200px;            border: 10px #ccc solid;            padding: 10px;            background-color: black;            margin: 10px;                   }        .inner {            width: 20px;            height: 20px;            border: 10px #ccc solid;            padding: 10px;            background-color:#fff;            margin: 10px;            /* position: absolute;            top: 50%;            left: 50%;            transform: translate(-50%, -50%) */            /* position: absolute;            top: 0;            left: 0;            right: 0;            bottom: 0;            margin: auto; */            /* display: flex;            justify-content: center;            align-content: center; */            /* display: table-cell;            text-align: center;            vertical-align: middle; */                    }    </style><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>    <div class="out">        <div class="inner"></div>    </div></body></html>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/17/2019/02/16/boxmodel/"/>
+      <url>/2019/02/17/2019/02/16/boxmodel/</url>
+      
+        <content type="html"><![CDATA[<!-- ``` --><!-- <!DOCTYPE html> --><html lang="en"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>Document</title>    <style>        div{            width: 200px;            height: 200px;            border: 10px #ccc solid;            padding: 10px;            background-color: black;            margin: 10px;            box-sizing: content-box;        }        /* span {            background-color: blanchedalmond;            width: 20px;            height: 20px;            border: 1px #ccc solid;            padding: 10px 20px;            margin: 10px 20px;        } */    </style><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>    <div id="div">        <!-- <span id="span">cccccccccc </span> -->    </div></body><script>var div = document.getElementById('div').offsetHeight || clientHeightconsole.log("高度为" + div);</script></html><!-- ``` -->]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/17/2019/02/16/position/"/>
+      <url>/2019/02/17/2019/02/16/position/</url>
+      
+        <content type="html"><![CDATA[```<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0">    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="ie=edge">    <title>Document</title>    <style>        .div1,.div2,.div3 {            width: 200px;            height: 200px;            border: 1px #ccc solid;        }        .div1 {            background-color: red;        }        .div2 {            background-color: green;        }        .div3 {            background-color: yellow;        }        .div-container1 .div2{            position: static;        }        .div-container2 .div2{            position:fixed;            left:500px;            top:5px;        }        .div-container3 .div2{            position: sticky;            top: 200px;            left: 250px;        }        .div-container4 {            position: fixed;            top: 3px;            left: 300px;        }        .div-container4 .div2{            position: inherit;        }        .div-container5 .div2{            position: initial;        }        .div-container6 .div2{            position: relative;        }        .div-container7 .div2{            position: absolute;        }        .div-container7 .div2{            position: static;        }        .div-container8 .div2{            position: static;        }        .div-container9 .div2{            position: static;        }    </style><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body>    <h5>static   `static`默认值。没有定位，元素出现在正常的流中。</h5>    <div class="div-container div-container1">        <div class="div1">static3</div>        <div class="div2">static</div>        <div class="div3">static3</div>    </div>          <h5>fixed   `fixed`生成固定定位的元素，相对于浏览器窗口进行定位。</h5>    <div class="div-container div-container2">        <div class="div1">static3</div>        <div class="div2">fixed</div>        <div class="div3">static3</div>    </div>    <h5>sticky   `sticky`粘性定位，该定位基于用户滚动的位置。</h5>    <div class="div-container div-container3">        <div class="div1">static3</div>        <div class="div2">sticky</div>        <div class="div3">static3</div>    </div>    <h5>inherit    `inherit`规定应该从父元素继承 position 属性的值。</h5>    <div class="div-container div-container4">        <div class="div1">static3</div>        <div class="div2">inherit</div>        <div class="div3">static3</div>    </div>    <h5>initial    `initial`设置该属性为默认值</h5>    <div class="div-container div-container5">        <div class="div1">static3</div>        <div class="div2">initial</div>        <div class="div3">static3</div>    </div>    <h5>Relative      `relative`生成相对定位的元素，相对于其正常位置进行定位。</h5>    <div class="div-container div-container6">        <div class="div1">static1</div>        <div class="div2">relative1</div>        <div class="div3">static1</div>    </div>    <h5>Absolute     `absolute`生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。</h5>    <div class="div-container div-container7">        <div class="div1">static2</div>        <div class="div2">absolute2</div>        <div class="div3">static2</div>    </div>    <h5>Relative contains Absolute</h5>    <div class="div-container div-container8">        <div class="div1">static3</div>        <div class="div2">absolute3</div>        <div class="div3">static3</div>    </div>    <h5>Absolute contains Absolute</h5>    <div class="div-container div-container9">        <div class="div1">static3</div>        <div class="div2">absolute3</div>        <div class="div3">static3</div>    </div>  </body></html><!-- 块级元素和行内元素区别        * 行内元素与块级元素直观上的区别            行内元素会在一条直线上排列，都是同一行的，水平方向排列            块级元素各占据一行，垂直方向排列。块级元素从新行开始结束接着一个断行。        * 块级元素可以包含行内元素和块级元素。行内元素不能包含块级元素。        * 行内元素与块级元素属性的不同，主要是盒模型属性上            行内元素设置width无效，height无效(可以设置line-height)，margin上下无效，padding上下无效（是有效的，只是不像块级元素会影响其他行） -->```]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/17/2019/02/16/clone/"/>
+      <url>/2019/02/17/2019/02/16/clone/</url>
+      
+        <content type="html"><![CDATA[```/** * 浅克隆对象只会被克隆最外部的一层, * 至于更深层的对象,则依然是通过引用指向同一块堆内存. * @param {*} o  */function shallow(o) {    const obj = {}    for (const i in o) {        obj[i] = o[i]                }    return obj}// 被克隆对象const oldObj = {    a: 1,    b: ['aaa', 'bbbb'],    old: {        zwz: {            name:111        }    }}const newObj = shallow(oldObj)console.log(newObj.old.zwz, oldObj.old.zwz)console.log(newObj.old.zwz === oldObj.old.zwz)// { name: 111 } { name: 111 }// truenewObj.old.zwz.name = '卓文智'console.log(newObj.old.zwz, oldObj.old.zwz)// { name: '卓文智' } { name: '卓文智' }// 深度克隆// 1.JOSN.parse()// JSON对象parse方法可以将JSON字符串反序列化成JS对象，// stringify方法可以将JS对象序列化成JSON字符串,// 这两个方法结合起来就能产生一个便捷的深克隆const newObjDeep1 = JSON.parse(JSON.stringify(oldObj))console.log(newObjDeep1.old.zwz, oldObj.old.zwz)console.log(newObjDeep1.old.zwz === oldObj.old.zwz)// { name: 111 } { name: 111 }// falsenewObjDeep1.old.zwz.name = '卓文智zzz'console.log(newObjDeep1.old.zwz, oldObj.old.zwz)// { name: '卓文智zzz' } { name: '卓文智' }// JOSN.parse()坑// 1.他无法实现对函数 、RegExp等特殊对象的克隆;// 2.会抛弃对象的constructor,所有的构造函数会指向Object;// 3.对象有循环引用,会报错;// 构造函数function person(name) {    this.name = name}const cgl = new person('cgl')// 函数function say() {    console.log('haaa')}const oldObj2 = {    a: say,    b: new Array(1),    c: new RegExp('ab+c', 'i'),    d: cgl}console.log('*************JSON.parse***********')const newObj2 = JSON.parse(JSON.stringify(oldObj2))console.log(newObj2.a, oldObj2.a);//无法复制函数// undefined [Function: say]console.log(newObj2.b[0], oldObj2.b[0]);//稀疏数组 复制错误// null undefinedconsole.log(newObj2.c, oldObj2.c);//无法复制正在对象// {} /ab+c/iconsole.log(newObj2.d.constructor, oldObj2.d.constructor);//构造函数指向错误// [Function: Object] [Function: person]/** * 2.深度克隆函数 * 由于要面对不同的对象(正则、数组、Date等)要采用不同的处理方式， * 我们需要实现一个对象类型判断函数 */ const isType = (obj, type) => {     if (typeof obj !== 'object') return false    //  判断数据类型    const typeString = Object.prototype.toString.call(obj)    let flag    switch (type) {        case 'Array':            flag = typeString === '[object Array]'            break;        case 'Date':            flag = typeString === '[object Date]'            break;        case 'RegExp':            flag = typeString === '[object RegExp]'            break;        default:            flag = false    }    return flag }//  我们需要通过正则的扩展了解到flags属性等等,// 因此我们需要实现一个提取flags的函数const getRegExp = re => {    var flags = ''    if (re.global) flags += 'g'    if (re.ignoreCase) flags += 'i'    if (re.multiline) flags += 'm'    return flags}/** * deep clone * @param {*} parent  */const clone = parent => {    // 维护两个存储循坏的数组    const parents = []    const children = []    const _clone = parent => {        if (parent === null ) return null        if (typeof parent !== 'object') return parent        let child,proto        if (isType(parent, 'Array')) {            // 对数组做特殊处理            child = []        } else if (isType(parent, 'RegExp')) {             // 对正则对象做特殊处理             child = new RegExp(parent.source, getRegExp(parent))             if (parent.lastIndex) child.lastIndex = parent.lastIndex        } else if (isType(parent, 'RegExp')) {             // 对Date对象做特殊处理             child = new Date(parent.getTime)        } else {            // 处理对象原型            proto = Object.getPrototypeOf(parent)            // 利用Object.create切断原型链            child = Object.create(proto)        }        // 处理循环引用        const index = parents.indexOf(parent)        if (index != -1) {            // 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象            return children[index]        }        parents.push(parent)        children.push(child)        for (let i in parent) {            // 递归            child[i] = _clone(parent[i])        }        return child    }    return _clone(parent)}console.log('*************clone***********')const newClone = oldObj2console.log(newClone.a, oldObj2.a);// [Function: say] [Function: say]console.log(newClone.b[0], oldObj2.b[0]);// undefined undefinedconsole.log(newClone.c, oldObj2.c);// /ab+c/i /ab+c/iconsole.log(newClone.d.constructor, oldObj2.d.constructor);// [Function: person] [Function: person]// 参考链接：https://www.jianshu.com/p/2a3728cded4c?utm_campaign=maleskine&utm_content=note&utm_medium=reader_share&utm_source=weixin```]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/17/2019/02/16/this/"/>
+      <url>/2019/02/17/2019/02/16/this/</url>
+      
+        <content type="html"><![CDATA[```// 如果要想把 this 的值从一个环境传到另一个，就要用 call 或者apply 方法。// Function.prototype 的 call 或 apply 方法将 this 值绑定到调用中的特定对象// Function.prototype.apply()// apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。var numbers = [5, 2, 3, 6]var max = Math.max.apply(null, numbers)console.log(max)// 6var min = Math.min.apply(null, numbers)console.log(min);// 2// Function.prototype.bind()// bind()方法创建一个新的函数，在调用时设置this关键字为提供的值。// 并在调用新函数时，将给定参数列表作为原函数的参数序列的前若干项var module = {    x: 42,    getX: function(){        return this.x    }}var unboundGetX = module.getXconsole.log(unboundGetX())// undefinedvar boundGetX = unboundGetX.bind(module)console.log(boundGetX())// 42// Function.prototype.call()// call() 方法调用一个函数, 其具有一个指定的this值和分别地提供的参数(参数的列表)。\function Product(name, price) {    this.name = name    this.price = price}function Food(name, price) {    Product.call(this, name, price)     this.categroy = 'food'}console.log(new Food('cheese', 5).name);// cheeseconsole.log('*************  读程序  ************');var a = 3function Text() {    var a =0    console.log(a)    console.log(this.a)    var a    console.log(a)}Text()   // 0// undefined// 0new Text()// 0// undefined// 0setTimeout(Text, 100)// 0// undefined// 0```]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/17/2019/02/16/bi-bao/"/>
+      <url>/2019/02/17/2019/02/16/bi-bao/</url>
+      
+        <content type="html"><![CDATA[```/** * bar()是定义在 foo() 里的内部函数，仅在该函数体内可用。 * bar()内没有自己的局部变量，然而它可以访问到外部函数的变量， * bar() 可以使用父函数 foo() 中声明的变量 name  */function foo() {    var name = 1;        //name 是一个被 foo 创建的局部变量    function bar(){      //bar() 是内部函数,一个闭包       console.log(name); //使用了父函数中声明的变量           }    bar()}// foo()function F() {    var f = []    for (var i = 0; i ]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/17/2019/02/16/shu-ju-lei-xing-zhuan-huan/"/>
+      <url>/2019/02/17/2019/02/16/shu-ju-lei-xing-zhuan-huan/</url>
+      
+        <content type="html"><![CDATA[```var num = 1var str = 'str'var arr = [1,2,3]var boo = truevar obj = new Object()var und = undefinedvar oNull = nullconst sym = Symbol()function foo() {}console.log('******   []   *****');console.log( [] == 0 )console.log( [] == null )console.log( [] == undefined )console.log( [] == false )console.log( [] == '' )// true// false// false// true// trueconsole.log('******   0   *****');console.log( 0 == null )console.log( 0 == undefined )console.log( 0 == false )console.log( 0 == '' )// false// false// true// trueconsole.log('******  null   *****');console.log( null == '' )console.log( null == undefined )console.log( null == false )console.log( null == '' )// false// true// false// falseconsole.log('******  undefined   *****');console.log( undefined == '' )console.log( undefined == false )console.log( undefined == '' )// false// true// false// falseconsole.log('******  false   *****');console.log( false == '' )// true```]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/02/17/2019/02/16/shu-ju-lei-xing-pan-duan/"/>
+      <url>/2019/02/17/2019/02/16/shu-ju-lei-xing-pan-duan/</url>
+      
+        <content type="html"><![CDATA[```var num = 1var str = 'str'var arr = [1,2,3]var boo = truevar obj = new Object()var und = undefinedvar objNull = nullconst sym = Symbol()function foo() {}// 1.typeof 可以对基本类型做出准确的判断，但对于引用类型力不从心console.log('***********typeof*********');console.log(typeof num)console.log(typeof str)console.log(typeof arr)console.log(typeof boo)console.log(typeof obj)console.log(typeof und)console.log(typeof objNull)console.log(typeof sym)console.log(typeof foo)// number// string// object// boolean// object// undefined// object// symbol// function// 2.instanceof 判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假console.log('***********instanceof*********');console.log( num instanceof Array)console.log( str instanceof Array) console.log( arr instanceof Array)console.log( boo instanceof Array)console.log( obj instanceof Array)console.log( und instanceof Array)console.log( objNull instanceof Array)console.log( sym instanceof Array)console.log( foo instanceof Array)// false// false// true// false// false// false// false// false// false// 3. constructor 查看对象对应的构造函数console.log('***********constructor*********');console.log( num.constructor == Array)console.log( str.constructor == Array) console.log( arr.constructor ==  Array)console.log( boo.constructor ==  Array)console.log( obj.constructor ==  Array)// console.log( und.constructor ==  Array)//报错// console.log( objNull.constructor ==  Array)//报错console.log( sym.constructor ==  Array)console.log( foo.constructor ==  Array)// false// false// true// false// false// false// false// false// 4.Object.prototype.toString  // toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，// 更严格的讲，是 toString运行时this指向的对象类型, 返回的类型console.log('***********Object.prototype.toString*********');console.log(Object.prototype.toString (num))console.log(Object.prototype.toString (str))console.log(Object.prototype.toString (arr))console.log(Object.prototype.toString (boo))console.log(Object.prototype.toString (obj))console.log(Object.prototype.toString (und))console.log(Object.prototype.toString (objNull))console.log(Object.prototype.toString (sym))console.log(Object.prototype.toString (foo))// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]// [object Object]console.log('***********Object.prototype.toString.call()*********');console.log(Object.prototype.toString.call (num))console.log(Object.prototype.toString.call (str))console.log(Object.prototype.toString.call (arr))console.log(Object.prototype.toString.call (boo))console.log(Object.prototype.toString.call (obj))console.log(Object.prototype.toString.call (und))console.log(Object.prototype.toString.call (objNull))console.log(Object.prototype.toString.call (sym))console.log(Object.prototype.toString.call (foo))// [object Number]// [object String]// [object Array]// [object Boolean]// [object Object]// [object Undefined]// [object Null]// [object Symbol]// [object Function]```]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基础题</title>
+      <link href="/2019/02/17/2019/02/16/xun-fei/"/>
+      <url>/2019/02/17/2019/02/16/xun-fei/</url>
+      
+        <content type="html"><![CDATA[<p>讯飞易听说</p><ol><li><p>JavaScript数据类型</p><p> 值类型(基本类型): 字符串(String), 数字(Number), 布尔(Boolean), 对空(Null), 未定义(Undefined),代表(Symbol)</p><p> <code>注：Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。</code></p><p> 引用数据类型:对象(Object),数组(Array),函数(Function)</p></li><li><p>闭包概念</p><p> 闭包是由函数以及创建该函数的词法环境组合而成。这个环境包含了这个闭包创建时所能访问的所有局部变量。</p></li><li><p>解释this变量，call 和 apply 的作用，区别?</p><p> <code>apply()</code>方法调用一个具有给定<code>this</code>值的函数，以及作为一个数组（或类似数组对象）提供的参数。</p><p> <code>bind()</code>方法创建一个新的函数，在调用时设置<code>this</code>关键字为提供的值，并在调用新函数时，将给定的参数列表作为原函数的参数序列的前若干项</p><p> <code>call()</code>方法调用一个函数，其具有一个指定的<code>this</code>的值和分别地提供参数(参数的列表)</p><p> <code>call() 方法和 apply() 方法类似 ，区别在于call()方法接受的是参数列表而apply()方法接受的是一个参数数组</code></p></li></ol><ol start="4"><li><p>为什么要对对象进行深度克隆，如何实现</p><p> 当一个变量向另一个变量复制引用类型的值时，同时也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上引用同一个对象。因此改变其中一个变量就会影响另一个变量。</p><p> 涉及<code>JS的数据类型、数据存储、内存管理</code></p><p> 每一个数据都需要一个内存空间，分为栈内存(stack)和堆内存(heap)</p><ul><li><p>基础数据类型和栈内存<br>  基础数据类型都有固定大小，保存在栈内存中，由系统自动分配空间。我们可以直接操作保存在栈内存中的值，基础数据类型都是按值访问的，他们的值存储在变量访问的位置</p></li><li><p>引用数据类型和堆内存<br>  引用数据类型都是保存在堆内存中，大小不固定，动态填充。在操作对象时，实际上是在操作对象的引用而不是实际的对象。因此，引用类型的值都是按引用访问的。</p></li></ul></li><li><p>position取值和含义</p><p> position 属性：规定元素的定位类型。即元素脱离文档流的布局，在页面的任意位置显示。</p><p> 取值类型可以有：static、relative、absolute、fixed、inherit和sticky，这里sticky是CSS3新发布的一个属性。</p><p> <code>absolute</code>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。</p><p> <code>fixed</code>生成固定定位的元素，相对于浏览器窗口进行定位。</p><p> <code>relative</code>生成相对定位的元素，相对于其正常位置进行定位。</p><p> <code>static</code>默认值。没有定位，元素出现在正常的流中。</p><p> <code>sticky</code>粘性定位，该定位基于用户滚动的位置。</p><p> <code>inherit</code>规定应该从父元素继承 position 属性的值。</p><p> <code>initial</code>设置该属性为默认值</p></li><li><p>块级元素和行内元素区别</p><ul><li><p>行内元素与块级元素直观上的区别</p><p> 行内元素会在一条直线上排列，都是同一行的，水平方向排列</p><p> 块级元素各占据一行，垂直方向排列。块级元素从新行开始结束接着一个断行。</p><ul><li><p>块级元素可以包含行内元素和块级元素。行内元素不能包含块级元素。</p></li><li><p>行内元素与块级元素属性的不同，主要是盒模型属性上</p><p>行内元素设置width无效，height无效(可以设置line-height)，margin上下无效，padding上下无效（是有效的，只是不像块级元素会影响其他行）</p></li></ul></li></ul></li><li><p>简述盒模型，以及不同浏览器的差异</p><p> <code>标准盒模型和IE盒模型的区别</code></p><p> W3C标准下padding、border所占的空间不在width、height范围内，而IE盒模型width包括content尺寸＋padding＋border的总和</p></li><li><p>CSS中的float机制以及使用方式</p><p> CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。</p><p> <code>元素怎样浮动</code></p><p> 元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。</p><p> 一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。</p><p> 浮动元素之后的元素将围绕它。</p><p> 浮动元素之前的元素将不会受到影响。</p></li><li><p>如何实现元素的垂直和水平居中</p><ul><li><p>1.CSS3的transform</p><pre><code>   position: absolute;      top: 50%;      left: 50%;      transform: translate(-50%, -50%)   position: absolute;      top: 0;      left: 0;      right: 0;      bottom: 0;      margin: auto;</code></pre></li><li><p>2.flex盒子布局</p><pre><code></code></pre></li><li>3.display的table-cell</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript 设计模式</title>
+      <link href="/2019/02/16/javascript/she-ji-mo-shi/she-ji-mo-shi/"/>
+      <url>/2019/02/16/javascript/she-ji-mo-shi/she-ji-mo-shi/</url>
+      
+        <content type="html"><![CDATA[<p>构造器模式</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript this</title>
+      <link href="/2019/02/16/javascript/ji-chu-zhi-shi/this/javascript-this/"/>
+      <url>/2019/02/16/javascript/ji-chu-zhi-shi/this/javascript-this/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript this </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript原型继承</title>
+      <link href="/2019/02/16/javascript/ji-chu-zhi-shi/yuan-xing-lian/0305/"/>
+      <url>/2019/02/16/javascript/ji-chu-zhi-shi/yuan-xing-lian/0305/</url>
+      
+        <content type="html"><![CDATA[<pre><code>var F = function(){};Object.prototype.a=function(){};Function.prototype.b=function(){};var f = new F();</code></pre><p>调用的时候能取到a不能取到b</p><p>Function、Object——Js自带的函数对象</p><p>new:</p><p>1.var f = () {}  创建空对象</p><p>2.f.<em>proto</em> = F.prototype </p><p>3.F.call(f) 初始化对象f</p><p>F为函数，可以来源于Function、Object可以访问Function和Obejct的原型 ；f是变量，祖先为Object，所以只能访问Object的原型。</p><ol><li><p>f.<strong>proto</strong> === f[的构造函数].prototype === F.prototype</p></li><li><p>F.prototype.<strong>proto</strong> ===  (F.prototype)[的构造函数].prototype ===   Object.prototype (所以a能够 通过f.a访问)</p></li><li><p>f.constructor === F</p></li><li><p>F.<strong>proto</strong> === F[的构造函数].prototype === Function.prototype (所以b可以通过, f.constructor.b访问到)</p></li></ol><p><img src="/2019/02/16/javascript/ji-chu-zhi-shi/yuan-xing-lian/0305/../../../../../public/images/js/1.png" alt="原型继承"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript原型继承 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTTP的三次握手</title>
+      <link href="/2019/02/16/http/http-de-san-ci-wo-shou/"/>
+      <url>/2019/02/16/http/http-de-san-ci-wo-shou/</url>
+      
+        <content type="html"><![CDATA[<p>client     — SYN = 1, Seq = X                  —-&gt;  server</p><p>client     &lt;— SYN = 1, ACK = X + 1 ,Seq = Y    —-   server</p><p>client     —- ACK = Y + 1 ,Seq = Z             —-&gt;   server</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTTP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TCP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTTP</title>
+      <link href="/2019/02/15/http/http/"/>
+      <url>/2019/02/15/http/http/</url>
+      
+        <content type="html"><![CDATA[<h1 id="web核心-HTTP协议"><a href="#web核心-HTTP协议" class="headerlink" title="web核心-HTTP协议"></a>web核心-HTTP协议</h1><p>webservice = HTTP协议 + XML<br>Rest = HTTP协议 + json/XML</p><h2 id="HTTP请求信息和响应信息"><a href="#HTTP请求信息和响应信息" class="headerlink" title="HTTP请求信息和响应信息"></a>HTTP请求信息和响应信息</h2><p>请求</p><ol><li><p>请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD] 请求路径[URL一部分] 所用协议[1.0版本])</p></li><li><p>请求头信息(格式为 key:value)</p></li><li><p>请求主体信息</p></li></ol><p>例：</p><p>POST /0606/php HTTP/1.1</p><p>Host:localhost</p><p>Content-type:application/x-www-form-urlencode</p><p>Content_length:5</p><p>响应</p><ol><li><p>响应(协议 状态码 状态文字)</p></li><li><p>响应头信息(格式为 key:value)</p></li><li><p>主体信息(也可能没有)</p></li></ol><p>例子：</p><p>HTTP/1.1 200 OK</p><p>Content-type:text/html</p><p>Content-length:5</p><p>hello</p><p>请求方法[GET,POST,PUT,DELETE,TRACE,OPTIONS,HEAD]</p><p><code>请求方法虽然是HTTP协议里规定的，但是WEB SERVER未必允许或支持这些方法</code></p><p><code>HEAD</code> :和GET一致只是返回内容<br>比如我们确认一个内容是否存在不需要返回内容时这是HRAD比较合适</p><p><code>TRACE</code>: TRACE可以测试代理有没有修改你的HTTP请求</p><p><code>OPTIONS</code> :返回服务器可以用的请求方法</p><p><code>GET</code> :获取服务器资源</p><p><code>POST</code> :发送数据给服务器</p><p>状态码:用来反应服务器响应情况</p><p>1XX 信息        收到请求，继续处理</p><p>2XX 成功        操作成功接收，理解和接受</p><p>3XX 重定向      为了完成请求，必须采取进一步措施</p><p>4XX 客户端错误  请求的语法错误或不能完全被满足</p><p>5XX 服务端错误  服务器无法完成明显有效的请求</p><p>成功状态码</p><p>200               服务器成功返回网页<br>301/2             永久/临时重定向<br>304 NOT Modified  请求未修改(缓存可拿，减轻服务器负担)</p><p>失败的状态码</p><p>404                请求网页不存在<br>503                服务器暂时不可用<br>500                服务器内部错误</p><h2 id="更多有意义的头"><a href="#更多有意义的头" class="headerlink" title="更多有意义的头"></a>更多有意义的头</h2><ul><li><p>Content_Type,Content-Encoding等约束数据类型</p></li><li><p>Cookie保持会话信息</p></li><li><p>CORS实现跨域并保持安全限制</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTTP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue-Webpack</title>
+      <link href="/2019/02/14/vue/webpack/webpack/"/>
+      <url>/2019/02/14/vue/webpack/webpack/</url>
+      
+        <content type="html"><![CDATA[<h2 id="网页中引用的静态资源"><a href="#网页中引用的静态资源" class="headerlink" title="网页中引用的静态资源"></a>网页中引用的静态资源</h2><p>JS:  .js  .jsx  .coffee  .ts</p><p>CSS: .css  .less  .sass  .scss</p><p>Img: .jpg  .png  .svg  .gif</p><p>fonts: .ttf  .eot  .woff  .woff2</p><p>模板文件: .ejs  .jade  .vue</p><h2 id="网页静态资源多引发的问题"><a href="#网页静态资源多引发的问题" class="headerlink" title="网页静态资源多引发的问题"></a>网页静态资源多引发的问题</h2><ol><li>网页加载速度慢，因为要发起很多二次请求</li><li>要处理错综复杂的依赖关系</li></ol><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol><li>合并，压缩，精灵图，图片的Base64</li><li>使用requireJS，也可以使用webpack解决各个包之间的依赖</li></ol><h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p>webpack 是前端的一个项目构建工具，它是基于Node.js开发出来的一个前端工具。</p><h2 id="完美解决上述的2种解决方案"><a href="#完美解决上述的2种解决方案" class="headerlink" title="完美解决上述的2种解决方案"></a>完美解决上述的2种解决方案</h2><ol><li>使用Gulp， 是基于task任务的</li><li>使用webpack， 是基于整个项目进行构建的<ul><li>借助webpack这个前端自动化工具,可以完美实现资源的合并，压缩，打包，混淆等功能</li></ul></li></ol><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol><li>npm i webpack -g  全局</li><li>npm i webpack –save-dev</li></ol><h2 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h2><ol><li>初始化</li></ol><p><code>npm init -y</code></p><ol start="2"><li>新建文件夹不能命名为webpack</li></ol><pre><code>npm ERR! Refusing to install package with name &quot;webpack&quot; under a packagenpm ERR! also called &quot;webpack&quot;. Did you name your project the samenpm ERR! as the dependency you&#39;re installing?</code></pre><ol start="3"><li>安装webpack-cli</li></ol><p><code>npm install webpack webpack-cli -g</code></p><ol start="4"><li>在package.json配置中添加 “mode”: “production”</li></ol><pre><code>The &#39;mode&#39; option has not been set, webpack will fallback to &#39;production&#39; for this value. Set &#39;mode&#39; option to &#39;development&#39; or &#39;production&#39; to enable defaults for each environment.</code></pre><ul><li>webpack能够处理JS文件的互相依赖关系</li><li><p>webpack 能够处理JS兼容问题，把高级的。浏览器不能识别的语法，转化为低级的语法</p><p>webpack4打包文件命令</p></li></ul><pre><code>webpack .\src\main.js -o .\dist\bundle.js</code></pre><p>安装完毕，用法和webpack命令一样</p><p>node   nodemon</p><p>webpack  webpack-dev-server</p><p>项目中本地安装webpack-dev-server，所以无法当作脚本命令在powershell终端执行（安装到全局 -g）</p><p>解决</p><p>在package.json的scripts添加 “dev”: “webpack-dev-server”</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue Webpack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue</title>
+      <link href="/2019/02/07/vue/he-xin-ji-zhu/vue-router/"/>
+      <url>/2019/02/07/vue/he-xin-ji-zhu/vue-router/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是路由"><a href="#什么是路由" class="headerlink" title="什么是路由"></a>什么是路由</h2><p>1.<code>后端路由</code>:对应普通网站，所有的超链接都是URI地址，所有URI地址都对应服务器上对应的资源</p><p>2.<code>前端路由</code>:对于单页面应用程序来说，主要通过URI中的hash（#号）来实现不同的切换，同时，hash有个特点：HTTP请求中不包含hash相关的内容，所以单页面应用程序中的页面跳转主要用hash实现</p><p>3.在单页面应用程序中，这种通过hash改变切换页面的方式，承做前端路由</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue-router </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue</title>
+      <link href="/2019/02/01/vue/he-xin-ji-zhu/zu-jian-hua-he-mo-kuai-hua-qu-bie/"/>
+      <url>/2019/02/01/vue/he-xin-ji-zhu/zu-jian-hua-he-mo-kuai-hua-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<p>组件：组建的出现，就是为了能够拆分vue实例的代码，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调相对应的组件即可。<br>模块化：从代码逻辑的角度进行划分：方便代码开发，保证每个模块功能单一<br>组件化：从UI界面的角度进行划分：方便UI组件重用</p><p>创建组件的3种方式</p><pre><code> // 1.    Vue.component(&#39;myComl&#39;, Vue.extend({        template: &#39;&lt;h4&gt;xxxxxxxxxxxx&lt;/h4&gt;&#39;    }))    // 2.    Vue.component(&#39;myComl2&#39;, {        template: &#39;&lt;h4&gt;xxxxxxxxxxxx&lt;/h4&gt;&#39;    })    // 3    Vue.component(&#39;myComl3&#39;,{        template: &#39;#temp&#39;    })</code></pre><p>组件中的data</p><pre><code>1.组件的data可以有自己的数据2.组件中的data必须是一个方法，实例的data可以作为一个对象3.组件中的data在方法内部必须返回一个对象</code></pre><pre><code>// 定义一个名为 button-counter 的新组件Vue.component(&#39;button-counter&#39;, {  data: function () {    return {      count: 0    }  },  template: &#39;&lt;button v-on:click=&quot;count++&quot;&gt;You clicked me {{ count }} times.&lt;/button&gt;&#39;})</code></pre><p>父组件传值子组件</p><p>1.在引用的时候，通过属性绑定的形式传值v-bind:属性名</p><p>2.父组件传递过来的属性，先在props数组中定义一下，才能使用这个数据</p><p>3.props中的数据都是只读的</p><p>子组件传值父组件</p><p>1.在父元素methods定义方法获取</p><p>2.事件绑定传递值$emit</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue组件化和模块化区别 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>A-InsertionSort</title>
+      <link href="/2019/01/25/suan-fa/a-insertionsort/"/>
+      <url>/2019/01/25/suan-fa/a-insertionsort/</url>
+      
+        <content type="html"><![CDATA[<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p><p>算法描述和实现</p><p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p><p><1> 从第一个元素开始，该元素可以认为已经被排序；</1></p><p><2> 取出下一个元素，在已经排序的元素序列中从后向前扫描；</2></p><p><3> 如果该元素（已排序）大于新元素，将该元素移到下一位置；</3></p><p><4> 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</4></p><p><5> 将新元素插入到该位置后；</5></p><p><6> 重复步骤2~5。</6></p><p>直接插入排序</p><pre><code>function directInsertSort(arr) {    for (var i = 1; i &lt; arr.length; i++) {        var temp =arr[i]        var j = i - 1        while (j &gt;= 0 &amp;&amp; arr[j] &gt; temp) {            arr[j + 1] = arr[j]            j--        }        arr[j + 1] = temp    }    return arr}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 插入排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>A-sort-bubble</title>
+      <link href="/2019/01/24/suan-fa/a-switchingsort-quit/"/>
+      <url>/2019/01/24/suan-fa/a-switchingsort-quit/</url>
+      
+        <content type="html"><![CDATA[<p>快速排序英文名quick sort，又城划分排序，是对冒泡排序的一种改进，是目前所有排序算法中最快的一种。</p><p>快速排序：快速排序在每一轮挑选一个基准元素，并让其他比它大的元素移动到数列一边，比它小的元素移动到数列的另一边，从而把数列拆解成了两个部分。</p><p>分治法：在分治法的思想下，原数列在每一轮被拆分成两部分，每一部分在下一轮又分别被拆分成两部分，直到不可再分为止。平均情况下需要logn轮，因此快速排序算法的平均时间复杂度是O（nlogn）。快速排序的平均时间复杂度是 O（nlogn），最坏情况下的时间复杂度是 O（n^2）。</p><p>基准元素的选择：基准元素，英文pivot，用于在分治过程中以此为中心，把其他元素移动到基准元素的左右两边。</p><h3 id="挖坑法"><a href="#挖坑法" class="headerlink" title="挖坑法"></a>挖坑法</h3><pre><code>var arr = [4, 7, 6, 5, 3, 2, 8, 1]// 挖坑法console.log(&#39;排序前的arr:&#39; + arr + &quot;长度&quot; +arr.length+ &quot;\n&quot;)quickSort(arr,0,arr.length-1)console.log(&#39;quickSort排序后的arr:&#39; + arr)function quickSort(arr, startIndex, endIndex) {    // 取第一个元素作为基准值    var pivot = arr[startIndex]    var left = startIndex    var right = endIndex    // 坑的位置,初始等于pivot    var index = startIndex    // 大循环在左右指针重合或者交错时结束    while (right &gt;= left) {        // right指针从右向左比较        while (right &gt;= left) {            if (arr[right] &lt; pivot) {                arr[left] = arr[right]                index = right                left++                console.log(&quot;right右向左数组right&quot; + right + &quot;个位置left&quot; + left + &quot;个位置&quot; + &quot;index值为&quot; + index + &quot;数组为&quot; + arr)                break            }            right--        }         // left指针从左向右比较        while (right &gt;= left) {            if (arr[left] &gt; pivot) {                arr[right] = arr[left]                index = left                right--                console.log(&quot;left左向右数组left&quot; + left + &quot;个位置rigth&quot; + right + &quot;个位置&quot; + &quot;index值为&quot; + index + &quot;数组为&quot; + arr + &quot;\n&quot;)                break            }            left++        }    }    arr[index] = pivot    console.log(&quot;index的值为&quot; + index)    return index}</code></pre><p><img src="/2019/01/24/suan-fa/a-switchingsort-quit/../../public/images/quick1.png" alt="快速排序挖坑法"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 交换排序 </tag>
+            
+            <tag> 快速排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue</title>
+      <link href="/2019/01/23/vue/ji-ben-yu-fa/sheng-ming-zhou-qi/"/>
+      <url>/2019/01/23/vue/ji-ben-yu-fa/sheng-ming-zhou-qi/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2019/01/23/vue/ji-ben-yu-fa/sheng-ming-zhou-qi/../../../../public/images/vue/1.png" alt="vue生命周期 "></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue生命周期 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue-MVVC</title>
+      <link href="/2019/01/23/vue/ji-ben-yu-fa/mvvm/"/>
+      <url>/2019/01/23/vue/ji-ben-yu-fa/mvvm/</url>
+      
+        <content type="html"><![CDATA[<p>MVC和MVVM区别</p><p>MVC：后台开发概念</p><p>MVVM：前端开发</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue MVVM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue</title>
+      <link href="/2019/01/23/vue/ji-ben-yu-fa/zhi-ling/"/>
+      <url>/2019/01/23/vue/ji-ben-yu-fa/zhi-ling/</url>
+      
+        <content type="html"><![CDATA[<h3 id="v-for-列表渲染"><a href="#v-for-列表渲染" class="headerlink" title="v-for (列表渲染)"></a>v-for (列表渲染)</h3><p>使用v-for要加上key，提高渲染效率，key值不重复</p><pre><code> &lt;body&gt;    &lt;div id=&#39;app&#39;&gt;        &lt;!-- 循环简单数组 --&gt;        &lt;p v-for=&quot;(item,index) in list&quot;&gt;索引：{{index}} -- 值：{{item}}&lt;/p&gt;&lt;hr&gt;        &lt;!-- 循环对象数组 --&gt;        &lt;p v-for=&quot;user in list2&quot;&gt;id:{{user.id}}--name:{{user.name}}&lt;/p&gt;&lt;hr&gt;        &lt;!-- 遍历对象 --&gt;        &lt;p v-for=&quot;(val,key) in user&quot;&gt;{{key}}:{{val}}&lt;/p&gt;&lt;hr&gt;        &lt;!-- 迭代数字 --&gt;        &lt;p v-for=&quot;count in 10&quot;&gt;这是第{{count}}次循环&lt;/p&gt;&lt;hr&gt;        &lt;!-- 在2.2.0+的版本里面，当在组件找那个使用v-for必须加v-key --&gt;    &lt;/div&gt;&lt;/body&gt;&lt;script&gt;    // 实例化vue对象    let vm = new Vue({        // 绑定对象        el:&#39;#app&#39;,        data:{            list:[1,2,3,4,5,6],            list2:[                {id:1,name:&#39;zhangsan&#39;},                {id:2,name:&#39;lisi&#39;},                {id:3,name:&#39;wangwu&#39;}            ],            user:{                id:1,                user:&#39;shaohang&#39;,                age:20            }        },        methods:{        }    })&lt;/script&gt;</code></pre><h3 id="v-if-条件渲染"><a href="#v-if-条件渲染" class="headerlink" title="v-if (条件渲染)"></a>v-if (条件渲染)</h3><p>v-if:每次都会删除或创建元素，有较高的切换性能消耗</p><p>v-show:每次不会重新进行DOM的删除和创建操作，只是切换元素的display，有较高的初始渲染消耗</p><p>v-html:解析html代码</p><p>v-on:绑定事件(methods)</p><p>插值语法</p><h3 id="class-amp-style"><a href="#class-amp-style" class="headerlink" title="class &amp; style"></a>class &amp; style</h3><p>使用v-bind:style绑定样式，style作为data的一个值</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue指令 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>A-sort-bubble</title>
+      <link href="/2019/01/22/suan-fa/a-switchingsort-bubble/"/>
+      <url>/2019/01/22/suan-fa/a-switchingsort-bubble/</url>
+      
+        <content type="html"><![CDATA[<p>冒泡排序的英文Bubble Sort，是一种最基础的交换排序。这种排序算法的每一个元素都可以像小气泡一样，根据自身大小，一点一点向着数组的一侧移动。</p><p>冒泡排序：<code>相邻的元素两两比较，根据大小来交换元素的位置</code>，如果后面的比前面的小，则将小的元素排到前面。依照这个规则进行多次并且递减的迭代，直到顺序正确。</p><p>c</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 交换排序 </tag>
+            
+            <tag> 冒泡排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node-promise</title>
+      <link href="/2019/01/20/node/bi-li-bi-li-xue-xi/node-pormise/"/>
+      <url>/2019/01/20/node/bi-li-bi-li-xue-xi/node-pormise/</url>
+      
+        <content type="html"><![CDATA[<p>promise是一个构造函数</p><p>promise容器存放了一个异步任务pending，有两种状态，resolved和rejected</p><p>封装Promise readFile</p><pre><code>function pReadFile(filePath) {  return new Promise(function (resolve, reject) {    fs.readFile(filePath,&#39;utf8&#39;,function(err, data) {      if (err) {        reject(err)      } else {        resolve(data)      }    })  })}pReadFile(&#39;./data/c.txt&#39;)    .then(function (data) {      console.log(data)     return pReadFile(&#39;./data/b.txt&#39;)    })    .then(function (data) {      console.log(data)      return pReadFile(&#39;./data/a.txt&#39;)    })    .then(function (data) {      console.log(data)      console.log(&#39;end&#39;)    })</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> promise </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node-npm</title>
+      <link href="/2019/01/20/node/bi-li-bi-li-xue-xi/node-npm/"/>
+      <url>/2019/01/20/node/bi-li-bi-li-xue-xi/node-npm/</url>
+      
+        <content type="html"><![CDATA[<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><ul><li>建议每个文件都有这个文件（包描述文件）</li><li>这个文件可以用过npm init来创建</li><li>执行npm install加上–save用来保存依赖项信息</li><li>npm install 会把所有依赖项都加载回来</li></ul><h4 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h4><ul><li><p><code>npm init</code></p></li><li><p><code>npm install 包名</code></p></li><li><p><code>npm uninstall 包名</code></p></li><li><p><code>npm install --save</code></p></li><li><p><code>npm help</code></p></li></ul><h4 id="npm被墙"><a href="#npm被墙" class="headerlink" title="npm被墙"></a>npm被墙</h4><p><a href="http://npm.taobao.org/" target="_blank" rel="noopener">http://npm.taobao.org/</a></p><p>安装淘宝的cnpm</p><p><code>npm install --global cnpm</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> npm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node-mysql</title>
+      <link href="/2019/01/20/node/bi-li-bi-li-xue-xi/node-mysql/"/>
+      <url>/2019/01/20/node/bi-li-bi-li-xue-xi/node-mysql/</url>
+      
+        <content type="html"><![CDATA[<h2 id="使用node操作MySQL"><a href="#使用node操作MySQL" class="headerlink" title="使用node操作MySQL"></a>使用node操作MySQL</h2><p>安装<br><code>npm install --save mysql</code></p><pre><code>var mysql      = require(&#39;mysql&#39;);var connection = mysql.createConnection({  host     : &#39;localhost&#39;,  user     : &#39;me&#39;,  password : &#39;secret&#39;,  database : &#39;my_db&#39;});connection.connect();connection.query(&#39;SELECT 1 + 1 AS solution&#39;, function (error, results, fields) {  if (error) throw error;  console.log(&#39;The solution is: &#39;, results[0].solution);});connection.end();</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node-MongoDB</title>
+      <link href="/2019/01/20/node/bi-li-bi-li-xue-xi/node-mongodb/"/>
+      <url>/2019/01/20/node/bi-li-bi-li-xue-xi/node-mongodb/</url>
+      
+        <content type="html"><![CDATA[<h3 id="开启服务"><a href="#开启服务" class="headerlink" title="开启服务"></a>开启服务</h3><ol><li>mongod</li><li>mongo ,需要重新开启一个窗口</li></ol><h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><ul><li><code>show dbs</code><ul><li>查看所有数据库</li></ul></li><li><code>db</code><ul><li>查看当前操作的数据库</li></ul></li><li><code>use 数据库名</code><ul><li>切换到指点数据库（如果没有就新建）</li></ul></li><li>插入数据</li></ul><h2 id="在node中操作MongoDB"><a href="#在node中操作MongoDB" class="headerlink" title="在node中操作MongoDB"></a>在node中操作MongoDB</h2><h3 id="使用官方mongodb包来操作"><a href="#使用官方mongodb包来操作" class="headerlink" title="使用官方mongodb包来操作"></a>使用官方mongodb包来操作</h3><p><a href="https://github.com/mongodb/node-mongodb-native" target="_blank" rel="noopener">https://github.com/mongodb/node-mongodb-native</a></p><h3 id="使用第三方mongoose来操作数据库"><a href="#使用第三方mongoose来操作数据库" class="headerlink" title="使用第三方mongoose来操作数据库"></a>使用第三方mongoose来操作数据库</h3><p><a href="https://mongoosejs.com/" target="_blank" rel="noopener">https://mongoosejs.com/</a></p><pre><code>const mongoose = require(&#39;mongoose&#39;);mongoose.connect(&#39;mongodb://localhost:27017/test&#39;, {useNewUrlParser: true});const Cat = mongoose.model(&#39;Cat&#39;, { name: String });const kitty = new Cat({ name: &#39;Zildjian&#39; });kitty.save().then(() =&gt; console.log(&#39;meow&#39;));</code></pre><h1 id="mongoose"><a href="#mongoose" class="headerlink" title="mongoose"></a>mongoose</h1><ul><li>官网  <a href="https://mongoosejs.com/" target="_blank" rel="noopener">https://mongoosejs.com/</a></li><li>官方指南  <a href="https://mongoosejs.com/docs/guides.html" target="_blank" rel="noopener">https://mongoosejs.com/docs/guides.html</a></li><li>官方文档API  <a href="https://mongoosejs.com/docs/api.html" target="_blank" rel="noopener">https://mongoosejs.com/docs/api.html</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MongoDB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node-module</title>
+      <link href="/2019/01/20/node/bi-li-bi-li-xue-xi/node-module/"/>
+      <url>/2019/01/20/node/bi-li-bi-li-xue-xi/node-module/</url>
+      
+        <content type="html"><![CDATA[<h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><ul><li>核心模块</li><li>第三方模块</li><li>自己写的模块</li><li><p>require加载模块的规则</p><ul><li>优先从缓存加载，不会重复加载</li><li>判断模块标识</li><li>首位的/表示跟路径</li></ul></li></ul><h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><ul><li>文件作用域</li><li>通信规则<ul><li>加载模块</li><li>导出</li></ul></li></ul><h4 id="CommonJS模块规范化"><a href="#CommonJS模块规范化" class="headerlink" title="CommonJS模块规范化"></a>CommonJS模块规范化</h4><ul><li>模块作用域</li><li>使用require方法加载模块</li><li>使用exports接口对象用来导出模块中的成员</li></ul><h4 id="加载require"><a href="#加载require" class="headerlink" title="加载require"></a>加载require</h4><p>语法：<code>var 变量名 = require(&#39;模块&#39;)</code></p><h4 id="导出exports"><a href="#导出exports" class="headerlink" title="导出exports"></a>导出exports</h4><p><code>每个模块都有对象module，该对象中有一个成员exports</code></p><ul><li>导出单个成员<pre><code>module.exports = &#39;a&#39;</code></pre></li><li>导出多个成员<pre><code>module.exports = {  foo:&#39;bar&#39;,  add:function(x, y) {      return x + y  }}</code></pre></li></ul><h4 id="module-exports-和-exports区别"><a href="#module-exports-和-exports区别" class="headerlink" title="module.exports 和 exports区别"></a>module.exports 和 exports区别</h4><ul><li>exports 只是module.exports的引用而已</li><li>每个模块最终的return的是module.exports</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> module </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node-express</title>
+      <link href="/2019/01/20/node/bi-li-bi-li-xue-xi/node-express/"/>
+      <url>/2019/01/20/node/bi-li-bi-li-xue-xi/node-express/</url>
+      
+        <content type="html"><![CDATA[<h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><ul><li>安装<a href="http://expressjs.com/en/starter/installing.html" target="_blank" rel="noopener">http://expressjs.com/en/starter/installing.html</a><br><code>npm install express --save</code></li><li>配置模板引擎</li></ul><p><code>npm install --save art-template</code><br><code>npm install  --save expressart-template</code></p><h3 id="基于文件做一套CRUD"><a href="#基于文件做一套CRUD" class="headerlink" title="基于文件做一套CRUD"></a>基于文件做一套CRUD</h3><h4 id="文件操作路径和模块路径"><a href="#文件操作路径和模块路径" class="headerlink" title="文件操作路径和模块路径"></a>文件操作路径和模块路径</h4><p>文件操作路径</p><pre><code>//  ./data/a.txt //当前目录//  data/a.txt //当前目录//  /data/a.txt //绝对路径，当前文件模块所处磁盘根目录fs.readFile(&#39;./data/a.txt&#39;,function (err, data) {    if (err) {        console.log(err)        return console.log(&#39;读取失败&#39;)    }    console.log(data.toString())}})</code></pre><p>模块路径</p><pre><code>//这里忽略了.则也是磁盘根目录require(&#39;./data/foo.js&#39;)//相对路径require(&#39;./data/foo.js)//模块加载的路径中的相对路径不能省略./</code></pre><h4 id="自动重启"><a href="#自动重启" class="headerlink" title="自动重启"></a>自动重启</h4><p><code>npm install --global nodemon</code><br>安装完毕</p><pre><code>node app.jsnodemon app.js</code></pre><h4 id="基本路由"><a href="#基本路由" class="headerlink" title="基本路由"></a>基本路由</h4><p>get</p><pre><code>app.get(&#39;/&#39;.function (req, res) {    res.send(&#39;hello world&#39;)})</code></pre><p>post</p><pre><code>app.post(&#39;/&#39;,function (req, res){    res.send(&#39;Got a POST request&#39;)})</code></pre><h4 id="静态服务"><a href="#静态服务" class="headerlink" title="静态服务"></a>静态服务</h4><pre><code>app.use(express.static(&#39;public&#39;))app.use(express.static(&#39;files&#39;))app.use(&#39;/static&#39;,express.static(&#39;public&#39;))</code></pre><h4 id="使用art-template"><a href="#使用art-template" class="headerlink" title="使用art-template"></a>使用art-template</h4><p>安装</p><p><code>npm install --save art-template</code><br>配置</p><pre><code>var express = require(&#39;express&#39;);var app = express();app.engine(&#39;art&#39;, require(&#39;express-art-template&#39;));app.set(&#39;view options&#39;, {    debug: process.env.NODE_ENV !== &#39;production&#39;});app.get(&#39;/&#39;, function (req, res) {    res.render(&#39;index.art&#39;, {        user: {            name: &#39;aui&#39;,            tags: [&#39;art&#39;, &#39;template&#39;, &#39;nodejs&#39;]        }    });});</code></pre><h4 id="获取表单POST请求数据"><a href="#获取表单POST请求数据" class="headerlink" title="获取表单POST请求数据"></a>获取表单POST请求数据</h4><p>安装中间件middleware<br><code>npm install --save body-parser</code></p><p>配置</p><pre><code>var express = require(&#39;express&#39;)var bodyParser = require(&#39;body-parser&#39;)var app = express()// parse application/x-www-form-urlencodedapp.use(bodyParser.urlencoded({ extended: false }))// parse application/jsonapp.use(bodyParser.json())app.use(function (req, res) {  res.setHeader(&#39;Content-Type&#39;, &#39;text/plain&#39;)  res.write(&#39;you posted:\n&#39;)  res.end(JSON.stringify(req.body, null, 2))})</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> express </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node-Express - CRUD</title>
+      <link href="/2019/01/20/node/bi-li-bi-li-xue-xi/node-crud/"/>
+      <url>/2019/01/20/node/bi-li-bi-li-xue-xi/node-crud/</url>
+      
+        <content type="html"><![CDATA[<h2 id="路由设计"><a href="#路由设计" class="headerlink" title="路由设计"></a>路由设计</h2><p>| 请求方法 |      请求路径      | get 参数 | post 参数                 |     备注 |<br>|   GET    |    /students     |         |                           | 渲染首页 |<br>|   GET    |    /students/new |         |                           | 渲染添加 |<br>|  POST    |    /students     |         |   name age gender hobbies | 渲染添加 |<br>|   GET    |   /students/edit | id      |   name age gender hobbies | 渲染编辑 |<br>|   POST   |   /students/edit | id      |                           | 渲染编辑 |<br>|   GET    | /students/delete | id      |                           | 渲染删除 |</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CRUD </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node-art-template</title>
+      <link href="/2019/01/20/node/bi-li-bi-li-xue-xi/node-art-template/"/>
+      <url>/2019/01/20/node/bi-li-bi-li-xue-xi/node-art-template/</url>
+      
+        <content type="html"><![CDATA[<ul><li>each语法<pre><code>  {{each 数组}}  &lt;li&gt;{{$value}}&lt;/li&gt;  {{/each}}</code></pre></li><li>配置<br><code>npm install art-template --save</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> art-template </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/01/19/hello-world/"/>
+      <url>/2019/01/19/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
