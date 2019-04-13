@@ -8,7 +8,7 @@
       <link href="/2019/04/13/json/json/"/>
       <url>/2019/04/13/json/json/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[{"loveEat":false}]]></content>
       
       
       
@@ -21,7 +21,7 @@
       <link href="/2019/04/13/json/json/"/>
       <url>/2019/04/13/json/json/</url>
       
-        <content type="html"><![CDATA[<h1 id="JSON-JavaScript对象字面量表示法"><a href="#JSON-JavaScript对象字面量表示法" class="headerlink" title="JSON(JavaScript对象字面量表示法)"></a>JSON(JavaScript对象字面量表示法)</h1><p>JSON 是一种数据交互格式</p><p>JSON 独立于编程语言</p><p>JSON基于JavaScript对象字面量表示法</p><p>JSON表达数据的方式对通用的编程很友好</p><h1 id="正确的JSON语法"><a href="#正确的JSON语法" class="headerlink" title="正确的JSON语法"></a>正确的JSON语法</h1><p>名称 - 值对</p><p><code>名称总是要被双引号包裹</code></p><p><code>值是字符串必须使用双引号</code>，如果是其他数字，布尔，数组，对象，null等其他数据，这些都不应该被双引号包裹。</p><p>多个名称-值对用逗号分开</p><p>json 的媒体类型是application/json</p><h1 id="JSON的双引号"><a href="#JSON的双引号" class="headerlink" title="JSON的双引号"></a>JSON的双引号</h1><p>没有在名称两边加双引号的，不是json，而是一个JavaScript对象</p><p>json中仅使用双引号，在JavaScript对象中，可以使用单引号代替双引号</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="JSON-JavaScript对象字面量表示法"><a href="#JSON-JavaScript对象字面量表示法" class="headerlink" title="JSON(JavaScript对象字面量表示法)"></a>JSON(JavaScript对象字面量表示法)</h1><p>JSON 是一种数据交互格式</p><p>JSON 独立于编程语言</p><p>JSON基于JavaScript对象字面量表示法</p><p>JSON表达数据的方式对通用的编程很友好</p><h1 id="正确的JSON语法"><a href="#正确的JSON语法" class="headerlink" title="正确的JSON语法"></a>正确的JSON语法</h1><p>名称 - 值对</p><p><code>名称总是要被双引号包裹</code></p><p><code>值是字符串必须使用双引号</code>，如果是其他数字，布尔，数组，对象，null等其他数据，这些都不应该被双引号包裹。</p><p>多个名称-值对用逗号分开</p><p>json 的媒体类型是application/json</p><h1 id="JSON的双引号"><a href="#JSON的双引号" class="headerlink" title="JSON的双引号"></a>JSON的双引号</h1><p>没有在名称两边加双引号的，不是json，而是一个JavaScript对象</p><p>json中仅使用双引号，在JavaScript对象中，可以使用单引号代替双引号</p><h1 id="JSON中的数据类型"><a href="#JSON中的数据类型" class="headerlink" title="JSON中的数据类型"></a>JSON中的数据类型</h1><ul><li>对象</li></ul><pre><code>{    &quot;person&quot;: {        &quot;name&quot;: &quot;zwz&quot;,        &quot;height&quot;: 160    }}</code></pre><ul><li>字符串</li></ul><pre><code>{    &quot;name&quot;:&quot;zwz&quot;}</code></pre><ul><li>数字</li></ul><pre><code>{    &quot;long&quot;:123566}</code></pre><ul><li>数组<pre><code>{  &quot;student&quot;: [      &quot;zwz&quot;,      &quot;cgl&quot;  ]}</code></pre></li><li>null<pre><code>{  &quot;title&quot; :null}</code></pre></li><li>布尔</li></ul><pre><code>{    &quot;loveEat&quot;: false}</code></pre><h1 id="JSON中的安全问题"><a href="#JSON中的安全问题" class="headerlink" title="JSON中的安全问题"></a>JSON中的安全问题</h1><ol><li>跨站伪请求(CSRF)</li></ol><p>利用站点对用户浏览器的信任进行攻击</p><p>避免</p><p>将数组存进对象中，使其成为非法的JavaScript，这样子就不会被script标签加载</p><pre><code>{    &quot;info&quot;: [        {            &quot;user&quot;: &quot;zwz&quot;        },        {            &quot;phone&quot;: &quot;020-89002000&quot;        }    ]}</code></pre><ol start="2"><li>注入攻击</li></ol><p>依赖于将数据注入到web程序以方便恶意数据执行或编译攻击</p><ol start="3"><li>JSON跨站脚本攻击(XSS)</li></ol><p>通过截取或将站点使用的第三方代码更换为恶意脚本，来对站点进行的一种攻击</p><p><code>注意</code></p><ol><li><p>不在JSON中使用顶层数组。顶级数组是合法的JavaScript脚本，可以使用<script>标签链接并使用</p></li><li><p>对于不想公开的资源，仅允许使用HTTP POST请求而不是GET。GET方法可以通过URL请求，甚至放在<script>标签中</p></li><li><p>使用JSON.parse()代替URL来请求。eval()函数会将传入的字符串编译并执行，这会让你的代码容易被攻击。应仅使用JSON.parse()来解析JSON数据。</p></li></ol></script></p></li></ol>]]></content>
       
       
       <categories>
