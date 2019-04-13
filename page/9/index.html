@@ -153,27 +153,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Node/node-CRUD" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Vue/核心技术/Vue-router" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/20/Node/node-CRUD/">node-Express - CRUD</a>
+      <a class="article-title" href="/2019/02/07/Vue/核心技术/Vue-router/">vue</a>
     </h1>
   
 
         
-        <a href="/2019/01/20/Node/node-CRUD/" class="archive-article-date">
-  	<time datetime="2019-01-20T01:12:53.511Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
+        <a href="/2019/02/07/Vue/核心技术/Vue-router/" class="archive-article-date">
+  	<time datetime="2019-02-07T04:45:05.145Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="路由设计"><a href="#路由设计" class="headerlink" title="路由设计"></a>路由设计</h2><p>| 请求方法 |      请求路径      | get 参数 | post 参数                 |     备注 |<br>|   GET    |    /students     |         |                           | 渲染首页 |<br>|   GET    |    /students/new |         |                           | 渲染添加 |<br>|  POST    |    /students     |         |   name age gender hobbies | 渲染添加 |<br>|   GET    |   /students/edit | id      |   name age gender hobbies | 渲染编辑 |<br>|   POST   |   /students/edit | id      |                           | 渲染编辑 |<br>|   GET    | /students/delete | id      |                           | 渲染删除 |</p>
+        <h2 id="什么是路由"><a href="#什么是路由" class="headerlink" title="什么是路由"></a>什么是路由</h2><p>1.<code>后端路由</code>:对应普通网站，所有的超链接都是URI地址，所有URI地址都对应服务器上对应的资源</p>
+<p>2.<code>前端路由</code>:对于单页面应用程序来说，主要通过URI中的hash（#号）来实现不同的切换，同时，hash有个特点：HTTP请求中不包含hash相关的内容，所以单页面应用程序中的页面跳转主要用hash实现</p>
+<p>3.在单页面应用程序中，这种通过hash改变切换页面的方式，承做前端路由</p>
 
       
 
@@ -187,7 +189,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CRUD</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue-router</a>
         		</li>
       		
 		</ul>
@@ -199,7 +201,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -208,7 +210,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/20/Node/node-CRUD/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/07/Vue/核心技术/Vue-router/">展开全文 >></a>
         </p>
       
 
@@ -238,33 +240,775 @@
 
 
   
-    <article id="post-Node/node-art-template" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Vue/核心技术/组件化和模块化区别" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/20/Node/node-art-template/">npde-art-template</a>
+      <a class="article-title" href="/2019/02/01/Vue/核心技术/组件化和模块化区别/">vue</a>
     </h1>
   
 
         
-        <a href="/2019/01/20/Node/node-art-template/" class="archive-article-date">
-  	<time datetime="2019-01-20T01:12:53.509Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
+        <a href="/2019/02/01/Vue/核心技术/组件化和模块化区别/" class="archive-article-date">
+  	<time datetime="2019-02-01T12:44:20.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>each语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;each 数组&#125;&#125;</span><br><span class="line">&lt;li&gt;&#123;&#123;$value&#125;&#125;&lt;/li&gt;</span><br><span class="line">&#123;&#123;/each&#125;&#125;</span><br></pre></td></tr></table></figure>
+        <p>组件：组建的出现，就是为了能够拆分vue实例的代码，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调相对应的组件即可。<br>模块化：从代码逻辑的角度进行划分：方便代码开发，保证每个模块功能单一<br>组件化：从UI界面的角度进行划分：方便UI组件重用</p>
+<p>创建组件的3种方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 1.</span><br><span class="line">   Vue.component(&apos;myComl&apos;, Vue.extend(&#123;</span><br><span class="line">       template: &apos;&lt;h4&gt;xxxxxxxxxxxx&lt;/h4&gt;&apos;</span><br><span class="line">   &#125;))</span><br><span class="line">   // 2.</span><br><span class="line">   Vue.component(&apos;myComl2&apos;, &#123;</span><br><span class="line">       template: &apos;&lt;h4&gt;xxxxxxxxxxxx&lt;/h4&gt;&apos;</span><br><span class="line">   &#125;)</span><br><span class="line">   // 3</span><br><span class="line">   Vue.component(&apos;myComl3&apos;,&#123;</span><br><span class="line">       template: &apos;#temp&apos;</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>组件中的data</p>
+<pre><code>1.组件的data可以有自己的数据
+2.组件中的data必须是一个方法，实例的data可以作为一个对象
+3.组件中的data在方法内部必须返回一个对象
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 定义一个名为 button-counter 的新组件</span><br><span class="line">Vue.component(&apos;button-counter&apos;, &#123;</span><br><span class="line">  data: function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  template: &apos;&lt;button v-on:click=&quot;count++&quot;&gt;You clicked me &#123;&#123; count &#125;&#125; times.&lt;/button&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>父组件传值子组件</p>
+<p>1.在引用的时候，通过属性绑定的形式传值v-bind:属性名</p>
+<p>2.父组件传递过来的属性，先在props数组中定义一下，才能使用这个数据</p>
+<p>3.props中的数据都是只读的</p>
+<p>子组件传值父组件</p>
+<p>1.在父元素methods定义方法获取</p>
+<p>2.事件绑定传递值$emit</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue组件化和模块化区别</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/01/Vue/核心技术/组件化和模块化区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-算法/A-InsertionSort" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/25/算法/A-InsertionSort/">A-InsertionSort</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/25/算法/A-InsertionSort/" class="archive-article-date">
+  	<time datetime="2019-01-25T13:16:17.752Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+<p>算法描述和实现</p>
+<p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
+<p><1> 从第一个元素开始，该元素可以认为已经被排序；</1></p>
+<p><2> 取出下一个元素，在已经排序的元素序列中从后向前扫描；</2></p>
+<p><3> 如果该元素（已排序）大于新元素，将该元素移到下一位置；</3></p>
+<p><4> 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</4></p>
+<p><5> 将新元素插入到该位置后；</5></p>
+<p><6> 重复步骤2~5。</6></p>
+<p>直接插入排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function directInsertSort(arr) &#123;</span><br><span class="line">    for (var i = 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">        var temp =arr[i]</span><br><span class="line">        var j = i - 1</span><br><span class="line">        while (j &gt;= 0 &amp;&amp; arr[j] &gt; temp) &#123;</span><br><span class="line">            arr[j + 1] = arr[j]</span><br><span class="line">            j--</span><br><span class="line">        &#125;</span><br><span class="line">        arr[j + 1] = temp</span><br><span class="line">    &#125;</span><br><span class="line">    return arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">插入排序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/25/算法/A-InsertionSort/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-算法/A-SwitchingSort-quit" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/24/算法/A-SwitchingSort-quit/">A-sort-bubble</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/24/算法/A-SwitchingSort-quit/" class="archive-article-date">
+  	<time datetime="2019-01-24T04:35:03.081Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>快速排序英文名quick sort，又城划分排序，是对冒泡排序的一种改进，是目前所有排序算法中最快的一种。</p>
+<p>快速排序：快速排序在每一轮挑选一个基准元素，并让其他比它大的元素移动到数列一边，比它小的元素移动到数列的另一边，从而把数列拆解成了两个部分。</p>
+<p>分治法：在分治法的思想下，原数列在每一轮被拆分成两部分，每一部分在下一轮又分别被拆分成两部分，直到不可再分为止。平均情况下需要logn轮，因此快速排序算法的平均时间复杂度是O（nlogn）。快速排序的平均时间复杂度是 O（nlogn），最坏情况下的时间复杂度是 O（n^2）。</p>
+<p>基准元素的选择：基准元素，英文pivot，用于在分治过程中以此为中心，把其他元素移动到基准元素的左右两边。</p>
+<h3 id="挖坑法"><a href="#挖坑法" class="headerlink" title="挖坑法"></a>挖坑法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">var arr = [4, 7, 6, 5, 3, 2, 8, 1]</span><br><span class="line">// 挖坑法</span><br><span class="line">console.log(&apos;排序前的arr:&apos; + arr + &quot;长度&quot; +arr.length+ &quot;\n&quot;)</span><br><span class="line">quickSort(arr,0,arr.length-1)</span><br><span class="line">console.log(&apos;quickSort排序后的arr:&apos; + arr)</span><br><span class="line">function quickSort(arr, startIndex, endIndex) &#123;</span><br><span class="line">    // 取第一个元素作为基准值</span><br><span class="line">    var pivot = arr[startIndex]</span><br><span class="line">    var left = startIndex</span><br><span class="line">    var right = endIndex</span><br><span class="line">    // 坑的位置,初始等于pivot</span><br><span class="line">    var index = startIndex</span><br><span class="line"></span><br><span class="line">    // 大循环在左右指针重合或者交错时结束</span><br><span class="line">    while (right &gt;= left) &#123;</span><br><span class="line">        // right指针从右向左比较</span><br><span class="line">        while (right &gt;= left) &#123;</span><br><span class="line">            if (arr[right] &lt; pivot) &#123;</span><br><span class="line">                arr[left] = arr[right]</span><br><span class="line">                index = right</span><br><span class="line">                left++</span><br><span class="line">                console.log(&quot;right右向左数组right&quot; + right + &quot;个位置left&quot; + left + &quot;个位置&quot; + &quot;index值为&quot; + index + &quot;数组为&quot; + arr)</span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">            right--</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">         // left指针从左向右比较</span><br><span class="line">        while (right &gt;= left) &#123;</span><br><span class="line">            if (arr[left] &gt; pivot) &#123;</span><br><span class="line">                arr[right] = arr[left]</span><br><span class="line">                index = left</span><br><span class="line">                right--</span><br><span class="line">                console.log(&quot;left左向右数组left&quot; + left + &quot;个位置rigth&quot; + right + &quot;个位置&quot; + &quot;index值为&quot; + index + &quot;数组为&quot; + arr + &quot;\n&quot;)</span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">            left++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[index] = pivot</span><br><span class="line">    console.log(&quot;index的值为&quot; + index)</span><br><span class="line">    return index</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/01/24/算法/A-SwitchingSort-quit/../../public/images/quick1.png" alt="快速排序挖坑法"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">交换排序</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">快速排序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/24/算法/A-SwitchingSort-quit/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue/基本语法/生命周期" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/23/Vue/基本语法/生命周期/">vue</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/23/Vue/基本语法/生命周期/" class="archive-article-date">
+  	<time datetime="2019-01-23T12:47:09.282Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2019/01/23/Vue/基本语法/生命周期/../../../../public/images/vue/1.png" alt="vue生命周期 "></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue生命周期</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/23/Vue/基本语法/生命周期/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue/基本语法/MVVM" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/23/Vue/基本语法/MVVM/">vue-MVVC</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/23/Vue/基本语法/MVVM/" class="archive-article-date">
+  	<time datetime="2019-01-23T12:44:34.750Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MVC和MVVM区别</p>
+<p>MVC：后台开发概念</p>
+<p>MVVM：前端开发</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue MVVM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/23/Vue/基本语法/MVVM/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue/基本语法/指令" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/23/Vue/基本语法/指令/">vue</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/23/Vue/基本语法/指令/" class="archive-article-date">
+  	<time datetime="2019-01-23T12:16:01.511Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="v-for-列表渲染"><a href="#v-for-列表渲染" class="headerlink" title="v-for (列表渲染)"></a>v-for (列表渲染)</h3><p>使用v-for要加上key，提高渲染效率，key值不重复</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"> &lt;body&gt;</span><br><span class="line">    &lt;div id=&apos;app&apos;&gt;</span><br><span class="line">        &lt;!-- 循环简单数组 --&gt;</span><br><span class="line">        &lt;p v-for=&quot;(item,index) in list&quot;&gt;索引：&#123;&#123;index&#125;&#125; -- 值：&#123;&#123;item&#125;&#125;&lt;/p&gt;&lt;hr&gt;</span><br><span class="line">        &lt;!-- 循环对象数组 --&gt;</span><br><span class="line">        &lt;p v-for=&quot;user in list2&quot;&gt;id:&#123;&#123;user.id&#125;&#125;--name:&#123;&#123;user.name&#125;&#125;&lt;/p&gt;&lt;hr&gt;</span><br><span class="line">        &lt;!-- 遍历对象 --&gt;</span><br><span class="line">        &lt;p v-for=&quot;(val,key) in user&quot;&gt;&#123;&#123;key&#125;&#125;:&#123;&#123;val&#125;&#125;&lt;/p&gt;&lt;hr&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 迭代数字 --&gt;</span><br><span class="line">        &lt;p v-for=&quot;count in 10&quot;&gt;这是第&#123;&#123;count&#125;&#125;次循环&lt;/p&gt;&lt;hr&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 在2.2.0+的版本里面，当在组件找那个使用v-for必须加v-key --&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 实例化vue对象</span><br><span class="line">    let vm = new Vue(&#123;</span><br><span class="line">        // 绑定对象</span><br><span class="line">        el:&apos;#app&apos;,</span><br><span class="line">        data:&#123;</span><br><span class="line">            list:[1,2,3,4,5,6],</span><br><span class="line">            list2:[</span><br><span class="line">                &#123;id:1,name:&apos;zhangsan&apos;&#125;,</span><br><span class="line">                &#123;id:2,name:&apos;lisi&apos;&#125;,</span><br><span class="line">                &#123;id:3,name:&apos;wangwu&apos;&#125;</span><br><span class="line">            ],</span><br><span class="line">            user:&#123;</span><br><span class="line">                id:1,</span><br><span class="line">                user:&apos;shaohang&apos;,</span><br><span class="line">                age:20</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-if-条件渲染"><a href="#v-if-条件渲染" class="headerlink" title="v-if (条件渲染)"></a>v-if (条件渲染)</h3><p>v-if:每次都会删除或创建元素，有较高的切换性能消耗</p>
+<p>v-show:每次不会重新进行DOM的删除和创建操作，只是切换元素的display，有较高的初始渲染消耗</p>
+<p>v-html:解析html代码</p>
+<p>v-on:绑定事件(methods)</p>
+<p>插值语法</p>
+<h3 id="class-amp-style"><a href="#class-amp-style" class="headerlink" title="class &amp; style"></a>class &amp; style</h3><p>使用v-bind:style绑定样式，style作为data的一个值</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue指令</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/23/Vue/基本语法/指令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-算法/A-SwitchingSort-bubble" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/22/算法/A-SwitchingSort-bubble/">A-sort-bubble</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/22/算法/A-SwitchingSort-bubble/" class="archive-article-date">
+  	<time datetime="2019-01-22T00:43:04.086Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>冒泡排序的英文Bubble Sort，是一种最基础的交换排序。这种排序算法的每一个元素都可以像小气泡一样，根据自身大小，一点一点向着数组的一侧移动。</p>
+<p>冒泡排序：<code>相邻的元素两两比较，根据大小来交换元素的位置</code>，如果后面的比前面的小，则将小的元素排到前面。依照这个规则进行多次并且递减的迭代，直到顺序正确。</p>
+<p>c</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">交换排序</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">冒泡排序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/22/算法/A-SwitchingSort-bubble/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Node/哔哩哔哩学习/node-pormise" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/Node/哔哩哔哩学习/node-pormise/">node-promise</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/20/Node/哔哩哔哩学习/node-pormise/" class="archive-article-date">
+  	<time datetime="2019-01-20T01:12:53.565Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>promise是一个构造函数</p>
+<p>promise容器存放了一个异步任务pending，有两种状态，resolved和rejected</p>
+<p>封装Promise readFile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function pReadFile(filePath) &#123;</span><br><span class="line">  return new Promise(function (resolve, reject) &#123;</span><br><span class="line">    fs.readFile(filePath,&apos;utf8&apos;,function(err, data) &#123;</span><br><span class="line">      if (err) &#123;</span><br><span class="line">        reject(err)</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        resolve(data)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pReadFile(&apos;./data/c.txt&apos;)</span><br><span class="line">    .then(function (data) &#123;</span><br><span class="line">      console.log(data)</span><br><span class="line">     return pReadFile(&apos;./data/b.txt&apos;)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(function (data) &#123;</span><br><span class="line">      console.log(data)</span><br><span class="line">      return pReadFile(&apos;./data/a.txt&apos;)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(function (data) &#123;</span><br><span class="line">      console.log(data)</span><br><span class="line">      console.log(&apos;end&apos;)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">promise</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/20/Node/哔哩哔哩学习/node-pormise/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Node/哔哩哔哩学习/node-npm" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/20/Node/哔哩哔哩学习/node-npm/">node-npm</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/20/Node/哔哩哔哩学习/node-npm/" class="archive-article-date">
+  	<time datetime="2019-01-20T01:12:53.564Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><ul>
+<li>建议每个文件都有这个文件（包描述文件）</li>
+<li>这个文件可以用过npm init来创建</li>
+<li>执行npm install加上–save用来保存依赖项信息</li>
+<li>npm install 会把所有依赖项都加载回来</li>
+</ul>
+<h4 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h4><ul>
+<li><p><code>npm init</code></p>
 </li>
-<li><p>配置<br><code>npm install art-template --save</code></p>
+<li><p><code>npm install 包名</code></p>
+</li>
+<li><p><code>npm uninstall 包名</code></p>
+</li>
+<li><p><code>npm install --save</code></p>
+</li>
+<li><p><code>npm help</code></p>
 </li>
 </ul>
+<h4 id="npm被墙"><a href="#npm被墙" class="headerlink" title="npm被墙"></a>npm被墙</h4><p><a href="http://npm.taobao.org/" target="_blank" rel="noopener">http://npm.taobao.org/</a></p>
+<p>安装淘宝的cnpm</p>
+<p><code>npm install --global cnpm</code></p>
 
       
 
@@ -278,7 +1022,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">art-template</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
         		</li>
       		
 		</ul>
@@ -299,78 +1043,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/20/Node/node-art-template/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/19/hello-world/" class="archive-article-date">
-  	<time datetime="2019-01-19T02:35:41.906Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/19/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/20/Node/哔哩哔哩学习/node-npm/">展开全文 >></a>
         </p>
       
 
@@ -402,7 +1075,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -497,6 +1170,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">选择器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">基础面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bootstrap carousel</a>
               </li>
              
@@ -505,11 +1186,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap  dropdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap  dropdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,19 +1202,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
+                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,27 +1218,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,15 +1230,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,19 +1238,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">WEB标准</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">HTML iframe</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">浏览器页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">浏览器兼容性</a>
+                <a href="javascript:void(0)" class="js-tag color1">WEB标准</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,27 +1250,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">浏览器兼容性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">浏览器页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">angular组件和组件树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES6 Hosting</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ES6 字符串</a>
+                <a href="javascript:void(0)" class="js-tag color1">浏览器兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,19 +1270,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES6 Hosting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6 箭头函数</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML5关系型数据库存储</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTML5新增的表单元素</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HTML5缓存</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML5本地存储</a>
+                <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ES6 字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,7 +1306,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTML5缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HTML5关系型数据库存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Inspector调试node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,11 +1338,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML5本地存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML5离线存储</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -693,11 +1366,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,15 +1414,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue源码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">字符串String</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -729,15 +1434,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
+                <a href="javascript:void(0)" class="js-tag color1">构造器模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
               </li>
              
               <li class="article-tag-list-item">

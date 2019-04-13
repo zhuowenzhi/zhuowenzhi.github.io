@@ -153,12 +153,12 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-HTML5/存储/IndexedDB" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-JSON/json" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var db;</span><br><span class="line">    var arrKey = [];</span><br><span class="line">    var openRequest;</span><br><span class="line">    var lastCursor;</span><br><span class="line">    var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;</span><br><span class="line">    var dbName = &quot;person&quot;;</span><br><span class="line">    var tableName = &quot;testTable&quot;;</span><br><span class="line"></span><br><span class="line">    function init () &#123;</span><br><span class="line">        // 数据库存在的话就打开</span><br><span class="line">        openRequest = indexedDB.open(dbName);</span><br><span class="line"></span><br><span class="line">        // 数据库不存在就新建</span><br><span class="line">        // onupgradeneeded事件在新的数据库创建或版本改变时触发</span><br><span class="line">        openRequest.onupgradeneeded = function(e) &#123;</span><br><span class="line">            console.log(&quot;running onupgradeneeded&quot;);</span><br><span class="line">            var thisDb = e.target.result;</span><br><span class="line">            console.log(thisDb.version);</span><br><span class="line">            // 数据库建表</span><br><span class="line">            if (!thisDb.objectStoreNames.contains(tableName)) &#123;</span><br><span class="line">                console.log(&quot;I need to create the objectStoreNames&quot;);</span><br><span class="line">                var objectStore = thisDb.createObjectStore(tableNmae, &#123; keyPath: &quot;id&quot;, autoIncrement:true &#125;);//主键</span><br><span class="line">                objectStore.createIndex(&quot;name&quot;, &quot;name&quot;, &#123; unique: false&#125;);//是否能被索引</span><br><span class="line">                objectStore.createIndex(&quot;phone&quot;, &quot;phone&quot;, &#123; unique: false&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 已经创建好的数据库</span><br><span class="line">        openRequest.onsuccess = function(e) &#123;</span><br><span class="line">            db = e.target.result;</span><br><span class="line">            console.log(db.version);</span><br><span class="line">            db.onerror = function(event) &#123;</span><br><span class="line">                alert(&quot;database error&quot; + event.target.errorCode)</span><br><span class="line">                console.dir(event.target);</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            if (db.objectStoreNames.contains(tableName)) &#123;</span><br><span class="line">                console.log(&quot;contain table&quot; + tableName);</span><br><span class="line"></span><br><span class="line">                // 事务可读机制保证一致性和可靠性</span><br><span class="line">                var tansaction = db.tansaction([tableName], &quot;readwirte&quot;);</span><br><span class="line">                tansaction.oncomplete = function(event) &#123;</span><br><span class="line">                    console.log(&quot;All done&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                tansaction.onerror = function(event) &#123;</span><br><span class="line">                    console.dir(event);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                // 得到表的对象</span><br><span class="line">                var objectStore = tansaction.objectStore(tableName);</span><br><span class="line"></span><br><span class="line">                // 使用游标遍历（遍历表）</span><br><span class="line">                objectStore.openCursor().onsuccess = function(event) &#123;</span><br><span class="line">                    var cursor = event.target.result;</span><br><span class="line">                    if (cursor) &#123;</span><br><span class="line">                        console.log(cursor.key);</span><br><span class="line">                        console.log(cursor.value);</span><br><span class="line">                        reder(&#123;</span><br><span class="line">                            key:cursor.key,</span><br><span class="line">                            name:cursor.value[&quot;name&quot;],</span><br><span class="line">                            phone:cursor.value[&quot;phone&quot;],</span><br><span class="line">                            address:cursor.value[&quot;address&quot;]</span><br><span class="line">                        &#125;)</span><br><span class="line">                        lastCursor = cursor.key;</span><br><span class="line">                        // 执行下一条</span><br><span class="line">                        cursor.continue();</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        console.log(&quot;Done with cursor&quot;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;</span><br><span class="line"></span><br><span class="line">                objectStore.openCursor().onerror = function () &#123;</span><br><span class="line">                    console.dir(event);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // </span><br><span class="line">        openRequest.onerror = function(e) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // add</span><br><span class="line">        document.querySelector(&apos;#add&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">            var name = document.querySelector(&apos;#name&apos;).value;</span><br><span class="line">            var phone = document.querySelector(&apos;#phone&apos;).value;</span><br><span class="line">            var address = document.querySelector(&apos;#address&apos;).value;</span><br><span class="line">            var person = &#123;</span><br><span class="line">                &quot;name&quot;: name,</span><br><span class="line">                &quot;phone&quot;: phone,</span><br><span class="line">                &quot;address&quot;: address</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            var transaction = db.transaction([tableName], &quot;readwrite&quot;);</span><br><span class="line">            transaction.compelete = function(event) &#123;</span><br><span class="line">                console.log(&quot;transaction compelete&quot;);</span><br><span class="line">            &#125;;</span><br><span class="line">            transaction.onerror = function() &#123;</span><br><span class="line">                console.log(event);</span><br><span class="line">            &#125;</span><br><span class="line">            var objectStore = transaction.objectStore(tableName);</span><br><span class="line">            objectStore.add(person);</span><br><span class="line">            objectStore.openCursor().onsuccess = function(event) &#123;</span><br><span class="line">                cursor = event.target.result;</span><br><span class="line">                var key;</span><br><span class="line">                if (lastCursor == null) &#123;</span><br><span class="line">                    key = cursor.key;</span><br><span class="line">                    lastCursor = key;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    key = ++ lastCursor;</span><br><span class="line">                &#125;</span><br><span class="line">                reder(&#123;</span><br><span class="line">                    key: key,</span><br><span class="line">                    name: name,</span><br><span class="line">                    phone: phone,</span><br><span class="line">                    address: address</span><br><span class="line">                &#125;);</span><br><span class="line">                console.log(&quot;success add new record !key&quot; + key);</span><br><span class="line">                console.dir(person)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        // delete</span><br><span class="line">        function deleteRecord(id) &#123;</span><br><span class="line">            var transaction = db.transaction([tableName], &quot;readwrite&quot;)</span><br><span class="line">            transaction.oncomplete = function(event) &#123;</span><br><span class="line">                console.log(&quot;transaction complete&quot;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            transaction.onerror = function(event) &#123;</span><br><span class="line">                console.dir(event);</span><br><span class="line">            &#125;</span><br><span class="line">            var objectStore = transaction.objectStore(tableName);</span><br><span class="line">            var removeKey = parseInt(id);</span><br><span class="line">            var getRequest = function(e) &#123;</span><br><span class="line">                var result = getRequest.result;</span><br><span class="line">                console.log(result);</span><br><span class="line">            &#125;</span><br><span class="line">            var request = objectStore.delete(removeKey);</span><br><span class="line">            request.onsuccess = function(e) &#123;</span><br><span class="line">                console.log(&quot;success delete record&quot;);</span><br><span class="line">            &#125;;</span><br><span class="line">            request.onerror = function(e) &#123;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        
       
 
       
@@ -170,7 +170,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/17/HTML5/存储/IndexedDB/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/13/JSON/json/">展开全文 >></a>
         </p>
       
 
@@ -200,36 +200,271 @@
 
 
   
-    <article id="post-HTML5/存储/IndexedDB" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-2019/04/1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /**
+ * 这道题的经典之处在于它综合考察了面试者的JavaScript的综合能力
+ * 包含了变量定义提升、
+ * this指针指向、
+ * 运算符优先级、
+ * 原型、
+ * 继承、
+ * 全局变量污染、
+ * 对象属性及原型属性优先级等知识
+ */
+
+
+//  创建了Foo函数
+function Foo () {
+    // 为Foo函数创建了getName的静态属性存储了一个匿名函数
+    getName = function () {
+        console.log(1)
+    }
+    return this
+}
+
+// 为Foo的原型对象创建了一个叫getName的匿名函数
+Foo.getName = function () {
+    console.log(2)
+}
+
+Foo.prototype.getName = function () {
+    console.log(3)
+}
+
+// 通过函数变量表达式创建了一个getName函数
+var getName = function () {
+    console.log(4)
+}
+
+function getName () {
+    console.log(5)
+}
+
+// Foo.getName自然是访问Foo函数上存储的静态属性
+Foo.getName()            //2
+
+getName()                //4
+
+Foo().getName()          //1
+
+getName()                //1
+
+new Foo.getName()        //2
+
+new new Foo().getName()  //3
+
+
+
+// 第一问Foo.getName() 
+function User (name) {
+    var name = name   //私有属性
+    this.name = name  //公有属性
+    function getName ()  {  //私有方法
+        return name
+    }
+}
+
+User.prototype.getName = function () {//公有方法
+    return this.name
+}
+
+User.name = 'zwz' //静态属性
+User.getName = function () { //静态方法
+    return this.name
+}
+
+var zz = new User('zwz')  //实例化
+
+// 调用公有属性，公有方法，我们必须先实例化对象，也据说new操作符实例化对象，就可构造实例化对象的方法和属性，并且公有方法是不能调用私有方法和静态方法的
+
+//静态方法和静态属性就是我们无需实例化就可以调用的
+
+// 而对象的私有方法和属性，外部是不可以访问的
+
+// 第二问getName() 
+// 直接调用getName()，既然是直接调用那么就是访问当前上下文作用域内的叫getName() 的函数，和123没用关系
+
+// 函数声明
+function zwz (type) {
+    return type === 'zwz'
+}
+
+// 函数表达式
+var zwz = function (type) {
+    return type === 'zwz'
+}
+
+var getName  //undefined
+getName()    //TypeError:getName is not a function
+var getName = function () {
+    console.log(zwz)
+}
+
+var getName  //undefined
+getName()    
+function getName() {
+    console.log(zwz)
+}
+
+// 函数声明和函数表达式是存在区别的，函数声明在JS解析时进行函数提升，因此在同一个作用域内，不管函数声明定义在哪里，该函数都可以调用而函数表达式的值是在JS运行时确定的，并且在表达式完成赋值后，该函数才能调用。所所以4覆盖了5
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/10/2019/04/1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/04/高新兴科技" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>web前端实习生（2020届毕业生）</p>
+<p>1、掌握HTML、Javascript、CSS、ajax等前端开发技术，熟悉jQuery/vue等主流前端开发框架，熟悉css2/css3，掌握各种布局原理，能灵活应用</p>
+<p>2、了解设计模式，掌握MVC等设计思想，了解数据与表现解耦方法</p>
+<h1 id="面试前准备"><a href="#面试前准备" class="headerlink" title="面试前准备"></a>面试前准备</h1><h3 id="1-前端代码解耦-编写可维护的JavaScript"><a href="#1-前端代码解耦-编写可维护的JavaScript" class="headerlink" title="1. 前端代码解耦(编写可维护的JavaScript)"></a>1. 前端代码解耦(编写可维护的JavaScript)</h3><p>解耦就是更改其中一个代码对另一个不影响，模块化编程</p>
+<ol>
+<li><p>Javascript自身代码解耦</p>
+<ul>
+<li>划分清晰的js模块</li>
+<li>组织高内聚的js模块</li>
+<li>设计透明的js模块依赖和通信</li>
+</ul>
+</li>
+<li><p>前端与后端解耦</p>
+<ul>
+<li>接口参数类型：ajax还是jsonp</li>
+<li>入参要求</li>
+<li>返回的编码格式</li>
+</ul>
+</li>
+<li><p>JavaScript与HTML解耦</p>
+<ul>
+<li>HTML和JavaScript的分离</li>
+<li>JavaScript尽量依赖DOM的class</li>
+<li>为重复使用的dom创建变量 在你的代码里面，尽量在模块顶部声明依赖的DOM元素，后期改动方便，而且也提升代码执行效率。</li>
+<li>划分模块按功能划分</li>
+</ul>
+</li>
+</ol>
+<p>简单理解就是 函数拆分，每个函数都独立处理和别的函数无关而不是所有的if else 逻辑全都是一个大函数里面</p>
+<h3 id="2-MVC设计模式"><a href="#2-MVC设计模式" class="headerlink" title="2. MVC设计模式"></a>2. MVC设计模式</h3><ol>
+<li><p>Model(模型)表示应用程序核心(比如数据库记录表)</p>
+</li>
+<li><p>View(视图)显示数据</p>
+</li>
+<li><p>Controller模式同时对HTML，CSS和JavaScript的完全控制</p>
+</li>
+</ol>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><ol>
+<li>行内元素，块级元素，空元素</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/09/2019/04/高新兴科技/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java/基础/基础" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/17/HTML5/存储/IndexedDB/">HTML5关系型数据库存储</a>
+      <a class="article-title" href="/2019/04/06/Java/基础/基础/">Java基础</a>
     </h1>
   
 
         
-        <a href="/2019/03/17/HTML5/存储/IndexedDB/" class="archive-article-date">
-  	<time datetime="2019-03-17T13:12:13.249Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
+        <a href="/2019/04/06/Java/基础/基础/" class="archive-article-date">
+  	<time datetime="2019-04-06T02:57:56.188Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Web SQL 和 IndexedDB</p>
-<p>一种能在浏览器中持久化地存储结构化数据的数据库，并且为web应用提供了丰富的查询能力</p>
-<p>浏览器支持</p>
-<p>chrome 11 +</p>
-<p>opera 不支持</p>
-<p>Firefox 4+</p>
-<p>IE 10+</p>
-<p>存储结构</p>
-<p>IndexedDB是按域名分配独立空间，一个独立域名下可以创建多个数据库，每个数据库可以创建多个对象存储空间（表），一个对象存储空间可以存储多个对象数据</p>
-<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><h3 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h3><h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3>
+        <h3 id="1-变量"><a href="#1-变量" class="headerlink" title="1. 变量"></a>1. 变量</h3><p>变量：本质上代表应该可操作的存储空间，空间位置我确定的，值是不确定的</p>
+<p>double，long 8字节</p>
+<p>int  4字节</p>
+<p>变量作为程序中最基本的存储单元，要素包括变量名，变量类型和作用域。变量在使用钱必须对其声明，只有在变量声明以后才能为其分配相应长度存储空间。</p>
+<h3 id="2-自动类型转换-amp-强制转换"><a href="#2-自动类型转换-amp-强制转换" class="headerlink" title="2. 自动类型转换 &amp; 强制转换"></a>2. 自动类型转换 &amp; 强制转换</h3><p> 自动类型转换指容量小的数据类型转为容量大的自动类型</p>
+<h3 id="3-溢出"><a href="#3-溢出" class="headerlink" title="3. 溢出"></a>3. 溢出</h3>
       
 
       
@@ -242,7 +477,664 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">HTML5关系型数据库存储</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/06/Java/基础/基础/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS/50道CSS基础题" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/04/CSS/50道CSS基础题/">基础面试题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/04/CSS/50道CSS基础题/" class="archive-article-date">
+  	<time datetime="2019-04-04T08:01:44.602Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-盒子模型"><a href="#1-盒子模型" class="headerlink" title="1. 盒子模型"></a>1. 盒子模型</h3><p>标准盒子模型：宽度 = 内容宽度(content) + border +padding + margin</p>
+<p>低版本IE盒子模型：宽度 = 内容宽度(content + border + padding) + margin</p>
+<h3 id="2-box-sizing属性"><a href="#2-box-sizing属性" class="headerlink" title="2. box-sizing属性"></a>2. box-sizing属性</h3><p>用来控制盒子模型的解析模式，默认为content-box</p>
+<ol>
+<li><p>content-box：W3C的标准盒子模型，设置元素的height/width属性是content部分的宽/高</p>
+</li>
+<li><p>border-box：IE传统盒子模型，设置元素的height/width属性是content+border+padding部分的宽/高</p>
+</li>
+</ol>
+<h3 id="3-display有哪些值"><a href="#3-display有哪些值" class="headerlink" title="3. display有哪些值"></a>3. display有哪些值</h3><ol>
+<li><p>inline 内联</p>
+</li>
+<li><p>none   隐藏</p>
+</li>
+<li><p>block  块显示</p>
+</li>
+<li><p>table  表格显示</p>
+</li>
+<li><p>list-item 项目列表</p>
+</li>
+<li><p>inline-block </p>
+</li>
+</ol>
+<h3 id="4-CSS3有哪些新特性"><a href="#4-CSS3有哪些新特性" class="headerlink" title="4. CSS3有哪些新特性"></a>4. CSS3有哪些新特性</h3><ol>
+<li><p>RGBA和透明度</p>
+</li>
+<li><p>background-image background-origin(content-box/padding-box/border-box)</p>
+</li>
+<li><p>word-warp(对长的不可分割单词换行) word-warp:break-word</p>
+</li>
+<li><p>文字阴影：text-shadow:5px 5px 5px #FF0000;(水平阴影，垂直阴影，模糊距离，阴影颜色)</p>
+</li>
+<li><p>font-face属性：定义自己的字体</p>
+</li>
+<li><p>圆角：border-radius</p>
+</li>
+<li><p>边框图片：border-image:url(border.png) 30 30 round</p>
+</li>
+<li><p>盒阴影：box-shadow:10px 10px 5px #888888</p>
+</li>
+<li><p>媒体查询：定义两套CSS，当浏览器尺寸变化是会才有不同的属性</p>
+</li>
+</ol>
+<h3 id="5-CSS创建三角形的原理"><a href="#5-CSS创建三角形的原理" class="headerlink" title="5. CSS创建三角形的原理"></a>5. CSS创建三角形的原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">width: 0;</span><br><span class="line">height: 0;</span><br><span class="line">border-top: 40px solid transparent;</span><br><span class="line">border-left: 40px solid transparent;</span><br><span class="line">border-right: 40px solid transparent;</span><br><span class="line">border-bottom: 40px solid #ff0000;</span><br></pre></td></tr></table></figure>
+<h3 id="6-absolute的containing-block计算方式跟正常文档流有什么不同"><a href="#6-absolute的containing-block计算方式跟正常文档流有什么不同" class="headerlink" title="6. absolute的containing block计算方式跟正常文档流有什么不同"></a>6. absolute的containing block计算方式跟正常文档流有什么不同</h3><p>无论属于哪种，都要先找到其祖先元素最近的position值不为static的元素，然后再判断</p>
+<ol>
+<li><p>若次元素为inline元素，则containing block为能够包含这个元素生成的第一个和最后一个inline box的padding box(除margin，border外的区域)最小矩形</p>
+</li>
+<li><p>否则，则由这个祖先元素的padding box</p>
+</li>
+</ol>
+<p>如果都找不到，则为initial containing block</p>
+<p>补充：</p>
+<ol>
+<li><p>static/relative：简单说就是它的父元素的内容框</p>
+</li>
+<li><p>absolute：向上找到的最近定位为absolute/relative</p>
+</li>
+<li><p>fixed：他的containing block一律为根元素</p>
+</li>
+</ol>
+<p>包含块(Containing Block)</p>
+<p>包含块简单理解就是一个定位参考块，就是”大盒子里套小盒子”中那个大盒子。元素有positon属性就必然涉及到包含块。先简单总结一下。</p>
+<h3 id="7-CSS里的visibility属性有个collapse属性值，在不同浏览器下有什么区别"><a href="#7-CSS里的visibility属性有个collapse属性值，在不同浏览器下有什么区别" class="headerlink" title="7. CSS里的visibility属性有个collapse属性值，在不同浏览器下有什么区别"></a>7. CSS里的visibility属性有个collapse属性值，在不同浏览器下有什么区别</h3><p>当一个元素的visibility属性被设置为collapse值后。对于一般的元素，它的表现跟hidden是一样的</p>
+<ol>
+<li><p>chrome中，使用collapse值和使用hidden没有什么区别</p>
+</li>
+<li><p>Firefox，opera和IE，使用collapse值和使用display：none没有什么区别</p>
+</li>
+</ol>
+<h3 id="8-display-none和visibility-hidden的区别"><a href="#8-display-none和visibility-hidden的区别" class="headerlink" title="8. display:none和visibility:hidden的区别"></a>8. display:none和visibility:hidden的区别</h3><p>display:none：不显示对应的元素，在文档布局中不再分配空间(回流+重绘)</p>
+<p>visibility:hidden隐藏对应的元素，在文档布局中仍然保留原来的空间(重绘)</p>
+<p>明确页面在文档加载完成之后到完全显示中间的过程是</p>
+<ol>
+<li>根据文档生成DOM树（包括display:none的节点）</li>
+<li>在DOM树基础上根据节点的几何属性（margin/padding/width/height等)生成render树（不包括display:none、head节点但会包含visibility:hidden节点）</li>
+<li>在render树基础上进行进一步渲染包括color,outline等样式</li>
+</ol>
+<p><code>reflow</code>:当render树中的一部分或者全部因为大小边距等问题发生改变而需要重建的过程叫做回流</p>
+<p><code>repaint</code>:当元素的一部分属性发生变化，如外观背景色不会引起布局变化而需要重新渲染的过程叫做重绘</p>
+<p>减少回流的几点建议：</p>
+<ol>
+<li><p>减少不必要的DOM深度</p>
+</li>
+<li><p>精简CSS，去掉没用的css</p>
+</li>
+<li><p>避免不必要的复杂css选择符，尤其是使用子选择权，或消耗更多的cpu去做选择器匹配</p>
+</li>
+<li><p>直接改变className，如果动态改变样式，则使用cssText（考虑没有优化的浏览器）</p>
+</li>
+<li><p>.不要经常访问会引起浏览器flush队列的属性，如果你确实要访问，利用缓存</p>
+</li>
+<li><p>让元素脱离动画流，减少回流的Render Tree的规模</p>
+</li>
+</ol>
+<h3 id="9-position跟display、overflow、float这些特性相互叠加后会怎么样？"><a href="#9-position跟display、overflow、float这些特性相互叠加后会怎么样？" class="headerlink" title="9. position跟display、overflow、float这些特性相互叠加后会怎么样？"></a>9. position跟display、overflow、float这些特性相互叠加后会怎么样？</h3><p>display属性规定元素一个生成的框的类型</p>
+<p>position属性规定元素的定位</p>
+<p>float属性是一种布局方式，定义元素在哪个方向浮动</p>
+<p>类似于优先级机制：position：absolute/fixed优先级最高，有他们在时，float不起作用，display值需要调整。float 或者absolute定位的元素，只能是块元素或表格。</p>
+<h3 id="10-对BFC规范-会计格式化上下文-blbok-formatting-content-的理解"><a href="#10-对BFC规范-会计格式化上下文-blbok-formatting-content-的理解" class="headerlink" title="10. 对BFC规范(会计格式化上下文:blbok formatting content)的理解"></a>10. 对BFC规范(会计格式化上下文:blbok formatting content)的理解</h3><p>BFC规定了内部的block box如何布局</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">基础面试题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/css//" class="article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/04/CSS/50道CSS基础题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS/浏览器兼容问题/浏览器兼容" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/04/CSS/浏览器兼容问题/浏览器兼容/">浏览器兼容</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/04/CSS/浏览器兼容问题/浏览器兼容/" class="archive-article-date">
+  	<time datetime="2019-04-04T07:53:17.360Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不同浏览器的标签默认的margin和padding不同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* &#123; margin:0; padding:0; &#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<p>块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大,hack：display:inline;将其转化为行内属性</p>
+<p> 渐进的识别方式，从总体逐渐排除局部。首先，巧妙的使用”9”,这一标记，将IE浏览器从所有情况中分离出来。接着，再次使用”+”将IE8和IE7，IE6分离开来，这样子IE8已经独立识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">background-color:#f1ee18;/*所有识别*/</span><br><span class="line">.background-color: #00deff\9; /*IE6、7、8识别*/</span><br><span class="line">+background-color: #a200ff;/*IE6、7识别*/</span><br><span class="line">_background-color: #1e0bd1;/*IE6识别*/</span><br></pre></td></tr></table></figure>
+<p>设置较小高度标签(小于10px)，再IE6，IE7中高度超出自己设置的高度。hack:给超出高度的标签设置overflow:hidden;或者设置行高line-height小于你设置的高度。</p>
+<p>IE下，可以使用获取常规属性的方法来获取自定义属性,也可以使用getAttribute()获取自定义属性；Firefox下，只能使用getAttribute()获取自定义属性。解决方法:统一通过getAttribute()获取自定义属性。</p>
+<p>Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,可通过加入 CSS 属性 -webkit-text-size-adjust:none</p>
+<p>超链接访问过后hover样式就不出现，被点击访问过的超链接不再具有hover和active了。解决方法是改变CSS属性的排列顺序:L-V-H-A(love hate):a:link{} a:visited{} a:hover{} a:active{}</p>
+<p>为什么要初始化CSS样式</p>
+<p>因为浏览器的兼容问题，不同浏览器对有些标签的默认样式是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">浏览器兼容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/css//" class="article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/04/CSS/浏览器兼容问题/浏览器兼容/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaScript/设计模式/Constructor/Constructor" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/04/JavaScript/设计模式/Constructor/Constructor/">构造器模式</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/04/JavaScript/设计模式/Constructor/Constructor/" class="archive-article-date">
+  	<time datetime="2019-04-04T06:34:49.190Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="构造器模式"><a href="#构造器模式" class="headerlink" title="构造器模式"></a>构造器模式</h3><p>在面向对象编程中，构造器是一个当新创建对象的内存被分配后，用来初始化该对象的一个特殊函数。</p>
+<h3 id="创建对象的三种基本方式"><a href="#创建对象的三种基本方式" class="headerlink" title="创建对象的三种基本方式"></a>创建对象的三种基本方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var newObject = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">var newObject = Object.create( null )</span><br><span class="line"></span><br><span class="line">var newObject = new Object()</span><br></pre></td></tr></table></figure>
+<h3 id="将一个键值赋给一个对象"><a href="#将一个键值赋给一个对象" class="headerlink" title="将一个键值赋给一个对象"></a>将一个键值赋给一个对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newObject.someKey = &quot;Hello World&quot;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">构造器模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/04/JavaScript/设计模式/Constructor/Constructor/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Node/node调试入门/Inspector" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/04/Node/node调试入门/Inspector/">Inspector</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/04/Node/node调试入门/Inspector/" class="archive-article-date">
+  	<time datetime="2019-04-04T02:39:10.074Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>可查看当前上下文变量、</p>
+<p>可观察当前函数调用栈</p>
+<p>不入侵代码</p>
+<p>可暂停状态下执行指定代码</p>
+<p>Inspector的构成</p>
+<p>WebSockets服务</p>
+<p>Inspector协议</p>
+<p>HTTP服务</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Inspector调试node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/04/Node/node调试入门/Inspector/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS/1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+        }
+        .san {
+            /* width: 0;
+            height: 0;
+            border-top: 40px solid transparent;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 40px solid #ff0000; */
+            height:32px;
+            background-color:#f1ee18;/*所有识别*/
+            .background-color: #00deff\9; /*IE6、7、8识别*/
+            +background-color: #a200ff;/*IE6、7识别*/
+            _background-color: #1e0bd1;/*IE6识别*/ 
+       },
+       div {
+           height: 400px;
+           border: 1px solid #ccc;
+       }
+       .top {
+            width:100%;
+           margin: 0 auto;
+       }
+       .left, .right{
+            width: 49%;
+            float: left;
+       }
+       h1 {
+        -webkit-text-size-adjust:none;
+        font-size: 20px;
+       }
+    </style>
+</head>
+<body>
+  
+    <div class="san">
+
+    </div>
+    <div class="top"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <h1>wwwwwwwww</h1>
+</body>
+</html>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/04/CSS/1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTML5/表单/表单" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/04/HTML5/表单/表单/">表单</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/04/HTML5/表单/表单/" class="archive-article-date">
+  	<time datetime="2019-04-04T00:27:29.988Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>HTML5新增的表单元素</p>
+<ul>
+<li><p>datalist</p>
+</li>
+<li><p>keygen</p>
+</li>
+<li><p>output</p>
+</li>
+</ul>
+<p>datalist 元素规定输入域的选项列表，</p>
+<p>列表是通过datalist内的option元素创建的</p>
+<p>如需把datalist绑定到输入域，请用输入域的list属性引用datalist的id<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Webpage: &lt;input type=&quot;url&quot; list=&quot;url_list&quot; name=&quot;link&quot; /&gt;</span><br><span class="line">  &lt;datalist id=&quot;url_list&quot;&gt;</span><br><span class="line">  &lt;option label=&quot;W3School&quot; value=&quot;http://www.W3School.com.cn&quot; /&gt;</span><br><span class="line">  &lt;option label=&quot;Google&quot; value=&quot;http://www.google.com&quot; /&gt;</span><br><span class="line">  &lt;option label=&quot;Microsoft&quot; value=&quot;http://www.microsoft.com&quot; /&gt;</span><br><span class="line">  &lt;/datalist&gt;</span><br></pre></td></tr></table></figure></p>
+<p>keygen 元素的作用是提供一种验证用户的可靠方法。</p>
+<p>keygen 元素是密钥对生成器（key-pair generator）。当提交表单时，会生成两个键，一个是私钥，一个公钥。</p>
+<p>私钥（private key）存储于客户端，公钥（public key）则被发送到服务器。公钥可用于之后验证用户的客户端证书（client certificate）。</p>
+<p>output 元素</p>
+<p>output 元素用于不同类型的输出，比如计算或脚本输出</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HTML5新增的表单元素</a>
         		</li>
       		
 		</ul>
@@ -263,829 +1155,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/17/HTML5/存储/IndexedDB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5/存储/localstorage" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;本地存储图片&lt;/title&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!-- &lt;img src=&quot;../../../../public/images/html5/2.png&quot; alt=&quot;&quot;&gt; --&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var src =&quot;../../../../public/images/html5/2.png&quot;</span><br><span class="line">function set(key) &#123;</span><br><span class="line">    var img = document.createElement(&apos;img&apos;);</span><br><span class="line">    img.addEventListener(&apos;load&apos;, function() &#123;</span><br><span class="line">        </span><br><span class="line">        var imgCanvas = document.createElement(&apos;canvas&apos;);</span><br><span class="line">        var imgContext = imgCanvas.getContext(&apos;2d&apos;)</span><br><span class="line">        </span><br><span class="line">        imgCanvas.width = this.width</span><br><span class="line">        imgCanvas.height = this.height</span><br><span class="line"></span><br><span class="line">        imgContext.drawImage(this, 0, 0, this.width, this.height)</span><br><span class="line"></span><br><span class="line">        var imgAsDataURL = imgCanvas.toDataURL(&apos;images/png&apos;)</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            localStorage.setItem(key, imgAsDataURL)</span><br><span class="line">        &#125; catch (e) &#123;</span><br><span class="line">            console.log(&quot;failed&quot; + e)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;, false)</span><br><span class="line">    img.src = src</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 获取图片并渲染 </span><br><span class="line">    function get(key) &#123;</span><br><span class="line">        var srcStr = localStorage.getItem(key)</span><br><span class="line"></span><br><span class="line">        var imgObj = document.createElement(&apos;img&apos;)</span><br><span class="line"></span><br><span class="line">        imgObj.src = srcStr</span><br><span class="line"></span><br><span class="line">        document.body.appendChild(imgObj)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/17/HTML5/存储/localstorage/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5/存储/本地存储" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/17/HTML5/存储/本地存储/">HTML5本地存储</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/17/HTML5/存储/本地存储/" class="archive-article-date">
-  	<time datetime="2019-03-17T12:29:41.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>API : localStorage &amp;&amp; sessionStorage</p>
-</li>
-<li><p>存储形式 : key —&gt;value</p>
-</li>
-<li><p>过期 : 永久存储，永不失效</p>
-</li>
-<li><p>大小 : 官方给出是每个域名5M</p>
-</li>
-</ul>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>localStorage API</p>
-<ul>
-<li><p>getItem : 取记录</p>
-</li>
-<li><p>setItem : 设置</p>
-</li>
-<li><p>removeItem : 移除</p>
-</li>
-<li><p>key : 取索引</p>
-</li>
-<li><p>clear : 全部删掉</p>
-</li>
-</ul>
-<p>sessionStorage</p>
-<p>重新打开浏览器或者关闭浏览器消失</p>
-<h3 id="H5本地存储"><a href="#H5本地存储" class="headerlink" title="H5本地存储"></a>H5本地存储</h3><p>数组 ： 直接不能存，要把数组序列化成字符串就可以</p>
-<p>json数据 ：直接不能存，把json数据parse成对象，stringfiy转成字符串</p>
-<p>图片</p>
-<p>脚本 ： ajax</p>
-<p>样式文件</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
-<li><p>使用前要判断浏览器是否支持</p>
-</li>
-<li><p>写数据时，需要异常处理，避免超出容量抛错</p>
-</li>
-<li><p>避免把敏感信息存入localStorage</p>
-</li>
-<li><p>key的唯一性</p>
-</li>
-</ol>
-<h3 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h3><ol>
-<li><p>存储更新策略，过期控制</p>
-</li>
-<li><p>子域名之间不能共享数据</p>
-</li>
-<li><p>超出存储大小之后如何存储（LRU，FIFO）</p>
-</li>
-<li><p>server端如何取到</p>
-</li>
-</ol>
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol>
-<li><p>利用本地存储数据，减少网络传输</p>
-</li>
-<li><p>弱网络环境下，高延迟，低宽带，尽量把数据本地化</p>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML5本地存储</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HTML5//" class="article-tag-list-link color1">HTML5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/17/HTML5/存储/本地存储/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5/存储/客户端储存" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/17/HTML5/存储/客户端储存/">HTML5缓存</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/17/HTML5/存储/客户端储存/" class="archive-article-date">
-  	<time datetime="2019-03-17T11:59:43.737Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>客户端储存历程</p>
-<h3 id="远古时期"><a href="#远古时期" class="headerlink" title="远古时期"></a>远古时期</h3><ul>
-<li>cookies的用法和缺陷</li>
-<li>userdata</li>
-</ul>
-<h3 id="HTML时代"><a href="#HTML时代" class="headerlink" title="HTML时代"></a>HTML时代</h3><ul>
-<li>localStorage</li>
-<li>application cache</li>
-<li>indexedDB</li>
-</ul>
-<ol>
-<li>使用规范</li>
-<li>每种存储的特点以及解决的问题</li>
-<li>在大型站点的使用</li>
-<li>具体业务适用的场景</li>
-</ol>
-<h3 id="HTML5储存"><a href="#HTML5储存" class="headerlink" title="HTML5储存"></a>HTML5储存</h3><p>如何实现把图片放在客户端</p>
-<p>如何实现跨域请求</p>
-<p>如何做到真正的离线访问web应用</p>
-<p>如何实现一个客户端的数据库</p>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><p>H5之前如何实现存储</p>
-</li>
-<li><p>H5的几种常见的存储方式</p>
-</li>
-<li><p>localStorage &amp;&amp; sessionStorage</p>
-</li>
-<li><p>application cache 的介绍和应用</p>
-</li>
-<li><p>indexDB的介绍和使用场景</p>
-</li>
-</ul>
-<h3 id="关于存储"><a href="#关于存储" class="headerlink" title="关于存储"></a>关于存储</h3><ul>
-<li><p>cache</p>
-</li>
-<li><p>磁盘文件</p>
-</li>
-<li><p>数据库</p>
-</li>
-<li><p>内存</p>
-</li>
-</ul>
-<h3 id="H5之前"><a href="#H5之前" class="headerlink" title="H5之前"></a>H5之前</h3><p>H5之前浏览器端使用cookies去存客户端的一些内容</p>
-<p>cookies 的特点</p>
-<ol>
-<li><p><code>http请求头上会带着</code>：一个比较大的缺点，一个http请求要通过三次握手，要去请求回包，整个过程比较长，请求头又带着一堆,会显得非常臃肿</p>
-</li>
-<li><p><code>大小4k</code>: 对于每一个域名，浏览器客户端只会存4k大小，不能放更多</p>
-</li>
-<li><p><code>主domain污染</code>：每一个子域名都放在主域名下，子域名去访问一条记录或者http请求都会带着主域名，会造成主域名cookies的污染，产生安全隐患</p>
-</li>
-</ol>
-<p>cookies在浏览器存储形态</p>
-<p>name value domain path expires size http secure</p>
-<p>UserDate</p>
-<ol>
-<li>只有IE支持</li>
-</ol>
-<h3 id="H5存储"><a href="#H5存储" class="headerlink" title="H5存储"></a>H5存储</h3><ul>
-<li><p>解决4k大小问题</p>
-</li>
-<li><p>解决请求头常带存储信息的问题</p>
-</li>
-<li><p>解决关系型存储的问题</p>
-</li>
-<li><p>跨浏览器</p>
-</li>
-</ul>
-<h3 id="H5的存储"><a href="#H5的存储" class="headerlink" title="H5的存储"></a>H5的存储</h3><ul>
-<li><p>本地存储 (localStorage &amp;&amp; sessionStorage)</p>
-</li>
-<li><p>离线存储 (application cache)</p>
-</li>
-<li><p>IndexedDB 和 WebSQL</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HTML5缓存</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HTML5//" class="article-tag-list-link color1">HTML5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/17/HTML5/存储/客户端储存/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Angular/基础知识/组件和组件树" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/17/Angular/基础知识/组件和组件树/">angular</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/17/Angular/基础知识/组件和组件树/" class="archive-article-date">
-  	<time datetime="2019-03-17T01:24:32.655Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><p>模块</p>
-<p>组件</p>
-<p>元数据</p>
-<p>模板</p>
-<p>数据绑定</p>
-<p>服务</p>
-<p>指令</p>
-<p>依赖注入</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">angular组件和组件树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/angular//" class="article-tag-list-link color3">angular</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/17/Angular/基础知识/组件和组件树/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue/源码/双向数据绑定" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/17/Vue/源码/双向数据绑定/">双向数据绑定</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/17/Vue/源码/双向数据绑定/" class="archive-article-date">
-  	<time datetime="2019-03-17T00:33:43.023Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue源码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/17/Vue/源码/双向数据绑定/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6/箭头函数/箭头函数" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/16/ES6/箭头函数/箭头函数/">箭头函数</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/16/ES6/箭头函数/箭头函数/" class="archive-article-date">
-  	<time datetime="2019-03-16T05:45:14.446Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6 箭头函数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/16/ES6/箭头函数/箭头函数/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue/集成vue/高仿别人的APP" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/16/Vue/集成vue/高仿别人的APP/">高仿别人的app</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/16/Vue/集成vue/高仿别人的APP/" class="archive-article-date">
-  	<time datetime="2019-03-16T03:17:13.248Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>Chrome调试查看DOM结构</p>
-</li>
-<li><p>Header，Body里面查看js/css引用，搜索相应的js库</p>
-</li>
-<li><p>查看source，network中的js，使用饭编与断点进行调试。</p>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/16/Vue/集成vue/高仿别人的APP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue/集成vue/集成Vue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/16/Vue/集成vue/集成Vue/">Vue集成</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/16/Vue/集成vue/集成Vue/" class="archive-article-date">
-  	<time datetime="2019-03-16T02:33:02.424Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>单页面，多页面引入Vue.js</p>
-</li>
-<li><p>复杂单页面应用Vue.cli工具</p>
-</li>
-<li><p>开发工作流</p>
-</li>
-</ol>
-<ul>
-<li><p>需求调研</p>
-</li>
-<li><p>交互设计，逻辑设计，接口设计</p>
-</li>
-<li><p>代码实验，测试运行，线上部署</p>
-</li>
-</ul>
-<ol start="4">
-<li>git</li>
-</ol>
-<ul>
-<li><p>git clone 地址 (远程仓库下载代码到本地目录)</p>
-</li>
-<li><p>git status (查看在哪个分支和有无提交)</p>
-</li>
-<li><p>ls (查看)</p>
-</li>
-<li><p>git branch -a (查看本地分支远程分支)</p>
-</li>
-<li><p>git branch</p>
-</li>
-<li><p>touch 文件名 (创建文件)</p>
-</li>
-<li><p>git add . (将所有本地文件添加到待提交待处理的状态)</p>
-</li>
-<li><p>git commit -m “注释” (本次提交注释)</p>
-</li>
-<li><p>git remote -v (查看推送到哪里去)</p>
-</li>
-<li><p>git push origin master (提交到远程主干分支)</p>
-</li>
-<li><p>git checkout -b 分支名 (创建分支)</p>
-</li>
-<li><p>git checkout 分支名 (切换分支)</p>
-</li>
-<li><p>git merge 分支名 (合并分支)</p>
-</li>
-<li><p>git branch -D 分支名 (删除本地分支)</p>
-</li>
-<li><p>git branch -a (查看本地远程分支)</p>
-</li>
-<li><p>git push origin :分支名 (删除远程分支)</p>
-</li>
-<li><p>git reset –haed head^ (回退)</p>
-</li>
-<li><p>git log(日志)</p>
-</li>
-<li><p>git relog</p>
-</li>
-<li><p>git reset –hard HEAD@{1}</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Vue集成</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/16/Vue/集成vue/集成Vue/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/04/HTML5/表单/表单/">展开全文 >></a>
         </p>
       
 
@@ -1117,7 +1187,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1212,6 +1282,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">选择器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">基础面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bootstrap carousel</a>
               </li>
              
@@ -1220,11 +1298,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap  dropdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap  dropdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1236,19 +1314,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
+                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1256,27 +1330,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1288,15 +1342,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1304,19 +1350,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">WEB标准</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">HTML iframe</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">浏览器页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">浏览器兼容性</a>
+                <a href="javascript:void(0)" class="js-tag color1">WEB标准</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1324,27 +1362,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">浏览器兼容性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">浏览器页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">angular组件和组件树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES6 Hosting</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ES6 字符串</a>
+                <a href="javascript:void(0)" class="js-tag color1">浏览器兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1352,19 +1382,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES6 Hosting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6 箭头函数</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML5关系型数据库存储</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTML5新增的表单元素</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HTML5缓存</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML5本地存储</a>
+                <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ES6 字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1372,7 +1418,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTML5缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HTML5关系型数据库存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Inspector调试node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1392,11 +1450,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML5本地存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML5离线存储</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1408,11 +1478,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1424,15 +1526,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue源码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">字符串String</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1444,15 +1546,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
+                <a href="javascript:void(0)" class="js-tag color1">构造器模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
               </li>
              
               <li class="article-tag-list-item">

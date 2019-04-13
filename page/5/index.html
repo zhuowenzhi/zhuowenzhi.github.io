@@ -153,31 +153,32 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-ES6/块级作用域/var声明以及变量提升机制" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Vue/webpack/webpack-dev-server" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/10/ES6/块级作用域/var声明以及变量提升机制/">var变量提升</a>
+      <a class="article-title" href="/2019/03/14/Vue/webpack/webpack-dev-server/">webpack-dev-server</a>
     </h1>
   
 
         
-        <a href="/2019/03/10/ES6/块级作用域/var声明以及变量提升机制/" class="archive-article-date">
-  	<time datetime="2019-03-10T13:10:58.535Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
+        <a href="/2019/03/14/Vue/webpack/webpack-dev-server/" class="archive-article-date">
+  	<time datetime="2019-03-14T04:16:27.947Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hosting机制：在函数作用域或者全局作用域中通过关键字var声明的变量，无论实际上是在哪里声明的，都会被当作在<code>当前作用域</code>顶部声明的变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function getValue(conditon) &#123;</span><br><span class="line"></span><br><span class="line">    if (conditon) &#123;</span><br><span class="line">        var value = &quot;blue&quot;</span><br><span class="line">        return value;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return null</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>变量提升后<br>JavaScript引擎会将getValue函数修改成这样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getValue(conditon) &#123;</span><br><span class="line"></span><br><span class="line">    var value;</span><br><span class="line">    if (conditon) &#123;</span><br><span class="line">        value = &quot;blue&quot;</span><br><span class="line">        return value;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return null</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>变量value被提升至函数顶部,而初始化操作依旧停留在原处，这意味着else也可以访问到value该变量，由于此时变量尚未初始化，所以其值为undefined</p>
+        <p>使用webpack-dev-server这个工具，来实现自动打包编译的功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-dev-server -D</span><br></pre></td></tr></table></figure>
+<p>webpack-dev-server常用命令</p>
+<p>自动打开浏览器：”dev”: “webpack-dev-server –open”</p>
+<p>自动端口：”dev”: “webpack-dev-server –open –port 3000”</p>
+<p>无刷新：”dev”: “webpack-dev-server –open –port 3000 –hot”</p>
 
       
 
@@ -191,7 +192,676 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ES6 Hosting</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue webpack-dev-server</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/14/Vue/webpack/webpack-dev-server/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue/webpack/webpack基本配置" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/14/Vue/webpack/webpack基本配置/">webpack基本配置</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/14/Vue/webpack/webpack基本配置/" class="archive-article-date">
+  	<time datetime="2019-03-14T03:40:59.261Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 这个配置文件就是一个JS文件，通过node中的模块操作，向外暴露了一个配置对象</span><br><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">module.exports = &#123;</span><br><span class="line"></span><br><span class="line">    // 在配置文件中，需要手动指定入口和出口</span><br><span class="line">     //入口，表示要使用webpack打包哪个文件</span><br><span class="line">    entry: path.join(__dirname, &apos;./src/main.js&apos;), </span><br><span class="line">    output: &#123;</span><br><span class="line">        //指定 打包好的文件输出到哪个目录</span><br><span class="line">        path: path.join(__dirname, &apos;./dist&apos;),  </span><br><span class="line">        //指定输出的文件名</span><br><span class="line">        filename: &apos;bunble2.js&apos;  </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>webpack 命令执行</p>
+<ol>
+<li>webpack 发现，我们并没有痛感命令的形式，给定指定的入口和出口</li>
+<li>webpack 去根目录寻找‘webpack.config.js’的配置文件</li>
+<li>解析配置文件，导出配置对象</li>
+<li>当webpack拿到配置对象后，就拿到了配置对象中指定的入口和出口，然后进行打包构建</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/14/Vue/webpack/webpack基本配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/03/13浏览器兼容性问题与解决方案" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/2019/03/13浏览器兼容性问题与解决方案/">浏览器兼容性问题与解决方案</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/2019/03/13浏览器兼容性问题与解决方案/" class="archive-article-date">
+  	<time datetime="2019-03-13T14:42:06.220Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同<br>问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>碰到频率:100%<br>解决方案：CSS里 <em>{margin:0;padding:0;}<br>备注：这个是最常见的也是最易解决的一个浏览器兼容性问题，几乎所有的CSS文件开头都会用通配符</em>来设置各个标签的内外补丁是0。</p>
+</li>
+<li><p>浏览器兼容问题二：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大<br>问题症状:常见症状是IE6中后面的一块被顶到下一行<br>碰到频率：90%（稍微复杂点的页面都会碰到，float布局最常见的浏览器兼容问题）<br>解决方案：在float的标签样式控制中加入 display:inline;将其转化为行内属性<br>备注：我们最常用的就是div+CSS布局了，而div就是一个典型的块属性标签，横向布局的时候我们通常都是用div float实现的，横向的间距设置如果用margin实现，这就是一个必然会碰到的兼容性问题。</p>
+</li>
+<li><p>浏览器兼容问题三：设置较小高度标签（一般小于10px），在IE6，IE7，遨游中高度超出自己设置高度<br>问题症状：IE6、7和遨游里这个标签的高度不受控制，超出自己设置的高度<br>碰到频率：60%<br>解决方案：给超出高度的标签设置overflow:hidden;或者设置行高line-height 小于你设置的高度。<br>备注：这种情况一般出现在我们设置小圆角背景的标签里。出现这个问题的原因是IE8之前的浏览器都会给标签一个最小默认的行高的高度。即使你的标签是空的，这个标签的高度还是会达到默认的行高。</p>
+</li>
+<li><p>浏览器兼容问题四：行内属性标签，设置display:block后采用float布局，又有横行的margin的情况，IE6间距bug<br>问题症状：IE6里的间距比超过设置的间距<br>碰到几率：20%<br>解决方案 ： 在display:block;后面加入display:inline;display:table;<br>备注：行内属性标签，为了设置宽高，我们需要设置display:block;(除了input标签比较特殊)。在用float布局并有横向的margin后，在IE6下，他就具有了块属性float后的横向margin的bug。不过因为它本身就是行内属性标签，所以我们再加上display:inline的话，它的高宽就不可设了。这时候我们还需要在display:inline后面加入display:talbe。</p>
+</li>
+<li><p>浏览器兼容问题五：图片默认有间距<br>问题症状：几个img标签放在一起的时候，有些浏览器会有默认的间距，加了问题一中提到的通配符也不起作用。<br>碰到几率：20%<br>解决方案：使用float属性为img布局<br>备注 ： 因为img标签是行内属性标签，所以只要不超出容器宽度，img标签都会排在一行里，但是部分浏览器的img标签之间会有个间距。去掉这个间距使用float是正道。（我的一个学生使用负margin，虽然能解决，但负margin本身就是容易引起浏览器兼容问题的用法，所以我禁止他们使用）</p>
+</li>
+<li><p>浏览器兼容问题六：标签最低高度设置min-height不兼容<br>问题症状：因为min-height本身就是一个不兼容的CSS属性，所以设置min-height时不能很好的被各个浏览器兼容<br>碰到几率：5%<br>解决方案：如果我们要设置一个标签的最小高度200px，需要进行的设置为：{min-height:200px; height:auto !important; height:200px; overflow:visible;}<br>备注：在B/S系统前端开时，有很多情况下我们又这种需求。当内容小于一个值（如300px）时。容器的高度为300px；当内容高度大于这个值时，容器高度被撑高，而不是出现滚动条。这时候我们就会面临这个兼容性问题。</p>
+</li>
+<li><p>浏览器兼容问题七：透明度的兼容CSS设置<br>一般在ie中用的是filter:alpha(opacity=0);这个属性来设置div或者是块级元素的透明度，而在firefox中，一般就是直接使用opacity:0,对于兼容的，一般的做法就是在书写css样式的将2个都写上就行，就能实现兼容</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">浏览器兼容性</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/基础题//" class="article-tag-list-link color4">基础题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/2019/03/13浏览器兼容性问题与解决方案/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/03/13iframe缺点" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/2019/03/13iframe缺点/">iframe缺点</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/2019/03/13iframe缺点/" class="archive-article-date">
+  	<time datetime="2019-03-13T14:37:20.257Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>iframe会阻塞主页面的 Onload 事件；</p>
+</li>
+<li><p>搜索引擎的检索程序无法解读这种页面，不利于 SEO;</p>
+</li>
+<li><p>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。</p>
+</li>
+<li><p>使用iframe之前需要考虑这两个缺点。如果需要使用 iframe ，最好是通过 javascript</p>
+</li>
+<li><p>动态给iframe添加 src 属性值，这样可以绕开以上两个问题。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML iframe</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/基础题//" class="article-tag-list-link color4">基础题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/2019/03/13iframe缺点/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/03/13对WEB标准以及W3C的理解与认识" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/2019/03/13对WEB标准以及W3C的理解与认识/">对WEB标准以及W3C的理解与认识</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/2019/03/13对WEB标准以及W3C的理解与认识/" class="archive-article-date">
+  	<time datetime="2019-03-13T14:29:12.201Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对WEB标准以及W3C的理解与认识</p>
+<ul>
+<li>标签闭合</li>
+<li>标签小写</li>
+<li>不乱嵌套</li>
+<li>提供搜索机器人搜索几率</li>
+<li>使用外链css和js脚本</li>
+<li>结构行为表现的分离</li>
+<li>文件下载与页面速度更快</li>
+<li>内容能被更多的用户所访问</li>
+<li>内容能被更广泛的设备所访问</li>
+<li>更少的代码和组件</li>
+<li>容易维护</li>
+<li>改版方便</li>
+<li>不需要变动页面内容</li>
+<li>提供打印本而不需要复制内容</li>
+<li>提供网站易用性</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">WEB标准</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/基础题//" class="article-tag-list-link color4">基础题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/2019/03/13对WEB标准以及W3C的理解与认识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/03/13浏览器内核" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/2019/03/13浏览器内核/">浏览器内核</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/2019/03/13浏览器内核/" class="archive-article-date">
+  	<time datetime="2019-03-13T14:26:39.783Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>浏览器内核</p>
+<ul>
+<li>IE: trident</li>
+<li>FireFox: gecko</li>
+<li>Safari: webkit</li>
+<li>Oprea: presto,Blink</li>
+<li>Chrome:Blink</li>
+</ul>
+<p>对浏览器内核的理解</p>
+<ul>
+<li><p>主要分成两部分：渲染引擎(layout engineer或 Rendering Engine) 和 JS 引擎。</p>
+</li>
+<li><p>渲染引擎：负责取得网页的内容（HTML、 XML 、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
+</li>
+<li><p>JS引擎则：解析和执行 javascript 来实现网页的动态效果。</p>
+</li>
+<li><p>最开始渲染引擎和JS引擎并没有区分的很明确，后来 JS 引擎越来越独立，内核就倾向于只指渲染引擎。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">浏览器内核</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/基础题//" class="article-tag-list-link color4">基础题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/2019/03/13浏览器内核/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2019/03/13浏览器页面构成" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/2019/03/13浏览器页面构成/">浏览器页面构成</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/2019/03/13浏览器页面构成/" class="archive-article-date">
+  	<time datetime="2019-03-13T14:22:42.668Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>浏览器页面由哪些构成，分别是什么，作用是什么？</p>
+<ul>
+<li>构成：结构层，表示层，行为层</li>
+<li>分别是：HTML，CSS，JavaScript</li>
+<li>HTML实现页面结构，CSS完成页面表现与风格，JavaScript实现一些客户端功能与业务。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">浏览器页面</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/基础题//" class="article-tag-list-link color4">基础题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/2019/03/13浏览器页面构成/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6/字符串和正则表达式/正则表达式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/11/ES6/字符串和正则表达式/正则表达式/">正则表达式</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/11/ES6/字符串和正则表达式/正则表达式/" class="archive-article-date">
+  	<time datetime="2019-03-11T09:04:40.429Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="正则表达式u修饰符"><a href="#正则表达式u修饰符" class="headerlink" title="正则表达式u修饰符"></a>正则表达式u修饰符</h3><p>正则表达式可以完成简单的字符串操作，但默认将字符串的每个字符按照16位编码单元处理。为解决这个问题，ES6给正则表达式定义一个支持Unicode的u修饰符</p>
+<h4 id="u修饰符实例"><a href="#u修饰符实例" class="headerlink" title="u修饰符实例"></a>u修饰符实例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let text = &apos;𠮷&apos;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ES6 正则表达式</a>
         		</li>
       		
 		</ul>
@@ -212,7 +882,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/10/ES6/块级作用域/var声明以及变量提升机制/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/11/ES6/字符串和正则表达式/正则表达式/">展开全文 >></a>
         </p>
       
 
@@ -242,211 +912,59 @@
 
 
   
-    <article id="post-CSS/选择器优先级" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/03/CSS/选择器优先级/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/基础知识/闭包/0303" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        function Foo() {
-    var i = 0
-    return function() {
-        console.log(i++)
-    }
-}
-var f1 = Foo()
-var f2 = Foo()
-f1()
-f1()
-f2()
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/03/JavaScript/基础知识/闭包/0303/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/03/自我介绍" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-ES6/字符串和正则表达式/字符的Unicode表示法" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/03/2019/03/自我介绍/">自我介绍</a>
+      <a class="article-title" href="/2019/03/11/ES6/字符串和正则表达式/字符的Unicode表示法/">字符串</a>
     </h1>
   
 
         
-        <a href="/2019/03/03/2019/03/自我介绍/" class="archive-article-date">
-  	<time datetime="2019-03-03T13:43:47.777Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-03</time>
+        <a href="/2019/03/11/ES6/字符串和正则表达式/字符的Unicode表示法/" class="archive-article-date">
+  	<time datetime="2019-03-11T06:45:13.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>学习经历 项目经历 工作经历 个人优势</p>
-<p>1分钟</p>
-<p>5分钟</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/03/2019/03/自我介绍/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTTP/HTTP状态码" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/03/HTTP/HTTP状态码/">HTTP的状态码</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/03/HTTP/HTTP状态码/" class="archive-article-date">
-  	<time datetime="2019-03-03T06:50:34.476Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>100 continue 继续</li>
-<li>200 ok 正常返回信息</li>
-<li>201 created 请求成功并且服务器创建了新的资源</li>
-<li>202 accepted 服务器已经接受请求但是尚未处理</li>
-<li>301 moved permanently 请求的网页已经永久移动到新位置</li>
-<li>302 found 临时重定向</li>
-<li>303 see other 临时重定向</li>
-<li>304 not modified 自从上次请求后，请求的网页未修改过</li>
-<li>400 bad request 服务器无法理解请求的格式</li>
-<li>401 unauthorized 请求未授权</li>
-<li>403 forbidden 禁止访问</li>
-<li>404 not found 找不到与url匹配的资源</li>
-<li>500 internal server error 服务端错误</li>
-<li>503 service unavailable 服务器暂时无法处理请求</li>
+        <h3 id="字符的Unicode表示法"><a href="#字符的Unicode表示法" class="headerlink" title="字符的Unicode表示法"></a>字符的Unicode表示法</h3><p>JavaScript允许采用<code>\uxxxx</code>表示一个字符，其中xxxx表示字符的码点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;\u0061&quot;);</span><br><span class="line">//a</span><br></pre></td></tr></table></figure>
+<p>但是这种表示法只限于<code>\u0000 -- \uFFFF</code>之间的字符。超出这个范围的字符，必须用双字节表示法表达</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;\uD842\uDFB7&quot;);</span><br><span class="line">//𠮷</span><br></pre></td></tr></table></figure>
+<p>上面代码表示，如果在\u后面跟上超过0xFFFF的数值(比如\u20BB7),JavaScript就会理解成\u20BB+7,由于\u20BB是一个不可打印字符，所以会显示一个空格，后面跟一个7(₻7)</p>
+<p>ES6对这点做了改进，只要将码点放入大括号，就能正确解读该字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;\u&#123;20BB7&#125;&quot;);//𠮷</span><br></pre></td></tr></table></figure>
+<p>JavaScript 方法表示一个字符</p>
+<ol>
+<li>‘\z’ === ‘z’  //true</li>
+<li>‘\172’ === ‘z’   //true</li>
+<li>‘\x7A’ === ‘z’   //true</li>
+<li>‘\u007A’ === ‘z’   //true</li>
+<li>‘\u{7A}’ === ‘z’   //true</li>
+</ol>
+<h3 id="codePointAt"><a href="#codePointAt" class="headerlink" title="codePointAt()"></a>codePointAt()</h3><p>JavaScript内部，字符以UTF-16的格式存储，每个字符固定为2字节，对于那些需要4个字节存储的字符(码点大于0xFFFF的字符)，JavaScript会认为他们是两个字节。</p>
+<p>“𠮷”字码点是0x20BB7,UTF-16编码为0xD842 0xDFB7(十进制为55362 57271)，需要4个字节存储。对于4个字节的字符，JavaScript不能正确处理，字符串长度就会误判长度为2，而且charAt方法无法读取整个字符，charCodeAt方法只能返回前2个字节和后2个字节的值。</p>
+<p>ES6提供的codePointAt()方法，能够正确处理4个字节存储的字符，返回一个字符的码点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;𠮷a&quot;</span><br><span class="line">console.log(str.charCodeAt(0));</span><br><span class="line">console.log(str.charCodeAt(1));</span><br><span class="line"></span><br><span class="line">console.log(str.codePointAt(0));</span><br><span class="line">console.log(str.codePointAt(1));</span><br><span class="line">console.log(str.codePointAt(2));</span><br><span class="line"></span><br><span class="line">//55362</span><br><span class="line">//57271</span><br><span class="line">//134071</span><br><span class="line">//57271</span><br><span class="line">//97</span><br></pre></td></tr></table></figure>
+<p>codePointAt()检测一个字符占用的编码单元数量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function is32Bit(c) &#123;</span><br><span class="line">    return c.codePointAt(0) &gt; 0xFFFF;</span><br><span class="line">&#125;</span><br><span class="line">console.log(is32Bit(&apos;𠮷&apos;));</span><br><span class="line">console.log(is32Bit(&apos;a&apos;));</span><br><span class="line">//true</span><br><span class="line">//false</span><br></pre></td></tr></table></figure>
+<h3 id="String-fromCodePoint"><a href="#String-fromCodePoint" class="headerlink" title="String.fromCodePoint()"></a>String.fromCodePoint()</h3><p>String.fromCodePoint()方法根据指定的码位生成一个字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(String.fromCodePoint(134071));//𠮷</span><br></pre></td></tr></table></figure>
+<h3 id="normalize"><a href="#normalize" class="headerlink" title="normalize()"></a>normalize()</h3><p>ES6为字符串实例化提供了normalize方法，用来将两个字符的不同表示方法统一为同样的形式，称为Unicode正规化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;\u01D1&apos;.normalize() === &apos;\u004F\u030c&apos;.normalize());</span><br><span class="line">//true</span><br></pre></td></tr></table></figure>
+<p>normalize接受4个参数</p>
+<ul>
+<li>NFC 标准等价合成</li>
+<li>NFD 标准等价分解</li>
+<li>NFKC 兼容等价合成</li>
+<li>NFKD 兼容等价分解</li>
 </ul>
+<p>在对比字符串之前，一定要把它们标准化为同一形式</p>
 
       
 
@@ -460,7 +978,7 @@ f2()
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HTTP状态码</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ES6 字符串</a>
         		</li>
       		
 		</ul>
@@ -472,7 +990,7 @@ f2()
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/HTTP//" class="article-tag-list-link color5">HTTP</a>
+        			<a href="/categories/ES6//" class="article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
@@ -481,7 +999,7 @@ f2()
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/03/HTTP/HTTP状态码/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/11/ES6/字符串和正则表达式/字符的Unicode表示法/">展开全文 >></a>
         </p>
       
 
@@ -511,13 +1029,12 @@ f2()
 
 
   
-    <article id="post-JavaScript/基础知识/深度克隆" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-ES6/字符串和正则表达式/string" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// js对象的深度克隆代码实现</span><br><span class="line">function clone(obj) &#123;</span><br><span class="line">    var buf</span><br><span class="line">    if (obj instanceof Array) &#123;</span><br><span class="line">        buf = [] //创建一个空数组</span><br><span class="line">        var i = obj.length</span><br><span class="line">        while (i--) &#123;</span><br><span class="line">            buf[i] = clone(obj[i])</span><br><span class="line">        &#125;</span><br><span class="line">        return buf</span><br><span class="line">    &#125; else if (obj instanceof Object) &#123;</span><br><span class="line">        buf =&#123;&#125; //创建一个空对象</span><br><span class="line">        for (var k in obj) &#123;</span><br><span class="line">            buf[k] = clone(obj[k])</span><br><span class="line">        &#125;</span><br><span class="line">        return buf</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return obj</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        // <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;\u0061&quot;);</span><br><span class="line">console.log(&quot;\uD842\uDFB7&quot;);</span><br><span class="line">console.log(&quot;\u&#123;20BB7&#125;&quot;);//𠮷</span><br><span class="line">var str = &quot;𠮷a&quot;</span><br><span class="line">console.log(str.charCodeAt(0));</span><br><span class="line">console.log(str.charCodeAt(1));</span><br><span class="line"></span><br><span class="line">console.log(str.codePointAt(0));</span><br><span class="line">console.log(str.codePointAt(1));</span><br><span class="line">console.log(str.codePointAt(2));</span><br><span class="line">// ₻7</span><br><span class="line">function is32Bit(c) &#123;</span><br><span class="line">    return c.codePointAt(0) &gt; 0xFFFF;</span><br><span class="line">&#125;</span><br><span class="line">console.log(is32Bit(&apos;𠮷&apos;));</span><br><span class="line">console.log(is32Bit(&apos;a&apos;));</span><br><span class="line"></span><br><span class="line">console.log(&apos;\u01D1&apos;.normalize(&apos;NFC&apos;) === &apos;\u004F\u030c&apos;.normalize(&apos;NFC&apos;));</span><br><span class="line">console.log(&apos;\u01D1&apos;.normalize(&apos;NFD&apos;) === &apos;\u004F\u030c&apos;.normalize(&apos;NFD&apos;));</span><br><span class="line">console.log(&apos;\u01D1&apos;.normalize(&apos;NFKC&apos;) === &apos;\u004F\u030c&apos;.normalize(&apos;NFKC&apos;));</span><br><span class="line">console.log(&apos;\u01D1&apos;.normalize(&apos;NFKD&apos;) === &apos;\u004F\u030c&apos;.normalize(&apos;NFKD&apos;));</span><br><span class="line"></span><br><span class="line">let text = &apos;𠮷&apos;</span><br><span class="line">console.log(text.length);</span><br><span class="line">console.log(/^.$/.test(text));</span><br><span class="line">console.log(/^.$/u.test(text));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(&quot;+++++++++++++++++++++++++&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function codePointLength(text) &#123;</span><br><span class="line">    let result = text.match(/[\s\S]/gu)</span><br><span class="line">    return result ? result.length : 0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(codePointLength(&quot;abc&quot;));</span><br><span class="line">console.log(codePointLength(&quot;𠮷bc&quot;));</span><br><span class="line"></span><br><span class="line">//</span><br></pre></td></tr></table></figure>
       
 
       
@@ -529,283 +1046,7 @@ f2()
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/03/JavaScript/基础知识/深度克隆/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/23/compute" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        compute(10,100);
-var compute = function(A,B) {
-  console.info(A * B) ;
-};
- function compute(A,B){
-   console.info(A + B);
- }
- function compute(A,B){
-   console.info((A + B)*2);
- }
- compute(2,10);
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/23/2019/02/23/compute/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019/02/23/foo" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        var obj = {
-
-    name:"zhangsan",
- 
-    sayName:function(){
- 
-      console.info(this.name);
- 
-    }
- 
-  }
- 
-  var wfunc = obj.sayName;
- 
-  obj.sayName();
- 
-  wfunc();
- 
-  var name = "lisi";
- 
-  obj.sayName();
- 
-  wfunc();
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/23/2019/02/23/foo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-错点/display两次才有block" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/19/错点/display两次才有block/">onclcik两次才触发block</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/19/错点/display两次才有block/" class="archive-article-date">
-  	<time datetime="2019-02-19T10:31:04.461Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2019/02/19/错点/display两次才有block/../../../public/images/html/display.png" alt="第二次请求"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">错点总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/19/错点/display两次才有block/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-错点/p标签不能内嵌div" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/19/错点/p标签不能内嵌div/">p标签不能内嵌div</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/19/错点/p标签不能内嵌div/" class="archive-article-date">
-  	<time datetime="2019-02-19T05:51:42.980Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在开发音乐webAPP时，我在p内嵌了div，发现div单独出来了</p>
-<p><img src="/2019/02/19/错点/p标签不能内嵌div/../../../public/images/html/p.png" alt="第二次请求"></p>
-<p>p是块级元素只能包含内联元素，而不能包含块级元素，还有h1-h6，dt，也是如此</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">错点总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/19/错点/p标签不能内嵌div/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/11/ES6/字符串和正则表达式/string/">展开全文 >></a>
         </p>
       
 
@@ -837,7 +1078,7 @@ var compute = function(A,B) {
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -932,6 +1173,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">选择器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">基础面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bootstrap carousel</a>
               </li>
              
@@ -940,11 +1189,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap  dropdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap  dropdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -956,19 +1205,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
+                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -976,27 +1221,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,15 +1233,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1024,19 +1241,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">WEB标准</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">HTML iframe</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">浏览器页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">浏览器兼容性</a>
+                <a href="javascript:void(0)" class="js-tag color1">WEB标准</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1044,27 +1253,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">浏览器兼容性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">浏览器页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">angular组件和组件树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES6 Hosting</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ES6 字符串</a>
+                <a href="javascript:void(0)" class="js-tag color1">浏览器兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1072,19 +1273,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES6 Hosting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6 箭头函数</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML5关系型数据库存储</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTML5新增的表单元素</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HTML5缓存</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML5本地存储</a>
+                <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ES6 字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1092,7 +1309,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTML5缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HTML5关系型数据库存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Inspector调试node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,11 +1341,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML5本地存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML5离线存储</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1128,11 +1369,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1144,15 +1417,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue源码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">字符串String</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1164,15 +1437,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
+                <a href="javascript:void(0)" class="js-tag color1">构造器模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
               </li>
              
               <li class="article-tag-list-item">

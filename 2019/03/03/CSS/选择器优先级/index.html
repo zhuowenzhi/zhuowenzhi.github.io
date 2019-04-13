@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://zhuowenzhi.github.io">
-  <title>指尖上的盛夏</title>
+  <title>选择器 | 指尖上的盛夏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面朝大海 春暖花开">
+  <meta name="description" content="1. CSS3的选择器:nth-child():nth-child():选择从第一开始Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1） 2. CSS 选择器有哪些 id选择器 class类选择器 标签选择器 相邻选择器(h1 + p) 子选择器(ul &amp;gt; li) 后代选择器(li a) 通配符选择器(*) 属性选择器(a[rel = “exter">
+<meta name="keywords" content="选择器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="指尖上的盛夏">
+<meta property="og:title" content="选择器">
 <meta property="og:url" content="http://zhuowenzhi.github.io/2019/03/03/CSS/选择器优先级/index.html">
 <meta property="og:site_name" content="指尖上的盛夏">
-<meta property="og:description" content="面朝大海 春暖花开">
+<meta property="og:description" content="1. CSS3的选择器:nth-child():nth-child():选择从第一开始Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1） 2. CSS 选择器有哪些 id选择器 class类选择器 标签选择器 相邻选择器(h1 + p) 子选择器(ul &amp;gt; li) 后代选择器(li a) 通配符选择器(*) 属性选择器(a[rel = “exter">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-03-03T14:18:24.126Z">
+<meta property="og:updated_time" content="2019-04-05T01:16:55.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="指尖上的盛夏">
-<meta name="twitter:description" content="面朝大海 春暖花开">
+<meta name="twitter:title" content="选择器">
+<meta name="twitter:description" content="1. CSS3的选择器:nth-child():nth-child():选择从第一开始Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1） 2. CSS 选择器有哪些 id选择器 class类选择器 标签选择器 相邻选择器(h1 + p) 子选择器(ul &amp;gt; li) 后代选择器(li a) 通配符选择器(*) 属性选择器(a[rel = “exter">
   
     <link rel="alternative" href="/atom.xml" title="指尖上的盛夏" type="application/atom+xml">
   
@@ -155,9 +156,50 @@
             <article id="post-CSS/选择器优先级" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      选择器
+    </h1>
+  
+
+        
+        <a href="/2019/03/03/CSS/选择器优先级/" class="archive-article-date">
+  	<time datetime="2019-03-03T14:18:24.126Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-03</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="1-CSS3的选择器-nth-child"><a href="#1-CSS3的选择器-nth-child" class="headerlink" title="1. CSS3的选择器:nth-child()"></a>1. CSS3的选择器:nth-child()</h3><p>:nth-child():选择从第一开始<br>Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1）</p>
+<h3 id="2-CSS-选择器有哪些"><a href="#2-CSS-选择器有哪些" class="headerlink" title="2. CSS 选择器有哪些"></a>2. CSS 选择器有哪些</h3><ol>
+<li>id选择器</li>
+<li>class类选择器</li>
+<li>标签选择器</li>
+<li>相邻选择器(h1 + p)</li>
+<li>子选择器(ul &gt; li)</li>
+<li>后代选择器(li a)</li>
+<li>通配符选择器(*)</li>
+<li>属性选择器(a[rel = “external”])</li>
+<li>伪类选择器(a:hover)</li>
+</ol>
+<h3 id="3-可继承的属性"><a href="#3-可继承的属性" class="headerlink" title="3. 可继承的属性"></a>3. 可继承的属性</h3><p>font-size, font-family, color</p>
+<h3 id="4-不可继承的样式"><a href="#4-不可继承的样式" class="headerlink" title="4. 不可继承的样式"></a>4. 不可继承的样式</h3><p>border, padding, margin, width, height</p>
+<p>优先级（就近原则）：!important &gt; [ id &gt; class &gt; tag ]<br>!important 比内联优先级高</p>
+<h3 id="5-优先级计算原则"><a href="#5-优先级计算原则" class="headerlink" title="5.优先级计算原则"></a>5.优先级计算原则</h3><p>元素选择符：1</p>
+<p>class：10</p>
+<p>id：100</p>
+<p>元素标签：1000</p>
+<h3 id="6-CSS3的新增伪类"><a href="#6-CSS3的新增伪类" class="headerlink" title="6.CSS3的新增伪类"></a>6.CSS3的新增伪类</h3><ol>
+<li>p:first-of-type</li>
+<li>p:last-of-type</li>
+<li>p:only-type</li>
+<li>p:nth-child(2)</li>
+<li>:checked</li>
+</ol>
+
       
 
       
@@ -186,7 +228,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">选择器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/css//" class="article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -387,6 +451,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">选择器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">基础面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bootstrap carousel</a>
               </li>
              
@@ -395,11 +467,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap  dropdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap  dropdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -411,19 +483,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">express</a>
+                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,27 +499,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">错点总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,15 +511,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">浏览器缓存机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,19 +519,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">WEB标准</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">HTML iframe</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">浏览器页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">浏览器兼容性</a>
+                <a href="javascript:void(0)" class="js-tag color1">WEB标准</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,27 +531,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">浏览器兼容性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">浏览器页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">angular组件和组件树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ES6 Hosting</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ES6 字符串</a>
+                <a href="javascript:void(0)" class="js-tag color1">浏览器兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,19 +551,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ES6 Hosting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6 箭头函数</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML5关系型数据库存储</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTML5新增的表单元素</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HTML5缓存</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML5本地存储</a>
+                <a href="javascript:void(0)" class="js-tag color1">ES6 全局块作用域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ES6 字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6 块级声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,7 +587,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTML5缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HTML5关系型数据库存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Inspector调试node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,11 +619,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML5本地存储</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML5离线存储</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue MVVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,11 +647,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CRUD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,15 +695,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue指令</a>
+                <a href="javascript:void(0)" class="js-tag color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue源码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">字符串String</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,15 +715,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue生命周期</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
+                <a href="javascript:void(0)" class="js-tag color1">构造器模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">基础题</a>
               </li>
              
               <li class="article-tag-list-item">
