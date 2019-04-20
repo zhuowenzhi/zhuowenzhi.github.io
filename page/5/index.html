@@ -293,6 +293,140 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2019/02/19/p-biao-qian-bu-neng-nei-qian-div/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="p标签不能内嵌div">
+                            
+                            <span class="card-title">p标签不能内嵌div</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                在开发音乐webAPP时，我在p内嵌了div，发现div单独出来了
+p是块级元素只能包含内联元素，而不能包含块级元素，还有h1-h6，dt，也是如此
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-user fa-fw"></i>
+                                卓文智
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/错点总结/" target="_blank">
+                            <span class="chip bg-color">错点总结</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/02/18/liu-lan-qi-huan-cun-ji-zhi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="HTTP浏览器缓存机制">
+                            
+                            <span class="card-title">HTTP浏览器缓存机制</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                浏览器缓存浏览器缓存就是把一个以及请求过的Web资源(如html页面，图片，数据，js等等)拷贝一份副本存储在浏览器中。缓存会根据进来的请求保存输出内容的副本。当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-18
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/HTTP/" class="post-category" target="_blank">
+                                    HTTP
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/浏览器缓存机制/" target="_blank">
+                            <span class="chip bg-color">浏览器缓存机制</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/02/17/clone/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                克隆/**
+ * 浅克隆对象只会被克隆最外部的一层,
+ * 至于更深层的对象,则依然是通过引用指向同一块堆内存.
+ * @param {*} o
+ */
+function shallow(o) {
+    const obj = {}
+  
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-user fa-fw"></i>
+                                卓文智
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2019/02/17/this/">
                         <div class="card-image">
                             
@@ -704,155 +838,6 @@ client     &lt;— SYN = 1, ACK = X + 1 ,Seq = Y    —-   ser
                         
                         <a href="/tags/TCP/" target="_blank">
                             <span class="chip bg-color">TCP</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/02/15/http/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="HTTP">
-                            
-                            <span class="card-title">HTTP</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                web核心-HTTP协议
-webservice = HTTP协议 + XMLRest = HTTP协议 + json/XML
-HTTP请求信息和响应信息请求
-
-请求行 ( 请求方法[GET,POST,PUT,DELETE,TRACE,OPT
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/HTTP/" class="post-category" target="_blank">
-                                    HTTP
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/HTTP/" target="_blank">
-                            <span class="chip bg-color">HTTP</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/02/14/webpack/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="vue-Webpack">
-                            
-                            <span class="card-title">vue-Webpack</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                网页中引用的静态资源JS:  .js  .jsx  .coffee  .ts
-CSS: .css  .less  .sass  .scss
-Img: .jpg  .png  .svg  .gif
-fonts: .ttf  .eot  .wo
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/vue/" class="post-category" target="_blank">
-                                    vue
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vue-Webpack/" target="_blank">
-                            <span class="chip bg-color">vue Webpack</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/02/07/vue-router/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="vue">
-                            
-                            <span class="card-title">vue</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                什么是路由1.后端路由:对应普通网站，所有的超链接都是URI地址，所有URI地址都对应服务器上对应的资源
-2.前端路由:对于单页面应用程序来说，主要通过URI中的hash（#号）来实现不同的切换，同时，hash有个特点：HTTP请求中不包含
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/vue/" class="post-category" target="_blank">
-                                    vue
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vue-router/" target="_blank">
-                            <span class="chip bg-color">vue-router</span>
                         </a>
                         
                     </div>
