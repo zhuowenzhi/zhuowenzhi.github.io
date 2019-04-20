@@ -4,9 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="onclcik两次才触发block, 云深不知处">
-    <meta name="description" content="js获取的display的值有三个，none |’’ |block所以导致点击两次才触发事件
-">
+    <meta name="keywords" content="讯飞易听说前端面试, 云深不知处">
+    <meta name="description" content="
+讯飞易听说前端面试(2019/02/16)
+
+开学随便投的，在准备教师资格证，没有复习就去了，真的是凉凉，一问三不知
+面试一开始面试管让我自我介绍，哇，当时只会说面试官您好，我叫卓文智，现在想想真的很丢人。理所当然地，一面就凉了。
+1. ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>onclcik两次才触发block | 云深不知处</title>
+    <title>讯飞易听说前端面试 | 云深不知处</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        onclcik两次才触发block
+                        讯飞易听说前端面试
                     </div>
                 </div>
             </div>
@@ -375,8 +379,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/错点总结/" target="_blank">
-                                <span class="chip bg-color">错点总结</span>
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
                             </a>
                         
                     </div>
@@ -384,13 +388,22 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/面试/" class="post-category" target="_blank">
+                                面试
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-02-19
+                    2019-04-20
                 </div>
 
                 
@@ -406,7 +419,227 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>js获取的display的值有三个，none |’’ |block<br>所以导致点击两次才触发事件</p>
+                <blockquote>
+<p>讯飞易听说前端面试(2019/02/16)</p>
+</blockquote>
+<p>开学随便投的，在准备教师资格证，没有复习就去了，真的是凉凉，一问三不知</p>
+<p>面试一开始面试管让我自我介绍，哇，当时只会说面试官您好，我叫卓文智，现在想想真的很丢人。理所当然地，一面就凉了。</p>
+<h2 id="1-JavaScript数据类型"><a href="#1-JavaScript数据类型" class="headerlink" title="1. JavaScript数据类型"></a>1. JavaScript数据类型</h2><pre><code>值类型(基本类型): 字符串(String), 数字(Number), 布尔(Boolean), 对空(Null), 未定义(Undefined),代表(Symbol)
+
+`注：Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。 `
+
+引用数据类型:对象(Object),数组(Array),函数(Function)
+</code></pre><h2 id="2-闭包概念"><a href="#2-闭包概念" class="headerlink" title="2. 闭包概念"></a>2. 闭包概念</h2><pre><code>闭包是由函数以及创建该函数的词法环境组合而成。这个环境包含了这个闭包创建时所能访问的所有局部变量。
+</code></pre><h2 id="3-解释this变量，call-和-apply-的作用，区别"><a href="#3-解释this变量，call-和-apply-的作用，区别" class="headerlink" title="3. 解释this变量，call 和 apply 的作用，区别"></a>3. 解释this变量，call 和 apply 的作用，区别</h2><pre><code>`apply()`方法调用一个具有给定`this`值的函数，以及作为一个数组（或类似数组对象）提供的参数。
+
+`bind()`方法创建一个新的函数，在调用时设置`this`关键字为提供的值，并在调用新函数时，将给定的参数列表作为原函数的参数序列的前若干项
+
+`call()`方法调用一个函数，其具有一个指定的`this`的值和分别地提供参数(参数的列表)
+
+`call()`方法和 apply() 方法类似 ，区别在于call()方法接受的是参数列表而apply()方法接受的是一个参数数组`
+</code></pre><h2 id="4-为什么要对对象进行深度克隆，如何实现"><a href="#4-为什么要对对象进行深度克隆，如何实现" class="headerlink" title="4. 为什么要对对象进行深度克隆，如何实现"></a>4. 为什么要对对象进行深度克隆，如何实现</h2><pre><code>当一个变量向另一个变量复制引用类型的值时，同时也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上引用同一个对象。因此改变其中一个变量就会影响另一个变量。
+
+涉及`JS的数据类型、数据存储、内存管理`
+
+每一个数据都需要一个内存空间，分为栈内存(stack)和堆内存(heap)
+</code></pre><ul>
+<li><p>基础数据类型和栈内存</p>
+<p>  基础数据类型都有固定大小，保存在栈内存中，由系统自动分配空间。我们可以直接操作保存在栈内存中的值，基础数据类型都是按值访问的，他们的值存储在变量访问的位置</p>
+</li>
+<li><p>引用数据类型和堆内存</p>
+<p>  引用数据类型都是保存在堆内存中，大小不固定，动态填充。在操作对象时，实际上是在操作对象的引用而不是实际的对象。因此，引用类型的值都是按引用访问的。</p>
+</li>
+</ul>
+<h2 id="5-position取值和含义"><a href="#5-position取值和含义" class="headerlink" title="5. position取值和含义"></a>5. position取值和含义</h2><pre><code>position 属性：规定元素的定位类型。即元素脱离文档流的布局，在页面的任意位置显示。
+
+取值类型可以有：static、relative、absolute、fixed、inherit和sticky，这里sticky是CSS3新发布的一个属性。
+
+`absolute`生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+
+`fixed`生成固定定位的元素，相对于浏览器窗口进行定位。
+
+`relative`生成相对定位的元素，相对于其正常位置进行定位。
+
+`static`默认值。没有定位，元素出现在正常的流中。
+
+`sticky`粘性定位，该定位基于用户滚动的位置。
+
+`inherit`规定应该从父元素继承 position 属性的值。
+
+`initial`设置该属性为默认值
+</code></pre><h2 id="6-块级元素和行内元素区别"><a href="#6-块级元素和行内元素区别" class="headerlink" title="6. 块级元素和行内元素区别"></a>6. 块级元素和行内元素区别</h2><ul>
+<li><p>行内元素与块级元素直观上的区别</p>
+<p>  行内元素会在一条直线上排列，都是同一行的，水平方向排列</p>
+<p>  块级元素各占据一行，垂直方向排列。块级元素从新行开始结束接着一个断行。</p>
+</li>
+<li><p>块级元素可以包含行内元素和块级元素。行内元素不能包含块级元素。</p>
+</li>
+<li><p>行内元素与块级元素属性的不同，主要是盒模型属性上</p>
+<p>  行内元素设置width无效，height无效(可以设置line-height)，margin上下无效，padding上下无效（是有效的，只是不像块级元素会影响其他行）</p>
+</li>
+</ul>
+<h2 id="7-简述盒模型，以及不同浏览器的差异"><a href="#7-简述盒模型，以及不同浏览器的差异" class="headerlink" title="7. 简述盒模型，以及不同浏览器的差异"></a>7. 简述盒模型，以及不同浏览器的差异</h2><p><code>标准盒模型和IE盒模型的区别</code></p>
+<pre><code>W3C标准下padding、border所占的空间不在width、height范围内，而IE盒模型width包括content尺寸＋padding＋border的总和
+</code></pre><h2 id="8-CSS中的float机制以及使用方式"><a href="#8-CSS中的float机制以及使用方式" class="headerlink" title="8. CSS中的float机制以及使用方式"></a>8. CSS中的float机制以及使用方式</h2><pre><code>CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。
+
+`元素怎样浮动`
+
+元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。
+
+一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
+
+浮动元素之后的元素将围绕它。
+
+浮动元素之前的元素将不会受到影响。
+</code></pre><h2 id="9-如何实现元素的垂直和水平居中"><a href="#9-如何实现元素的垂直和水平居中" class="headerlink" title="9. 如何实现元素的垂直和水平居中"></a>9. 如何实现元素的垂直和水平居中</h2><ol>
+<li><p>CSS3的transform</p>
+<pre class=" language-css"><code class="language-css">     <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+     <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+     <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+     <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-<span class="token number">50%</span>, -<span class="token number">50%</span><span class="token punctuation">)</span>
+
+     <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+     <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+     <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+     <span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+     <span class="token property">bottom</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+     <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>flex盒子布局</p>
+</li>
+<li><p>display的table-cell</p>
+</li>
+</ol>
+<h2 id="10-描述CSS中的float机制以及使用方式"><a href="#10-描述CSS中的float机制以及使用方式" class="headerlink" title="10. 描述CSS中的float机制以及使用方式"></a>10. 描述CSS中的float机制以及使用方式</h2><ul>
+<li><p>工作原理</p>
+<p>  W3C:浮动的框可以向左或右移动，直到它的外缘遇到包含框或者另一个浮动框的边缘。浮动框不属于普通文档流，当一个元素浮动之后，不会影响到块级框的布局而只会影响内联框(通常是文本)的排列，文档中的普通流就会表现得和浮动框不存在一样，当浮动的高度超出包含框的时候，也就会出现包含框不会自动伸高来闭合浮动元素,也就表现出高度为0（高度塌陷）。</p>
+<p>  float属性</p>
+<pre><code>  -- left
+
+  -- right
+
+  -- none
+</code></pre></li>
+<li><p>清除浮动</p>
+<ol>
+<li>clear:left| right |both |none</li>
+</ol>
+</li>
+</ul>
+<pre><code>2. 闭合浮动：使元素闭合，从而减少浮动带来的影响
+
+    * 方法一（差）：添加额外标签
+
+        在浮动元素末尾添加一个新标签，例如：
+        `&lt;div style=”clear:both;”&gt;&lt;/div&gt;` (清除float:left 和 float:right的影响)
+
+        优点：通俗易懂，容易掌握
+
+        缺点：将添加很多无意义的空标签，有违结构与表现的分离，后期维护会是噩梦。
+
+    * 方法二（差）：使用br标签及自身html属性
+
+        这个方法有些小众，br 有 clear=“all | left | right | none” 属性
+
+        `&lt;br clear=”all” /&gt;` (清除float:left 和 float:right的影响)
+
+        `&lt;br clear=”left “ /&gt;` (清除float:left的影响，如果是float:right造成的浮动影响这样写无用)
+
+        `&lt;br clear=”right” /&gt;` (清除float:right的影响，如果是float:left造成的浮动影响这样写无用)
+
+        优点：比空标签方式语义稍强，代码量较少
+
+        缺点：同样有违结构与表现的分离，不推荐使用
+
+    * 方法三（差）：父元素设置overflow属性
+
+        通过设置父元素overflow值设置为hidden;在IE6中还需要触发hasLayout，例如zoom：1;
+
+        优点：不存在结构和语义化问题，代码量极少
+
+        缺点：overflow:hidden; 内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素；不要使用
+
+        overflow:auto; 多层嵌套后，firefox与IE 可能会出现显示错误；不要使用
+
+    * 方法四（差）：父元素也设置浮动
+
+        优点：不存在结构和语义化问题，代码量极少
+
+        缺点：使得与父元素相邻的元素的布局会受到影响，不可能一直浮动到body，不推荐使用
+
+    * 方法五（差）：父元素设置display:table
+
+        优点：结构语义化完全正确，代码量极少
+
+        缺点：盒模型属性已经改变，由此造成的一系列问题，得不偿失，不推荐使用
+
+    * 方法六（可）：使用:after伪元素
+
+        :after 伪元素在元素之后添加内容。
+
+        1) display:block 使生成的元素以块级元素显示,占满剩余空间;
+
+        2) height:0 避免生成内容破坏原有布局的高度。
+
+        3) visibility:hidden 使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互;
+
+        4）通过 content:”.”生成内容作为最后一个元素，至于content里面是点还是其他都是可以的，例如oocss里面就有经典的 content:”XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX”,有些版本可能content 里面内容为空,不推荐这样做的,firefox直到7.0 content:”” 仍然会产生额外的空隙；
+
+        5）zoom：1 触发IE hasLayout。
+        通过分析发现，除了clear：both用来闭合浮动的，其他代码无非都是为了隐藏掉content生成的内容，这也就是其他版本的闭合浮动为什么会有font-size：0，line-height：0。
+
+&gt;`闭合浮动的原理：`
+
+以上方法，分为两类：
+
+1. 在浮动元素末尾添加一个空元素 (方法一，二，六)
+
+2. 设置父元素overflow 或者 display:table 来闭合浮动 (方法三，四，五)
+
+ `为什么设置父元素overflow 或者 display:table 可以闭合浮动?`
+
+原理为:Block formatting contexts （块级格式化上下文），以下简称 BFC。
+</code></pre><ul>
+<li><p><code>如何触发BFC?</code></p>
+</li>
+<li><p>float 除了none以外的值</p>
+</li>
+<li><p>overflow 除了visible 以外的值（hidden，auto，scroll ）</p>
+</li>
+<li><p>display (table-cell，table-caption，inline-block)</p>
+</li>
+<li><p>position（absolute，fixed）</p>
+</li>
+<li><p>fieldset元素</p>
+</li>
+<li><p><code>BFC的特性：</code></p>
+</li>
+<li><p>块级格式化上下文会阻止外边距叠加</p>
+</li>
+</ul>
+<p>当两个相邻的块框在同一个块级格式化上下文中时，它们之间垂直方向的外边距会发生叠加。换句话说，如果这两个相邻的块框不属于同一个块级格式化上下文，那么它们的外边距就不会叠加。</p>
+<ul>
+<li><p>块级格式化上下文不会重叠浮动元素</p>
+<p>  根据规定，一个块级格式化上下文的边框不能和它里面的元素的外边距重叠。这就意味着浏览器将会给块级格式化上下文创建隐式的外边距来阻止它和浮动元素的外边距叠加。由于这个原因，当给一个挨着浮动的块级格式化上下文添加负的外边距时将会不起作用（Webkit和IE6在这点上有一个问题——可以看这个测试用例）。</p>
+</li>
+<li><p>块级格式化上下文通常可以包含浮动</p>
+</li>
+</ul>
+<p>通俗地来说：创建了 BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时BFC任然属于文档中的普通流。<br>overflow:hidden或者auto可以闭合浮动，就是因为父元素创建了新的BFC。</p>
+<h2 id="11-jquery-里绑定事件有几种方法，区别"><a href="#11-jquery-里绑定事件有几种方法，区别" class="headerlink" title="11. jquery 里绑定事件有几种方法，区别"></a>11. jquery 里绑定事件有几种方法，区别</h2><h2 id="12-事件冒泡和事件捕获的概念，如何实现事件委托"><a href="#12-事件冒泡和事件捕获的概念，如何实现事件委托" class="headerlink" title="12. 事件冒泡和事件捕获的概念，如何实现事件委托"></a>12. 事件冒泡和事件捕获的概念，如何实现事件委托</h2><h2 id="13-domReady-onload-前写js，这三者的区别，如何选择"><a href="#13-domReady-onload-前写js，这三者的区别，如何选择" class="headerlink" title="13. domReady, onload, 前写js，这三者的区别，如何选择"></a>13. domReady, onload, 前写js，这三者的区别，如何选择</h2><h2 id="14-如何使用js改变元素的样式"><a href="#14-如何使用js改变元素的样式" class="headerlink" title="14. 如何使用js改变元素的样式"></a>14. 如何使用js改变元素的样式</h2><h2 id="15-http协议有几种方法"><a href="#15-http协议有几种方法" class="headerlink" title="15. http协议有几种方法"></a>15. http协议有几种方法</h2><h2 id="16-请简述浏览器缓存机制"><a href="#16-请简述浏览器缓存机制" class="headerlink" title="16. 请简述浏览器缓存机制"></a>16. 请简述浏览器缓存机制</h2><h2 id="17-简述XSS和CSRF攻击以及对应的防范措施"><a href="#17-简述XSS和CSRF攻击以及对应的防范措施" class="headerlink" title="17. 简述XSS和CSRF攻击以及对应的防范措施"></a>17. 简述XSS和CSRF攻击以及对应的防范措施</h2><h2 id="18-请实现indexOf功能"><a href="#18-请实现indexOf功能" class="headerlink" title="18. 请实现indexOf功能"></a>18. 请实现indexOf功能</h2><h2 id="19-网站性能优化"><a href="#19-网站性能优化" class="headerlink" title="19. 网站性能优化"></a>19. 网站性能优化</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> Text <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">0</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+    <span class="token keyword">var</span> a
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>三条语句执行结果是什么</p>
+<p>Text()</p>
+<p>new Text()</p>
+<p>setTimeout(Text, 100)</p>
 
             </div>
             <hr>
@@ -554,7 +787,7 @@
                     </span>
                     <a href="http://zhuowenzhi.github.io" class="b-link-green">云深不知处</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/19/display-liang-ci-cai-you-block/" class="b-link-green">onclcik两次才触发block</a>
+                    <a href="/2019/04/20/interview/xun-fei-yi-ting-shuo-qian-duan-mian-shi/" class="b-link-green">讯飞易听说前端面试</a>
                 </p>
             </div>
         </div>
@@ -579,32 +812,28 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/03/03/http-zhuang-tai-ma/">
+                <a href="/2019/04/20/interview/a-li-ba-ba-ding-ding-qian-duan-mian-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="HTTP的状态码">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="阿里钉钉电话一面">
                         
-                        <span class="card-title">HTTP的状态码</span>
+                        <span class="card-title">阿里钉钉电话一面</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-100 continue 继续
-200 ok 正常返回信息
-201 created 请求成功并且服务器创建了新的资源
-202 accepted 服务器已经接受请求但是尚未处理
-301 moved permanently 请求的网页已经永久</div>
+                    <div class="summary block-with-text">开始我电话过期了不知道，然后他们打不进来，还特地发了邮箱给我，我排查了好久才知道我电话卡没有钱了，因为有两张卡。面试官打电话过来约面试时间，超温柔的。
+自我介绍一开始让我自我介绍，我之前有准备过一分钟的自我介绍但是有点紧张说话就一直然后然后</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-03
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-20
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/HTTP/" class="post-category" target="_blank">
-                                    HTTP
+                            <a href="/categories/面试/" class="post-category" target="_blank">
+                                    面试
                                 </a>
                             
                             
@@ -614,8 +843,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTTP状态码/" target="_blank">
-                        <span class="chip bg-color">HTTP状态码</span>
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
                 </div>
@@ -629,27 +858,37 @@
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/19/p-biao-qian-bu-neng-nei-qian-div/">
+                <a href="/2019/04/20/problem/html-li-mian-wu-fa-diao-yong-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="p标签不能内嵌div">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="html里面无法调用点击事件">
                         
-                        <span class="card-title">p标签不能内嵌div</span>
+                        <span class="card-title">html里面无法调用点击事件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">在开发音乐webAPP时，我在p内嵌了div，发现div单独出来了
-p是块级元素只能包含内联元素，而不能包含块级元素，还有h1-h6，dt，也是如此
-</div>
+                    <div class="summary block-with-text">Uncaught ReferenceError: function is not defined at HTMLInputElement.onclick
+页面代码
+
+
+
+报错
+
+
+错误原因html里面调用JavaScript函数，函数必须声</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            卓文智
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/开发遇到的问题/" class="post-category" target="_blank">
+                                    开发遇到的问题
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -657,8 +896,8 @@ p是块级元素只能包含内联元素，而不能包含块级元素，还有h
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/错点总结/" target="_blank">
-                        <span class="chip bg-color">错点总结</span>
+                    <a href="/tags/项目/" target="_blank">
+                        <span class="chip bg-color">项目</span>
                     </a>
                     
                 </div>

@@ -488,7 +488,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"基础题","value":6},{"name":"JavaScript","value":3},{"name":"CSS","value":3},{"name":"算法","value":3},{"name":"设计模式","value":2},{"name":"HTTP","value":4},{"name":"vue","value":15},{"name":"SEO","value":1},{"name":"HTML5","value":5},{"name":"bootstrap","value":5},{"name":"XSS","value":1},{"name":"loader","value":1},{"name":"JSON","value":1},{"name":"node","value":8},{"name":"面试","value":2},{"name":"ES6","value":7},{"name":"开发遇到的问题","value":1}],
+                data: [{"name":"JavaScript","value":3},{"name":"基础题","value":6},{"name":"CSS","value":3},{"name":"算法","value":3},{"name":"设计模式","value":2},{"name":"HTML5","value":5},{"name":"HTTP","value":4},{"name":"vue","value":15},{"name":"SEO","value":1},{"name":"XSS","value":1},{"name":"bootstrap","value":5},{"name":"loader","value":1},{"name":"JSON","value":1},{"name":"node","value":8},{"name":"面试","value":4},{"name":"ES6","value":7},{"name":"开发遇到的问题","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -512,7 +512,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["错点总结","交换排序","面试","bootstrap  modal","浏览器兼容性","浏览器内核","CSS面试题","HTML iframe","冒泡排序","构造器模式"]
+                data: ["面试","交换排序","错点总结","mysql","浏览器兼容性","浏览器页面","CSS面试题","插入排序","JavaScript原型继承","冒泡排序"]
             }
         ],
         yAxis: [
@@ -684,6 +684,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/JavaScript原型继承/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">JavaScript原型继承</span>
+            </a>
+            
+            
+            
             <a href="/tags/HTML-iframe/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">HTML iframe</span>
             </a>
@@ -696,14 +702,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/浏览器页面/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">浏览器页面</span>
-            </a>
-            
-            
-            
-            <a href="/tags/JavaScript原型继承/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">JavaScript原型继承</span>
+            <a href="/tags/浏览器内核/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">浏览器内核</span>
             </a>
             
             
@@ -714,14 +714,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/浏览器内核/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">浏览器内核</span>
+            <a href="/tags/浏览器页面/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">浏览器页面</span>
             </a>
             
             
             
             <a href="/tags/CSS面试题/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">CSS面试题</span>
+            </a>
+            
+            
+            
+            <a href="/tags/插入排序/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">插入排序</span>
             </a>
             
             
@@ -738,56 +744,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/构造器模式/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">构造器模式</span>
-            </a>
-            
-            
-            
-            <a href="/tags/插入排序/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">插入排序</span>
-            </a>
-            
-            
-            
             <a href="/tags/快速排序/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">快速排序</span>
             </a>
             
             
             
-            <a href="/tags/JavaScript-this/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">JavaScript-this</span>
-            </a>
-            
-            
-            
-            <a href="/tags/TCP/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">TCP</span>
-            </a>
-            
-            
-            
-            <a href="/tags/vue-MVVM/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">vue MVVM</span>
-            </a>
-            
-            
-            
-            <a href="/tags/vue-router/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">vue-router</span>
-            </a>
-            
-            
-            
-            <a href="/tags/SEO/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
-            </a>
-            
-            
-            
-            <a href="/tags/HTTP/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">HTTP</span>
+            <a href="/tags/构造器模式/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">构造器模式</span>
             </a>
             
             
@@ -798,8 +762,50 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
+            <a href="/tags/HTTP/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">HTTP</span>
+            </a>
+            
+            
+            
             <a href="/tags/HTTP状态码/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">HTTP状态码</span>
+            </a>
+            
+            
+            
+            <a href="/tags/TCP/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">TCP</span>
+            </a>
+            
+            
+            
+            <a href="/tags/JavaScript-this/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">JavaScript-this</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vue-MVVM/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">vue MVVM</span>
+            </a>
+            
+            
+            
+            <a href="/tags/SEO/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vue-router/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">vue-router</span>
+            </a>
+            
+            
+            
+            <a href="/tags/XSS/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">XSS</span>
             </a>
             
             
@@ -810,8 +816,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/XSS/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">XSS</span>
+            <a href="/tags/bootstrap-carousel/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">bootstrap carousel</span>
             </a>
             
             
@@ -828,8 +834,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/bootstrap-carousel/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">bootstrap carousel</span>
+            <a href="/tags/bootstrap-dropdown/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">bootstrap  dropdown</span>
             </a>
             
             
@@ -840,26 +846,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/错点总结/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">错点总结</span>
-            </a>
-            
-            
-            
-            <a href="/tags/bootstrap-dropdown/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">bootstrap  dropdown</span>
-            </a>
-            
-            
-            
             <a href="/tags/JSON/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">JSON</span>
             </a>
             
             
             
-            <a href="/tags/express/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">express</span>
+            <a href="/tags/bootstrap-modal/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">bootstrap  modal</span>
+            </a>
+            
+            
+            
+            <a href="/tags/CRUD/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">CRUD</span>
             </a>
             
             
@@ -870,8 +870,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/CRUD/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">CRUD</span>
+            <a href="/tags/express/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">express</span>
+            </a>
+            
+            
+            
+            <a href="/tags/module/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">module</span>
+            </a>
+            
+            
+            
+            <a href="/tags/MongoDB/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">MongoDB</span>
             </a>
             
             
@@ -888,14 +900,26 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/bootstrap-modal/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">bootstrap  modal</span>
+            <a href="/tags/promise/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">promise</span>
             </a>
             
             
             
-            <a href="/tags/module/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">module</span>
+            <a href="/tags/面试/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">面试</span>
+            </a>
+            
+            
+            
+            <a href="/tags/ES6-Hosting/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">ES6 Hosting</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vue-cli/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">vue-cli</span>
             </a>
             
             
@@ -912,38 +936,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/MongoDB/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">MongoDB</span>
-            </a>
-            
-            
-            
-            <a href="/tags/vue-cli/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">vue-cli</span>
-            </a>
-            
-            
-            
-            <a href="/tags/面试/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">面试</span>
-            </a>
-            
-            
-            
             <a href="/tags/vue-Webpack/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">vue Webpack</span>
             </a>
             
             
             
-            <a href="/tags/promise/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">promise</span>
-            </a>
-            
-            
-            
-            <a href="/tags/ES6-Hosting/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">ES6 Hosting</span>
+            <a href="/tags/vue-webpack/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">vue webpack</span>
             </a>
             
             
@@ -960,8 +960,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/vue-webpack/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">vue webpack</span>
+            <a href="/tags/ES6-字符串/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">ES6 字符串</span>
             </a>
             
             
@@ -972,8 +972,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/ES6-字符串/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">ES6 字符串</span>
+            <a href="/tags/vue指令/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">vue指令</span>
             </a>
             
             
@@ -984,38 +984,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/ES6-正则表达式/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">ES6 正则表达式</span>
-            </a>
-            
-            
-            
-            <a href="/tags/vue指令/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">vue指令</span>
-            </a>
-            
-            
-            
             <a href="/tags/HTML5本地存储/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">HTML5本地存储</span>
             </a>
             
             
             
-            <a href="/tags/ES6-箭头函数/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">ES6 箭头函数</span>
-            </a>
-            
-            
-            
-            <a href="/tags/浏览器缓存机制/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">浏览器缓存机制</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Vue组件/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Vue组件</span>
+            <a href="/tags/ES6-正则表达式/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">ES6 正则表达式</span>
             </a>
             
             
@@ -1026,8 +1002,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/vue-组件化/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">vue-组件化</span>
+            <a href="/tags/浏览器缓存机制/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">浏览器缓存机制</span>
             </a>
             
             
@@ -1038,8 +1014,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/vue/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">vue</span>
+            <a href="/tags/ES6-箭头函数/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">ES6 箭头函数</span>
             </a>
             
             
@@ -1050,26 +1026,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
+            <a href="/tags/Vue组件/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Vue组件</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vue-组件化/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">vue-组件化</span>
+            </a>
+            
+            
+            
             <a href="/tags/vue组件化和模块化区别/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">vue组件化和模块化区别</span>
-            </a>
-            
-            
-            
-            <a href="/tags/设计模式/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">设计模式</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Vue集成/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Vue集成</span>
-            </a>
-            
-            
-            
-            <a href="/tags/HTML5新增的表单元素/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">HTML5新增的表单元素</span>
             </a>
             
             
@@ -1080,14 +1050,44 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
+            <a href="/tags/HTML5新增的表单元素/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">HTML5新增的表单元素</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vue/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">vue</span>
+            </a>
+            
+            
+            
             <a href="/tags/基础题/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">基础题</span>
             </a>
             
             
             
+            <a href="/tags/设计模式/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">设计模式</span>
+            </a>
+            
+            
+            
             <a href="/tags/CSS选择器/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">CSS选择器</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Vue集成/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Vue集成</span>
+            </a>
+            
+            
+            
+            <a href="/tags/错点总结/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">错点总结</span>
             </a>
             
             
