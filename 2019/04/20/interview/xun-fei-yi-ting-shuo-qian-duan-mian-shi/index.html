@@ -492,20 +492,21 @@
 
 浮动元素之前的元素将不会受到影响。
 </code></pre><h2 id="9-如何实现元素的垂直和水平居中"><a href="#9-如何实现元素的垂直和水平居中" class="headerlink" title="9. 如何实现元素的垂直和水平居中"></a>9. 如何实现元素的垂直和水平居中</h2><ol>
-<li><p>CSS3的transform</p>
-<pre class=" language-css"><code class="language-css">     <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-     <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
-     <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
-     <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-<span class="token number">50%</span>, -<span class="token number">50%</span><span class="token punctuation">)</span>
+<li>CSS3的transform</li>
+</ol>
+<pre class=" language-css"><code class="language-css">    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-<span class="token number">50%</span>, -<span class="token number">50%</span><span class="token punctuation">)</span>
 
-     <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-     <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-     <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-     <span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-     <span class="token property">bottom</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-     <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
 </code></pre>
-</li>
+<ol start="2">
 <li><p>flex盒子布局</p>
 </li>
 <li><p>display的table-cell</p>
@@ -514,93 +515,65 @@
 <h2 id="10-描述CSS中的float机制以及使用方式"><a href="#10-描述CSS中的float机制以及使用方式" class="headerlink" title="10. 描述CSS中的float机制以及使用方式"></a>10. 描述CSS中的float机制以及使用方式</h2><ul>
 <li><p>工作原理</p>
 <p>  W3C:浮动的框可以向左或右移动，直到它的外缘遇到包含框或者另一个浮动框的边缘。浮动框不属于普通文档流，当一个元素浮动之后，不会影响到块级框的布局而只会影响内联框(通常是文本)的排列，文档中的普通流就会表现得和浮动框不存在一样，当浮动的高度超出包含框的时候，也就会出现包含框不会自动伸高来闭合浮动元素,也就表现出高度为0（高度塌陷）。</p>
-<p>  float属性</p>
-<pre><code>  -- left
-
-  -- right
-
-  -- none
-</code></pre></li>
-<li><p>清除浮动</p>
-<ol>
-<li>clear:left| right |both |none</li>
-</ol>
 </li>
 </ul>
-<pre><code>2. 闭合浮动：使元素闭合，从而减少浮动带来的影响
-
-    * 方法一（差）：添加额外标签
-
-        在浮动元素末尾添加一个新标签，例如：
-        `&lt;div style=”clear:both;”&gt;&lt;/div&gt;` (清除float:left 和 float:right的影响)
-
-        优点：通俗易懂，容易掌握
-
-        缺点：将添加很多无意义的空标签，有违结构与表现的分离，后期维护会是噩梦。
-
-    * 方法二（差）：使用br标签及自身html属性
-
-        这个方法有些小众，br 有 clear=“all | left | right | none” 属性
-
-        `&lt;br clear=”all” /&gt;` (清除float:left 和 float:right的影响)
-
-        `&lt;br clear=”left “ /&gt;` (清除float:left的影响，如果是float:right造成的浮动影响这样写无用)
-
-        `&lt;br clear=”right” /&gt;` (清除float:right的影响，如果是float:left造成的浮动影响这样写无用)
-
-        优点：比空标签方式语义稍强，代码量较少
-
-        缺点：同样有违结构与表现的分离，不推荐使用
-
-    * 方法三（差）：父元素设置overflow属性
-
-        通过设置父元素overflow值设置为hidden;在IE6中还需要触发hasLayout，例如zoom：1;
-
-        优点：不存在结构和语义化问题，代码量极少
-
-        缺点：overflow:hidden; 内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素；不要使用
-
-        overflow:auto; 多层嵌套后，firefox与IE 可能会出现显示错误；不要使用
-
-    * 方法四（差）：父元素也设置浮动
-
-        优点：不存在结构和语义化问题，代码量极少
-
-        缺点：使得与父元素相邻的元素的布局会受到影响，不可能一直浮动到body，不推荐使用
-
-    * 方法五（差）：父元素设置display:table
-
-        优点：结构语义化完全正确，代码量极少
-
-        缺点：盒模型属性已经改变，由此造成的一系列问题，得不偿失，不推荐使用
-
-    * 方法六（可）：使用:after伪元素
-
-        :after 伪元素在元素之后添加内容。
-
-        1) display:block 使生成的元素以块级元素显示,占满剩余空间;
-
-        2) height:0 避免生成内容破坏原有布局的高度。
-
-        3) visibility:hidden 使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互;
-
-        4）通过 content:”.”生成内容作为最后一个元素，至于content里面是点还是其他都是可以的，例如oocss里面就有经典的 content:”XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX”,有些版本可能content 里面内容为空,不推荐这样做的,firefox直到7.0 content:”” 仍然会产生额外的空隙；
-
-        5）zoom：1 触发IE hasLayout。
-        通过分析发现，除了clear：both用来闭合浮动的，其他代码无非都是为了隐藏掉content生成的内容，这也就是其他版本的闭合浮动为什么会有font-size：0，line-height：0。
-
-&gt;`闭合浮动的原理：`
-
-以上方法，分为两类：
-
-1. 在浮动元素末尾添加一个空元素 (方法一，二，六)
-
-2. 设置父元素overflow 或者 display:table 来闭合浮动 (方法三，四，五)
-
- `为什么设置父元素overflow 或者 display:table 可以闭合浮动?`
-
-原理为:Block formatting contexts （块级格式化上下文），以下简称 BFC。
-</code></pre><ul>
+<p>float属性:left| right |none</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><ol>
+<li><p>clear:left| right |both |none</p>
+</li>
+<li><p>闭合浮动：使元素闭合，从而减少浮动带来的影响</p>
+</li>
+</ol>
+<ul>
+<li><p>方法一（差）：添加额外标签</p>
+<p>  在浮动元素末尾添加一个新标签，例如：<br>  <code>&lt;div style=”clear:both;”&gt;&lt;/div&gt;</code> (清除float:left 和 float:right的影响)</p>
+<p>  优点：通俗易懂，容易掌握</p>
+<p>  缺点：将添加很多无意义的空标签，有违结构与表现的分离，后期维护会是噩梦。</p>
+</li>
+<li><p>方法二（差）：使用br标签及自身html属性</p>
+<p>  这个方法有些小众，br 有 clear=“all | left | right | none” 属性</p>
+<p>  <code>&lt;br clear=”all” /&gt;</code> (清除float:left 和 float:right的影响)</p>
+<p>  <code>&lt;br clear=”left “ /&gt;</code> (清除float:left的影响，如果是float:right造成的浮动影响这样写无用)</p>
+<p>  <code>&lt;br clear=”right” /&gt;</code> (清除float:right的影响，如果是float:left造成的浮动影响这样写无用)</p>
+<p>  优点：比空标签方式语义稍强，代码量较少</p>
+<p>  缺点：同样有违结构与表现的分离，不推荐使用</p>
+</li>
+<li><p>方法三（差）：父元素设置overflow属性</p>
+<p>  通过设置父元素overflow值设置为hidden;在IE6中还需要触发hasLayout，例如zoom：1;</p>
+<p>  优点：不存在结构和语义化问题，代码量极少</p>
+<p>  缺点：overflow:hidden; 内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素；不要使用</p>
+<p>  overflow:auto; 多层嵌套后，firefox与IE 可能会出现显示错误；不要使用</p>
+</li>
+<li><p>方法四（差）：父元素也设置浮动</p>
+<p>  优点：不存在结构和语义化问题，代码量极少</p>
+<p>  缺点：使得与父元素相邻的元素的布局会受到影响，不可能一直浮动到body，不推荐使用</p>
+</li>
+<li><p>方法五（差）：父元素设置display:table</p>
+<p>  优点：结构语义化完全正确，代码量极少</p>
+<p>  缺点：盒模型属性已经改变，由此造成的一系列问题，得不偿失，不推荐使用</p>
+</li>
+<li><p>方法六（可）：使用:after伪元素</p>
+<p>  :after 伪元素在元素之后添加内容。</p>
+<p>  1) display:block 使生成的元素以块级元素显示,占满剩余空间;</p>
+<p>  2) height:0 避免生成内容破坏原有布局的高度。</p>
+<p>  3) visibility:hidden 使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互;</p>
+<p>  4）通过 content:”.”生成内容作为最后一个元素，至于content里面是点还是其他都是可以的，例如oocss里面就有经典的 content:”XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX”,有些版本可能content 里面内容为空,不推荐这样做的,firefox直到7.0 content:”” 仍然会产生额外的空隙；</p>
+<p>  5）zoom：1 触发IE hasLayout。<br>  通过分析发现，除了clear：both用来闭合浮动的，其他代码无非都是为了隐藏掉content生成的内容，这也就是其他版本的闭合浮动为什么会有font-size：0，line-height：0。</p>
+</li>
+</ul>
+<blockquote>
+<p><code>闭合浮动的原理：</code></p>
+</blockquote>
+<p>以上方法，分为两类：</p>
+<ol>
+<li><p>在浮动元素末尾添加一个空元素 (方法一，二，六)</p>
+</li>
+<li><p>设置父元素overflow 或者 display:table 来闭合浮动 (方法三，四，五)</p>
+</li>
+</ol>
+<p><code>为什么设置父元素overflow 或者 display:table 可以闭合浮动?</code></p>
+<p>原理为:Block formatting contexts （块级格式化上下文），以下简称 BFC。</p>
+<ul>
 <li><p><code>如何触发BFC?</code></p>
 </li>
 <li><p>float 除了none以外的值</p>
