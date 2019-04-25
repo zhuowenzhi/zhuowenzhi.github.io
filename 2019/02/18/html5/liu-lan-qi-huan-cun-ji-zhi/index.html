@@ -615,9 +615,13 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">在开发音乐webAPP时，我在p内嵌了div，发现div单独出来了
-p是块级元素只能包含内联元素，而不能包含块级元素，还有h1-h6，dt，也是如此
-</div>
+                    <div class="summary block-with-text">p标签不能内嵌div在开发，我在p内嵌了div，发现div单独出来了
+
+它的开始标签&lt;p&gt;和结束标签&lt;/p&gt;都会被浏览器会解析为：
+&lt;p>&lt;/p>
+
+所以我们的页面代码会被解析成
+  &lt;p>&lt;</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-19

@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>我们亲爱的花花毕业了</title>
+      <link href="/2019/04/23/life/hua-hua-bi-ye-dian-li/"/>
+      <url>/2019/04/23/life/hua-hua-bi-ye-dian-li/</url>
+      
+        <content type="html"><![CDATA[<h2 id="2019年4月21号花花毕业啦"><a href="#2019年4月21号花花毕业啦" class="headerlink" title="2019年4月21号花花毕业啦"></a>2019年4月21号花花毕业啦</h2><p>花邀请了我去参加她的毕业典礼，很开心，总之是有时间逃离了代码一会。从繁忙中放松身心，可以让自己舒畅一下，顺便见见老友。由于前天改代码熬夜了，第二天起不来，好怕自己赶不上。不过还好刚刚赶上了，哈哈哈哈哈哈。</p><p>见到她超开心的，刚好是送花环节我直接奔上去抱住她，哇开心死了。总算赶上了。我挺高兴的，这么多年她性格还是没变。很多人慢慢都改变了，包括我自己也是，我不知道自己变成什么样了，还是这才是我的本性。</p><p>她舍友也很好，像晓茹，那个我当年在探鱼工作认识的女孩子，超暖。曾经温暖了我好久。也许缘分这东西本来就是注定的。也许是可以把握的，可是我把握了多少呢。</p><p>小平也来参加花的毕业典礼。那个笑的如阳光般的女孩子，曾经是我同学，舍友。然后我连名字都记不起来。七年，才七年，我忘了。看着她的脸，我拼命回忆我们之间有发生了什么，可是我却始终想不起来。但是她的笑声却让我觉得很熟悉，想起稀稀疏疏的，也只剩下她的笑容了。然而，我连问她微信的勇气都没有。我不知道我能否和她成为好朋友，我不知道迈出那一步是不是也会像绝大多数一样，只是静静躺着。</p><p>她也没有问我微信，我感觉我们之间隔的不仅仅是一个七年，我们已经不知道怎么沟通了。像是刚上大学那会，把初中同学都加回来了，发现已经不是我想要的样子，我拼命逃离，我格格不入。</p><p>我会坚持初衷吗？谁知道呢。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活琐事 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>终于除了那个孽障</title>
+      <link href="/2019/04/23/life/ji-ba-ya-de-yi-tian/"/>
+      <url>/2019/04/23/life/ji-ba-ya-de-yi-tian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="那个孽障说再见了"><a href="#那个孽障说再见了" class="headerlink" title="那个孽障说再见了"></a>那个孽障说再见了</h2><p>终于在昨天把那个折磨了我多年的智齿拔了，不拍片不知道一拍吓一跳，我居然长了四颗。看到片子的时候我整个人都不好了。医生说拔这颗牙要一千块左右，我这穷的学生狗，当时挺犹豫的，可能穷半年，但是又想狠下心拔了，从此一了百了。</p><h2 id="拔牙过程"><a href="#拔牙过程" class="headerlink" title="拔牙过程"></a>拔牙过程</h2><p>躺下问医生要拔多久，她说二十分钟，实际上我觉得三分钟不到。过程就是打麻药的时候稍有些痛。可能我是个变态吧。拔的很开心，医生用力撬开那个牙我真怕撬段了。</p><h2 id="拔完后"><a href="#拔完后" class="headerlink" title="拔完后"></a>拔完后</h2><p>拿了冰敷了我的脸，稍微有些肿，有麻醉的效果真不痛。拔了真的很开心。今天还是有些许痛肿，不过想想那颗牙不在了就开心，哈哈哈哈哈哈哈哈哈。以后想吃啥就吃啥了。啊哈哈哈哈哈哈哈哈哈。</p><h2 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h2><p>真的开始痛了，做题做到睁不开眼。直接睡着了。希望能善待我。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活琐事 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue音乐播放器组件数据定义</title>
       <link href="/2019/04/20/project/vue-music/yin-le-bo-fang-qi-shu-ju-ding-yi/"/>
       <url>/2019/04/20/project/vue-music/yin-le-bo-fang-qi-shu-ju-ding-yi/</url>
@@ -33,7 +71,7 @@
       <link href="/2019/04/20/project/vue-music/bo-fang-qi-xiang-guan-ying-yong/"/>
       <url>/2019/04/20/project/vue-music/bo-fang-qi-xiang-guan-ying-yong/</url>
       
-        <content type="html"><![CDATA[<p>在Audio组件里面引入<code>import {mapGetters} from &#39;vuex&#39;</code>,并且在computed里面写mapGetters计算属性，</p><ul><li>playlist控制播放器的显示渲染</li></ul><p>在song-list里面添加代码selectItem给每首歌添加点击事件</p><pre class=" language-js"><code class="language-js">selectItem <span class="token punctuation">(</span>index<span class="token punctuation">,</span> song<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">// 告诉外面父组件可以点击以及是哪首歌和当前的索引</span>    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'select'</span><span class="token punctuation">,</span> index<span class="token punctuation">,</span> song<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p>在Audio组件里面引入<code>import {mapGetters} from &#39;vuex&#39;</code>,并且在computed里面写mapGetters计算属性，</p><ul><li>playlist控制播放器的显示渲染</li></ul><p>在song-list里面添加代码selectItem给每首歌添加点击事件</p><pre class=" language-js"><code class="language-js">selectItem <span class="token punctuation">(</span>index<span class="token punctuation">,</span> song<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">// 告诉外面父组件可以点击以及是哪首歌和当前的索引</span>    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'select'</span><span class="token punctuation">,</span> index<span class="token punctuation">,</span> song<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre><p>song-list:不知道点击的是什么值,尽可能传知道的值</p><p>music-list:</p><p>通过事件点击触发事件触发actions，actions会触发mutations去修改数据，数据映射到palyer，player会映射到DOM上面。</p>]]></content>
       
       
       <categories>
@@ -108,7 +146,7 @@
       <link href="/2019/04/20/problem/html-li-mian-wu-fa-diao-yong-han-shu/"/>
       <url>/2019/04/20/problem/html-li-mian-wu-fa-diao-yong-han-shu/</url>
       
-        <content type="html"><![CDATA[<h2 id="Uncaught-ReferenceError-function-is-not-defined-at-HTMLInputElement-onclick"><a href="#Uncaught-ReferenceError-function-is-not-defined-at-HTMLInputElement-onclick" class="headerlink" title="Uncaught ReferenceError: function is not defined at HTMLInputElement.onclick"></a>Uncaught ReferenceError: function is not defined at HTMLInputElement.onclick</h2><ul><li>页面代码</li></ul><p><img src="/2019/04/20/problem/html-li-mian-wu-fa-diao-yong-han-shu/../../Img/1.png" alt="页面代码"></p><ul><li>报错</li></ul><p><img src="/2019/04/20/problem/html-li-mian-wu-fa-diao-yong-han-shu/../../Img/2.png" alt="页面代码"></p><h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p>html里面调用JavaScript函数，函数必须声明为</p><pre class=" language-js"><code class="language-js">deleteBtn <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><p>下面两种声明都将报错</p><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deleteBtn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//or</span><span class="token keyword">var</span> deleteBtn <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><blockquote><p>参考链接</p></blockquote><p><a href="https://stackoverflow.com/questions/43843986/uncaught-referenceerror-function-is-not-defined-at-htmlinputelement-onclick-whi/55769824#55769824" target="_blank" rel="noopener">stackoverflow</a></p><p><a href="https://blog.csdn.net/ywl570717586/article/details/53130863" target="_blank" rel="noopener">CSDN博客</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Uncaught-ReferenceError-function-is-not-defined-at-HTMLInputElement-onclick"><a href="#Uncaught-ReferenceError-function-is-not-defined-at-HTMLInputElement-onclick" class="headerlink" title="Uncaught ReferenceError: function is not defined at HTMLInputElement.onclick"></a>Uncaught ReferenceError: function is not defined at HTMLInputElement.onclick</h2><ul><li>页面代码</li></ul><p><img src="/2019/04/20/problem/html-li-mian-wu-fa-diao-yong-han-shu/../../../public/medias/code/1.png" alt="页面代码"></p><ul><li>报错</li></ul><p><img src="/2019/04/20/problem/html-li-mian-wu-fa-diao-yong-han-shu/../../../public/medias/code/2.png" alt="页面代码"></p><h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p>html里面调用JavaScript函数，函数必须声明为</p><pre class=" language-js"><code class="language-js">deleteBtn <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><p>下面两种声明都将报错</p><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deleteBtn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//or</span><span class="token keyword">var</span> deleteBtn <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><blockquote><p>参考链接</p></blockquote><p><a href="https://stackoverflow.com/questions/43843986/uncaught-referenceerror-function-is-not-defined-at-htmlinputelement-onclick-whi/55769824#55769824" target="_blank" rel="noopener">stackoverflow</a></p><p><a href="https://blog.csdn.net/ywl570717586/article/details/53130863" target="_blank" rel="noopener">CSDN博客</a></p>]]></content>
       
       
       <categories>
@@ -1071,7 +1109,7 @@
       <link href="/2019/02/19/problem/display-liang-ci-cai-you-block/"/>
       <url>/2019/02/19/problem/display-liang-ci-cai-you-block/</url>
       
-        <content type="html"><![CDATA[<p>js获取的display的值有三个，none |’’ |block<br>所以导致点击两次才触发事件</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="onclcik两次才触发让元素的display改变"><a href="#onclcik两次才触发让元素的display改变" class="headerlink" title="onclcik两次才触发让元素的display改变"></a>onclcik两次才触发让元素的display改变</h2><p>页面代码</p><p><img src="/2019/02/19/problem/display-liang-ci-cai-you-block/../../../public/medias/code/5.png" alt="页面代码"></p><p>第一次点击要改变的元素的display的值</p><p><img src="/2019/02/19/problem/display-liang-ci-cai-you-block/../../../public/medias/code/3.png" alt="页面代码"></p><p>再次点击要改变的元素的display的值</p><p><img src="/2019/02/19/problem/display-liang-ci-cai-you-block/../../../public/medias/code/4.png" alt="页面代码"></p><p>js获取的display的值有三个，none |’’ |block<br>所以导致点击两次才触发事件，<code>要把判断条件改为block才能判断</code></p>]]></content>
       
       
       <categories>
@@ -1096,7 +1134,7 @@
       <link href="/2019/02/19/problem/p-biao-qian-bu-neng-nei-qian-div/"/>
       <url>/2019/02/19/problem/p-biao-qian-bu-neng-nei-qian-div/</url>
       
-        <content type="html"><![CDATA[<p>在开发音乐webAPP时，我在p内嵌了div，发现div单独出来了</p><p>p是块级元素只能包含内联元素，而不能包含块级元素，还有h1-h6，dt，也是如此</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="p标签不能内嵌div"><a href="#p标签不能内嵌div" class="headerlink" title="p标签不能内嵌div"></a>p标签不能内嵌div</h2><p>在开发，我在p内嵌了div，发现div单独出来了</p><p><img src="/2019/02/19/problem/p-biao-qian-bu-neng-nei-qian-div/../../../public/medias/code/6.png" alt="页面代码"></p><p>它的开始标签<code>&lt;p&gt;</code>和结束标签<code>&lt;/p&gt;</code>都会被浏览器会解析为：</p><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre><p>所以我们的页面代码会被解析成</p><pre class=" language-html"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>p里面嵌套div<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre><h2 id="块级标签和内联标签之间的嵌套规则Nesting-rules"><a href="#块级标签和内联标签之间的嵌套规则Nesting-rules" class="headerlink" title="块级标签和内联标签之间的嵌套规则Nesting rules"></a>块级标签和内联标签之间的嵌套规则Nesting rules</h2><ol><li><p>块级元素可以包含内联元素或某些块级元素，但内联元素不能包含块级元素，它只能包含其他内联元素</p></li><li><p>块级元素不能放在p标签里面</p></li><li><p>有几个特殊的块级元素只能包含内联元素不能包含其他块级元素。<strong>h1~h6,p,dt</strong></p></li><li><p>li 可以包含 div</p></li><li><p>块级元素和块级元素<font color="#7FFF00">并排</font>，内联元素和内联元素<font color="#7FFFF0">并列</font></p></li></ol><hr><p>&#9733; p是块级元素只能包含内联元素，而不能包含块级元素，还有<em>h1-h6，dt</em>，也是如此</p><blockquote><p>参考链接</p></blockquote><p> &#10084; <a href="https://blog.csdn.net/u012302552/article/details/75330750" target="_blank" rel="noopener">CSDN博客</a></p>]]></content>
       
       
       <categories>
@@ -1702,7 +1740,7 @@
       <link href="/2019/01/19/zhuo-wen-zhi-de-bo-ke/"/>
       <url>/2019/01/19/zhuo-wen-zhi-de-bo-ke/</url>
       
-        <content type="html"><![CDATA[<h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><p>Welcome to 卓文智的博客</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New blog"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><p>:relaxed:</p><p>Welcome to 卓文智的博客</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New blog"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><h3 id="MarkDown语法"><a href="#MarkDown语法" class="headerlink" title="MarkDown语法"></a>MarkDown语法</h3><blockquote><p>参考链接</p></blockquote><p><a href="https://blog.csdn.net/u014061630/article/details/81359144" target="_blank" rel="noopener">CSDN博客</a></p><p>&#10211; <a href="https://unicode-table.com/cn/" target="_blank" rel="noopener">字符对应的Unicode编码</a></p><p><a href="https://htmlcolorcodes.com/zh/" target="_blank" rel="noopener">HTML颜色</a></p>]]></content>
       
       
       

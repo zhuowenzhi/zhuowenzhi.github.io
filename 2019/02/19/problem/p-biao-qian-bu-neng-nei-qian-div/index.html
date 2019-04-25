@@ -5,9 +5,13 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="p标签不能内嵌div, 云深不知处">
-    <meta name="description" content="在开发音乐webAPP时，我在p内嵌了div，发现div单独出来了
-p是块级元素只能包含内联元素，而不能包含块级元素，还有h1-h6，dt，也是如此
-">
+    <meta name="description" content="p标签不能内嵌div在开发，我在p内嵌了div，发现div单独出来了
+
+它的开始标签&amp;lt;p&amp;gt;和结束标签&amp;lt;/p&amp;gt;都会被浏览器会解析为：
+&amp;lt;p&gt;&amp;lt;/p&gt;
+
+所以我们的页面代码会被解析成
+  &amp;lt;p&gt;&amp;lt;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -416,8 +420,34 @@ p是块级元素只能包含内联元素，而不能包含块级元素，还有h
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在开发音乐webAPP时，我在p内嵌了div，发现div单独出来了</p>
-<p>p是块级元素只能包含内联元素，而不能包含块级元素，还有h1-h6，dt，也是如此</p>
+                <h2 id="p标签不能内嵌div"><a href="#p标签不能内嵌div" class="headerlink" title="p标签不能内嵌div"></a>p标签不能内嵌div</h2><p>在开发，我在p内嵌了div，发现div单独出来了</p>
+<p><img src="/2019/02/19/problem/p-biao-qian-bu-neng-nei-qian-div/../../../public/medias/code/6.png" alt="页面代码"></p>
+<p>它的开始标签<code>&lt;p&gt;</code>和结束标签<code>&lt;/p&gt;</code>都会被浏览器会解析为：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>所以我们的页面代码会被解析成</p>
+<pre class=" language-html"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>p里面嵌套div<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</code></pre>
+<h2 id="块级标签和内联标签之间的嵌套规则Nesting-rules"><a href="#块级标签和内联标签之间的嵌套规则Nesting-rules" class="headerlink" title="块级标签和内联标签之间的嵌套规则Nesting rules"></a>块级标签和内联标签之间的嵌套规则Nesting rules</h2><ol>
+<li><p>块级元素可以包含内联元素或某些块级元素，但内联元素不能包含块级元素，它只能包含其他内联元素</p>
+</li>
+<li><p>块级元素不能放在p标签里面</p>
+</li>
+<li><p>有几个特殊的块级元素只能包含内联元素不能包含其他块级元素。<strong>h1~h6,p,dt</strong></p>
+</li>
+<li><p>li 可以包含 div</p>
+</li>
+<li><p>块级元素和块级元素<font color="#7FFF00">并排</font>，内联元素和内联元素<font color="#7FFFF0">并列</font></p>
+</li>
+</ol>
+<hr>
+<p>&#9733; p是块级元素只能包含内联元素，而不能包含块级元素，还有<em>h1-h6，dt</em>，也是如此</p>
+<blockquote>
+<p>参考链接</p>
+</blockquote>
+<p> &#10084; <a href="https://blog.csdn.net/u012302552/article/details/75330750" target="_blank" rel="noopener">CSDN博客</a></p>
 
             </div>
             <hr>
@@ -600,8 +630,13 @@ p是块级元素只能包含内联元素，而不能包含块级元素，还有h
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">js获取的display的值有三个，none |’’ |block所以导致点击两次才触发事件
-</div>
+                    <div class="summary block-with-text">onclcik两次才触发让元素的display改变页面代码
+
+第一次点击要改变的元素的display的值
+
+再次点击要改变的元素的display的值
+
+js获取的display的值有三个，none |’’ |block所以导致点击两次才触发</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-19
