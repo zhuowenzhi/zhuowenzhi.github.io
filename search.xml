@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>Map</title>
+      <link href="/2019/04/25/es6/map/map/"/>
+      <url>/2019/04/25/es6/map/map/</url>
+      
+        <content type="html"><![CDATA[<h2 id="含义和基本用法"><a href="#含义和基本用法" class="headerlink" title="含义和基本用法"></a>含义和基本用法</h2><p>JavaScript的对象Object，本质上是键值对的</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6-Map </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript Two Sum</title>
+      <link href="/2019/04/25/leetcode/leetcode/1.two-sum/1-twosum/"/>
+      <url>/2019/04/25/leetcode/leetcode/1.two-sum/1-twosum/</url>
+      
+        <content type="html"><![CDATA[<h2 id="JavaScript-Two-Sum"><a href="#JavaScript-Two-Sum" class="headerlink" title="JavaScript Two Sum"></a>JavaScript Two Sum</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p><p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p><p>给定一个整数数组，返回两个数字的索引，使它们相加到特定目标。 您可以假设每个输入只有一个解决方案，并且您可能不会两次使用相同的元素。</p><p>Example:</p><p>Given nums = [2, 7, 11, 15], target = 9,</p><p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p><h3 id="解法一双重for循坏暴力破解"><a href="#解法一双重for循坏暴力破解" class="headerlink" title="解法一双重for循坏暴力破解"></a>解法一双重for循坏暴力破解</h3><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number[]} nums * @param {number} target * @return {number[]} */</span><span class="token keyword">var</span> twoSum <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>           <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">===</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>            result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>            result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>      <span class="token punctuation">}</span>   <span class="token punctuation">}</span>    <span class="token keyword">return</span> result<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre><p> &#10084; 解法一双重for循坏暴力破解Runtime:160ms,Memory:34.7MB,时间复杂度是<font color="red">O(n^2)</font>,暴力破解时间复杂度高</p><p><img src="https://raw.githubusercontent.com/zhuowenzhi/git_resource/master/Img/8.png" alt="暴力破解for循坏"></p><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">hasSum</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>  hashMap <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> value <span class="token keyword">of</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">if</span> <span class="token punctuation">(</span>hashMap<span class="token punctuation">[</span>value<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>      hashMap<span class="token punctuation">[</span>k <span class="token operator">-</span> value<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>    <span class="token punctuation">}</span>    <span class="token keyword">return</span> <span class="token boolean">false</span>  <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><h3 id="使用ES6的数据结构Map"><a href="#使用ES6的数据结构Map" class="headerlink" title="使用ES6的数据结构Map"></a>使用ES6的数据结构Map</h3><p>使用ES6的数据结构Map时间复杂度是O(n)</p><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number[]} nums * @param {number} target * @return {number[]} */</span><span class="token keyword">var</span> twoSum <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">return</span> <span class="token punctuation">[</span>map<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>target <span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> i<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>    map<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">]</span>  <span class="token punctuation">}</span>  <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span></code></pre><blockquote><p>参考链接</p></blockquote><p><a href="https://wsvincent.com/javascript-two-sum-find-all-pairs-match-target-value/" target="_blank" rel="noopener">JavaScript Two Sum</a></p><p><a href="https://leetcode.com/problems/two-sum/discuss/234005/Neat-JavaScript-Map-O(n" target="_blank" rel="noopener">leetcode讨论</a>)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TwoSum-LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我们亲爱的花花毕业了</title>
       <link href="/2019/04/23/life/hua-hua-bi-ye-dian-li/"/>
       <url>/2019/04/23/life/hua-hua-bi-ye-dian-li/</url>
@@ -1046,7 +1096,7 @@
       
         <tags>
             
-            <tag> ES6 Hosting </tag>
+            <tag> ES6-Hosting </tag>
             
         </tags>
       
